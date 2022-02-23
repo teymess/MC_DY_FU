@@ -11,6 +11,7 @@
 * ---
 */
 
+
 "use strict";
 
 const ngc = require('nodegame-client');
