@@ -1,69 +1,62 @@
 /**
- * # Game settings definition file
+ * # Game setup
  * Copyright(c) 2021 Anca Balietti <anca.balietti@gmail.com>
  * MIT Licensed
  *
- * The variables in this file will be sent to each client and saved under:
+ * This file includes settings that are shared amongst all client types
  *
- *   `node.game.settings`
- *
- * The name of the chosen treatment will be added as:
- *
- *    `node.game.settings.treatmentName`
+ * Setup settings are passed by reference and can be modified globally
+ * by any instance executing on the server (but not by remote instances).
  *
  * http://www.nodegame.org
  * ---
  */
-module.exports = {
 
-    // Variables shared by all treatments.
+ const path = require('path');
+ const NDDB = require('NDDB');
+ const J = require('JSUS').JSUS;
 
-    // #nodeGame properties:
+ module.exports = function (settings, stages, dir, level) {
 
-    /**
-     * ### TIMER (object) [nodegame-property]
-     *
-     * Maps the names of the steps of the game to timer durations
-     *
-     * If a step name is found here, then the value of the property is
-     * used to initialize the game timer for the step.
-     */
-    TIMER: {
+    let setup = {};
 
-        'task_2_-_Counting': 120000,
+    setup.debug = true;
 
-        'task_1_-_Slider': 120000
-    },
+    // setup.verbosity = 1;
 
-    // # Game specific properties
+    setup.window = {
+        promptOnleave: !setup.debug
+    };
 
-    BASE_PAY: 1,
+    // Create DB.
 
-    BONUS_PAY: 1.5,
+    let pollutionDb = NDDB.db();
 
-    // Exchange rate coins to dollars.
-    EXCHANGE_RATE: 1,
+    // Create a map of state/district for convenience.
+    setup.districts = {};
+    pollutionDb.on('insert', item => {
+        let d = setup.districts;
+        if (!d[item.state]) d[item.state] = [];
+        d[item.state].push(item.district);
+    });
 
+    // Creates a list of states for convenience.
+    setup.states = [];
+    pollutionDb.on('insert', item => {
+        let s = setup.states;
+        if (!J.inArray(item.state, s)) s.push(item.state);
+    });
 
+    // Index every district for faster retrieval.
+    pollutionDb.index('district');
 
-    // # Treatments definition.
+    pollutionDb.loadSync(path.join(dir, 'private', 'combined_pollution_data.csv'), {
+        lineBreak: '\r\n'
+    });
+    console.log("Loaded csv file into database");
 
-    // They can contain any number of properties, and also overwrite
-    // those defined above.
+    // Store db in setup.
+    setup.pollutionDb = pollutionDb;
 
-    // If the `treatments` object is missing a treatment named _standard_
-    // will be created automatically, and will contain all variables.
-
-    // treatments: {
-    //
-    //     standard: {
-    //         description: "Longer time"
-    //     },
-    //
-    //     pressure: {
-    //         description: "Short times to take decisions",
-    //         guess: 5000
-    //     }
-    //
-    // }
+    return setup;
 };

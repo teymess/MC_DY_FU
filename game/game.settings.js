@@ -51,16 +51,16 @@ module.exports = {
     // If the `treatments` object is missing a treatment named _standard_
     // will be created automatically, and will contain all variables.
 
-    treatments: {
-
-        standard: {
-            description: "Longer time"
-        },
-
-        pressure: {
-            description: "Short times to take decisions",
-            guess: 5000
-        }
-
-    }
+    // treatments: {
+    //
+    //     standard: {
+    //         description: "Longer time"
+    //     },
+    //
+    //     pressure: {
+    //         description: "Short times to take decisions",
+    //         guess: 5000
+    //     }
+    //
+    // }
 };
