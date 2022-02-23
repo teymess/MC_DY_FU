@@ -75,6 +75,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     });
 
+/////////////////////////////////////////////////////////////////////////////////
     stager.extendStep('consent', {
         donebutton: false,
         widget: 'Consent'
@@ -833,7 +834,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 node.game.controlQuestions = node.widgets.append('ChoiceManager', "ComprehquestionsL5", {
                     id: 'p5_q',
                     // ref: 'controlQuestions',
-                    mainText: 'Based on the information provided in the box above, find the correct answer to the questions below.<br>' +
+                    mainText: 'Based on the information <em>provided</em> in the box above, find the correct answer to the questions below.<br>' +
                     '<span style="color:gray;font-size:14px;">(All your answers need to be correct in order to be able to proceed to the next page.) </span>',
                     simplify: true,
                     forms: [

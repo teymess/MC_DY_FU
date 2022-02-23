@@ -1,7 +1,20 @@
 /**
- * # Authorization settings
+ * # Channel settings
  * Copyright(c) 2022 Anca Balietti <anca.balietti@gmail.com>
  * MIT Licensed
+ *
+ * The channel is divided into two internal servers: player and admin.
+ * Each of those grants different privileges upon connection.
+ *
+ * Player and admin server share all options specified here. If custom
+ * options for each server are needed, they can be specified inside the
+ * `playerServer` and `adminServer` properties.
+ *
+ * Each server must define an 'endpoint' to which nodeGame clients
+ * can connect. The default server endpoints are:
+ *
+ *   - player server: name of the game,
+ *   - admin server: name of the game /admin
  *
  * http://www.nodegame.org
  * ---
@@ -9,174 +22,286 @@
 module.exports = {
 
     /**
-     * ## enabled
+     * ## enabled (boolean) Optional
      *
-     * If TRUE, authorization files will be imported and checked
-     */
-    enabled: false, // [true, false] Default: TRUE.
-
-    /**
-     * ## mode
+     * Set to FALSE to disable loading this channel at startup
      *
-     * The mode for importing the authorization codes
-     *
-     * Available modes:
-     *
-     *   - 'dummy': creates dummy ids and passwords in sequential order.
-     *   - 'auto': creates random 8-digit alphanumeric ids and passwords.
-     *   - 'local': reads the authorization codes from a file. Defaults:
-     *              codes.json, code.csv. A custom file can be specified
-     *              in settings.file (available formats: json and csv).
-     *   - 'remote': **Currently disabled** fetches the authorization codes
-     *               from a remote URI. Available protocol: DeSciL protocol.
-     *   -  external': allows users to set their own ids upon connection.
-     *               Useful if a third-party service provides participants.
-     *   - 'custom': The 'customCb' property of the settings object
-     *               will be executed with settings and done callback
-     *               as parameters.
-     *
-     */
-    mode: 'local',
-
-    /**
-     * ## nCodes
-     *
-     * The number of codes to create
-     *
-     * Modes: 'dummy', 'auto'
-     * Default: 100
-     */
-    // nCodes: 20,
-
-    /**
-     * ## addPwd
-     *
-     * If TRUE, a password field is added to each code
-     *
-     * Modes: 'dummy', 'auto'
-     * Default: FALSE
-     */
-    // addPwd: true,
-
-    /**
-     * ## codesLength
-     *
-     * The length of generated codes
-     *
-     * Modes: 'auto'
-     * Default: { id: 8, pwd: 8, AccessCode: 6, ExitCode: 6 }
-     */
-    // codesLength: { id: 8, pwd: 8, AccessCode: 6, ExitCode: 6 },
-
-    /**
-     * ## customCb
-     *
-     * The custom callback associated to mode 'custom'
-     *
-     * Modes: 'custom'
-     */
-    // customCb: function(settings, done) { return [ ... ] },
-
-    /**
-     * ## inFile
-     *
-     * The name of the codes file inside auth/ dir or a full path to it
-     *
-     * Available formats: .csv and .json.
-     *
-     * Modes: 'local'
-     * Default: 'codes.json', 'codes.js', 'code.csv' (tried in sequence)
-     */
-    inFile: 'codes.csv',
-
-    /**
-     * ## dumpCodes
-     *
-     * If TRUE, all imported codes will be dumped to file `outFile`
-     *
-     * Modes: 'dummy', 'auto', 'local', 'remote', 'custom'
      * Default: TRUE
      */
-    // dumpCodes: false
+    enabled: true,
 
     /**
-     * ## outFile
+     * ## name (string) Optional
      *
-     * The name of the codes dump file inside auth/ dir or a full path to it
+     * The name of the channel
      *
-     * Only used, if `dumpCodes` is TRUE. Available formats: .csv and .json.
-     *
-     * Modes: 'dummy', 'auto', 'local', 'remote', 'custom'
-     * Default: 'codes.imported.csv'
+     * Default: the name of the game, as found in the package.json file.
      */
-    // outFile: 'my.imported.codes.csv',
+    // name: 'Gridlock',
 
     /**
-     * ## claimId
+     * ## alias (string|array) Optional
      *
-     * If TRUE, remote clients will be able to claim an id via GET request
+     * Alternative name/s for the channel
+     *
+     * By default, if 'gameName' is the name of the channel, files will
+     * be served from the address: `http://myserver/gameName/`.
+     * Here you can add aliases to enable urls like: `http://myserver/alias/`.
+     *
+     * Important! `node.connect()` in `public/js/index.js` still needs
+     * to use the real channel name, so you will need to pass it explicitly:
+     * `node.connect('/gameName').
+     */
+    // alias: [],
+
+    /**
+     * ## playerServer (object|string) Optional
+     *
+     * Set of custom options applying only to player server
+     *
+     * If string, it will be interpreted as the name oof the server
+     * endpoint for socket.io player connections.
+     *
+     * If object, the endpoint must be specified in the _endpoint_ property.
+     *
+     * Default: name-of-the-channel
+     */
+    playerServer: {
+
+        endpoint: 'Motivated_cognition',
+
+        // Anti-spoofing, extra check to see if msg.from matches socket.id
+        // on SocketIo socket connections. Spoofed messages are logged
+        // normally, and an additional log entry with id and from msg is added.
+        // Disable only if you need that extra bit of speed.
+        antiSpoofing: true
+    },
+
+    /**
+     * ## adminServer (object|string) Optional
+     *
+     * Set of custom options applying only to admin server
+     *
+     * If string, it will be interpreted as the name oof the server
+     * endpoint for socket.io admin connections.
+     *
+     * If object, the endpoint must be specified in the _endpoint_ property.
+     *
+     * Default: name-of-the-channel/admin
+     */
+    // adminServer: 'Gridlock/admin',
+
+    /**
+     * ## getFromAdmins (boolean) Optional
+     *
+     * If TRUE, players can invoke GET commands on admins
      *
      * Default: FALSE
      */
-    // claimId: true,
+    getFromAdmins: true,
 
     /**
-     * ## claimIdValidateRequest
+     * ## accessDeniedUrl (string) Optional
      *
-     * Returns TRUE if a requester is authorized to claim an id
+     * Unauthorized clients will be redirected here.
      *
-     * Returns an error string describing the error otherwise.
+     * Default: "/pages/accessdenied.htm"
+     */
+    // accessDeniedUrl: 'unauth.htm',
+
+    /**
+     * ## notify (object) Optional
+     *
+     * Configuration options controlling what events are notified to players
+     *
+     * Default: player actions are notified to admins only.
+     */
+    notify: {
+
+        // When a player connects / disconnects.
+        onConnect: false,
+
+        // When a player changes a stage / step.
+        onStageUpdate: false,
+
+        // When the 'LOADED' stageLevel is fired (useful to sync players)
+        onStageLoadedUpdate: false,
+
+        // When any change of stageLevel happens (e.g. INIT, CALLBACK_EXECUTED)
+        // Notice: generates a lot of overhead of messages.
+        onStageLevelUpdate: false,
+
+    },
+
+    /**
+     * ## enableReconnections (boolean) Optional
+     *
+     * If TRUE, only one TAB per browser will be allowed
+     *
+     * Default: FALSE
+     */
+    enableReconnections: true,
+
+    /**
+     * ### sameStepReconnectionOnly (boolean) Optional
+     *
+     * If TRUE, only reconnections in the same game step are allowed.
+     *
+     * Default: FALSE
+     */
+    // sameStepReconnectionOnly: false,
+
+    /**
+     * ### disposeFailedReconnections (boolean) Optional
+     *
+     * If TRUE, failed reconnections are disposed
+     *
+     * If FALSE, failed reconnections are treated as a new connection.
+     *
+     * A reconnection can fail for the following reasones:
+     *
+     * - Parameter `enabledReconnections` is FALSE.
+     * - Parameter `sameStepReconnectionOnly` is TRUE, and the
+     *      client's stage and the logic's stage are different.
+     * - The room in which the client was at the moment of
+     *      disconnection cannot be located.
+     * - Any other error.
+     *
+     * Default: FALSE
+     */
+    // disposeFailedReconnections: true,
+
+    /**
+     * ### cacheMaxAge (number) Optional
+     *
+     * The duration in ms of the browser cache for public/ resources
+     *
+     * Default: 0 (no cache)
+     */
+    // cacheMaxAge: 360000,
+
+    /**
+     * ### sioQuery (boolean) Optional
+     *
+     * If TRUE, clients connecting via Socket.io can set own parameters
+     *
+     * Available parameters:
+     *
+     *  - clientType: sets the client type
+     *  - startingRoom: sets the room in which the client will be placed first
+     *
+     * It is recommended to disable sioQuery in production
+     *
+     * Default: TRUE
+     */
+    // sioQuery: false,
+
+    /**
+     * ### defaultChannel (boolean) Optional
+     *
+     * If TRUE, the game is served from / (instead of /gamename/)
+     *
+     * The route `/gamename` will be disabled, while aliases,
+     * if defined, will continue to work if not shadowed by any public path.
+     *
+     * Important! Socket.io connection must be established
+     * with the right endpoint (i.e., node.connect("/channelName").
+     * Check the public/index.htm file or public/js/index.js file for the
+     * connect statement.
+     *
+     * Important! Other games might not be reachable any more.
+     *
+     * @deprecated. Use option --default at startup
+     *
+     * Default: false
+     */
+    // defaultChannel: false,
+
+    /**
+     * ### noAuthCookie (boolean) Optional
+     *
+     * If TRUE, a cookie is set even with authorization disabled
+     *
+     * Opening multiple browser tabs will cause a disconnection in other ones.
+     *
+     * Default: false
+     */
+    // noAuthCookie: false,
+
+    /**
+     * ### roomOwnDataDir (boolean) Optional
+     *
+     * If TRUE, each new room in the channel has an own data dir named after it
+     *
+     * Default: true
+     */
+    // roomOwnDataDir: true,
+
+    /**
+     * ### roomCounter (number) Optional
+     *
+     * If set, room counter is initialized to this value
+     *
+     * If undefined, room counter self-initialize to the next available id,
+     * starting from 1, as found in the data folder of the game.
      *
      * Default: undefined
      */
-    // claimIdValidateRequest: function(query, headers) {
-    //    if ('string' !== typeof query.a || query.a === '') {
-    //        return 'missing or invalid AssignmentId';
-    //    }
-    //    if ('string' !== typeof query.h || query.h === '') {
-    //        return 'missing or invalid HITId';
-    //    }
-    //    return true;
-    //},
+    // roomCounter: 100,
 
     /**
-     * ## claimIdPostProcess
+     * ### roomCounterPadChars (0 <= number <= 12) Optional
      *
-     * Manipulates the client object after the claim id process succeeded
+     * If set, leading 0 are added to the room counter to reach desired length
+     *
+     * For example, if `roomCounterChars` is equal to 6 and
+     * the current roomCounter value is 123, then room name is: '000123'.
+     *
+     * Default: 6
      */
-    //claimIdPostProcess: function(clientObj, query, headers) {
-    //    clientObj.WorkerId = query.id;
-    //    clientObj.AssignmentId = query.a;
-    //    clientObj.HITId = query.h;
-    //},
+    // roomCounterPadChars: 6
 
     /**
-     * ## claimIdModifyReply
+     * ## logClients
      *
-     * Manipulates the object sent back to the client
+     * If TRUE, all connected/disconnected clients are logged to a csv file
      *
-     * @experimental
-     * @v4
+     * Default: FALSE
      */
-    //claimIdModifyReply: function(reply, clientObj) {
-    //    In case of success tell the client the name of the host
-    //    where the game is. Default: same host.
-    //    if (reply.code) reply.host = 'http://myhost.com';
-    //},
+    // logClients: true,
 
     /**
-     * ## codes
+     * ## logClientsExtra
      *
-     * Path to the code generator file
+     * Adds additional fields to the file of logged clients
      *
-     * The file must export a function that takes current settings
-     * (e.g. mode, etc.) and returns synchronously or asynchronously
-     * an array of valid authorization codes.
+     * Default: undefined
      */
-    //codes: 'auth.codes.js',
+    // logClientsExtra: function(p) {
+    //     return [ p.WorkerId || 'NA', p.HITId || 'NA',
+    //              p.AssignmentId || 'NA', p.ExitCode || 'NA' ];
+    // },
 
-    // # Reserved words for future requirements settings.
+    /**
+    * ## logClientsInterval
+    *
+    * How often (in milliseconds) data about clients is written to file system
+    *
+    * Default: 10000
+    */
+    // logClientsInterval: 10000,
 
-    // page: 'login.htm'
 
+
+
+    // Reserved for future versions:
+
+    /**
+     * ### roomCounterSeparator (character) Optional
+     *
+     * If set, this char is inserted between the padded room counter and 'room'
+     *
+     * Default: ''
+     */
+    // roomCounterSeparator: '@'
 };

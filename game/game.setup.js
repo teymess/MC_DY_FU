@@ -1,61 +1,69 @@
 /**
- * # Game setup
- * Copyright(c) 2022 Anca Balietti <anca.balietti@gmail.com>
+ * # Game settings definition file
+ * Copyright(c) 2021 Anca Balietti <anca.balietti@gmail.com>
  * MIT Licensed
  *
- * This file includes settings that are shared amongst all client types
+ * The variables in this file will be sent to each client and saved under:
  *
- * Setup settings are passed by reference and can be modified globally
- * by any instance executing on the server (but not by remote instances).
+ *   `node.game.settings`
+ *
+ * The name of the chosen treatment will be added as:
+ *
+ *    `node.game.settings.treatmentName`
  *
  * http://www.nodegame.org
  * ---
  */
+module.exports = {
 
- // Some imports, often used in setup.
- const path = require('path');
- const NDDB = require('NDDB');
- const J = require('JSUS').JSUS;
+    // Variables shared by all treatments.
 
- module.exports = function (settings, stages, dir, level) {
+    // #nodeGame properties:
 
-    let setup = {};
+    /**
+     * ### TIMER (object) [nodegame-property]
+     *
+     * Maps the names of the steps of the game to timer durations
+     *
+     * If a step name is found here, then the value of the property is
+     * used to initialize the game timer for the step.
+     */
+    TIMER: {
 
-    // ## verbosity
-    // Changes the quantity of output to console in the browser and Node.JS
-    // setup.verbosity = 1;
+        'task_2_-_Counting': 120000,
 
-    // ## debug
-    // Changes the behavior of nodeGame in relation to errors in the browser
-    // and Node.JS. If TRUE, errors are thrown and displayed.
-    setup.debug = true;
+        'task_1_-_Slider': 120000
+    },
 
-    // ## window
-    // Changes the appereance and some of the features in the browser.
-    setup.window = {
+    // # Game specific properties
 
-        // ### promptOnleave
-        // If TRUE, a popup window will ask users whether they want to
-        // leave the page.
-        promptOnleave: !setup.debug
-    };
+    BASE_PAY: 1,
 
-    // Metadata.
-    // By default are as in package.json, but can be overwritten.
+    BONUS_PAY: 1.5,
+
+    // Exchange rate coins to dollars.
+    EXCHANGE_RATE: 1,
+
+
+
+    // # Treatments definition.
+
+    // They can contain any number of properties, and also overwrite
+    // those defined above.
+
+    // If the `treatments` object is missing a treatment named _standard_
+    // will be created automatically, and will contain all variables.
+
+    // treatments: {
     //
-    // setup.metadata = {
-    //    name: 'another name',
-    //    version: 'another version',
-    //    description: 'another descr'
-    // };
-
-    // Environment variables. Can be retrieved via `node.env('foo')`,
-    // or be used to conditionally execute a function:
-    // `node.env('foo', function(foo) { ... })`.
+    //     standard: {
+    //         description: "Longer time"
+    //     },
     //
-    // setup.env = {
-    //    foo: false
-    // };
-
-    return setup;
+    //     pressure: {
+    //         description: "Short times to take decisions",
+    //         guess: 5000
+    //     }
+    //
+    // }
 };
