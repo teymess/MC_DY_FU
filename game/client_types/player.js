@@ -680,6 +680,113 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         }
     });
 
+////////////////////////////////////////////////////////////////////////////////
+// PRIOR LYL
+    stager.extendStep('Part2_Prior_LYL', {
+        name: 'Part 2',
+        frame: 'Impact_on_you.htm',
+        donebutton: false,
+        cb: function() {
+            node.get('districtData', function(data) {
+
+            node.game.Q_impact = node.widgets.append('ChoiceManager', "T_impact", {
+                    id: 'T_impact_q',
+                    simplify: true,
+                    panel: false,
+                    forms: [
+                        {
+                            id: 'T_impact_more_or_less',
+                            orientation: 'H',
+                            mainText: '<span style="font-weight: normal;color:gray;">Q1</span> ' +
+                                      'Think about all people living in your home district: ' + data.district + '.<br><br>' +
+                                      'In your opinion, how many years of life do people living in ' +
+                                       data.district + ' lose on average because of air pollution?',
+                            choices: ['0','1','2','3','4','5','6','7','8','9','10','11','12'],
+                            requiredChoice: true,
+                            shuffleChoices: false,
+                            hidden: true
+                        },
+                    ]
+                });
+
+                W.show('data', 'flex');
+                node.game.doneButton.enable();
+            });
+        },
+        done: function() {
+            var w, q1, q2, q3, q4;
+
+            w = node.game.Q_impact;
+
+            // DISPLAY 1
+            q1 = w.formsById.T_impact_more_or_less;
+            if (q1.isHidden()) {
+                q1.reset(); // removes error.
+                q1.show();
+                return false;
+            }
+
+            // DISPLAY 2
+            q2 = w.formsById.T_confident;
+            if (!q2) {
+                node.widgets.last.addForm({
+                    id: 'T_confident',
+                    orientation: 'H',
+                    mainText: '<span style="font-weight: normal;color:gray;">Q2</span> How confident are you about your answer to the previous question?</span>',
+                    choices: [
+                      ['1', 'Not confident at all'],
+                      ['2', 'Not very confident'],
+                      ['3', 'Neutral'],
+                      ['4', 'Quite confident'],
+                      ['5', 'Completely confident']
+                    ],
+                    shuffleChoices: false,
+                    requiredChoice: true,
+                });
+                return false;
+            }
+
+            // DISPLAY 3
+            q3 = w.formsById.T_impact_more_or_less_you;
+            if (!q3) {
+                if (q3) q3.disable();
+                node.widgets.last.addForm({
+                    id: 'T_impact_more_or_less_you',
+                    orientation: 'H',
+                    mainText: '<span style="font-weight: normal;color:gray;">Q3</span> Now, think about all people living in Austria, a country in central Europe.<br><br>' +
+                              'In your opinion, how many years of life do people living in ' +
+                               'Austria lose on average because of air pollution?',
+                    choices: ['0','1','2','3','4','5','6','7','8','9','10','11','12'],
+                    requiredChoice: true,
+                    shuffleChoices: false,
+                });
+
+                return false;
+            }
+
+            // DISPLAY 4 -- How confident?
+            q4 = w.formsById.T_confident_Austria;
+            if (!q4) {
+                node.widgets.last.addForm({
+                    id: 'T_confident_Austria',
+                    orientation: 'H',
+                    mainText: '<span style="font-weight: normal;color:gray;">Q4</span> How confident are you about your answer to the previous question?</span>',
+                    choices: [
+                      ['1', 'Not confident at all'],
+                      ['2', 'Not very confident'],
+                      ['3', 'Neutral'],
+                      ['4', 'Quite confident'],
+                      ['5', 'Completely confident']
+                    ],
+                    shuffleChoices: false,
+                    requiredChoice: true,
+                });
+                return false;
+            }
+            return w.getValues();
+        }
+    });
+
     //////////////////////////////////////////////////////////////////////////
     // LEAFLET P3
     stager.extendStep('Part2_Air_pollution_damages_your_health', {

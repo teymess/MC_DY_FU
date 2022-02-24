@@ -19,6 +19,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     stager
     .stage('Intro')
     .step('Welcome')
+    .step('Part_1_q3')
+    .step('Part2_Prior_LYL')
 
     stager
     .stage('Part_1_Survey')
@@ -35,7 +37,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('Instructions_Part_2')
     .step('Part2_Air_pollution_and_its_sources')
     .step('Part2_Pollution_and_life_expectancy')
-    // .step('Part2_Air_pollution_is_costly')
+    .step('Part2_Prior_LYL')
     .step('Part2_Air_pollution_damages_your_health')
     .step('Part2_Protection_measures')
     .step('Part2_Protection_measures_T')
