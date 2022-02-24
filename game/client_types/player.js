@@ -706,10 +706,9 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     //////////////////////////////////////////////////////////////////////////
     // LEAFLET P2
-    stager.extendStep('Part2_Air_pollution_is_costly', {
+    stager.extendStep('Part2_Pollution_and_life_expectancy', {
         name: 'Part 2: Reading and comprehension',
-        frame: 'leaflet_p2.htm',
-        // Make a widget step.
+        frame: 'leaflet_p4.htm',
         widget: {
             name: 'ChoiceManager',
             id: 'P2_q',
@@ -721,18 +720,16 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'P2_q1',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q3</span> How many deaths are caused yearly by air pollution in India?',
-                        choices: ["Less than 1 million", "About 1.67 million", "More than 3 million"],
-                        correctChoice: 1,
+                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How many years of life do we lose on average by being exposed for a long time to air pollution that is 10 &mu;/m<sup>3</sup> higher than the WHO recommended level?<br>',
+                        choices: ["0 years", "0.25 years", "0.5 years", "1 year", "2 years"],
+                        correctChoice: 3,
                     },
                     {
                         id: 'P2_q2',
-                        orientation: 'V',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Which of the following statements is correct?',
-                        choices: ["Air pollution causes only health damages.",
-                        "Air pollution causes both health and economic damages.",
-                        "Air pollution causes no damages."],
-                        correctChoice: 1,
+                        orientation: 'H',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q7</span> How many years of life do we lose on average by being exposed for a long time to air pollution that is 30 &mu;/m<sup>3</sup> higher than the WHO recommended level?<br>',
+                        choices: ["0 years", "1 year", "2 years", "3 years", "5 years"],
+                        correctChoice: 3,
                     }
                 ]
             }
@@ -769,12 +766,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         }
     });
 
-
     //////////////////////////////////////////////////////////////////////////
     // LEAFLET P4
-    stager.extendStep('Part2_Pollution_and_life_expectancy', {
+    stager.extendStep('Part2_Protection_measures', {
         name: 'Part 2: Reading and comprehension',
-        frame: 'leaflet_p4.htm',
+        frame: 'leaflet_protection.htm',
         widget: {
             name: 'ChoiceManager',
             id: 'P4_q',
@@ -786,21 +782,70 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'P4_q1',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How many years of life do we lose on average by being exposed for a long time to air pollution that is 10 &mu;/m<sup>3</sup> higher than the WHO recommended level?<br>',
-                        choices: ["0 years", "0.25 years", "0.5 years", "1 year", "2 years"],
-                        correctChoice: 3,
-                    },
-                    {
-                        id: 'P4_q2',
-                        orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q7</span> How many years of life do we lose on average by being exposed for a long time to air pollution that is 30 &mu;/m<sup>3</sup> higher than the WHO recommended level?<br>',
-                        choices: ["0 years", "1 year", "2 years", "3 years", "5 years"],
-                        correctChoice: 3,
+                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which of the following measures help with protecting your health from air pollution?<br>',
+                        hint: '<span style="color:gray;font-size:14px;">(There are several correct answers and you have to find all of them.)</span>',
+                        // Number of choices per row/column.
+                        choicesSetSize: 5,
+                        choices: ["Ventilating the kitchen", "Using clean cooking and heating fuels",
+                        "Wearing a face mask while outdoors", "Drinking cold water"],
+                        selectMultiple: true,
+                        correctChoice: [0,1,2],
                     }
                 ]
             }
         }
     });
+
+    //////////////////////////////////////////////////////////////////////////
+    // LEAFLET P5
+    stager.extendStep('Part2_Protection_measures_T', {
+        name: 'Part 2: Reading and comprehension',
+        frame: 'leaflet_protection_T.htm',
+        widget: {
+            name: 'ChoiceManager',
+            id: 'P4_T_q',
+            options: {
+                simplify: true,
+                mainText: 'This time, think about <b>yourself</b> and <b>your opinion</b> on how to protect yourself against air pollution.<br>',
+                forms: [
+                    {
+                        id: 'P4_T_q1',
+                        orientation: 'H',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> In your opinion, which 3 measures from the leaflet above are the <em>most effective</em> to protect yourself against air pollution?<br>',
+                        hint: '<span style="color:gray;font-size:14px;">(Select 3 measures.)</span>',
+                        // Number of choices per row/column.
+                        choicesSetSize: 4,
+                        choices: ["Wear a face mask", "Avoid exercising outdoors in congested areas",
+                        "Check the air quality and avoid congested areas", "Spend time in nature",
+                        "Remove dust often", "Use an air purifier", "Use clean cooking and heating fuels", "Ventilate well the kitchen"],
+                        selectMultiple: true,
+                        shuffleChoices: false
+                    },
+                    {
+                        id: 'P4_T_q2',
+                        orientation: 'H',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which protective measure(s) from the leaflet above are the most <em>convenient</em> for you to implement?<br>',
+                        hint: '<span style="color:gray;font-size:14px;">(Select at least 1.)</span>',
+                        // Number of choices per row/column.
+                        choicesSetSize: 4,
+                        choices: ["Wear a face mask", "Avoid exercising outdoors in congested areas",
+                        "Check the air quality and avoid congested areas", "Spend time in nature",
+                        "Remove dust often", "Use an air purifier", "Use clean cooking and heating fuels", "Ventilate well the kitchen"],
+                        selectMultiple: true,
+                        shuffleChoices: false
+                    },
+                    {
+                        name: 'CustomInput',
+                        id: 'P4_T_3',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q3</span> What <em>other</em> measures than the ones included in the leaflet above come to your mind that help with protecting yourself against air pollution?',
+                        width: '95%',
+                        requiredChoice: true,
+                    },
+                ]
+            }
+        }
+    });
+
 
     //////////////////////////////////////////////////////////////////////////
     // Pollution in your district
