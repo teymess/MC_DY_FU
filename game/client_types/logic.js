@@ -61,13 +61,13 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             //     let bonus = msg.data.effort_slider * settings.TASK_1_BONUS;
             //     gameRoom.updateWin(id, bonus);
             // }
-            if (step === 'task_2_-_Counting') {
+            if (step === 'Part_3_Filler_Task') {
                 let bonus = msg.data.effort_count * settings.TASK_2_BONUS;
                 gameRoom.updateWin(id, bonus);
             }
 
 
-            if (step === 'feedback') {
+            else if (step === 'feedback') {
 
                 // Saves bonus file, and notifies player.
                 //gameRoom.updateWin(id,settings.WIN);

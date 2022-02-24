@@ -32,7 +32,7 @@ module.exports = {
          'task_2_-_Counting': 120000,
      },
 
-    // # Game specific properties
+    BASE_PAY: 1,
     TASK_2_BONUS: 0.05,
 
     // Exchange rate coins to dollars.
