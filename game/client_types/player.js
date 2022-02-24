@@ -711,7 +711,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     //////////////////////////////////////////////////////////////////////////
-    // LEAFLET P4
+    // LEAFLET Protection measures ALL
     stager.extendStep('Part2_Protection_measures', {
         name: 'Part 2: Reading and comprehension',
         frame: 'leaflet_protection.htm',
@@ -741,7 +741,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     //////////////////////////////////////////////////////////////////////////
-    // LEAFLET P5
+    // LEAFLET Protection measures Treatment
     stager.extendStep('Part2_Protection_measures_T', {
         name: 'Part 2: Reading and comprehension',
         frame: 'leaflet_protection_T.htm',
@@ -789,7 +789,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'P4_T_q4',
                         orientation: 'H',
-                        mainText: '<img src="Leaflet_images/exclamation-mark.png" width="25px" /> Try to remember these protection measures and apply them whenever you can! They can help protect your health against air pollution!<br/><br>' +
+                        mainText: '<img src="Leaflet_images/exclamation-mark.png" width="35px" /> Try to remember these protection measures and apply them whenever you can! They can help protect your health against air pollution!<br/><br>' +
                         '<span style="font-weight: normal;color:gray;">Q7</span> How likely do you think you are to remember a few of these protection measures?<br>',
                         choices: ["Very likely", "Likely",
                         "Neutral", "Not very likely", "Very unlikely"],
@@ -800,6 +800,33 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             },
         },
     });
+
+    //////////////////////////////////////////////////////////////////////////
+    // LEAFLET P3
+    stager.extendStep('Part2_Info_Choice', {
+        name: 'Part 2: Reading and comprehension',
+        widget: {
+            name: 'ChoiceManager',
+            id: 'PC_q',
+            options: {
+                simplify: true,
+                mainText: ' In the next step, you will receive an information leaflet on air pollution levels and measured impact on health. ' +
+                'You have now the opportunity to chose the region that will be presented on the next page.',
+                forms: [
+                    {
+                        id: 'PC_q1',
+                        orientation: 'H',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which region would you like to read information on air pollution and health impacts about?<br>',
+                        hint: '<span style="color:gray;font-size:14px;">(Your choice will be implemented with a 60% probability.)</span>',
+                        choices: ["Your home district", "Austria"],
+                        requiredChoice: true,
+                        shuffleChoices: true
+                    }
+                ]
+            }
+        }
+    });
+
 
 
     //////////////////////////////////////////////////////////////////////////

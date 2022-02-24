@@ -15,14 +15,15 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager
     .stage('consent')
-    .step('Part2_Protection_measures_T')
 
     stager
-    .stage('Welcome')
+    .stage('Intro')
+    .step('Welcome')
+    .step('Part2_Protection_measures_T')
+    .step('Part2_Info_Choice')
 
     stager
     .stage('Part_1_Survey')
-    // .step('Part_1_q1')
     .step('Part_1_q2')
     .step('Part_1_q3')
     .step('Part_1_q4')
@@ -40,6 +41,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('Part2_Air_pollution_damages_your_health')
     .step('Part2_Protection_measures')
     .step('Part2_Protection_measures_T')
+    .step('Part2_Info_Choice')
     .step('Part2_Pollution_in_your_district')
 
 
