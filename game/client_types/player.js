@@ -1114,7 +1114,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     '<li>Did you find any question unclear or ' +
                     'uncomfortable?</li>' +
                     '<li>Did you experience any technical difficulty?</li>' +
-                    '<li>Was the map of your district loading correctly?</li>' +
+                    '<li>Was the map of the region of your choice loading correctly?</li>' +
                     '<li>How can we improve the study?</li></ol>'
                 }
             }
