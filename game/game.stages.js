@@ -20,7 +20,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .stage('Intro')
     .step('Welcome')
     .step('Part_1_q3')
-    .step('Part2_Prior_LYL')
+    .step('Part4_Posterior_LYL')
 
     stager
     .stage('Part_1_Survey')
@@ -51,6 +51,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager
     .stage('Part4')
+    .step('Part4_Posterior_LYL')
     .step('Part4_LOC1')
     .step('Part4_LOC2')
     .step('Part4_LOC3')

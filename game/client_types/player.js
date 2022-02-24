@@ -684,7 +684,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 // PRIOR LYL
     stager.extendStep('Part2_Prior_LYL', {
         name: 'Part 2',
-        frame: 'Impact_on_you.htm',
+        frame: 'prior_LYL.htm',
         donebutton: false,
         cb: function() {
             node.get('districtData', function(data) {
@@ -701,10 +701,9 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                       'Think about all people living in your home district: ' + data.district + '.<br><br>' +
                                       'In your opinion, how many years of life do people living in ' +
                                        data.district + ' lose on average because of air pollution?',
-                            choices: ['0','1','2','3','4','5','6','7','8','9','10','11','12'],
-                            requiredChoice: true,
-                            shuffleChoices: false,
-                            hidden: true
+                                       choices: ['0','1','2','3','4','5','6','7','8','9','10','11','12'],
+                                       requiredChoice: true,
+                                       shuffleChoices: false,
                         },
                     ]
                 });
@@ -1195,6 +1194,84 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 }
             },
         });
+
+
+////////////////////////////////////////////////////////////////////////////////
+        // PRIOR LYL
+            stager.extendStep('Part4_Posterior_LYL', {
+                name: 'Part 4',
+                frame: 'posterior_LYL.htm',
+                donebutton: false,
+                cb: function() {
+                    node.get('districtData', function(data) {
+
+                    node.game.LYL_post = node.widgets.append('ChoiceManager', "T_LYL_post", {
+                            id: 'LYL_posterior',
+                            simplify: true,
+                            panel: false,
+                            forms: [
+                                {
+                                    id: 'LYL_posterior_1',
+                                    mainText: '<span style="font-weight: normal;color:gray;">Q1</span> ' +
+                                              'Think about all people living in your home district: ' + data.district + '.<br><br>' +
+                                              'How many years of life do people living in ' +
+                                               data.district + ' lose on average because of air pollution?',
+                                     name: 'Slider',
+                                     hidden: true,
+                                     requiredChoice: true,
+                                     initialValue: 0,
+                                     min: 0,
+                                     max: 120,
+                                     displayNoChange: false,
+                                     type: 'flat',
+                                     panel: false,
+                                     texts: {
+                                     currentValue: function(widget, value) {
+                                         let LYL = [
+                                             '0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9',
+                                             '1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9',
+                                             '2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9',
+                                             '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9',
+                                             '4.0', '4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9',
+                                             '5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9',
+                                             '6.0', '6.1', '6.2', '6.3', '6.4', '6.5', '6.6', '6.7', '6.8', '6.9',
+                                             '7.0', '7.1', '7.2', '7.3', '7.4', '7.5', '7.6', '7.7', '7.8', '7.9',
+                                             '8.0', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6', '8.7', '8.8', '8.9',
+                                             '9.0', '9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8', '9.9',
+                                             '10.0', '10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7', '10.8', '10.9',
+                                             '11.0', '11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9',
+                                             '12'
+                                         ];
+                                         node.game.contributionAmount = LYL[(value)];
+                                         return '<span style=\'font-size:20px;\'>Your estimation is that people living in ' +
+                                         data.district + '<br> lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+                                     }
+                                   }
+                                },
+                            ]
+                        });
+
+                        W.show('data', 'flex');
+                        node.game.doneButton.enable();
+                    });
+                },
+                done: function() {
+                    var w, q1;
+
+                    w = node.game.LYL_post;
+
+                    // DISPLAY 1
+                    q1 = w.formsById.LYL_posterior_1;
+                    if (q1.isHidden()) {
+                        q1.reset(); // removes error.
+                        q1.show();
+                        return false;
+                    }
+                    return w.getValues();
+                }
+            });
+
+
 
 ////////////////////////////////////////////////////////////////////////////////
     // PART 4
