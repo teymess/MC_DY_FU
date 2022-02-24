@@ -947,6 +947,151 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
 
 
+    ///////////////////////////////////////////////////////////////////
+        // Explanation of counting task
+        stager.extendStep('Part_3_Instructions', {
+            name: 'Part 3: A fun exercise',
+            frame: 'instructions_filler_task.htm',
+            cb: function() {
+                W.setInnerHTML('bonus', node.game.settings.TASK_2_BONUS);
+            }
+        });
+
+
+        /////////////////////////////////////////////////////////////////////////
+        // Effort task - Counting zeros
+        stager.extendStep('Part_3_Filler_Task', {
+            name: 'Part 3: A fun exercise',
+            donebutton: false,
+            frame: 'effort.html',
+            done: function() {
+                return { effort_count: node.game.correct };
+            },
+            init: function() {
+                this.visualTimer = node.widgets.append('VisualTimer', W.getHeader());
+            },
+            exit: function() {
+                node.game.zero = null;
+                node.game.correct = null;
+                if (node.game.visualTimer) {
+                    node.game.visualTimer.destroy();
+                    node.game.visualTimer = null;
+                }
+            },
+            cb: function() {
+                var box = W.gid('box');
+                // variable to count correct answer
+                var correct = 0;
+                node.game.correct = correct;
+
+
+                //show effort task
+                // Number of numbers for each line
+                var n = 12;
+                // Number of lines
+                var m = 4;
+                // Initialize count of zeros
+                var zeros = 0;
+
+                // var Z = '<img src="effort_imgs/0.png" title="zero" name="zero" style="width: 30px"/>';
+                var Z = '<img src="effort_imgs/bitcoin-gold-logo.png" title="one" name="one" style="width: 30px"/>';
+
+                var O = '<img src="effort_imgs/1.png" title="one" name="one" style="width: 30px"/>';
+
+                function genrand(n,m) {
+                    box.innerHTML = '';
+                    zeros = 0;
+                    // Build a multidimensional array
+                    for (var i = 0; i < m; i++) {
+                        // Generate random sequence
+                        var rand = Array(n).fill().map(() => Math.floor(Math.random()*2));
+                        // Add div
+                        var myDiv = document.createElement("div");
+                        // Add the sequence to div
+
+                        // Makes numbers as TEXT.
+                        // myDiv.innerHTML = rand.join(' ');
+
+                        // Display sequence
+                        box.appendChild(myDiv);
+
+                        // number of zeros
+                        for (var j = 0; j < n; j++) {
+                            if (rand[j] === 0) {
+                                myDiv.innerHTML += Z;
+                                zeros += 1;
+                            }
+                            else {
+                                myDiv.innerHTML += O;
+                            }
+                        }
+                    }
+
+                    if (!node.game.zero) {
+                        node.game.zero = node.widgets.append('CustomInput', 'input-div', {
+                            id: 'zero',
+                            mainText: 'How many coins are there?',
+                            type: 'int',
+                            min: 0,
+                            max: 60,
+                            requiredChoice: true
+                        });
+                    }
+                    else {
+                        node.game.zero.reset();
+                    }
+                }
+
+                genrand(n,m);
+
+                var button;
+                button = W.gid('submitAnswer');
+                button.onclick = function() {
+                    var count = node.game.zero.getValues().value;
+                    var message1;
+                    var message2;
+                    if (count === zeros) {
+                        message1 = 'The answer is <strong>correct.</strong>';
+                        node.game.correct += 1;
+                        message2='So far, you had '+ node.game.correct+ ' correct tables';
+                    }
+                    else {
+                        message1 = 'The answer is <string>wrong.</strong>';
+                        message2 = 'So far, you had '+ node.game.correct+ ' correct tables';
+                    }
+                    //                alert(message);
+                    // Hide element with id above.
+                    // Show element with id results.
+                    // Set innerHTML property of element with id textresult to
+                    // the value correct or wrong and how many table done so far.
+
+                    // hint: W.show and W.hide
+                    W.hide('above');
+                    W.show('results');
+                    W.setInnerHTML('CheckAnswer', message1);
+                    W.setInnerHTML('TotalPoint', message2);
+                    genrand(n,m);
+                };
+
+                var button2;
+                button2 = W.gid('nextTable');
+                button2.onclick = function() {
+                    // if (node.game.correct === 2) {
+                    //     node.game.zero.destroy();
+                    //     node.done();
+                    //     return;
+                    // }
+                    // Hide element with id results.
+                    // Show element with id above.
+                    W.hide('results');
+                    W.show('above');
+                }
+            },
+        });
+
+
+
+
         ////////////////////////////////////////////////////////////////////////////
         // FEEDBACK
         stager.extendStep('feedback', {

@@ -19,6 +19,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     stager
     .stage('Intro')
     .step('Welcome')
+    .stage('Part3')
+    .step('Part_3_Instructions')
+    .step('Part_3_Filler_Task')
+
 
     stager
     .stage('Part_1_Survey')
@@ -42,7 +46,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('Part2_Info_Choice')
     .step('Part2_Pollution_in_your_district')
 
-
+    stager
+    .stage('Part3')
+    .step('Part_3_Instructions')
+    .step('Part_3_Filler_Task')
 
     stager
     .stage('feedback')

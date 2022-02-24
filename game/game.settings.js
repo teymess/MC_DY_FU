@@ -28,17 +28,12 @@ module.exports = {
      * If a step name is found here, then the value of the property is
      * used to initialize the game timer for the step.
      */
-    TIMER: {
-        guess: 10000
-    },
+     TIMER: {
+         'task_2_-_Counting': 120000,
+     },
 
     // # Game specific properties
-
-    // Number of game rounds to repeat.
-    ROUNDS: 4,
-
-    // Number of coins available each round.
-    COINS: 1,
+    TASK_2_BONUS: 0.05,
 
     // Exchange rate coins to dollars.
     EXCHANGE_RATE: 1,
