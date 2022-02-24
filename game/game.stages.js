@@ -19,8 +19,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     stager
     .stage('Intro')
     .step('Welcome')
-    .step('Part_1_q3')
-    .step('Part4_Posterior_LYL')
 
     stager
     .stage('Part_1_Survey')
