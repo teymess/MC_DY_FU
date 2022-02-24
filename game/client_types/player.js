@@ -759,9 +759,15 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         hint: '<span style="color:gray;font-size:14px;">(Select 3 measures.)</span>',
                         // Number of choices per row/column.
                         choicesSetSize: 4,
-                        choices: ["Wear a face mask", "Avoid exercising outdoors in congested areas",
-                        "Check the air quality and avoid congested areas", "Spend time in nature",
-                        "Remove dust often", "Use an air purifier", "Use clean cooking and heating fuels", "Ventilate well the kitchen"],
+                        choices: [
+                          ['1', '<div class="aligned"><img src="face_mask.png" width="140px"><span>'],
+                          ['2', '<div class="aligned"><img src="no_exercise.png" width="140px"><span>'],
+                          ['3', '<div class="aligned"><img src="no_congested.png" width="140px"><span>'],
+                          ['4', '<div class="aligned"><img src="nature.png" width="120px"><span>'],
+                          ['5', '<div class="aligned"><img src="no_dust.png" width="140px"><span>'],
+                          ['6', '<div class="aligned"><img src="AP.png" width="140px"><span>'],
+                          ['7', '<div class="aligned"><img src="clean_fuels.png" width="120px"><span>'],
+                          ['8', '<div class="aligned"><img src="ventilate.png" width="140px"><span>']],
                         selectMultiple: 3,
                         shuffleChoices: false,
                         requiredChoice: 3,
@@ -773,9 +779,18 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         hint: '<span style="color:gray;font-size:14px;">(Select at least 1.)</span>',
                         // Number of choices per row/column.
                         choicesSetSize: 4,
-                        choices: ["Wear a face mask", "Avoid exercising outdoors in congested areas",
-                        "Check the air quality and avoid congested areas", "Spend time in nature",
-                        "Remove dust often", "Use an air purifier", "Use clean cooking and heating fuels", "Ventilate well the kitchen"],
+                        choices: [
+                          ['1', '<div class="aligned"><img src="face_mask.png" width="140px"><span>'],
+                          ['2', '<div class="aligned"><img src="no_exercise.png" width="140px"><span>'],
+                          ['3', '<div class="aligned"><img src="no_congested.png" width="140px"><span>'],
+                          ['4', '<div class="aligned"><img src="nature.png" width="120px"><span>'],
+                          ['5', '<div class="aligned"><img src="no_dust.png" width="140px"><span>'],
+                          ['6', '<div class="aligned"><img src="AP.png" width="140px"><span>'],
+                          ['7', '<div class="aligned"><img src="clean_fuels.png" width="120px"><span>'],
+                          ['8', '<div class="aligned"><img src="ventilate.png" width="140px"><span>']],
+                        // choices: ["Wear a face mask", "Avoid exercising outdoors in congested areas",
+                        // "Check the air quality and avoid congested areas", "Spend time in nature",
+                        // "Remove dust often", "Use an air purifier", "Use clean cooking and heating fuels", "Ventilate well the kitchen"],
                         selectMultiple: true,
                         shuffleChoices: false
                     },
@@ -801,29 +816,53 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         },
     });
 
+
     //////////////////////////////////////////////////////////////////////////
-    // LEAFLET P3
+    // Region of CHOICE
     stager.extendStep('Part2_Info_Choice', {
         name: 'Part 2: Reading and comprehension',
-        widget: {
-            name: 'ChoiceManager',
-            id: 'PC_q',
-            options: {
-                simplify: true,
-                mainText: ' In the next step, you will receive an information leaflet on air pollution levels and measured impact on health. ' +
-                'You have now the opportunity to chose the region that will be presented on the next page.',
-                forms: [
-                    {
-                        id: 'PC_q1',
-                        orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which region would you like to read information on air pollution and health impacts about?<br>',
-                        hint: '<span style="color:gray;font-size:14px;">(Your choice will be implemented with a 60% probability.)</span>',
-                        choices: ["Your home district", "Austria"],
-                        requiredChoice: true,
-                        shuffleChoices: true
-                    }
-                ]
-            }
+        frame: 'choice_region.htm',
+        donebutton: false,
+        cb: function() {
+            node.get('districtData', function(data) {
+
+                console.log(data);
+                W.setInnerHTML('state', data.state);
+                W.setInnerHTML('district', data.district);
+
+                node.game.RegionC = node.widgets.append('ChoiceManager', "RegionOfChoice", {
+                    id: 'PC_q',
+                    // ref: 'controlQuestions',
+                    mainText: '<span style="font-weight: bold;font-size:24px;color:#183194;">Your choice!</span><br/><br/>' +
+                    'On the next page, you will receive an information leaflet on <b>air pollution levels</b> and its <b>measured impact ' +
+                    'on health</b> in <em>a specific region</em>. <br> <br>' +
+                    'You have now the opportunity to <b>choose the region</b> that will be presented on the next page.',
+                    simplify: true,
+                    forms: [
+                      {
+                          id: 'PC_q1',
+                          orientation: 'V',
+                          mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which region would you like to read information on air pollution and health impacts about?<br>',
+                          hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
+                          choices: [
+                            ['home', data.district  + ' (' + data.state + ')'],
+                            ['decoy', "Austria"]
+                          ],
+                          requiredChoice: true,
+                          shuffleChoices: true
+                      }
+                    ]
+                    // formsOptions: {
+                    //     requiredChoice: true
+                    // }
+                });
+
+                W.show('data', 'flex');
+                node.game.doneButton.enable();
+            });
+        },
+        done: function() {
+            return node.game.RegionC.getValues();
         }
     });
 
