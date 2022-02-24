@@ -92,65 +92,9 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     // START OF THE SURVEY
     //////////////////////////////////////////////////////////////////////////
 
-    // //////////////////////////////////////////////////////////////////////////
-    // // Page 1. Language
-    // stager.extendStep('Part_1_q1', {
-    //     name: "Part 1: Survey",
-    //     cb: function() {
-    //         // Modify CSS rules on the fly.
-    //         W.cssRule('.choicetable-left, .choicetable-right ' +
-    //         '{ width: 200px !important; }');
-    //
-    //         W.cssRule('table.choicetable td { text-align: left !important; ' +
-    //         'font-weight: normal; padding-left: 10px; }');
-    //     },
-    //     // Make a widget step.
-    //     widget: {
-    //         name: 'ChoiceManager',
-    //         id: 'q1',
-    //         options: {
-    //             simplify: true,
-    //             mainText: '',
-    //             forms: [
-    //                 {
-    //                     id: 'q1_1',
-    //                     orientation: 'H',
-    //                     mainText: '<span style="font-weight: normal;color:gray;">Q1</span> What language do you speak at home?',
-    //                     choices: ['English', 'Assamese','Bengali','Bodo','Dogri',
-    //                     'Gujarati','Hindi','Kannada','Kashmiri','Konkani',
-    //                     'Maithili','Malayalam','Marathi','Mora','Meitei','Nepali',
-    //                     'Odia','Punjabi','Sanskrit','Santali','Sindhi','Tamil',
-    //                     'Telugu','Urdu','Other'],
-    //                     shuffleChoices: false,
-    //                     requiredChoice: true,
-    //                     // Number of choices per row/column.
-    //                     choicesSetSize: 6,
-    //                     onclick: function(value, removed) {
-    //                         var w, forms, len;
-    //                         forms = node.widgets.lastAppended.formsById
-    //                         len = forms.q1_1.choices.length - 1;
-    //                         w = forms.q1_2;
-    //                         if (this.isChoiceCurrent(len)) w.show();
-    //                         else w.hide();
-    //
-    //                         W.adjustFrameHeight();
-    //                     }
-    //                 },
-    //                 {
-    //                     name: 'CustomInput',
-    //                     id: 'q1_2',
-    //                     mainText: '<span style="font-weight: normal;color:gray;">Q1b</span> Please specify your language.',
-    //                     width: '95%',
-    //                     hidden: true,
-    //                     requiredChoice: true,
-    //                 }
-    //             ]
-    //         }
-    //     }
-    // });
 
     //////////////////////////////////////////////////////////////////////////
-    // Page 2. Year of birth
+    // Page 1. Age and gender
     stager.extendStep('Part_1_q2', {
         name: "Part 1: Survey",
         cb: function() {
@@ -811,20 +755,21 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'P4_T_q1',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> In your opinion, which 3 measures from the leaflet above are the <em>most effective</em> to protect yourself against air pollution?<br>',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> In your opinion, which 3 measures from the leaflet above are the MOST EFFECTIVE to protect yourself against air pollution?<br>',
                         hint: '<span style="color:gray;font-size:14px;">(Select 3 measures.)</span>',
                         // Number of choices per row/column.
                         choicesSetSize: 4,
                         choices: ["Wear a face mask", "Avoid exercising outdoors in congested areas",
                         "Check the air quality and avoid congested areas", "Spend time in nature",
                         "Remove dust often", "Use an air purifier", "Use clean cooking and heating fuels", "Ventilate well the kitchen"],
-                        selectMultiple: true,
-                        shuffleChoices: false
+                        selectMultiple: 3,
+                        shuffleChoices: false,
+                        requiredChoice: 3,
                     },
                     {
                         id: 'P4_T_q2',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which protective measure(s) from the leaflet above are the most <em>convenient</em> for you to implement?<br>',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which protective measure(s) from the leaflet above are the MOST CONVENIENT for you to implement?<br>',
                         hint: '<span style="color:gray;font-size:14px;">(Select at least 1.)</span>',
                         // Number of choices per row/column.
                         choicesSetSize: 4,
@@ -836,14 +781,24 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     },
                     {
                         name: 'CustomInput',
-                        id: 'P4_T_3',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q3</span> What <em>other</em> measures than the ones included in the leaflet above come to your mind that help with protecting yourself against air pollution?',
+                        id: 'P4_T_q3',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> What OTHER measures than the ones included in the leaflet above come to your mind that help with protecting yourself against air pollution?',
                         width: '95%',
                         requiredChoice: true,
                     },
+                    {
+                        id: 'P4_T_q4',
+                        orientation: 'H',
+                        mainText: '<img src="Leaflet_images/exclamation-mark.png" width="25px" /> Try to remember these protection measures and apply them whenever you can! They can help protect your health against air pollution!<br/><br>' +
+                        '<span style="font-weight: normal;color:gray;">Q7</span> How likely do you think you are to remember a few of these protection measures?<br>',
+                        choices: ["Very likely", "Likely",
+                        "Neutral", "Not very likely", "Very unlikely"],
+                        shuffleChoices: false,
+                        requiredChoice: true
+                    }
                 ]
-            }
-        }
+            },
+        },
     });
 
 
