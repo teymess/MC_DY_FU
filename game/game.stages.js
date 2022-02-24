@@ -19,10 +19,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     stager
     .stage('Intro')
     .step('Welcome')
-    .stage('Part3')
-    .step('Part_3_Instructions')
-    .step('Part_3_Filler_Task')
-
 
     stager
     .stage('Part_1_Survey')
@@ -52,8 +48,18 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('Part_3_Filler_Task')
 
     stager
-    .stage('feedback')
+    .stage('Part4')
+    .step('Part4_LOC1')
+    .step('Part4_LOC2')
+    .step('Part4_LOC3')
+    .step('Part4_PC')
+    .step('Part4_Age_Caste')
 
+
+
+
+    stager
+    .stage('feedback')
     .stage('end')
 
     .gameover();

@@ -1089,7 +1089,226 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             },
         });
 
+////////////////////////////////////////////////////////////////////////////////
+    // PART 4
 
+    // LOCUS of CONTROL 1
+        stager.extendStep('Part4_LOC1', {
+            name: "Part 4: Your opinion",
+            widget: {
+                name: 'ChoiceManager',
+                id: 'Part4_LOC1',
+                options: {
+                    simplify: true,
+                    mainText: '<br><br>' +
+                    'Indicate how much you agree or disagree with the following statements.',
+                    forms: [
+                        {
+                            id: 'LOC_q1',
+                            mainText: '<span style="font-weight: normal;color:gray;">Statement 1</span><br>' +
+                            '"I have little control of the negative effects of air pollution on my health."',
+                            choices: [
+                              ['1', 'I strongly agree'],
+                              ['2', 'I agree'],
+                              ['3', 'I am neutral'],
+                              ['4', 'I disagree'],
+                              ['5', 'I strongly disagree'],
+                            ],
+                            requiredChoice: true,
+                            shuffleChoices: false,
+                        },
+                        {
+                            id: 'LOC_q2',
+                            orientation: 'H',
+                            mainText: '<span style="font-weight: normal;color:gray;">Statement 2</span><br>' +
+                            '"There is really no way I can avoid negative effects from air pollution on my health."',
+                            choices: [
+                              ['1', 'I strongly agree'],
+                              ['2', 'I agree'],
+                              ['3', 'I am neutral'],
+                              ['4', 'I disagree'],
+                              ['5', 'I strongly disagree'],
+                            ],
+                            requiredChoice: true,
+                            shuffleChoices: false,
+                        },
+                        {
+                            id: 'LOC_q3',
+                            orientation: 'H',
+                            mainText: '<span style="font-weight: normal;color:gray;">Statement 3</span><br>' +
+                            '"There is little I can do to reduce the negative effects from air pollution on my health."',
+                            choices: [
+                              ['1', 'I strongly agree'],
+                              ['2', 'I agree'],
+                              ['3', 'I am neutral'],
+                              ['4', 'I disagree'],
+                              ['5', 'I strongly disagree'],
+                            ],
+                            requiredChoice: true,
+                            shuffleChoices: false,
+                        }
+                    ]
+                }
+            }
+        });
+
+        ///////////////////////////////////////////////
+        // LOCUS of CONTROL 2
+            stager.extendStep('Part4_LOC2', {
+                name: "Part 4: Your opinion",
+                widget: {
+                    name: 'ChoiceManager',
+                    id: 'Part4_LOC2',
+                    options: {
+                        simplify: true,
+                        mainText: '<br><br>' +
+                        'Indicate how much you agree or disagree with the following statements.',
+                        forms: [
+                            {
+                                id: 'LOC_q4',
+                                mainText: '<span style="font-weight: normal;color:gray;">Statement 4</span><br>' +
+                                '"I often feel helpless when I think about air pollution and its effects on my health."',
+                                choices: [
+                                  ['1', 'I strongly agree'],
+                                  ['2', 'I agree'],
+                                  ['3', 'I am neutral'],
+                                  ['4', 'I disagree'],
+                                  ['5', 'I strongly disagree'],
+                                ],
+                                requiredChoice: true,
+                                shuffleChoices: false,
+                            },
+                            {
+                                id: 'LOC_q5',
+                                orientation: 'H',
+                                mainText: '<span style="font-weight: normal;color:gray;">Statement 5</span><br>' +
+                                '"Sometimes I feel that I’m forced to breathe polluted air."',
+                                choices: [
+                                  ['1', 'I strongly agree'],
+                                  ['2', 'I agree'],
+                                  ['3', 'I am neutral'],
+                                  ['4', 'I disagree'],
+                                  ['5', 'I strongly disagree'],
+                                ],
+                                requiredChoice: true,
+                                shuffleChoices: false,
+                            }
+                        ]
+                    }
+                }
+            });
+
+            ///////////////////////////////////////////////
+            // LOCUS of CONTROL 3
+                stager.extendStep('Part4_LOC3', {
+                    name: "Part 4: Your opinion",
+                    widget: {
+                        name: 'ChoiceManager',
+                        id: 'Part4_LOC3',
+                        options: {
+                            simplify: true,
+                            mainText: '<br><br>' +
+                            'Indicate how much you agree or disagree with the following statements.',
+                            forms: [
+                                {
+                                    id: 'LOC_q6',
+                                    mainText: '<span style="font-weight: normal;color:gray;">Statement 6</span><br>' +
+                                    '"How much air pollution will affect my health in the future mostly depends on me."',
+                                    choices: [
+                                      ['1', 'I strongly agree'],
+                                      ['2', 'I agree'],
+                                      ['3', 'I am neutral'],
+                                      ['4', 'I disagree'],
+                                      ['5', 'I strongly disagree'],
+                                    ],
+                                    requiredChoice: true,
+                                    shuffleChoices: false,
+                                },
+                                {
+                                    id: 'LOC_q7',
+                                    orientation: 'H',
+                                    mainText: '<span style="font-weight: normal;color:gray;">Statement 7</span><br>' +
+                                    '"I can reduce the negative effect of air pollution on my health as much as I want if I really set my mind to it."',
+                                    choices: [
+                                      ['1', 'I strongly agree'],
+                                      ['2', 'I agree'],
+                                      ['3', 'I am neutral'],
+                                      ['4', 'I disagree'],
+                                      ['5', 'I strongly disagree'],
+                                    ],
+                                    requiredChoice: true,
+                                    shuffleChoices: false,
+                                }
+                            ]
+                        }
+                    }
+                });
+
+
+                ///////////////////////////////////////////////
+                // Perceived Control
+                    stager.extendStep('Part4_PC', {
+                        name: "Part 4: Your opinion",
+                        widget: {
+                            name: 'ChoiceManager',
+                            id: 'Part4_PC',
+                            options: {
+                                simplify: true,
+                                mainText: '<br><br>' +
+                                'Indicate how much control do you think you have over the impacts of air pollution on your health.',
+                                forms: [
+                                    {
+                                        id: 'LOC_q6',
+                                        mainText: '<span style="font-weight: normal;">Please choose the answer that best completes the following sentence:</span><br><br/>' +
+                                        '"The impact of air pollution on my own health is ..."',
+                                        choices: [
+                                          ['1', 'Completely uncontrollable'],
+                                          ['2', 'Mostly uncontrollable'],
+                                          ['3', 'Neutral'],
+                                          ['4', 'Mostly controllable'],
+                                          ['5', 'Completely controllable'],
+                                        ],
+                                        requiredChoice: true,
+                                        shuffleChoices: false,
+                                    }
+                                ]
+                            }
+                        }
+                    });
+
+
+////////////////////////////////////////////////////////////////////////////////
+        // Age and caste
+            stager.extendStep('Part4_Age_Caste', {
+                name: "Part 4: Your opinion",
+                widget: {
+                    name: 'ChoiceManager',
+                    id: 'Part4_q',
+                    options: {
+                        simplify: true,
+                        mainText: '',
+                        forms: [
+                            {
+                                name: 'CustomInput',
+                                id: 'Part4_q1',
+                                mainText: '<span style="font-weight: normal;color:gray;">Q9</span> How old are you?',
+                                width: '95%',
+                                type: 'int',
+                                min: 0,
+                                max: 100,
+                                requiredChoice: true,
+                            },
+                            {
+                                id: 'Part4_q2',
+                                orientation: 'V',
+                                mainText: '<span style="font-weight: normal;color:gray;">Q10</span> What caste do you belong to?',
+                                choices: [ 'Upper caste', 'Lower caste (Scheduled caste / Scheduled tribe)', 'No caste / other'],
+                                requiredChoice: true
+                            }
+                        ]
+                    }
+                }
+            });
 
 
         ////////////////////////////////////////////////////////////////////////////
@@ -1122,18 +1341,18 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
 
         //////////////////////////////////////////////////////////////////////////////
-        // END OF SURVEY
-        //////////////////////////////////////////////////////////////////////////////
-        stager.extendStep('end', {
-            widget: {
-                name: 'EndScreen',
-                options: {
-                    feedback: false
-                }
-            },
-            init: function() {
-                node.game.doneButton.destroy();
-                node.say('end');
-            }
-        });
-    };
+      // END OF SURVEY
+      //////////////////////////////////////////////////////////////////////////////
+      stager.extendStep('end', {
+          widget: {
+              name: 'EndScreen',
+              options: {
+                  feedback: false
+              }
+          },
+          init: function() {
+              node.game.doneButton.destroy();
+              node.say('end');
+          }
+      });
+  };
