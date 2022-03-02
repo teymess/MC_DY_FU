@@ -115,7 +115,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             id: 'memory_test_1',
             options: {
                 simplify: true,
-                mainText: '<div class="aligned"><img src="paintbrush03a.jpg" width="500px"></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/YWRxwpj"><img src="https://i.ibb.co/xsCNdJ5/calculator02c.jpg" alt="calculator02c" border="0" width="500px" /></a></div>',
                 forms: [
                     {
                         id: 'mt1',
@@ -138,7 +138,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             id: 'memory_test_2',
             options: {
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/5TnNxqF"><img src="https://i.ibb.co/XX3hkm8/watermelon02b.jpg" alt="watermelon02b" border="0" width="500px" /></a></div>',
                 forms: [
                     {
                         id: 'mt2',
@@ -161,7 +161,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             id: 'memory_test_3',
             options: {
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/wy4xVQ6"><img src="https://i.ibb.co/Mn73r1N/paintbrush03a.jpg" alt="paintbrush03a" border="0" width="500px"/></a></div>',
                 forms: [
                     {
                         id: 'mt3',
@@ -184,11 +184,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             id: 'memory_test_4',
             options: {
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/ySSyZyT"><img src="https://i.ibb.co/TLL878X/ladle02b.jpg" alt="ladle02b" border="0" width="500px"/></a></div>',
                 forms: [
                     {
                         id: 'mt4',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T4</span> Have you seen this item earlier in the task?',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -207,11 +207,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             id: 'memory_test_5',
             options: {
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/4TpmKL7"><img src="https://i.ibb.co/vPkwVWH/usbcable01b.jpg" alt="usbcable01b" border="0" width="500px" /></a></div>',
                 forms: [
                     {
                         id: 'mt5',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T5</span> Have you seen this item earlier in the task?',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -230,11 +230,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             id: 'memory_test_6',
             options: {
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/0ZTFxRQ"><img src="https://i.ibb.co/tcgx9T3/spatula01.jpg" alt="spatula01" border="0" width="500px"/></a></div>',
                 forms: [
                     {
                         id: 'mt6',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T6</span> Have you seen this item earlier in the task?',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -253,11 +253,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             id: 'memory_test_7',
             options: {
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/sQY5v2s"><img src="https://i.ibb.co/tcrZM4Y/pot02b.jpg" alt="pot02b" border="0" width="500px"></a></div>',
                 forms: [
                     {
                         id: 'mt7',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T7</span> Have you seen this item earlier in the task?',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -276,11 +276,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             id: 'memory_test_8',
             options: {
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px" /></a></a></div>',
                 forms: [
                     {
                         id: 'mt8',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T8</span> Have you seen this item earlier in the task?',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -299,11 +299,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             id: 'memory_test_9',
             options: {
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/4K0c8Hb"><img src="https://i.ibb.co/DzjN9ZB/sponge02a.jpg" alt="sponge02a" border="0" width="500px" /></a></a></div>',
                 forms: [
                     {
                         id: 'mt9',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T9</span> Have you seen this item earlier in the task?',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -322,11 +322,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             id: 'memory_test_10',
             options: {
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/2cmcwyw"><img src="https://i.ibb.co/NWQWXsX/boxtruck.jpg" alt="boxtruck" border="0" width="500px" /></a></a></div>',
                 forms: [
                     {
                         id: 'mt10',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T10</span> Have you seen this item earlier in the task?',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
