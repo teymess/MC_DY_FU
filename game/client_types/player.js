@@ -83,6 +83,260 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     //////////////////////////////////////////////////////////////////
+    stager.extendStep('memory_intro', {
+        frame: 'instructions_memory.htm'
+    });
+
+    //////////////////////////////////////////////////////////////////
+    stager.extendStep('memory_learn', {
+        frame: 'memory_learn.htm',
+        donebutton: false,
+        init: function() {
+            this.visualTimer = node.widgets.append('VisualTimer', W.getHeader());
+        },
+        exit: function() {
+            node.game.zero = null;
+            node.game.correct = null;
+            if (node.game.visualTimer) {
+                node.game.visualTimer.destroy();
+                node.game.visualTimer = null;
+            }
+        },
+    });
+
+    //////////////////////////////////////////////////////////////////
+    stager.extendStep('memory_test1', {
+        cb: function() {
+            W.cssRule('table.choicetable td { text-align: center !important; ' +
+            'font-weight: normal; padding-left: 10px; }');
+        },
+        widget: {
+            name: 'ChoiceManager',
+            id: 'memory_test_1',
+            options: {
+                simplify: true,
+                mainText: '<div class="aligned"><img src="paintbrush03a.jpg" width="500px"></div>',
+                forms: [
+                    {
+                        id: 'mt1',
+                        mainText: '<span style="font-weight: normal;color:gray;">T1</span> Have you seen this item earlier in the task?',
+                        choices: ['No', 'Yes'],
+                        requiredChoice: true
+                    }
+                ]
+            }
+        }
+    });
+
+    stager.extendStep('memory_test2', {
+        cb: function() {
+            W.cssRule('table.choicetable td { text-align: center !important; ' +
+            'font-weight: normal; padding-left: 10px; }');
+        },
+        widget: {
+            name: 'ChoiceManager',
+            id: 'memory_test_2',
+            options: {
+                simplify: true,
+                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                forms: [
+                    {
+                        id: 'mt2',
+                        mainText: '<span style="font-weight: normal;color:gray;">T2</span> Have you seen this item earlier in the task?',
+                        choices: ['No', 'Yes'],
+                        requiredChoice: true
+                    }
+                ]
+            }
+        }
+    });
+
+    stager.extendStep('memory_test3', {
+        cb: function() {
+            W.cssRule('table.choicetable td { text-align: center !important; ' +
+            'font-weight: normal; padding-left: 10px; }');
+        },
+        widget: {
+            name: 'ChoiceManager',
+            id: 'memory_test_3',
+            options: {
+                simplify: true,
+                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                forms: [
+                    {
+                        id: 'mt3',
+                        mainText: '<span style="font-weight: normal;color:gray;">T3</span> Have you seen this item earlier in the task?',
+                        choices: ['No', 'Yes'],
+                        requiredChoice: true
+                    }
+                ]
+            }
+        }
+    });
+
+    stager.extendStep('memory_test4', {
+        cb: function() {
+            W.cssRule('table.choicetable td { text-align: center !important; ' +
+            'font-weight: normal; padding-left: 10px; }');
+        },
+        widget: {
+            name: 'ChoiceManager',
+            id: 'memory_test_4',
+            options: {
+                simplify: true,
+                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                forms: [
+                    {
+                        id: 'mt4',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Have you seen this item earlier in the task?',
+                        choices: ['No', 'Yes'],
+                        requiredChoice: true
+                    }
+                ]
+            }
+        }
+    });
+
+    stager.extendStep('memory_test5', {
+        cb: function() {
+            W.cssRule('table.choicetable td { text-align: center !important; ' +
+            'font-weight: normal; padding-left: 10px; }');
+        },
+        widget: {
+            name: 'ChoiceManager',
+            id: 'memory_test_5',
+            options: {
+                simplify: true,
+                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                forms: [
+                    {
+                        id: 'mt5',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Have you seen this item earlier in the task?',
+                        choices: ['No', 'Yes'],
+                        requiredChoice: true
+                    }
+                ]
+            }
+        }
+    });
+
+    stager.extendStep('memory_test6', {
+        cb: function() {
+            W.cssRule('table.choicetable td { text-align: center !important; ' +
+            'font-weight: normal; padding-left: 10px; }');
+        },
+        widget: {
+            name: 'ChoiceManager',
+            id: 'memory_test_6',
+            options: {
+                simplify: true,
+                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                forms: [
+                    {
+                        id: 'mt6',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Have you seen this item earlier in the task?',
+                        choices: ['No', 'Yes'],
+                        requiredChoice: true
+                    }
+                ]
+            }
+        }
+    });
+
+    stager.extendStep('memory_test7', {
+        cb: function() {
+            W.cssRule('table.choicetable td { text-align: center !important; ' +
+            'font-weight: normal; padding-left: 10px; }');
+        },
+        widget: {
+            name: 'ChoiceManager',
+            id: 'memory_test_7',
+            options: {
+                simplify: true,
+                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                forms: [
+                    {
+                        id: 'mt7',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Have you seen this item earlier in the task?',
+                        choices: ['No', 'Yes'],
+                        requiredChoice: true
+                    }
+                ]
+            }
+        }
+    });
+
+    stager.extendStep('memory_test8', {
+        cb: function() {
+            W.cssRule('table.choicetable td { text-align: center !important; ' +
+            'font-weight: normal; padding-left: 10px; }');
+        },
+        widget: {
+            name: 'ChoiceManager',
+            id: 'memory_test_8',
+            options: {
+                simplify: true,
+                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                forms: [
+                    {
+                        id: 'mt8',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Have you seen this item earlier in the task?',
+                        choices: ['No', 'Yes'],
+                        requiredChoice: true
+                    }
+                ]
+            }
+        }
+    });
+
+    stager.extendStep('memory_test9', {
+        cb: function() {
+            W.cssRule('table.choicetable td { text-align: center !important; ' +
+            'font-weight: normal; padding-left: 10px; }');
+        },
+        widget: {
+            name: 'ChoiceManager',
+            id: 'memory_test_9',
+            options: {
+                simplify: true,
+                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                forms: [
+                    {
+                        id: 'mt9',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Have you seen this item earlier in the task?',
+                        choices: ['No', 'Yes'],
+                        requiredChoice: true
+                    }
+                ]
+            }
+        }
+    });
+
+    stager.extendStep('memory_test10', {
+        cb: function() {
+            W.cssRule('table.choicetable td { text-align: center !important; ' +
+            'font-weight: normal; padding-left: 10px; }');
+        },
+        widget: {
+            name: 'ChoiceManager',
+            id: 'memory_test_10',
+            options: {
+                simplify: true,
+                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px"></a></div>',
+                forms: [
+                    {
+                        id: 'mt10',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Have you seen this item earlier in the task?',
+                        choices: ['No', 'Yes'],
+                        requiredChoice: true
+                    }
+                ]
+            }
+        }
+    });
+
+
+    //////////////////////////////////////////////////////////////////
     stager.extendStep('Welcome', {
         frame: 'instructions_start.htm'
     });
@@ -1077,8 +1331,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 this.visualTimer = node.widgets.append('VisualTimer', W.getHeader());
             },
             exit: function() {
-                node.game.zero = null;
-                node.game.correct = null;
                 if (node.game.visualTimer) {
                     node.game.visualTimer.destroy();
                     node.game.visualTimer = null;

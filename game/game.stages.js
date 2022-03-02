@@ -17,6 +17,21 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .stage('consent')
 
     stager
+    .stage('memory')
+    .step('memory_intro')
+    .step('memory_learn')
+    .step('memory_test1')
+    .step('memory_test2')
+    .step('memory_test3')
+    .step('memory_test4')
+    .step('memory_test5')
+    .step('memory_test6')
+    .step('memory_test7')
+    .step('memory_test8')
+    .step('memory_test9')
+    .step('memory_test10')
+
+    stager
     .stage('Intro')
     .step('Welcome')
 

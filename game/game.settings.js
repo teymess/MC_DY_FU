@@ -29,7 +29,10 @@ module.exports = {
      * used to initialize the game timer for the step.
      */
      TIMER: {
-         'task_2_-_Counting': 120000,
+
+         'memory_learn': 40950,
+
+         'Part_3_Filler_Task': 120000,
      },
 
     BASE_PAY: 1,
