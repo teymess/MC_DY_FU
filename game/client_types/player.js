@@ -1419,8 +1419,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     district_fig = district_fig.replace(/&/g, 'and');
                     district_fig = district_fig.replace(/-/g, '_');
                     W.setInnerHTML('district', data.row.district);
-                    W.setInnerHTML('districtAgain', info.district);
-                    W.setInnerHTML('districtAgainAgain',info.district);
+                    W.setInnerHTML('districtAgain', data.row.district);
+                    W.setInnerHTML('districtAgainAgain', data.row.district);
                     W.setInnerHTML('pm25', data.row.pm25.toFixed(2));
                     W.setInnerHTML('higher', (data.row.pm25 / 5).toFixed(0));
                     W.setInnerHTML('years', data.row.life_lost.toFixed(1));
