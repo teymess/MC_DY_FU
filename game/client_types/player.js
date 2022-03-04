@@ -1418,7 +1418,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     var district_fig = data.row.district.replace(/ /g, '_');
                     district_fig = district_fig.replace(/&/g, 'and');
                     district_fig = district_fig.replace(/-/g, '_');
-                    W.setInnerHTML('district', data.row.district;);
+                    W.setInnerHTML('district', data.row.district);
                     W.setInnerHTML('districtAgain', info.district);
                     W.setInnerHTML('districtAgainAgain',info.district);
                     W.setInnerHTML('pm25', data.row.pm25.toFixed(2));
