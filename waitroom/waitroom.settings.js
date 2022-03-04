@@ -96,22 +96,7 @@ module.exports = {
      *           return treatments[dispatchCounter % treatments.length];
      *       }
      */
-    CHOSEN_TREATMENT: function(treatments, roomCounter,
-                               groupIdx, dispatchCounter) {
-
-        // - treatments: array of available treatments.
-        // - roomCounter: total number of room created (it is initialized to
-        //                the last created room as loaded in the data folder).
-        // - groupIdx: zero-based group index within same dispatch
-        //             (when POOL_SIZE > GROUP_SIZE).
-        // - dispatchCounter: total number of dispatch calls (a dispatch can
-        //                    send players to an existing room, so it may
-        //                    differ from roomCounter).
-
-        // console.log(roomCounter, batchCounter, dispatchCounter);
-
-        return treatments[roomCounter % treatments.length];
-    },
+     CHOSEN_TREATMENT: "treatment_latin_square",
 
     /**
     * ## ROTATION_OFFSET (integer > 0) Optional

@@ -92,7 +92,16 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             'Part_1_q6',
             'Part_1_q7',
             'Part_1_q8'
-
+        ]);
+        stager.skip('Part2_Info_Pollution', [
+            'Instructions_Part_2',
+            'Part2_Air_pollution_and_its_sources',
+            'Part2_Pollution_and_life_expectancy',
+            'Part2_Prior_LYL_Austria',
+            'Part2_Prior_LYL_Nicaragua',
+            'Part2_Air_pollution_damages_your_health',
+            'Part2_Protection_measures',
+            'Part2_Protection_measures_T',
         ]);
     }
     else if (treatmentName === 'info_twice_austria') {
@@ -106,7 +115,16 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             'Part_1_q6',
             'Part_1_q7',
             'Part_1_q8'
-
+        ]);
+        stager.skip('Part2_Info_Pollution', [
+            'Instructions_Part_2',
+            'Part2_Air_pollution_and_its_sources',
+            'Part2_Pollution_and_life_expectancy',
+            'Part2_Prior_LYL_Austria',
+            'Part2_Prior_LYL_Nicaragua',
+            'Part2_Air_pollution_damages_your_health',
+            'Part2_Protection_measures',
+            'Part2_Protection_measures_T',
         ]);
     }
     else if (treatmentName === 'info_once_nicaragua') {
@@ -123,6 +141,16 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             'Part_1_q8'
 
         ]);
+        stager.skip('Part2_Info_Pollution', [
+            'Instructions_Part_2',
+            'Part2_Air_pollution_and_its_sources',
+            'Part2_Pollution_and_life_expectancy',
+            'Part2_Prior_LYL_Austria',
+            'Part2_Prior_LYL_Nicaragua',
+            'Part2_Air_pollution_damages_your_health',
+            'Part2_Protection_measures',
+            'Part2_Protection_measures_T',
+        ]);
     }
     else if (treatmentName === 'info_twice_nicaragua') {
         stager.skip('Part2_Info_Pollution', [
@@ -136,6 +164,16 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             'Part_1_q7',
             'Part_1_q8'
 
+        ]);
+        stager.skip('Part2_Info_Pollution', [
+            'Instructions_Part_2',
+            'Part2_Air_pollution_and_its_sources',
+            'Part2_Pollution_and_life_expectancy',
+            'Part2_Prior_LYL_Austria',
+            'Part2_Prior_LYL_Nicaragua',
+            'Part2_Air_pollution_damages_your_health',
+            'Part2_Protection_measures',
+            'Part2_Protection_measures_T',
         ]);
     }
 };
