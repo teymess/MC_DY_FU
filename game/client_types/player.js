@@ -936,7 +936,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
 ////////////////////////////////////////////////////////////////////////////////
 // PRIOR LYL
-    stager.extendStep('Part2_Prior_LYL', {
+    stager.extendStep('Part2_Prior_LYL_Austria', {
         name: 'Part 2',
         frame: 'prior_LYL.htm',
         donebutton: false,
@@ -1000,11 +1000,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             }
 
             // DISPLAY 3
-            q3 = w.formsById.T_impact_more_or_less_you;
+            q3 = w.formsById.T_impact_more_or_less_you_Austria;
             if (!q3) {
                 if (q3) q3.disable();
                 node.widgets.last.addForm({
-                    id: 'T_impact_more_or_less_you',
+                    id: 'T_impact_more_or_less_you_Austria',
                     orientation: 'H',
                     mainText: '<span style="font-weight: normal;color:gray;">Q3</span> Now, think about all people living in Austria, a country in central Europe.<br><br>' +
                               'In your opinion, how many years of life do people living in ' +
@@ -1039,6 +1039,112 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             return w.getValues();
         }
     });
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // PRIOR LYL
+        stager.extendStep('Part2_Prior_LYL_Nicaragua', {
+            name: 'Part 2',
+            frame: 'prior_LYL.htm',
+            donebutton: false,
+            cb: function() {
+                node.get('districtData', function(data) {
+
+                node.game.Q_impact = node.widgets.append('ChoiceManager', "T_impact", {
+                        id: 'T_impact_q',
+                        simplify: true,
+                        panel: false,
+                        forms: [
+                            {
+                                id: 'T_impact_more_or_less',
+                                orientation: 'H',
+                                mainText: '<span style="font-weight: normal;color:gray;">Q1</span> ' +
+                                          'Think about all people living in your home district: ' + data.district + '.<br><br>' +
+                                          'In your opinion, how many years of life do people living in ' +
+                                           data.district + ' lose on average because of air pollution?',
+                                           choices: ['0','1','2','3','4','5','6','7','8','9','10','11','12'],
+                                           requiredChoice: true,
+                                           shuffleChoices: false,
+                            },
+                        ]
+                    });
+
+                    W.show('data', 'flex');
+                    node.game.doneButton.enable();
+                });
+            },
+            done: function() {
+                var w, q1, q2, q3, q4;
+
+                w = node.game.Q_impact;
+
+                // DISPLAY 1
+                q1 = w.formsById.T_impact_more_or_less;
+                if (q1.isHidden()) {
+                    q1.reset(); // removes error.
+                    q1.show();
+                    return false;
+                }
+
+                // DISPLAY 2
+                q2 = w.formsById.T_confident;
+                if (!q2) {
+                    node.widgets.last.addForm({
+                        id: 'T_confident',
+                        orientation: 'H',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q2</span> How confident are you about your answer to the previous question?</span>',
+                        choices: [
+                          ['1', 'Not confident at all'],
+                          ['2', 'Not very confident'],
+                          ['3', 'Neutral'],
+                          ['4', 'Quite confident'],
+                          ['5', 'Completely confident']
+                        ],
+                        shuffleChoices: false,
+                        requiredChoice: true,
+                    });
+                    return false;
+                }
+
+                // DISPLAY 3
+                q3 = w.formsById.T_impact_more_or_less_you_Nicaragua;
+                if (!q3) {
+                    if (q3) q3.disable();
+                    node.widgets.last.addForm({
+                        id: 'T_impact_more_or_less_you_Nicaragua',
+                        orientation: 'H',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q3</span> Now, think about all people living in Nicaragua, a country in central America.<br><br>' +
+                                  'In your opinion, how many years of life do people living in ' +
+                                   'Austria lose on average because of air pollution?',
+                        choices: ['0','1','2','3','4','5','6','7','8','9','10','11','12'],
+                        requiredChoice: true,
+                        shuffleChoices: false,
+                    });
+
+                    return false;
+                }
+
+                // DISPLAY 4 -- How confident?
+                q4 = w.formsById.T_confident_Nicaragua;
+                if (!q4) {
+                    node.widgets.last.addForm({
+                        id: 'T_confident_Nicaragua',
+                        orientation: 'H',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> How confident are you about your answer to the previous question?</span>',
+                        choices: [
+                          ['1', 'Not confident at all'],
+                          ['2', 'Not very confident'],
+                          ['3', 'Neutral'],
+                          ['4', 'Quite confident'],
+                          ['5', 'Completely confident']
+                        ],
+                        shuffleChoices: false,
+                        requiredChoice: true,
+                    });
+                    return false;
+                }
+                return w.getValues();
+            }
+        });
 
     //////////////////////////////////////////////////////////////////////////
     // LEAFLET P3
@@ -1178,8 +1284,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
 
     //////////////////////////////////////////////////////////////////////////
-    // Region of CHOICE
-    stager.extendStep('Part2_Info_Choice', {
+    // Region of CHOICE (Austria)
+    stager.extendStep('Part2_Info_Choice_Austria', {
         name: 'Part 2: Reading and comprehension',
         frame: 'choice_region.htm',
         donebutton: false,
@@ -1200,7 +1306,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     simplify: true,
                     forms: [
                       {
-                          id: 'PC_q1',
+                          id: 'PC_q1_Austria',
                           orientation: 'V',
                           mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which region would you like to read information on air pollution and health impacts about?<br>',
                           hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
@@ -1226,7 +1332,54 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         }
     });
 
+    //////////////////////////////////////////////////////////////////////////
+    // Region of CHOICE (Nicaragua)
+    stager.extendStep('Part2_Info_Choice_Nicaragua', {
+        name: 'Part 2: Reading and comprehension',
+        frame: 'choice_region.htm',
+        donebutton: false,
+        cb: function() {
+            node.get('districtData', function(data) {
 
+                console.log(data);
+                W.setInnerHTML('state', data.state);
+                W.setInnerHTML('district', data.district);
+
+                node.game.RegionC = node.widgets.append('ChoiceManager', "RegionOfChoice", {
+                    id: 'PC_q',
+                    // ref: 'controlQuestions',
+                    mainText: '<span style="font-weight: bold;font-size:24px;color:#183194;">Your choice!</span><br/><br/>' +
+                    'On the next page, you will receive an information leaflet on <b>air pollution levels</b> and its <b>measured impact ' +
+                    'on health</b> in <em>a specific region</em>. <br> <br>' +
+                    'You have now the opportunity to <b>choose the region</b> that will be presented on the next page.',
+                    simplify: true,
+                    forms: [
+                      {
+                          id: 'PC_q1_Nicaragua',
+                          orientation: 'V',
+                          mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which region would you like to read information on air pollution and health impacts about?<br>',
+                          hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
+                          choices: [
+                            ['home', data.district  + ' (' + data.state + ')'],
+                            ['decoy', "Nicaragua"]
+                          ],
+                          requiredChoice: true,
+                          shuffleChoices: true
+                      }
+                    ]
+                    // formsOptions: {
+                    //     requiredChoice: true
+                    // }
+                });
+
+                W.show('data', 'flex');
+                node.game.doneButton.enable();
+            });
+        },
+        done: function() {
+            return node.game.RegionC.getValues();
+        }
+    });
 
     //////////////////////////////////////////////////////////////////////////
     // Pollution in your district
@@ -1235,28 +1388,70 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         frame: 'leaflet_p5.htm',
         donebutton: false,
         cb: function() {
-            node.get('districtData', function(data) {
+            node.get('districtData2', function(data) {
+                console.log(data.row.state);
+                const info = new Object();
+                if (data.rChoice === 'decoy') {
+                    if (node.game.settings.treatmentName === 'info_once_austria' || node.game.settings.treatmentName === 'info_twice_austria') {
+                        info.image = "district_maps/AUT.png";
+                        info.district = "Austria";
+                        info.pm25 = "11.76";
+                        info.higher = "2";
+                        info.years = "0.7";
+                        console.log(info);
 
-                var state_fig = data.state.replace(/ /g, '_');
-                state_fig = state_fig.replace(/&/g, 'and');
-                state_fig = state_fig.replace(/-/g, '_');
+                        W.setInnerHTML('district', info.district);
+                        W.setInnerHTML('districtAgain', info.district);
+                        W.setInnerHTML('districtAgainAgain',info.district);
+                        W.setInnerHTML('pm25', info.pm25);
+                        W.setInnerHTML('higher', info.higher);
+                        W.setInnerHTML('years', info.years);
+                        W.gid('img').src = info.image;
+                        console.log(info);
+                    }
+                    else {
+                        info.image = "district_maps/NIC.png";
+                        info.district = "Nicaragua";
+                        info.pm25 = "8.16";
+                        info.higher = "2";
+                        info.years = "0.3";
 
-                var district_fig = data.district.replace(/ /g, '_');
-                district_fig = district_fig.replace(/&/g, 'and');
-                district_fig = district_fig.replace(/-/g, '_');
 
-                var image = 'district_maps/' + state_fig + '_' + district_fig + '.png';
+                        W.setInnerHTML('district', info.district);
+                        W.setInnerHTML('districtAgain', info.district);
+                        W.setInnerHTML('districtAgainAgain',info.district);
+                        W.setInnerHTML('pm25', info.pm25);
+                        W.setInnerHTML('higher', info.higher);
+                        W.setInnerHTML('years', info.years);
+                        W.gid('img').src = info.image;
+                        console.log(info);
+                    }
+                }
+                else {
+                    var state_fig = data.row.state.replace(/ /g, '_');
+                    state_fig = state_fig.replace(/&/g, 'and');
+                    state_fig = state_fig.replace(/-/g, '_');
 
-                W.gid('img').src = image;
+                    var district_fig = data.row.district.replace(/ /g, '_');
+                    district_fig = district_fig.replace(/&/g, 'and');
+                    district_fig = district_fig.replace(/-/g, '_');
 
-                console.log(data);
-                W.setInnerHTML('state', data.state);
-                W.setInnerHTML('district', data.district);
-                W.setInnerHTML('districtAgain', data.district);
-                W.setInnerHTML('districtAgainAgain', data.district);
-                W.setInnerHTML('pm25', data.pm25.toFixed(2));
-                W.setInnerHTML('higher', (data.pm25 / 5).toFixed(0));
-                W.setInnerHTML('years', data.life_lost.toFixed(1));
+                    info.image = 'district_maps/' + state_fig + '_' + district_fig + '.png';
+                    info.state = data.row.state;
+                    info.district = data.row.district;
+                    info.pm25 = data.row.pm25.toFixed(2);
+                    info.higher = (data.row.pm25 / 5).toFixed(0);
+                    info.years = data.row.life_lost.toFixed(1);
+
+                    W.setInnerHTML('district', info.district);
+                    W.setInnerHTML('districtAgain', info.district);
+                    W.setInnerHTML('districtAgainAgain',info.district);
+                    W.setInnerHTML('pm25', info.pm25);
+                    W.setInnerHTML('higher', info.higher);
+                    W.setInnerHTML('years', info.years);
+                    W.gid('img').src = info.image;
+
+                }
 
                 node.game.controlQuestions = node.widgets.append('ChoiceManager', "ComprehquestionsL5", {
                     id: 'p5_q',
@@ -1282,11 +1477,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                             orientation: 'H',
                             mainText: '<span style="font-weight: normal;color:gray;">Q9</span> On average, how many years of life does a person living in your district lose because of air pollution?<br>',
                             choices: [
-                                (data.life_lost * 0.5).toFixed(1) + ' years',
-                                (data.life_lost * 0.8).toFixed(1) + ' years',
-                                data.life_lost.toFixed(1) + ' years',
-                                (data.life_lost * 1.2).toFixed(1) + ' years',
-                                (data.life_lost * 1.5).toFixed(1) + ' years'
+                                (data.row.life_lost * 0.5).toFixed(1) + ' years',
+                                (data.row.life_lost * 0.8).toFixed(1) + ' years',
+                                data.row.life_lost.toFixed(1) + ' years',
+                                (data.row.life_lost * 1.2).toFixed(1) + ' years',
+                                (data.row.life_lost * 1.5).toFixed(1) + ' years'
                             ],
                             correctChoice: 2,
                         }

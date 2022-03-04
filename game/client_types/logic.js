@@ -1,11 +1,11 @@
 /**
- * # Logic type implementation of the game stages
- * Copyright(c) 2021 Anca Balietti <anca.balietti@gmail.com>
- * MIT Licensed
- *
- * http://www.nodegame.org
- * ---
- */
+* # Logic type implementation of the game stages
+* Copyright(c) 2021 Anca Balietti <anca.balietti@gmail.com>
+* MIT Licensed
+*
+* http://www.nodegame.org
+* ---
+*/
 
 "use strict";
 
@@ -47,8 +47,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             if (item.stepId === 'Part_1_q4') return item.player;
         });
 
-        memory.index('income_guess', item => {
-            if (item.stepId === 'Part3_T_Income_Corr_Control1') return item.player;
+        memory.index('choice_austria', item => {
+            if (item.stepId === 'Part2_Info_Choice_Austria') return item.player;
+        });
+
+        memory.index('choice_nicaragua', item => {
+            if (item.stepId === 'Part2_Info_Choice_Nicaragua') return item.player;
         });
 
         node.on.data('done', function(msg) {
@@ -107,22 +111,42 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         });
 
         node.on('get.districtData', function(msg) {
-            // Get item from database.
 
-            // FOR EXPERIMENT.
             let district = memory.district_player.get(msg.from);
-            // Actual district.
+
             console.log(district);
             district = district.forms.district.value;
-            // END FOR EXPERIMENT.
 
-            // FOR QUICK TESTING.
-            // let district = 'Nicobar Islands'
-            // END FOR QUICK TESTING.
-
-            return setup.pollutionDb.district.get(district);
+            return setup.pollutionDb.district.get(district)
         });
+
+
+    node.on('get.districtData2', function(msg) {
+
+        if (treatmentName === 'info_once_austria' || treatmentName === 'info_twice_austria') {
+            var region_choice = memory.choice_austria.get(msg.from);
+            console.log(region_choice);
+            region_choice = region_choice.PC_q1_Austria.value;
+            return region_choice;
+        }
+        else if (treatmentName === 'info_once_nicaragua' || treatmentName === 'info_twice_nicaragua') {
+            region_choice = memory.choice_nicaragua.get(msg.from);
+            console.log(region_choice);
+            region_choice = region_choice.PC_q1_Nicaragua.value;
+            return region_choice;
+        }
+
+        let district = memory.district_player.get(msg.from);
+
+        console.log(district);
+        district = district.forms.district.value;
+
+        return {
+            row: setup.pollutionDb.district.get(district),
+            rChoice: region_choice
+        }
     });
+});
 
     stager.setOnGameOver(function() {
         // Something to do.

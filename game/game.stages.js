@@ -35,11 +35,13 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('Instructions_Part_2')
     .step('Part2_Air_pollution_and_its_sources')
     .step('Part2_Pollution_and_life_expectancy')
-    .step('Part2_Prior_LYL')
+    .step('Part2_Prior_LYL_Austria')
+    .step('Part2_Prior_LYL_Nicaragua')
     .step('Part2_Air_pollution_damages_your_health')
     .step('Part2_Protection_measures')
     .step('Part2_Protection_measures_T')
-    .step('Part2_Info_Choice')
+    .step('Part2_Info_Choice_Austria')
+    .step('Part2_Info_Choice_Nicaragua')
     .step('Part2_Pollution_in_your_district')
 
     stager
@@ -78,5 +80,62 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     .gameover();
 
+    if (treatmentName === 'info_once_austria') {
+        stager.skip('Part2_Info_Pollution', [
+            'Part2_Prior_LYL_Nicaragua',
+            'Part2_Protection_measures_T',
+            'Part2_Info_Choice_Nicaragua'
+        ])
+        stager.skip('Part_1_Survey', [
+            'Part_1_q4',
+            'Part_1_q5',
+            'Part_1_q6',
+            'Part_1_q7',
+            'Part_1_q8'
 
+        ]);
+    }
+    else if (treatmentName === 'info_twice_austria') {
+        stager.skip('Part2_Info_Pollution', [
+            'Part2_Prior_LYL_Nicaragua',
+            'Part2_Info_Choice_Nicaragua'
+        ])
+        stager.skip('Part_1_Survey', [
+            'Part_1_q4',
+            'Part_1_q5',
+            'Part_1_q6',
+            'Part_1_q7',
+            'Part_1_q8'
+
+        ]);
+    }
+    else if (treatmentName === 'info_once_nicaragua') {
+        stager.skip('Part2_Info_Pollution', [
+            'Part2_Prior_LYL_Austria',
+            'Part2_Protection_measures_T',
+            'Part2_Info_Choice_Austria'
+        ])
+        stager.skip('Part_1_Survey', [
+            'Part_1_q4',
+            'Part_1_q5',
+            'Part_1_q6',
+            'Part_1_q7',
+            'Part_1_q8'
+
+        ]);
+    }
+    else if (treatmentName === 'info_twice_nicaragua') {
+        stager.skip('Part2_Info_Pollution', [
+            'Part2_Prior_LYL_Austria',
+            'Part2_Info_Choice_Austria'
+        ])
+        stager.skip('Part_1_Survey', [
+            'Part_1_q4',
+            'Part_1_q5',
+            'Part_1_q6',
+            'Part_1_q7',
+            'Part_1_q8'
+
+        ]);
+    }
 };

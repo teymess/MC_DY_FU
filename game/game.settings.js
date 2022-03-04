@@ -48,7 +48,20 @@ module.exports = {
 
     // If the `treatments` object is missing a treatment named _standard_
     // will be created automatically, and will contain all variables.
-
+    treatments: {
+        info_once_austria: {
+            description: "Self-defense information is displayed once x Austria"
+        },
+        info_twice_austria: {
+            description: "Self-defense information is displayed twice x Austria"
+        },
+        info_once_nicaragua: {
+            description: "Self-defense information is displayed once x Nicaragua"
+        },
+        info_twice_nicaragua: {
+            description: "Self-defense information is displayed twice x Nicaragua"
+        }
+    }
     // treatments: {
     //
     //     standard: {
