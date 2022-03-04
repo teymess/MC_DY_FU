@@ -1306,7 +1306,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     simplify: true,
                     forms: [
                       {
-                          id: 'PC_q1_Austria',
+                          id: 'PC_q1_austria',
                           orientation: 'V',
                           mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which region would you like to read information on air pollution and health impacts about?<br>',
                           hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
@@ -1355,7 +1355,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     simplify: true,
                     forms: [
                       {
-                          id: 'PC_q1_Nicaragua',
+                          id: 'PC_q1_nicaragua',
                           orientation: 'V',
                           mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which region would you like to read information on air pollution and health impacts about?<br>',
                           hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
@@ -1389,7 +1389,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         donebutton: false,
         cb: function() {
             node.get('districtData2', function(data) {
-                console.log(data.row.state);
+
                 if (data.rChoice === 'decoy') {
                     if (node.game.settings.treatmentName === 'info_once_austria' || node.game.settings.treatmentName === 'info_twice_austria') {
                         W.setInnerHTML('district', "Austria");
