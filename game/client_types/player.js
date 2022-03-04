@@ -1390,41 +1390,24 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         cb: function() {
             node.get('districtData2', function(data) {
                 console.log(data.row.state);
-                const info = new Object();
                 if (data.rChoice === 'decoy') {
                     if (node.game.settings.treatmentName === 'info_once_austria' || node.game.settings.treatmentName === 'info_twice_austria') {
-                        info.image = "district_maps/AUT.png";
-                        info.district = "Austria";
-                        info.pm25 = "11.76";
-                        info.higher = "2";
-                        info.years = "0.7";
-                        console.log(info);
-
-                        W.setInnerHTML('district', info.district);
-                        W.setInnerHTML('districtAgain', info.district);
-                        W.setInnerHTML('districtAgainAgain',info.district);
-                        W.setInnerHTML('pm25', info.pm25);
-                        W.setInnerHTML('higher', info.higher);
-                        W.setInnerHTML('years', info.years);
-                        W.gid('img').src = info.image;
-                        console.log(info);
+                        W.setInnerHTML('district', "Austria");
+                        W.setInnerHTML('districtAgain', "Austria");
+                        W.setInnerHTML('districtAgainAgain', "Austria");
+                        W.setInnerHTML('pm25', "11.76");
+                        W.setInnerHTML('higher', "2");
+                        W.setInnerHTML('years', "0.7");
+                        W.gid('img').src = "district_maps/AUT.png";
                     }
                     else {
-                        info.image = "district_maps/NIC.png";
-                        info.district = "Nicaragua";
-                        info.pm25 = "8.16";
-                        info.higher = "2";
-                        info.years = "0.3";
-
-
-                        W.setInnerHTML('district', info.district);
-                        W.setInnerHTML('districtAgain', info.district);
-                        W.setInnerHTML('districtAgainAgain',info.district);
-                        W.setInnerHTML('pm25', info.pm25);
-                        W.setInnerHTML('higher', info.higher);
-                        W.setInnerHTML('years', info.years);
-                        W.gid('img').src = info.image;
-                        console.log(info);
+                        W.setInnerHTML('district', "Nicaragua");
+                        W.setInnerHTML('districtAgain', "Nicaragua");
+                        W.setInnerHTML('districtAgainAgain', "Nicaragua");
+                        W.setInnerHTML('pm25', "8.16");
+                        W.setInnerHTML('higher', "2");
+                        W.setInnerHTML('years', "0.3");
+                        W.gid('img').src = "district_maps/NIC.png";
                     }
                 }
                 else {
@@ -1435,22 +1418,13 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     var district_fig = data.row.district.replace(/ /g, '_');
                     district_fig = district_fig.replace(/&/g, 'and');
                     district_fig = district_fig.replace(/-/g, '_');
-
-                    info.image = 'district_maps/' + state_fig + '_' + district_fig + '.png';
-                    info.state = data.row.state;
-                    info.district = data.row.district;
-                    info.pm25 = data.row.pm25.toFixed(2);
-                    info.higher = (data.row.pm25 / 5).toFixed(0);
-                    info.years = data.row.life_lost.toFixed(1);
-
-                    W.setInnerHTML('district', info.district);
+                    W.setInnerHTML('district', data.row.district;);
                     W.setInnerHTML('districtAgain', info.district);
                     W.setInnerHTML('districtAgainAgain',info.district);
-                    W.setInnerHTML('pm25', info.pm25);
-                    W.setInnerHTML('higher', info.higher);
-                    W.setInnerHTML('years', info.years);
-                    W.gid('img').src = info.image;
-
+                    W.setInnerHTML('pm25', data.row.pm25.toFixed(2));
+                    W.setInnerHTML('higher', (data.row.pm25 / 5).toFixed(0));
+                    W.setInnerHTML('years', data.row.life_lost.toFixed(1));
+                    W.gid('img').src = 'district_maps/' + state_fig + '_' + district_fig + '.png';
                 }
 
                 node.game.controlQuestions = node.widgets.append('ChoiceManager', "ComprehquestionsL5", {
