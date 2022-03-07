@@ -1748,6 +1748,16 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 cb: function() {
                     node.get('districtData', function(data) {
 
+                        var left, right;
+                        left = '<span style="font-size: small; font-style: italic">0 years</span>';
+                        right = '<span style="font-size: small; font-style: italic">12 years</span>';
+                        console.log(data);
+                        W.setInnerHTML('district', data.district);
+                        var lifeLost = data.life_lost;
+                        lifeLost = Number(lifeLost.toFixed(1));
+                        node.game.lifeLost = lifeLost;
+                        W.setInnerHTML('correct', lifeLost);
+
                     node.game.LYL_post = node.widgets.append('ChoiceManager', "T_LYL_post", {
                             id: 'LYL_posterior',
                             simplify: true,
@@ -1756,15 +1766,17 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                 {
                                     id: 'LYL_posterior_1',
                                     mainText: '<span style="font-weight: normal;color:gray;">Q1</span> ' +
-                                              'Think about all people living in your home district: ' + data.district + '.<br><br>' +
                                               'How many years of life do people living in ' +
                                                data.district + ' lose on average because of air pollution?',
+                                     hint: false,
                                      name: 'Slider',
                                      hidden: true,
                                      requiredChoice: true,
                                      initialValue: 0,
                                      min: 0,
                                      max: 120,
+                                     left: left,
+                                     right: right,
                                      displayNoChange: false,
                                      type: 'flat',
                                      panel: false,
@@ -1786,8 +1798,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                              '12'
                                          ];
                                          node.game.contributionAmount = LYL[(value)];
-                                         return '<span style=\'font-size:20px;\'>Your estimation is that people living in ' +
-                                         data.district + '<br> lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+                                         return '<span style=\'font-size:20px;\'>People living in ' +
+                                         data.district + ' lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
                                      }
                                    }
                                 },
@@ -1799,7 +1811,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     });
                 },
                 done: function() {
-                    var w, q1;
+                    var w, q1, result, guessBonus;
 
                     w = node.game.LYL_post;
 
@@ -1810,6 +1822,24 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         q1.show();
                         return false;
                     }
+
+                    if (node.game.contributionAmount === node.game.lifeLost) {
+                        guessBonus = 0.5
+                    }
+                    else if ((node.game.contributionAmount >= (node.game.lifeLost - 0.5)) && (node.game.contributionAmount<= (node.game.lifeLost + 0.5))) {
+                        guessBonus = 0.2
+                    }
+                    else {
+                        guessBonus = 0
+                    }
+
+                    W.setInnerHTML('bonus', guessBonus)
+                    result = W.gid('result');
+                    if (result.style.display === 'none') {
+                        result.style.display = '';
+                        return false;
+                    }
+
                     return w.getValues();
                 }
             });

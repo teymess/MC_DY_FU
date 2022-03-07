@@ -7,14 +7,28 @@
     <br><br>
     <div id="container">
         <br>
-          <div id="data" style="display: none; display: flex">
+        <div id="data" style="display: none; display: flex">
             <p style="padding:4px;line-height:140%;">
                 Earlier in this survey, you have read an information page about the air pollution levels in your
-                  home district and <b>the number of life years lost due to air pollution</b> by the average person living there.
+                home district and <b>the number of life years lost due to air pollution</b> by the average person living there.
                 <br><br>
+                <b>We now ask you to recall this information</b> and tell us how many life years an average person living in
+                <span id="district">-</span> loses because of air pollution.
+                <br><br>
+                Base on your answer, you can earn an extra bonus:
+                <br><br>
+                <ul>
+                    <li>If your answer is correct (the exact value from the earlier information page), you will earn a <b>bonus of $0.50</b>.</li>
+                    <li>If your answer is within half a year of the correct value, you will earn a <b>bonus of $0.20$</b>.</li>
+                    <li>If your answer is not within half a year of the correct value, you will earn nothing.</li>
+                </ul>
+                <br><br>
+                <span id="result" style="display: none">The correct number of life years lost for your disitrict is <b><span id="correct">-</span></b>.
+                Accordingly, you receive $<span id="bonus">-</span> for your answer.
             </p>
-          </div>
-          <div id="T_LYL_post"></div>
-      </div>
-      <br>
-  </body>
+        </div>
+        <div id="T_LYL_post"></div>
+        <br><br>
+    </div>
+    <br>
+</body>
