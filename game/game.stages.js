@@ -86,46 +86,46 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             'Part2_Protection_measures_T',
             'Part2_Info_Choice_Nicaragua'
         ])
-        stager.skip('Part_1_Survey', [
-            'Part_1_q4',
-            'Part_1_q5',
-            'Part_1_q6',
-            'Part_1_q7',
-            'Part_1_q8'
-        ]);
-        stager.skip('Part2_Info_Pollution', [
-            'Instructions_Part_2',
-            'Part2_Air_pollution_and_its_sources',
-            'Part2_Pollution_and_life_expectancy',
-            'Part2_Prior_LYL_Austria',
-            'Part2_Prior_LYL_Nicaragua',
-            'Part2_Air_pollution_damages_your_health',
-            'Part2_Protection_measures',
-            'Part2_Protection_measures_T',
-        ]);
+        // stager.skip('Part_1_Survey', [
+        //     'Part_1_q4',
+        //     'Part_1_q5',
+        //     'Part_1_q6',
+        //     'Part_1_q7',
+        //     'Part_1_q8'
+        // ]);
+        // stager.skip('Part2_Info_Pollution', [
+        //     'Instructions_Part_2',
+        //     'Part2_Air_pollution_and_its_sources',
+        //     'Part2_Pollution_and_life_expectancy',
+        //     'Part2_Prior_LYL_Austria',
+        //     'Part2_Prior_LYL_Nicaragua',
+        //     'Part2_Air_pollution_damages_your_health',
+        //     'Part2_Protection_measures',
+        //     'Part2_Protection_measures_T',
+        // ]);
     }
     else if (treatmentName === 'info_twice_austria') {
         stager.skip('Part2_Info_Pollution', [
             'Part2_Prior_LYL_Nicaragua',
             'Part2_Info_Choice_Nicaragua'
         ])
-        stager.skip('Part_1_Survey', [
-            'Part_1_q4',
-            'Part_1_q5',
-            'Part_1_q6',
-            'Part_1_q7',
-            'Part_1_q8'
-        ]);
-        stager.skip('Part2_Info_Pollution', [
-            'Instructions_Part_2',
-            'Part2_Air_pollution_and_its_sources',
-            'Part2_Pollution_and_life_expectancy',
-            'Part2_Prior_LYL_Austria',
-            'Part2_Prior_LYL_Nicaragua',
-            'Part2_Air_pollution_damages_your_health',
-            'Part2_Protection_measures',
-            'Part2_Protection_measures_T',
-        ]);
+        // stager.skip('Part_1_Survey', [
+        //     'Part_1_q4',
+        //     'Part_1_q5',
+        //     'Part_1_q6',
+        //     'Part_1_q7',
+        //     'Part_1_q8'
+        // ]);
+        // stager.skip('Part2_Info_Pollution', [
+        //     'Instructions_Part_2',
+        //     'Part2_Air_pollution_and_its_sources',
+        //     'Part2_Pollution_and_life_expectancy',
+        //     'Part2_Prior_LYL_Austria',
+        //     'Part2_Prior_LYL_Nicaragua',
+        //     'Part2_Air_pollution_damages_your_health',
+        //     'Part2_Protection_measures',
+        //     'Part2_Protection_measures_T',
+        // ]);
     }
     else if (treatmentName === 'info_once_nicaragua') {
         stager.skip('Part2_Info_Pollution', [
@@ -133,47 +133,47 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             'Part2_Protection_measures_T',
             'Part2_Info_Choice_Austria'
         ])
-        stager.skip('Part_1_Survey', [
-            'Part_1_q4',
-            'Part_1_q5',
-            'Part_1_q6',
-            'Part_1_q7',
-            'Part_1_q8'
-
-        ]);
-        stager.skip('Part2_Info_Pollution', [
-            'Instructions_Part_2',
-            'Part2_Air_pollution_and_its_sources',
-            'Part2_Pollution_and_life_expectancy',
-            'Part2_Prior_LYL_Austria',
-            'Part2_Prior_LYL_Nicaragua',
-            'Part2_Air_pollution_damages_your_health',
-            'Part2_Protection_measures',
-            'Part2_Protection_measures_T',
-        ]);
+        // stager.skip('Part_1_Survey', [
+        //     'Part_1_q4',
+        //     'Part_1_q5',
+        //     'Part_1_q6',
+        //     'Part_1_q7',
+        //     'Part_1_q8'
+        //
+        // ]);
+        // stager.skip('Part2_Info_Pollution', [
+        //     'Instructions_Part_2',
+        //     'Part2_Air_pollution_and_its_sources',
+        //     'Part2_Pollution_and_life_expectancy',
+        //     'Part2_Prior_LYL_Austria',
+        //     'Part2_Prior_LYL_Nicaragua',
+        //     'Part2_Air_pollution_damages_your_health',
+        //     'Part2_Protection_measures',
+        //     'Part2_Protection_measures_T',
+        // ]);
     }
     else if (treatmentName === 'info_twice_nicaragua') {
         stager.skip('Part2_Info_Pollution', [
             'Part2_Prior_LYL_Austria',
             'Part2_Info_Choice_Austria'
         ])
-        stager.skip('Part_1_Survey', [
-            'Part_1_q4',
-            'Part_1_q5',
-            'Part_1_q6',
-            'Part_1_q7',
-            'Part_1_q8'
-
-        ]);
-        stager.skip('Part2_Info_Pollution', [
-            'Instructions_Part_2',
-            'Part2_Air_pollution_and_its_sources',
-            'Part2_Pollution_and_life_expectancy',
-            'Part2_Prior_LYL_Austria',
-            'Part2_Prior_LYL_Nicaragua',
-            'Part2_Air_pollution_damages_your_health',
-            'Part2_Protection_measures',
-            'Part2_Protection_measures_T',
-        ]);
+        // stager.skip('Part_1_Survey', [
+        //     'Part_1_q4',
+        //     'Part_1_q5',
+        //     'Part_1_q6',
+        //     'Part_1_q7',
+        //     'Part_1_q8'
+        //
+        // ]);
+        // stager.skip('Part2_Info_Pollution', [
+        //     'Instructions_Part_2',
+        //     'Part2_Air_pollution_and_its_sources',
+        //     'Part2_Pollution_and_life_expectancy',
+        //     'Part2_Prior_LYL_Austria',
+        //     'Part2_Prior_LYL_Nicaragua',
+        //     'Part2_Air_pollution_damages_your_health',
+        //     'Part2_Protection_measures',
+        //     'Part2_Protection_measures_T',
+        // ]);
     }
 };
