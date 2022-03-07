@@ -85,7 +85,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         stager.skip('Part2_Info_Pollution', [
             'Part2_Prior_LYL_Nicaragua',
             'Part2_Protection_measures_T',
-            'Part2_Protection_measures_T2'
+            'Part2_Protection_measures_T2',
             'Part2_Info_Choice_Nicaragua'
         ])
         // stager.skip('Part_1_Survey', [
@@ -133,7 +133,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         stager.skip('Part2_Info_Pollution', [
             'Part2_Prior_LYL_Austria',
             'Part2_Protection_measures_T',
-            'Part2_Protection_measures_T2'
+            'Part2_Protection_measures_T2',
             'Part2_Info_Choice_Austria'
         ])
         // stager.skip('Part_1_Survey', [
