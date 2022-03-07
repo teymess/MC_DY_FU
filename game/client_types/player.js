@@ -1825,6 +1825,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
                     if (node.game.contributionAmount === node.game.lifeLost) {
                         guessBonus = 0.5
+                        
                     }
                     else if ((node.game.contributionAmount >= (node.game.lifeLost - 0.5)) && (node.game.contributionAmount<= (node.game.lifeLost + 0.5))) {
                         guessBonus = 0.2
