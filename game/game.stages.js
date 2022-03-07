@@ -40,6 +40,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('Part2_Air_pollution_damages_your_health')
     .step('Part2_Protection_measures')
     .step('Part2_Protection_measures_T')
+    .step('Part2_Protection_measures_T2')
     .step('Part2_Info_Choice_Austria')
     .step('Part2_Info_Choice_Nicaragua')
     .step('Part2_Pollution_in_your_district')
@@ -84,6 +85,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         stager.skip('Part2_Info_Pollution', [
             'Part2_Prior_LYL_Nicaragua',
             'Part2_Protection_measures_T',
+            'Part2_Protection_measures_T2'
             'Part2_Info_Choice_Nicaragua'
         ])
         // stager.skip('Part_1_Survey', [
@@ -131,6 +133,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         stager.skip('Part2_Info_Pollution', [
             'Part2_Prior_LYL_Austria',
             'Part2_Protection_measures_T',
+            'Part2_Protection_measures_T2'
             'Part2_Info_Choice_Austria'
         ])
         // stager.skip('Part_1_Survey', [

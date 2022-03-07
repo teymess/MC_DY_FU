@@ -1261,17 +1261,45 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         shuffleChoices: false
                     },
                     {
-                        name: 'CustomInput',
                         id: 'P4_T_q3',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> What OTHER measures than the ones included in the leaflet above come to your mind that help with protecting yourself against air pollution?',
-                        width: '95%',
+                        orientation: 'V',
+                        mainText: '<div class="aligned"><img src="Leaflet_images/exclamation-mark.png" width="40px"><span> Read again the leaflet above and try to memorize it.' +
+                        ' You will be asked to summarize it on the next page.<br><br>' +
+                        'What task will you be required to do on the next page?',
+                        choices: [
+                          ['1', 'Summarize the leaflet.'],
+                          ['2', 'Do a task unrelated to the leaflet.']],
+                        correctChoice: 0,
+                    }
+                ]
+            },
+        },
+    });
+
+    //////////////////////////////////////////////////////////////////////////
+    // LEAFLET Protection measures Treatment
+    stager.extendStep('Part2_Protection_measures_T2', {
+        name: 'Part 2: Reading and comprehension',
+        // frame: 'leaflet_protection_T.htm',
+        widget: {
+            name: 'ChoiceManager',
+            id: 'P4_T2_q',
+            options: {
+                simplify: true,
+                mainText: '',
+                forms: [
+                    {
+                        name: 'CustomInput',
+                        id: 'P4_T_q4',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q7</span> Please summarize the information you have read on the previous page.',
                         requiredChoice: true,
+                        width: '95%',
                     },
                     {
-                        id: 'P4_T_q4',
+                        id: 'P4_T_q5',
                         orientation: 'H',
-                        mainText: '<img src="Leaflet_images/exclamation-mark.png" width="35px" /> Try to remember these protection measures and apply them whenever you can! They can help protect your health against air pollution!<br/><br>' +
-                        '<span style="font-weight: normal;color:gray;">Q7</span> How likely do you think you are to remember a few of these protection measures?<br>',
+                        mainText: '<div class="aligned"><img src="Leaflet_images/exclamation-mark.png" width="40px"><span> Try to remember these protection measures and apply them whenever you can! They can help protect your health against air pollution!<br/><br>' +
+                        '<span style="font-weight: normal;color:gray;">Q8</span> How likely do you think you are to remember a few of these protection measures?<br>',
                         choices: ["Very likely", "Likely",
                         "Neutral", "Not very likely", "Very unlikely"],
                         shuffleChoices: false,
