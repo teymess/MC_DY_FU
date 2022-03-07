@@ -1320,7 +1320,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         cb: function() {
             node.get('districtData', function(data) {
 
-                console.log(data);
+                //console.log(data);
                 W.setInnerHTML('state', data.state);
                 W.setInnerHTML('district', data.district);
 
@@ -1369,7 +1369,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         cb: function() {
             node.get('districtData', function(data) {
 
-                console.log(data);
+                //console.log(data);
                 W.setInnerHTML('state', data.state);
                 W.setInnerHTML('district', data.district);
 
@@ -1418,14 +1418,15 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         cb: function() {
             node.get('districtData2', function(data) {
 
-                console.log(data);
+                //console.log(data);
 
                 var random = Math.random();
+                console.log(random);
 
                 if ((data.rChoice === 'decoy' && random > 0.4) || (data.rChoice === 'home' && random <= 0.4)) {
 
                     if (node.game.settings.treatmentName === 'info_once_austria' || node.game.settings.treatmentName === 'info_twice_austria') {
-
+                        node.game.Choice = 'Austria';
                         W.setInnerHTML('district', "Austria");
                         W.setInnerHTML('districtAgain', "Austria");
                         W.setInnerHTML('districtAgainAgain', "Austria");
@@ -1476,6 +1477,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     }
 
                     else {
+                        node.game.Choice = 'Nicaragua';
+
                         W.setInnerHTML('district', "Nicaragua");
                         W.setInnerHTML('districtAgain', "Nicaragua");
                         W.setInnerHTML('districtAgainAgain', "Nicaragua");
@@ -1526,6 +1529,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     }
                 }
                 else {
+                    node.game.Choice = 'Home';
                     var state_fig = data.row.state.replace(/ /g, '_');
                     state_fig = state_fig.replace(/&/g, 'and');
                     state_fig = state_fig.replace(/-/g, '_');
@@ -1534,7 +1538,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     district_fig = district_fig.replace(/&/g, 'and');
                     district_fig = district_fig.replace(/-/g, '_');
 
-                    console.log(data);
+                    //console.log(data);
                     W.setInnerHTML('district', data.row.district);
                     W.setInnerHTML('districtAgain', data.row.district);
                     W.setInnerHTML('districtAgainAgain', data.row.district);
@@ -1739,26 +1743,30 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         });
 
 
-////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
         // PRIOR LYL
-            stager.extendStep('Part4_Posterior_LYL', {
-                name: 'Part 4',
-                frame: 'posterior_LYL.htm',
-                donebutton: false,
-                cb: function() {
-                    node.get('districtData', function(data) {
+        stager.extendStep('Part4_Posterior_LYL', {
+            name: 'Part 4',
+            frame: 'posterior_LYL.htm',
+            donebutton: false,
+            cb: function() {
+                node.get('districtData', function(data) {
 
-                        var left, right;
-                        left = '<span style="font-size: small; font-style: italic">0 years</span>';
-                        right = '<span style="font-size: small; font-style: italic">12 years</span>';
-                        console.log(data);
+                    var left, right, lifeLost;
+                    left = '<span style="font-size: small; font-style: italic">0 years</span>';
+                    right = '<span style="font-size: small; font-style: italic">12 years</span>';
+
+                    //console.log(data);
+
+                    if (node.game.Choice === 'Home') {
                         W.setInnerHTML('district', data.district);
-                        var lifeLost = data.life_lost;
+
+                        lifeLost = data.life_lost;
                         lifeLost = Number(lifeLost.toFixed(1));
                         node.game.lifeLost = lifeLost;
                         W.setInnerHTML('correct', lifeLost);
 
-                    node.game.LYL_post = node.widgets.append('ChoiceManager', "T_LYL_post", {
+                        node.game.LYL_post = node.widgets.append('ChoiceManager', "T_LYL_post", {
                             id: 'LYL_posterior',
                             simplify: true,
                             panel: false,
@@ -1766,84 +1774,191 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                 {
                                     id: 'LYL_posterior_1',
                                     mainText: '<span style="font-weight: normal;color:gray;">Q1</span> ' +
-                                              'How many years of life do people living in ' +
-                                               data.district + ' lose on average because of air pollution?',
-                                     hint: false,
-                                     name: 'Slider',
-                                     hidden: true,
-                                     requiredChoice: true,
-                                     initialValue: 0,
-                                     min: 0,
-                                     max: 120,
-                                     left: left,
-                                     right: right,
-                                     displayNoChange: false,
-                                     type: 'flat',
-                                     panel: false,
-                                     texts: {
-                                     currentValue: function(widget, value) {
-                                         let LYL = [
-                                             '0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9',
-                                             '1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9',
-                                             '2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9',
-                                             '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9',
-                                             '4.0', '4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9',
-                                             '5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9',
-                                             '6.0', '6.1', '6.2', '6.3', '6.4', '6.5', '6.6', '6.7', '6.8', '6.9',
-                                             '7.0', '7.1', '7.2', '7.3', '7.4', '7.5', '7.6', '7.7', '7.8', '7.9',
-                                             '8.0', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6', '8.7', '8.8', '8.9',
-                                             '9.0', '9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8', '9.9',
-                                             '10.0', '10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7', '10.8', '10.9',
-                                             '11.0', '11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9',
-                                             '12'
-                                         ];
-                                         node.game.contributionAmount = LYL[(value)];
-                                         return '<span style=\'font-size:20px;\'>People living in ' +
-                                         data.district + ' lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
-                                     }
-                                   }
+                                    'How many years of life do people living in ' +
+                                    data.district + ' lose on average because of air pollution?',
+                                    hint: false,
+                                    name: 'Slider',
+                                    hidden: true,
+                                    requiredChoice: true,
+                                    initialValue: 0,
+                                    min: 0,
+                                    max: 120,
+                                    left: left,
+                                    right: right,
+                                    displayNoChange: false,
+                                    type: 'flat',
+                                    panel: false,
+                                    texts: {
+                                        currentValue: function(widget, value) {
+                                            let LYL = [
+                                                '0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9',
+                                                '1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9',
+                                                '2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9',
+                                                '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9',
+                                                '4.0', '4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9',
+                                                '5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9',
+                                                '6.0', '6.1', '6.2', '6.3', '6.4', '6.5', '6.6', '6.7', '6.8', '6.9',
+                                                '7.0', '7.1', '7.2', '7.3', '7.4', '7.5', '7.6', '7.7', '7.8', '7.9',
+                                                '8.0', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6', '8.7', '8.8', '8.9',
+                                                '9.0', '9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8', '9.9',
+                                                '10.0', '10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7', '10.8', '10.9',
+                                                '11.0', '11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9',
+                                                '12'
+                                            ];
+                                            node.game.contributionAmount = LYL[(value)];
+                                            return '<span style=\'font-size:20px;\'>People living in ' +
+                                            data.district + ' lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+                                        }
+                                    }
                                 },
                             ]
                         });
-
-                        W.show('data', 'flex');
-                        node.game.doneButton.enable();
-                    });
-                },
-                done: function() {
-                    var w, q1, result, guessBonus;
-
-                    w = node.game.LYL_post;
-
-                    // DISPLAY 1
-                    q1 = w.formsById.LYL_posterior_1;
-                    if (q1.isHidden()) {
-                        q1.reset(); // removes error.
-                        q1.show();
-                        return false;
                     }
 
-                    if (node.game.contributionAmount === node.game.lifeLost) {
-                        guessBonus = 0.5
-                        
-                    }
-                    else if ((node.game.contributionAmount >= (node.game.lifeLost - 0.5)) && (node.game.contributionAmount<= (node.game.lifeLost + 0.5))) {
-                        guessBonus = 0.2
-                    }
-                    else {
-                        guessBonus = 0
+                    else if (node.game.Choice === 'Austria') {
+
+                        W.setInnerHTML('district', 'Austria');
+                        W.setInnerHTML('correct', 0.7);
+                        node.game.lifeLost = 0.7;
+
+                        node.game.LYL_post = node.widgets.append('ChoiceManager', "T_LYL_post", {
+                            id: 'LYL_posterior',
+                            simplify: true,
+                            panel: false,
+                            forms: [
+                                {
+                                    id: 'LYL_posterior_1',
+                                    mainText: '<span style="font-weight: normal;color:gray;">Q1</span> ' +
+                                    'How many years of life do people living in Austria lose on average because of air pollution?',
+                                    hint: false,
+                                    name: 'Slider',
+                                    hidden: true,
+                                    requiredChoice: true,
+                                    initialValue: 0,
+                                    min: 0,
+                                    max: 120,
+                                    left: left,
+                                    right: right,
+                                    displayNoChange: false,
+                                    type: 'flat',
+                                    panel: false,
+                                    texts: {
+                                        currentValue: function(widget, value) {
+                                            let LYL = [
+                                                '0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9',
+                                                '1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9',
+                                                '2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9',
+                                                '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9',
+                                                '4.0', '4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9',
+                                                '5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9',
+                                                '6.0', '6.1', '6.2', '6.3', '6.4', '6.5', '6.6', '6.7', '6.8', '6.9',
+                                                '7.0', '7.1', '7.2', '7.3', '7.4', '7.5', '7.6', '7.7', '7.8', '7.9',
+                                                '8.0', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6', '8.7', '8.8', '8.9',
+                                                '9.0', '9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8', '9.9',
+                                                '10.0', '10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7', '10.8', '10.9',
+                                                '11.0', '11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9',
+                                                '12'
+                                            ];
+                                            node.game.contributionAmount = LYL[(value)];
+                                            return '<span style=\'font-size:20px;\'>People living in Austria lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+                                        }
+                                    }
+                                },
+                            ]
+                        });
                     }
 
-                    W.setInnerHTML('bonus', guessBonus)
-                    result = W.gid('result');
-                    if (result.style.display === 'none') {
-                        result.style.display = '';
-                        return false;
+                    else if (node.game.Choice === 'Nicaragua') {
+
+                        W.setInnerHTML('district', 'Nicaragua');
+                        W.setInnerHTML('correct', 0.3);
+                        node.game.lifeLost = 0.3;
+
+                        node.game.LYL_post = node.widgets.append('ChoiceManager', "T_LYL_post", {
+                            id: 'LYL_posterior',
+                            simplify: true,
+                            panel: false,
+                            forms: [
+                                {
+                                    id: 'LYL_posterior_1',
+                                    mainText: '<span style="font-weight: normal;color:gray;">Q1</span> ' +
+                                    'How many years of life do people living in Nicaragua lose on average because of air pollution?',
+                                    hint: false,
+                                    name: 'Slider',
+                                    hidden: true,
+                                    requiredChoice: true,
+                                    initialValue: 0,
+                                    min: 0,
+                                    max: 120,
+                                    left: left,
+                                    right: right,
+                                    displayNoChange: false,
+                                    type: 'flat',
+                                    panel: false,
+                                    texts: {
+                                        currentValue: function(widget, value) {
+                                            let LYL = [
+                                                '0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9',
+                                                '1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9',
+                                                '2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9',
+                                                '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9',
+                                                '4.0', '4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9',
+                                                '5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9',
+                                                '6.0', '6.1', '6.2', '6.3', '6.4', '6.5', '6.6', '6.7', '6.8', '6.9',
+                                                '7.0', '7.1', '7.2', '7.3', '7.4', '7.5', '7.6', '7.7', '7.8', '7.9',
+                                                '8.0', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6', '8.7', '8.8', '8.9',
+                                                '9.0', '9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8', '9.9',
+                                                '10.0', '10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7', '10.8', '10.9',
+                                                '11.0', '11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9',
+                                                '12'
+                                            ];
+                                            node.game.contributionAmount = LYL[(value)];
+                                            return '<span style=\'font-size:20px;\'>People living in Nicaragua lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+                                        }
+                                    }
+                                },
+                            ]
+                        });
                     }
 
-                    return w.getValues();
+                    W.show('data', 'flex');
+                    node.game.doneButton.enable();
+                });
+            },
+            done: function() {
+                var w, q1, result, guessBonus;
+
+                w = node.game.LYL_post;
+
+                // DISPLAY 1
+                q1 = w.formsById.LYL_posterior_1;
+                if (q1.isHidden()) {
+                    q1.reset(); // removes error.
+                    q1.show();
+                    return false;
                 }
-            });
+
+                if (node.game.contributionAmount === node.game.lifeLost) {
+                    guessBonus = 0.50
+                    W.setInnerHTML('payoff', 'Your guess was correct! Therefore, you receive <b>$0.50</b>.')
+                }
+                else if ((node.game.contributionAmount >= (node.game.lifeLost - 0.5)) && (node.game.contributionAmount<= (node.game.lifeLost + 0.5))) {
+                    guessBonus = 0.20
+                    W.setInnerHTML('payoff', 'Your guess was within half a year of the correct value! Therefore, you receive <b>$0.20</b>.')
+                }
+                else {
+                    guessBonus = 0.00
+                    W.setInnerHTML('payoff', 'Your guess was not correct. Therefore, you receive no bonus.')
+                }
+                result = W.gid('result');
+                if (result.style.display === 'none') {
+                    result.style.display = '';
+                    return false;
+                }
+
+                return w.getValues();
+            }
+        });
 
 
 
