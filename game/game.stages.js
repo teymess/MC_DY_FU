@@ -25,8 +25,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('Part_1_q2')
     .step('Part_1_q3')
     .step('Part_1_q4')
-    .step('Part_1_q5')
-    .step('Part_1_q6')
+    // .step('Part_1_q5')
+    // .step('Part_1_q6')
     .step('Part_1_q7')
     .step('Part_1_q8')
 
