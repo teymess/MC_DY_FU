@@ -122,37 +122,47 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
 
         node.on('get.districtData2', function(msg) {
-            if (treatmentName === 'info_once_austria' || treatmentName === 'info_twice_austria') {
-                let choice = memory.choice_austria.get(msg.from);
+            var random = Math.random();
+            console.log(random);
+
+            let district = memory.district_player.get(msg.from);
+
+            //console.log(district);
+            district = district.forms.district.value;
+
+            if ((treatmentName === 'info_once_austria' || treatmentName === 'info_twice_austria')) {
+                var choice_aus = memory.choice_austria.get(msg.from);
 
                 //console.log(choice);
-                choice = choice.PC_q1_austria.value;
+                choice_aus = choice_aus.PC_q1_austria.value;
 
-                let district = memory.district_player.get(msg.from);
-
-                //console.log(district);
-                district = district.forms.district.value;
-
-                return {
-                    row: setup.pollutionDb.district.get(district),
-                    rChoice: choice
-                };
+                if ((choice_aus === 'decoy' && random > 0.4) || (choice_aus === 'home' && random < 0.4)) {
+                    let chosen = 'Austria';
+                    return chosen;
+                }
+                else {
+                    let chosen = setup.pollutionDb.district.get(district);
+                    return chosen;
+                }
             }
             else if (treatmentName === 'info_once_nicaragua' || treatmentName === 'info_twice_nicaragua') {
-                let choice = memory.choice_nicaragua.get(msg.from);
+                var choice_nic = memory.choice_nicaragua.get(msg.from);
 
                 //console.log(choice);
-                choice = choice.PC_q1_nicaragua.value;
+                choice_nic = choice_nic.PC_q1_nicaragua.value;
 
-                let district = memory.district_player.get(msg.from);
+                // let district = memory.district_player.get(msg.from);
+                //
+                // //console.log(district);
+                // district = district.forms.district.value;
 
-                //console.log(district);
-                district = district.forms.district.value;
-
-                return {
-                    row: setup.pollutionDb.district.get(district),
-                    rChoice: choice
-                };
+                if ((choice_nic === 'decoy' && random > 0.4) || (choice_nic === 'home' && random < 0.4)) {
+                    let chosen = 'Nicaragua';
+                    return chosen;
+                }
+                else {
+                    return setup.pollutionDb.district.get(district);
+                }
             }
         });
     });
