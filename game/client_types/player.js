@@ -1289,17 +1289,22 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 mainText: '',
                 forms: [
                     {
-                        name: 'CustomInput',
+                        name: 'Feedback',
                         id: 'P4_T_q4',
                         mainText: '<span style="font-weight: normal;color:gray;">Q7</span> Please summarize the information you have read on the previous page.',
                         requiredChoice: true,
-                        width: '95%',
+                        showSubmit: false,
+                        minChars: 50,
+                        // width: '95%',
+                        // min: 50,
                     },
                     {
                         id: 'P4_T_q5',
                         orientation: 'H',
-                        mainText: '<a href="https://imgbb.com/"><img src="https://i.ibb.co/88yMk2s/exclamation-mark.png" alt="exclamation-mark" border="0" width="40px"></a> Try to remember these protection measures and apply them whenever you can! They can help protect your health against air pollution!<br><br>' +
-                        '<span style="font-weight: normal;color:gray;">Q8</span> How likely do you think you are to remember a few of these protection measures?<br>',
+                        //<a href="https://imgbb.com/"><img src="https://i.ibb.co/88yMk2s/exclamation-mark.png" alt="exclamation-mark" border="0" width="40px"></a>
+                        //https://ibb.co/JpH4WYF
+                        mainText: '<img src="https://i.ibb.co/3Fcq5xY/remember.png" alt="remember" border="0" width="100px"><div class="aligned"> Try to remember these protection measures and apply them whenever you can! They can help protect your health against air pollution!</div><br><br>' +
+                        '<span style="font-weight: normal;color:gray;">Q8</span> How likely do you think you are to remember these protection measures?',
                         choices: ["Very likely", "Likely",
                         "Neutral", "Not very likely", "Very unlikely"],
                         shuffleChoices: false,
