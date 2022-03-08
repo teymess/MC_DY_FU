@@ -9,35 +9,45 @@
         <br>
         <div id="data" style="display: none; display: flex">
             <p style="padding:4px;line-height:140%;">
-                <span style="font-size:20px;"><b>Can you remember?</b></span>
+                <span style="font-size:30px;"><b>Can you remember?</b></span>
                 <br><br>
                 Earlier in this survey, you have read about
                 <b>the number of life years lost due to air pollution</b> by the average person living in
-                <span style="color:#07aa34;"><b><span id="district">-</span></span>.
+                <span style="color:#ee6933;"><b><span id="district">-</span></b></span>.
                 <br><br>
                 <b>We now ask you to recall this number.</b>
                 <br><br>
-                <img src="money-bag.png" width="50px"><span> Based on your answer, you can earn
+            </p>
+            <p>
+        </div>
+            <div id="instructions-bonus">
+            <img src="money-bag.png" width="50px"><span> Based on your answer, you can earn
                   <span style="color:#07aa34;"><b>an extra bonus</b></span>:
-                <br><br>
+            </p>
+            <!-- <br><br> -->
+            <p align="justify" style="margin-bottom:0.25cm;">
                 <ul>
                     <li>If your answer is correct (the exact value from the earlier information page), you will earn a <b>bonus of $0.50</b>.</li>
-                    <li>If your answer is within half a year of the correct value, you will earn a <b>bonus of $0.20$</b>.</li>
+                    <li>If your answer is within half a year of the correct value, you will earn a <b>bonus of $0.20</b>.</li>
                     <li>If your answer is not within half a year of the correct value, you will earn no bonus in this question.</li>
                 </ul>
-                <br>
+                <!-- <br> -->
                 For example, consider that the correct value is X years of life. If your answer is X years, you earn a bonus of $0.50.
                 If your answer is in the range [X - 0.5; X + 0.5], you earn a bonus of $0.20. Otherwise, your bonus for this question is $0.
                 <br><br>
+                Click <b>"Next"</b> to enter your answer.
             </p>
+          </div>
         <div id="T_LYL_post"></div>
         <br><br>
         <p style="padding:4px;line-height:140%;">
-        <span id="result" style="display: none">The correct number of life years lost for your disitrict is <b><span id="correct">-</span></b>.
-        <br>
+        <span id="result" style="display: none">
+          <span style="font-size:30px;"><b>Solution</b></span><br>
+          The correct number of life years lost due to air pollution in <span id="districtAgain">-</span> is <b><span id="correct">-</span></b>.
+        <br><br/>
         <span id="payoff">-</span>
         </p>
-      </div>
+      <!-- </div> -->
     </div>
-    <br>
+    <br><br><br/>
 </body>

@@ -1762,13 +1762,14 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 node.get('districtData', function(data) {
 
                     var left, right, lifeLost;
-                    left = '<span style="font-size: small; font-style: italic">0 years</span>';
-                    right = '<span style="font-size: small; font-style: italic">12 years</span>';
+                    left = '<span style="font-size: normal; font-style: italic">0 years</span><br><br>';
+                    right = '<span style="font-size: normal; font-style: italic">12 years</span><br><br>';
 
                     //console.log(data);
 
                     if (node.game.Choice === 'Home') {
                         W.setInnerHTML('district', data.district);
+                        W.setInnerHTML('districtAgain', data.district);
 
                         lifeLost = data.life_lost;
                         lifeLost = Number(lifeLost.toFixed(1));
@@ -1782,9 +1783,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                             forms: [
                                 {
                                     id: 'LYL_posterior_1',
-                                    mainText: '<span style="font-weight: normal;color:gray;">Q1</span> ' +
-                                    'How many years of life do people living in ' +
-                                    data.district + ' lose on average because of air pollution?',
+                                    mainText: '<span style="color:#07aa34;font-size:25px">Bonus question:</span> ' +
+                                    '<span style="font-size:25px">How many years of life do people living in ' +
+                                    data.district + ' lose on average because of air pollution?</span><br>' +
+                                    '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
                                     hint: false,
                                     name: 'Slider',
                                     hidden: true,
@@ -1815,7 +1817,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                                 '12'
                                             ];
                                             node.game.contributionAmount = LYL[(value)];
-                                            return '<span style=\'font-size:20px;\'>People living in ' +
+                                            return '<span style=\'font-size:20px;\'>You think people living in ' +
                                             data.district + ' lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
                                         }
                                     }
@@ -1827,6 +1829,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     else if (node.game.Choice === 'Austria') {
 
                         W.setInnerHTML('district', 'Austria');
+                        W.setInnerHTML('districtAgain', 'Austria');
                         W.setInnerHTML('correct', 0.7);
                         node.game.lifeLost = 0.7;
 
@@ -1837,8 +1840,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                             forms: [
                                 {
                                     id: 'LYL_posterior_1',
-                                    mainText: '<span style="font-weight: normal;color:gray;">Q1</span> ' +
-                                    'How many years of life do people living in Austria lose on average because of air pollution?',
+                                    mainText: '<span style="color:#07aa34;font-size:25px">Bonus question:</span> ' +
+                                    '<span style="font-size:25px">How many years of life do people living in Austria' +
+                                    ' lose on average because of air pollution?</span><br>' +
+                                    '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
                                     hint: false,
                                     name: 'Slider',
                                     hidden: true,
@@ -1869,7 +1874,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                                 '12'
                                             ];
                                             node.game.contributionAmount = LYL[(value)];
-                                            return '<span style=\'font-size:20px;\'>People living in Austria lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+                                            return '<span style=\'font-size:20px;\'>You think people living in Austria lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
                                         }
                                     }
                                 },
@@ -1880,6 +1885,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     else if (node.game.Choice === 'Nicaragua') {
 
                         W.setInnerHTML('district', 'Nicaragua');
+                        W.setInnerHTML('districtAgain', 'Nicaragua');
                         W.setInnerHTML('correct', 0.3);
                         node.game.lifeLost = 0.3;
 
@@ -1890,8 +1896,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                             forms: [
                                 {
                                     id: 'LYL_posterior_1',
-                                    mainText: '<span style="font-weight: normal;color:gray;">Q1</span> ' +
-                                    'How many years of life do people living in Nicaragua lose on average because of air pollution?',
+                                    mainText: '<span style="color:#07aa34;font-size:25px">Bonus question:</span> ' +
+                                    '<span style="font-size:25px">How many years of life do people living in Nicaragua' +
+                                    ' lose on average because of air pollution?</span><br>' +
+                                    '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
                                     hint: false,
                                     name: 'Slider',
                                     hidden: true,
@@ -1922,7 +1930,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                                 '12'
                                             ];
                                             node.game.contributionAmount = LYL[(value)];
-                                            return '<span style=\'font-size:20px;\'>People living in Nicaragua lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+                                            return '<span style=\'font-size:20px;\'>You think people living in Nicaragua lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
                                         }
                                     }
                                 },
@@ -1949,15 +1957,15 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
                 if (node.game.contributionAmount == node.game.lifeLost) {
                     guessBonus = 0.50
-                    W.setInnerHTML('payoff', 'Your answer is correct! Therefore, you receive <b>$0.50</b>.')
+                    W.setInnerHTML('payoff', '<img src="success.png" width="50px"> Your answer is <b>correct</b>! You receive a bonus of <b>$0.50</b>.<br>')
                 }
                 else if ((node.game.contributionAmount != node.game.lifeLost) && (node.game.contributionAmount >= (node.game.lifeLost - 0.5)) && (node.game.contributionAmount<= (node.game.lifeLost + 0.5))) {
                     guessBonus = 0.20
-                    W.setInnerHTML('payoff', 'Your answer is within half a year of the correct value! Therefore, you receive <b>$0.20</b>.')
+                    W.setInnerHTML('payoff', '<img src="almost_correct.png" width="50px"> Your answer is within half a year of the correct value! You receive a bonus of <b>$0.20</b>.<br>')
                 }
                 else {
                     guessBonus = 0.00
-                    W.setInnerHTML('payoff', 'Your answer is not correct. Therefore, you receive no bonus.')
+                    W.setInnerHTML('payoff', '<img src="failure.png" width="50px"> Your answer is <b>not correct</b>. Therefore, you receive no bonus for this question.<br>')
                 }
                 result = W.gid('result');
                 if (result.style.display === 'none') {
