@@ -1422,13 +1422,16 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         cb: function() {
             node.get('districtData2', function(data) {
                 if (data.chosen === 'Austria') {
-                    W.setInnerHTML('choice', "Austria, a country in central Europe");
+                    W.setInnerHTML('choice', "Austria");
+                    W.setInnerHTML('where', ", a country in central Europe");
                 }
                 else if (data.chosen === 'Nicaragua') {
-                    W.setInnerHTML('choice', "Nicaragua, country in central America");
+                    W.setInnerHTML('choice', "Nicaragua");
+                    W.setInnerHTML('where', ", a country in central America");
                 }
                 else {
                     W.setInnerHTML('choice', data.row.district);
+                    W.setInnerHTML('where', ", your home district");
                 }
                 W.show('data', 'flex');
             });
