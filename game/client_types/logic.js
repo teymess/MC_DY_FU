@@ -62,16 +62,21 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             let id = msg.from;
             let step = node.game.getStepId(msg.stage);
 
+            if (step === 'memory_test1') {
+                let bonus = msg.data.bonus;
+                console.log(bonus);
+                gameRoom.updateWin(id, bonus);
+            }
 
-            // if (step === 'task_1_-_Slider') {
-            //     let bonus = msg.data.effort_slider * settings.TASK_1_BONUS;
-            //     gameRoom.updateWin(id, bonus);
-            // }
-            if (step === 'Part_3_Filler_Task') {
+            else if (step === 'Part_3_Filler_Task') {
                 let bonus = msg.data.effort_count * settings.TASK_2_BONUS;
                 gameRoom.updateWin(id, bonus);
             }
 
+            else if (step === 'Part4_Posterior_LYL') {
+                let bonus = msg.data.bonus;
+                gameRoom.updateWin(id, bonus);
+            }
 
             else if (step === 'feedback') {
 
