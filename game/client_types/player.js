@@ -105,9 +105,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     stager.extendStep('memory_test1', {
         name: 'Memory Task',
         frame: 'memory.htm',
-        donebutton: false,
         cb: function() {
-            node.game.memory = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory1 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_1',
                 // ref: 'controlQuestions',
                 mainText: '<div class="aligned"><a href="https://ibb.co/YWRxwpj"><img src="https://i.ibb.co/xsCNdJ5/calculator02c.jpg" alt="calculator02c" border="0" width="500px" /></a></div>',
@@ -120,17 +119,18 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         requiredChoice: true
                     }
                 ]
-                // formsOptions: {
-                //     requiredChoice: true
-                // }
             });
         },
         done: function() {
             var bonus = 0;
-            if (node.game.memory.forms.memory_test_1.value === 'Yes'){
-                bonus = 0.05;
-            }
-            return bonus;
+            var answer = node.game.memory1.getValues().value
+            console.log(answer);
+            console.log(bonus);
+
+            if (answer === 'Yes'){
+                bonus = 0.02;
+            } 'SERVER', { data: bonus };
+
         }
     });
 
