@@ -1297,17 +1297,22 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 mainText: '',
                 forms: [
                     {
-                        name: 'CustomInput',
+                        name: 'Feedback',
                         id: 'P4_T_q4',
                         mainText: '<span style="font-weight: normal;color:gray;">Q7</span> Please summarize the information you have read on the previous page.',
                         requiredChoice: true,
-                        width: '95%',
+                        showSubmit: false,
+                        minChars: 50,
+                        // width: '95%',
+                        // min: 50,
                     },
                     {
                         id: 'P4_T_q5',
                         orientation: 'H',
-                        mainText: '<a href="https://imgbb.com/"><img src="https://i.ibb.co/88yMk2s/exclamation-mark.png" alt="exclamation-mark" border="0" width="40px"></a> Try to remember these protection measures and apply them whenever you can! They can help protect your health against air pollution!<br><br>' +
-                        '<span style="font-weight: normal;color:gray;">Q8</span> How likely do you think you are to remember a few of these protection measures?<br>',
+                        //<a href="https://imgbb.com/"><img src="https://i.ibb.co/88yMk2s/exclamation-mark.png" alt="exclamation-mark" border="0" width="40px"></a>
+                        //https://ibb.co/JpH4WYF
+                        mainText: '<img src="https://i.ibb.co/3Fcq5xY/remember.png" alt="remember" border="0" width="100px"><div class="aligned"> Try to remember these protection measures and apply them whenever you can! They can help protect your health against air pollution!</div><br><br>' +
+                        '<span style="font-weight: normal;color:gray;">Q8</span> How likely do you think you are to remember these protection measures?',
                         choices: ["Very likely", "Likely",
                         "Neutral", "Not very likely", "Very unlikely"],
                         shuffleChoices: false,
@@ -1335,28 +1340,26 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 node.game.RegionC = node.widgets.append('ChoiceManager', "RegionOfChoice", {
                     id: 'PC_q',
                     // ref: 'controlQuestions',
-                    mainText: '<span style="font-weight: bold;font-size:24px;color:#183194;">Your choice!</span><br/><br/>' +
+                    mainText: '<img src="choice.png" width="100px"> <span style="font-weight: bold;font-size:24px;color:#183194;">Your choice!</span><br/><br/>' +
                     'On the next page, you will receive an information leaflet on <b>air pollution levels</b> and its <b>measured impact ' +
-                    'on health</b> in <em>a specific region</em>. <br> <br>' +
-                    'You have now the opportunity to <b>choose the region</b> that will be presented on the next page.',
+                    'on health</b> in a specific region. <br> <br>' +
+                    'You have now the opportunity to <b><span style="font-size:25px;color:#ee6933;">choose the region</span></b> that will be presented on the next page. ' +
+                    '<br> <br>However, your selection will only be implemented with a <b>60% probability</b>. With a 40 % probability, we will show you information on the other option.<br> <br>',
                     simplify: true,
                     forms: [
                       {
                           id: 'PC_q1_austria',
                           orientation: 'V',
-                          mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which region would you like to read information on air pollution and health impacts about?<br>',
-                          hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
+                          mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which region would you like to read information on air pollution and health impacts about?',
+                          // hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
                           choices: [
                             ['home', data.district  + ' (' + data.state + ')'],
-                            ['decoy', "Austria"]
+                            ['decoy', "Austria (a country in central Europe)"]
                           ],
                           requiredChoice: true,
                           shuffleChoices: true
                       }
                     ]
-                    // formsOptions: {
-                    //     requiredChoice: true
-                    // }
                 });
 
                 W.show('data', 'flex');
@@ -1384,21 +1387,21 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 node.game.RegionC = node.widgets.append('ChoiceManager', "RegionOfChoice", {
                     id: 'PC_q',
                     // ref: 'controlQuestions',
-                    mainText: '<span style="font-weight: bold;font-size:24px;color:#183194;">Your choice!</span><br/><br/>' +
+                    mainText: '<img src="choice.png" width="100px"> <span style="font-weight: bold;font-size:24px;color:#183194;">Your choice!</span><br/><br/>' +
                     'On the next page, you will receive an information leaflet on <b>air pollution levels</b> and its <b>measured impact ' +
-                    'on health</b> in <em>a specific region</em>. <br> <br>' +
-                    'You have now the opportunity to <b>choose the region</b> that will be presented on the next page.' +
-                    '<br><br> <b>Attention:</b> Your selection will only be implemented with a 60% probability. With a 40 % probability, we will show you information on the other option.',
+                    'on health</b> in a specific region. <br> <br>' +
+                    'You have now the opportunity to <b><span style="font-size:25px;color:#ee6933;">choose the region</span></b> that will be presented on the next page. ' +
+                    '<br> <br>However, your selection will only be implemented with a <b>60% probability</b>. With a 40 % probability, we will show you information on the other option.<br> <br>',
                     simplify: true,
                     forms: [
                       {
                           id: 'PC_q1_nicaragua',
                           orientation: 'V',
-                          mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which region would you like to read information on air pollution and health impacts about?<br>',
+                          mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which region would you like to read information on air pollution and health impacts about?',
                          // hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
                           choices: [
                             ['home', data.district  + ' (' + data.state + ')'],
-                            ['decoy', "Nicaragua"]
+                            ['decoy', "Nicaragua (a country in Central America)"]
                           ],
                           requiredChoice: true,
                           shuffleChoices: true
@@ -1425,13 +1428,16 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         cb: function() {
             node.get('districtData2', function(data) {
                 if (data.chosen === 'Austria') {
-                    W.setInnerHTML('choice', "Austria, a country in central Europe");
+                    W.setInnerHTML('choice', "Austria");
+                    W.setInnerHTML('where', ", a country in central Europe");
                 }
                 else if (data.chosen === 'Nicaragua') {
-                    W.setInnerHTML('choice', "Nicaragua, country in central America");
+                    W.setInnerHTML('choice', "Nicaragua");
+                    W.setInnerHTML('where', ", a country in central America");
                 }
                 else {
                     W.setInnerHTML('choice', data.row.district);
+                    W.setInnerHTML('where', ", your home district");
                 }
                 W.show('data', 'flex');
             });
