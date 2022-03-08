@@ -1423,7 +1423,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     W.setInnerHTML('choice', "Nicaragua, country in central America");
                 }
                 else {
-                    W.setInnerHTML('choice', "your home district " + data.district);
+                    W.setInnerHTML('choice', data.row.district);
                 }
                 W.show('data', 'flex');
             });
@@ -1440,6 +1440,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.get('districtData2', function(data) {
 
                 if (data.chosen === 'Austria') {
+
                     node.game.Choice = 'Austria';
                     W.setInnerHTML('district', "Austria");
                     W.setInnerHTML('districtAgain', "Austria");
@@ -1549,22 +1550,22 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     console.log('home randomly selected!')
 
                     node.game.Choice = 'Home';
-                    var state_fig = data.state.replace(/ /g, '_');
+                    var state_fig = data.row.state.replace(/ /g, '_');
                     state_fig = state_fig.replace(/&/g, 'and');
                     state_fig = state_fig.replace(/-/g, '_');
 
-                    var district_fig = data.district.replace(/ /g, '_');
+                    var district_fig = data.row.district.replace(/ /g, '_');
                     district_fig = district_fig.replace(/&/g, 'and');
                     district_fig = district_fig.replace(/-/g, '_');
 
                     //console.log(data);
-                    W.setInnerHTML('district', data.district);
-                    W.setInnerHTML('districtAgain', data.district);
-                    W.setInnerHTML('districtAgainAgain', data.district);
-                    W.setInnerHTML('districtAgainAgainAgain', data.district);
-                    W.setInnerHTML('pm25', data.pm25.toFixed(2));
-                    W.setInnerHTML('higher', (data.pm25 / 5).toFixed(0));
-                    W.setInnerHTML('years', data.life_lost.toFixed(1));
+                    W.setInnerHTML('district', data.row.district);
+                    W.setInnerHTML('districtAgain', data.row.district);
+                    W.setInnerHTML('districtAgainAgain', data.row.district);
+                    W.setInnerHTML('districtAgainAgainAgain', data.row.district);
+                    W.setInnerHTML('pm25', data.row.pm25.toFixed(2));
+                    W.setInnerHTML('higher', (data.row.pm25 / 5).toFixed(0));
+                    W.setInnerHTML('years', data.row.life_lost.toFixed(1));
 
                     W.gid('img').src = 'district_maps/' + state_fig + '_' + district_fig + '.png';
                     W.gid('L5').src = "Leaflet_images/L5_your_district.png";
@@ -1596,11 +1597,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                 orientation: 'H',
                                 mainText: '<span style="font-weight: normal;color:gray;">Q9</span> On average, how many years of life does a person living in your district lose because of air pollution?<br>',
                                 choices: [
-                                    (data.life_lost * 0.5).toFixed(1) + ' years',
-                                    (data.life_lost * 0.8).toFixed(1) + ' years',
-                                    data.life_lost.toFixed(1) + ' years',
-                                    (data.life_lost * 1.2).toFixed(1) + ' years',
-                                    (data.life_lost * 1.5).toFixed(1) + ' years'
+                                    (data.row.life_lost * 0.5).toFixed(1) + ' years',
+                                    (data.row.life_lost * 0.8).toFixed(1) + ' years',
+                                    data.row.life_lost.toFixed(1) + ' years',
+                                    (data.row.life_lost * 1.2).toFixed(1) + ' years',
+                                    (data.row.life_lost * 1.5).toFixed(1) + ' years'
                                 ],
                                 correctChoice: 2,
                             }
