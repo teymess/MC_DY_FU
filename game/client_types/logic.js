@@ -125,7 +125,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             var random = Math.random();
             console.log(random);
 
-            let district = memory.district_player.get(msg.from);
+            var district = memory.district_player.get(msg.from);
 
             //console.log(district);
             district = district.forms.district.value;

@@ -1439,9 +1439,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         cb: function() {
             node.get('districtData2', function(data) {
 
-                var random = Math.random();
-                console.log(random);
-
                 if (data.chosen === 'Austria') {
                     node.game.Choice = 'Austria';
                     W.setInnerHTML('district', "Austria");
