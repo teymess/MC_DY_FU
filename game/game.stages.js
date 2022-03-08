@@ -107,7 +107,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             'Part2_Protection_measures_T',
         ]);
         stager.skip('Part3')
-        stager.skip('memory')
+        //stager.skip('memory')
     }
     else if (treatmentName === 'info_twice_austria') {
         stager.skip('Part2_Info_Pollution', [
@@ -132,7 +132,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             'Part2_Protection_measures_T',
         ]);
         stager.skip('Part3')
-        stager.skip('memory')
+        //stager.skip('memory')
     }
     else if (treatmentName === 'info_once_nicaragua') {
         stager.skip('Part2_Info_Pollution', [
@@ -160,7 +160,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             'Part2_Protection_measures_T',
         ]);
         stager.skip('Part3')
-        stager.skip('memory')
+        //stager.skip('memory')
     }
     else if (treatmentName === 'info_twice_nicaragua') {
         stager.skip('Part2_Info_Pollution', [
@@ -186,6 +186,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             'Part2_Protection_measures_T',
         ]);
         stager.skip('Part3')
-        stager.skip('memory')
+        //stager.skip('memory')
     }
 };

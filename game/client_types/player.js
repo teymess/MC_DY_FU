@@ -95,8 +95,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             this.visualTimer = node.widgets.append('VisualTimer', W.getHeader());
         },
         exit: function() {
-            node.game.zero = null;
-            node.game.correct = null;
             if (node.game.visualTimer) {
                 node.game.visualTimer.destroy();
                 node.game.visualTimer = null;
@@ -104,18 +102,16 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         },
     });
 
-    //////////////////////////////////////////////////////////////////
     stager.extendStep('memory_test1', {
+        name: 'Memory Task',
+        frame: 'memory.htm',
+        donebutton: false,
         cb: function() {
-            W.cssRule('table.choicetable td { text-align: center !important; ' +
-            'font-weight: normal; padding-left: 10px; }');
-        },
-        widget: {
-            name: 'ChoiceManager',
-            id: 'memory_test_1',
-            options: {
-                simplify: true,
+            node.game.memory = node.widgets.append('ChoiceManager', "input-div", {
+                id: 'memory_test_1',
+                // ref: 'controlQuestions',
                 mainText: '<div class="aligned"><a href="https://ibb.co/YWRxwpj"><img src="https://i.ibb.co/xsCNdJ5/calculator02c.jpg" alt="calculator02c" border="0" width="500px" /></a></div>',
+                simplify: true,
                 forms: [
                     {
                         id: 'mt1',
@@ -124,9 +120,21 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         requiredChoice: true
                     }
                 ]
+                // formsOptions: {
+                //     requiredChoice: true
+                // }
+            });
+        },
+        done: function() {
+            var bonus = 0;
+            if (node.game.memory.forms.memory_test_1.value === 'Yes'){
+                bonus = 0.05;
             }
+            return bonus;
         }
     });
+
+    //////////////////////////////////////////////////////////////////
 
     stager.extendStep('memory_test2', {
         cb: function() {
@@ -1969,10 +1977,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 if (node.game.contributionAmount == node.game.lifeLost) {
                     guessBonus = 0.50
                     W.setInnerHTML('payoff', '<img src="success.png" width="50px"> Your answer is <b>correct</b>! You receive a bonus of <b>$0.50</b>.<br>')
+                    return guessBonus;
                 }
                 else if ((node.game.contributionAmount != node.game.lifeLost) && (node.game.contributionAmount >= (node.game.lifeLost - 0.5)) && (node.game.contributionAmount<= (node.game.lifeLost + 0.5))) {
                     guessBonus = 0.20
                     W.setInnerHTML('payoff', '<img src="almost_correct.png" width="50px"> Your answer is within half a year of the correct value! You receive a bonus of <b>$0.20</b>.<br>')
+                    return guessBonus;
                 }
                 else {
                     guessBonus = 0.00
@@ -1983,8 +1993,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     result.style.display = '';
                     return false;
                 }
-
-                return w.getValues();
+                return {
+                    values: w.getValues(),
+                    bonus: guessBonus
+                }
             }
         });
 
