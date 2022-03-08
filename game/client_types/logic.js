@@ -114,7 +114,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
             let district = memory.district_player.get(msg.from);
 
-            console.log(district);
+            //console.log(district);
             district = district.forms.district.value;
 
             return setup.pollutionDb.district.get(district)
@@ -124,12 +124,13 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         node.on('get.districtData2', function(msg) {
             if (treatmentName === 'info_once_austria' || treatmentName === 'info_twice_austria') {
                 let choice = memory.choice_austria.get(msg.from);
-                console.log(choice);
+
+                //console.log(choice);
                 choice = choice.PC_q1_austria.value;
 
                 let district = memory.district_player.get(msg.from);
 
-                console.log(district);
+                //console.log(district);
                 district = district.forms.district.value;
 
                 return {
@@ -139,12 +140,13 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             }
             else if (treatmentName === 'info_once_nicaragua' || treatmentName === 'info_twice_nicaragua') {
                 let choice = memory.choice_nicaragua.get(msg.from);
-                console.log(choice);
+
+                //console.log(choice);
                 choice = choice.PC_q1_nicaragua.value;
 
                 let district = memory.district_player.get(msg.from);
 
-                console.log(district);
+                //console.log(district);
                 district = district.forms.district.value;
 
                 return {

@@ -1298,7 +1298,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'P4_T_q5',
                         orientation: 'H',
-                        mainText: '<div class="aligned"><img src="Leaflet_images/exclamation-mark.png" width="40px"><span> Try to remember these protection measures and apply them whenever you can! They can help protect your health against air pollution!<br/><br>' +
+                        mainText: '<a href="https://imgbb.com/"><img src="https://i.ibb.co/88yMk2s/exclamation-mark.png" alt="exclamation-mark" border="0" width="40px"></a> Try to remember these protection measures and apply them whenever you can! They can help protect your health against air pollution!<br><br>' +
                         '<span style="font-weight: normal;color:gray;">Q8</span> How likely do you think you are to remember a few of these protection measures?<br>',
                         choices: ["Very likely", "Likely",
                         "Neutral", "Not very likely", "Very unlikely"],
@@ -1418,18 +1418,20 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         cb: function() {
             node.get('districtData2', function(data) {
 
-                //console.log(data);
-
                 var random = Math.random();
                 console.log(random);
 
                 if ((data.rChoice === 'decoy' && random > 0.4) || (data.rChoice === 'home' && random <= 0.4)) {
+                    console.log('decoy randommly selected!')
 
                     if (node.game.settings.treatmentName === 'info_once_austria' || node.game.settings.treatmentName === 'info_twice_austria') {
+                        console.log('Austria chosen!')
+
                         node.game.Choice = 'Austria';
                         W.setInnerHTML('district', "Austria");
                         W.setInnerHTML('districtAgain', "Austria");
                         W.setInnerHTML('districtAgainAgain', "Austria");
+                        W.setInnerHTML('districtAgainAgainAgain', "Austria");
                         W.setInnerHTML('pm25', "11.76");
                         W.setInnerHTML('higher', "2");
                         W.setInnerHTML('years', "0.7");
@@ -1477,11 +1479,14 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     }
 
                     else {
+                        console.log('Nicaragua chosen!')
+
                         node.game.Choice = 'Nicaragua';
 
                         W.setInnerHTML('district', "Nicaragua");
                         W.setInnerHTML('districtAgain', "Nicaragua");
                         W.setInnerHTML('districtAgainAgain', "Nicaragua");
+                        W.setInnerHTML('districtAgainAgainAgain', "Nicaragua");
                         W.setInnerHTML('pm25', "8.16");
                         W.setInnerHTML('higher', "2");
                         W.setInnerHTML('years', "0.3");
@@ -1529,6 +1534,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     }
                 }
                 else {
+                    console.log('home randomly selected!')
+
                     node.game.Choice = 'Home';
                     var state_fig = data.row.state.replace(/ /g, '_');
                     state_fig = state_fig.replace(/&/g, 'and');
@@ -1542,6 +1549,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     W.setInnerHTML('district', data.row.district);
                     W.setInnerHTML('districtAgain', data.row.district);
                     W.setInnerHTML('districtAgainAgain', data.row.district);
+                    W.setInnerHTML('districtAgainAgainAgain', data.row.district);
                     W.setInnerHTML('pm25', data.row.pm25.toFixed(2));
                     W.setInnerHTML('higher', (data.row.pm25 / 5).toFixed(0));
                     W.setInnerHTML('years', data.row.life_lost.toFixed(1));
@@ -1593,6 +1601,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
                 W.show('data', 'flex');
                 node.game.doneButton.enable();
+                console.log('Hello World');
             });
         },
         done: function() {
@@ -1938,17 +1947,17 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     return false;
                 }
 
-                if (node.game.contributionAmount === node.game.lifeLost) {
+                if (node.game.contributionAmount == node.game.lifeLost) {
                     guessBonus = 0.50
-                    W.setInnerHTML('payoff', 'Your guess was correct! Therefore, you receive <b>$0.50</b>.')
+                    W.setInnerHTML('payoff', 'Your answer is correct! Therefore, you receive <b>$0.50</b>.')
                 }
-                else if ((node.game.contributionAmount >= (node.game.lifeLost - 0.5)) && (node.game.contributionAmount<= (node.game.lifeLost + 0.5))) {
+                else if ((node.game.contributionAmount != node.game.lifeLost) && (node.game.contributionAmount >= (node.game.lifeLost - 0.5)) && (node.game.contributionAmount<= (node.game.lifeLost + 0.5))) {
                     guessBonus = 0.20
-                    W.setInnerHTML('payoff', 'Your guess was within half a year of the correct value! Therefore, you receive <b>$0.20</b>.')
+                    W.setInnerHTML('payoff', 'Your answer is within half a year of the correct value! Therefore, you receive <b>$0.20</b>.')
                 }
                 else {
                     guessBonus = 0.00
-                    W.setInnerHTML('payoff', 'Your guess was not correct. Therefore, you receive no bonus.')
+                    W.setInnerHTML('payoff', 'Your answer is not correct. Therefore, you receive no bonus.')
                 }
                 result = W.gid('result');
                 if (result.style.display === 'none') {
