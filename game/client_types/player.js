@@ -1340,21 +1340,23 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 node.game.RegionC = node.widgets.append('ChoiceManager', "RegionOfChoice", {
                     id: 'PC_q',
                     // ref: 'controlQuestions',
-                    mainText: '<img src="choice.png" width="100px"> <span style="font-weight: bold;font-size:24px;color:#183194;">Your choice!</span><br/><br/>' +
+                    mainText: '<img src="choice.png" width="100px"> <span style="font-weight: bold;font-size:24px;color:#5c30af;">What do you want to read about next?</span><br/><br/>' +
                     'On the next page, you will receive an information leaflet on <b>air pollution levels</b> and its <b>measured impact ' +
                     'on health</b> in a specific region. <br> <br>' +
                     'You have now the opportunity to <b><span style="font-size:25px;color:#ee6933;">choose the region</span></b> that will be presented on the next page. ' +
-                    '<br> <br>However, your selection will only be implemented with a <b>60% probability</b>. With a 40 % probability, we will show you information on the other option.<br> <br>',
+                    '<br> <br><img src="dices.png" width="40px"> However, your selection will only be implemented with a <b>60% probability</b>.<br> With a 40 % probability, we will show you information on the other option.<br> <br>',
                     simplify: true,
                     forms: [
                       {
                           id: 'PC_q1_austria',
                           orientation: 'V',
-                          mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which region would you like to read information on air pollution and health impacts about?',
-                          // hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
+                          mainText: '<span style="font-weight: normal;color:gray;font-size:30px;">Q5</span> <span style="font-size:30px;">Which region would you like to read information on air pollution and health impacts about?</span>',
+                         // hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
                           choices: [
                             ['home', data.district  + ' (' + data.state + ')'],
                             ['decoy', "Austria (a country in central Europe)"]
+                            // ['home', "<span style="font-size:25px;color:#ee6933;">" + data.district + '</span>' + ' (' + data.state + ')'],
+                            // ['decoy', "<span style="font-size:25px;color:#ee6933;">Austria</span> (a country in central Europe)"]
                           ],
                           requiredChoice: true,
                           shuffleChoices: true
@@ -1387,20 +1389,20 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 node.game.RegionC = node.widgets.append('ChoiceManager', "RegionOfChoice", {
                     id: 'PC_q',
                     // ref: 'controlQuestions',
-                    mainText: '<img src="choice.png" width="100px"> <span style="font-weight: bold;font-size:24px;color:#183194;">Your choice!</span><br/><br/>' +
+                    mainText: '<img src="choice.png" width="100px"> <span style="font-weight: bold;font-size:24px;color:#5c30af;">What do you want to read about next?</span><br/><br/>' +
                     'On the next page, you will receive an information leaflet on <b>air pollution levels</b> and its <b>measured impact ' +
                     'on health</b> in a specific region. <br> <br>' +
                     'You have now the opportunity to <b><span style="font-size:25px;color:#ee6933;">choose the region</span></b> that will be presented on the next page. ' +
-                    '<br> <br>However, your selection will only be implemented with a <b>60% probability</b>. With a 40 % probability, we will show you information on the other option.<br> <br>',
+                    '<br> <br><img src="dices.png" width="40px"> However, your selection will only be implemented with a <b>60% probability</b>.<br> With a 40 % probability, we will show you information on the other option.<br> <br>',
                     simplify: true,
                     forms: [
                       {
                           id: 'PC_q1_nicaragua',
                           orientation: 'V',
-                          mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which region would you like to read information on air pollution and health impacts about?',
+                          mainText: '<span style="font-weight: normal;color:gray;font-size:30px;">Q5</span> <span style="font-size:30px;">Which region would you like to read information on air pollution and health impacts about?</span>',
                          // hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
                           choices: [
-                            ['home', data.district  + ' (' + data.state + ')'],
+                            ['home',  data.district + ' (' + data.state + ')'],
                             ['decoy', "Nicaragua (a country in Central America)"]
                           ],
                           requiredChoice: true,
@@ -1420,7 +1422,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         }
     });
 
-
+    ////////////////////////////////////////////////////////////////////////////
     stager.extendStep('Part2_choice_outcome', {
         name: 'Part 2: Reading and comprehension',
         frame: 'choice_outcome.htm',
@@ -1465,31 +1467,31 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     W.setInnerHTML('years', "0.7");
                     W.gid('img').src = "district_maps/AUT.png";
                     W.gid('L5').src = "Leaflet_images/L5_Austria.png";
-                    W.gid('banner').src = "Leaflet_images/banner_PM25_Austria.png";
+                    // W.gid('banner').src = "Leaflet_images/banner_PM25_Austria.png";
 
                     node.game.controlQuestions = node.widgets.append('ChoiceManager', "ComprehquestionsL5", {
                         id: 'p5_q',
                         // ref: 'controlQuestions',
-                        mainText: 'Based on the information <em>provided</em> in the box above, find the correct answer to the questions below.<br>' +
-                        '<span style="color:gray;font-size:14px;">(All your answers need to be correct in order to be able to proceed to the next page.) </span>',
+                        mainText: 'Based on the information provided in the box above, find the correct answer to the question below.<br>' +
+                        '<span style="color:gray;font-size:14px;">(Your answer needs to be correct in order to be able to proceed to the next page.) </span>',
                         simplify: true,
                         forms: [
+                            // {
+                            //     id: 'p5_q1',
+                            //     orientation: 'H',
+                            //     mainText: '<span style="font-weight: normal;color:gray;">Q8</span> What is the WHO recommendation for the annual average PM 2.5 concentrations?<br>',
+                            //     choices: [
+                            //         ['0', "0 &mu;g/m<sup>3</sup>"],
+                            //         ['5', "5 &mu;g/m<sup>3</sup>"],
+                            //         ['15', "15 &mu;g/m<sup>3</sup>"],
+                            //         ['30', "30 &mu;g/m<sup>3</sup>"],
+                            //     ],
+                            //     correctChoice: 1,
+                            // },
                             {
                                 id: 'p5_q1',
                                 orientation: 'H',
-                                mainText: '<span style="font-weight: normal;color:gray;">Q8</span> What is the WHO recommendation for the annual average PM 2.5 concentrations?<br>',
-                                choices: [
-                                    ['0', "0 &mu;g/m<sup>3</sup>"],
-                                    ['5', "5 &mu;g/m<sup>3</sup>"],
-                                    ['15', "15 &mu;g/m<sup>3</sup>"],
-                                    ['30', "30 &mu;g/m<sup>3</sup>"],
-                                ],
-                                correctChoice: 1,
-                            },
-                            {
-                                id: 'p5_q2',
-                                orientation: 'H',
-                                mainText: '<span style="font-weight: normal;color:gray;">Q9</span> On average, how many years of life does a person living in Austria lose because of air pollution?<br>',
+                                mainText: '<span style="font-weight: normal;color:gray;">Q8</span> On average, how many years of life does a person living in Austria lose because of air pollution?<br>',
                                 choices: [
                                     (0.7 * 0.5).toFixed(1) + ' years',
                                     (0.7 * 0.8).toFixed(1) + ' years',
@@ -1520,31 +1522,31 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     W.setInnerHTML('years', "0.3");
                     W.gid('img').src = "district_maps/NIC.png";
                     W.gid('L5').src = "Leaflet_images/L5_Nicaragua.png";
-                    W.gid('banner').src = "Leaflet_images/banner_PM25_Nicaragua.png";
+                    // W.gid('banner').src = "Leaflet_images/banner_PM25_Nicaragua.png";
 
                     node.game.controlQuestions = node.widgets.append('ChoiceManager', "ComprehquestionsL5", {
                         id: 'p5_q',
                         // ref: 'controlQuestions',
-                        mainText: 'Based on the information <em>provided</em> in the box above, find the correct answer to the questions below.<br>' +
-                        '<span style="color:gray;font-size:14px;">(All your answers need to be correct in order to be able to proceed to the next page.) </span>',
+                        mainText: 'Based on the information provided in the box above, find the correct answer to the question below.<br>' +
+                        '<span style="color:gray;font-size:14px;">(Your answer needs to be correct in order to be able to proceed to the next page.) </span>',
                         simplify: true,
                         forms: [
+                            // {
+                            //     id: 'p5_q1',
+                            //     orientation: 'H',
+                            //     mainText: '<span style="font-weight: normal;color:gray;">Q8</span> What is the WHO recommendation for the annual average PM 2.5 concentrations?<br>',
+                            //     choices: [
+                            //         ['0', "0 &mu;g/m<sup>3</sup>"],
+                            //         ['5', "5 &mu;g/m<sup>3</sup>"],
+                            //         ['15', "15 &mu;g/m<sup>3</sup>"],
+                            //         ['30', "30 &mu;g/m<sup>3</sup>"],
+                            //     ],
+                            //     correctChoice: 1,
+                            // },
                             {
                                 id: 'p5_q1',
                                 orientation: 'H',
-                                mainText: '<span style="font-weight: normal;color:gray;">Q8</span> What is the WHO recommendation for the annual average PM 2.5 concentrations?<br>',
-                                choices: [
-                                    ['0', "0 &mu;g/m<sup>3</sup>"],
-                                    ['5', "5 &mu;g/m<sup>3</sup>"],
-                                    ['15', "15 &mu;g/m<sup>3</sup>"],
-                                    ['30', "30 &mu;g/m<sup>3</sup>"],
-                                ],
-                                correctChoice: 1,
-                            },
-                            {
-                                id: 'p5_q2',
-                                orientation: 'H',
-                                mainText: '<span style="font-weight: normal;color:gray;">Q9</span> On average, how many years of life does a person living in Nicaragua lose because of air pollution?<br>',
+                                mainText: '<span style="font-weight: normal;color:gray;">Q8</span> On average, how many years of life does a person living in Nicaragua lose because of air pollution?<br>',
                                 choices: [
                                     (0.3 * 0.5).toFixed(1) + ' years',
                                     (0.3 * 0.8).toFixed(1) + ' years',
@@ -1583,33 +1585,33 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
                     W.gid('img').src = 'district_maps/' + state_fig + '_' + district_fig + '.png';
                     W.gid('L5').src = "Leaflet_images/L5_your_district.png";
-                    W.gid('banner').src = "Leaflet_images/banner_PM25_comp.png";
+                    // W.gid('banner').src = "Leaflet_images/banner_PM25_comp.png";
 
 
 
                     node.game.controlQuestions = node.widgets.append('ChoiceManager', "ComprehquestionsL5", {
                         id: 'p5_q',
                         // ref: 'controlQuestions',
-                        mainText: 'Based on the information <em>provided</em> in the box above, find the correct answer to the questions below.<br>' +
-                        '<span style="color:gray;font-size:14px;">(All your answers need to be correct in order to be able to proceed to the next page.) </span>',
+                        mainText: 'Based on the information provided in the box above, find the correct answer to the question below.<br>' +
+                        '<span style="color:gray;font-size:14px;">(Your answer needs to be correct in order to be able to proceed to the next page.) </span>',
                         simplify: true,
                         forms: [
+                            // {
+                            //     id: 'p5_q1',
+                            //     orientation: 'H',
+                            //     mainText: '<span style="font-weight: normal;color:gray;">Q8</span> What is the WHO recommendation for the annual average PM 2.5 concentrations?<br>',
+                            //     choices: [
+                            //         ['0', "0 &mu;g/m<sup>3</sup>"],
+                            //         ['5', "5 &mu;g/m<sup>3</sup>"],
+                            //         ['15', "15 &mu;g/m<sup>3</sup>"],
+                            //         ['30', "30 &mu;g/m<sup>3</sup>"],
+                            //     ],
+                            //     correctChoice: 1,
+                            // },
                             {
                                 id: 'p5_q1',
                                 orientation: 'H',
-                                mainText: '<span style="font-weight: normal;color:gray;">Q8</span> What is the WHO recommendation for the annual average PM 2.5 concentrations?<br>',
-                                choices: [
-                                    ['0', "0 &mu;g/m<sup>3</sup>"],
-                                    ['5', "5 &mu;g/m<sup>3</sup>"],
-                                    ['15', "15 &mu;g/m<sup>3</sup>"],
-                                    ['30', "30 &mu;g/m<sup>3</sup>"],
-                                ],
-                                correctChoice: 1,
-                            },
-                            {
-                                id: 'p5_q2',
-                                orientation: 'H',
-                                mainText: '<span style="font-weight: normal;color:gray;">Q9</span> On average, how many years of life does a person living in your district lose because of air pollution?<br>',
+                                mainText: '<span style="font-weight: normal;color:gray;">Q8</span> On average, how many years of life does a person living in your district lose because of air pollution?<br>',
                                 choices: [
                                     (data.row.life_lost * 0.5).toFixed(1) + ' years',
                                     (data.row.life_lost * 0.8).toFixed(1) + ' years',
