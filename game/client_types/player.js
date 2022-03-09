@@ -102,246 +102,645 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         },
     });
 
+    ///Pictures
+    ///Positive setup
+    // <a href="https://ibb.co/NZh0B2H"><img src="https://i.ibb.co/6ghKC0f/calculator02c.jpg" alt="calculator02c" border="0" /></a>
+    // <a href="https://ibb.co/Js3nt8D"><img src="https://i.ibb.co/HHh74R5/candelabra.jpg" alt="candelabra" border="0" /></a>
+    // <a href="https://ibb.co/VSNJyVt"><img src="https://i.ibb.co/wWLBHyR/carbattery.jpg" alt="carbattery" border="0" /></a>
+    // <a href="https://ibb.co/SBJtJQ1"><img src="https://i.ibb.co/89XrXzR/dice02a.jpg" alt="dice02a" border="0" /></a>
+    // <a href="https://ibb.co/h1Lm9pt"><img src="https://i.ibb.co/vvVjq2K/paintbrush03a.jpg" alt="paintbrush03a" border="0" /></a>
+    // <a href="https://ibb.co/5Kv6GYQ"><img src="https://i.ibb.co/g4w3mv0/rope02.jpg" alt="rope02" border="0" /></a>
+    // <a href="https://ibb.co/TvcHpcM"><img src="https://i.ibb.co/C1BnNBK/sponge02a.jpg" alt="sponge02a" border="0" /></a>
+    // <a href="https://ibb.co/86YzD9V"><img src="https://i.ibb.co/NZT16Kz/thumbtack02b.jpg" alt="thumbtack02b" border="0" /></a>
+
+    ///Negative setup
+    // <a href="https://ibb.co/FzV0f3z"><img src="https://i.ibb.co/vkYQrqk/boxtruck.jpg" alt="boxtruck" border="0" /></a>
+    // <a href="https://ibb.co/QjQVF77"><img src="https://i.ibb.co/G3pDvff/butterfly.jpg" alt="butterfly" border="0" /></a>
+    // <a href="https://ibb.co/K54MVf9"><img src="https://i.ibb.co/51pNsS5/envelope02b.jpg" alt="envelope02b" border="0" /></a>
+    // <a href="https://ibb.co/PGhMPKc"><img src="https://i.ibb.co/nMcBY97/lighter03b.jpg" alt="lighter03b" border="0" /></a>
+    // <a href="https://ibb.co/fkYkhRv"><img src="https://i.ibb.co/y6n6wTS/spatula01.jpg" alt="spatula01" border="0" /></a>
+    // <a href="https://ibb.co/V93T77H"><img src="https://i.ibb.co/Pjtg77T/usbcable01b.jpg" alt="usbcable01b" border="0" /></a>
+    // <a href="https://ibb.co/CVg22LX"><img src="https://i.ibb.co/xzWHHZc/watermelon02b.jpg" alt="watermelon02b" border="0" /></a>
+
+
     stager.extendStep('memory_test1', {
         name: 'Memory Task',
         frame: 'memory.htm',
-        donebutton: false,
         cb: function() {
-            node.game.memory = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory1 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_1',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/YWRxwpj"><img src="https://i.ibb.co/xsCNdJ5/calculator02c.jpg" alt="calculator02c" border="0" width="500px" /></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/V93T77H"><img src="https://i.ibb.co/Pjtg77T/usbcable01b.jpg" alt="usbcable01b" border="0" width="500px" /></a></div>',
                 simplify: true,
                 forms: [
                     {
                         id: 'mt1',
-                        mainText: '<span style="font-weight: normal;color:gray;">T1</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T1</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
                 ]
-                // formsOptions: {
-                //     requiredChoice: true
-                // }
             });
         },
         done: function() {
-            var bonus = 0;
-            if (node.game.memory.forms.memory_test_1.value === 'Yes'){
-                bonus = 0.05;
+            node.game.bonusMemory1 = 0;
+            var q1, q2;
+            q1 = node.game.memory1;
+            var answer = q1.formsById.mt1.getValues().value
+            console.log(answer);
+
+            if (answer === 'No'){
+                node.game.bonusMemory1 = 0.02;
             }
-            return bonus;
+
+            q2 = q1.formsById.mt1;
+            if (q2.isHidden()) {
+                q2.reset(); // removes error.
+                q2.show();
+                return false;
+            }
+            q1.hide();
+            return { bonus: node.game.bonusMemory1 };
         }
     });
 
-    //////////////////////////////////////////////////////////////////
-
     stager.extendStep('memory_test2', {
+        name: 'Memory Task',
+        frame: 'memory.htm',
         cb: function() {
-            W.cssRule('table.choicetable td { text-align: center !important; ' +
-            'font-weight: normal; padding-left: 10px; }');
-        },
-        widget: {
-            name: 'ChoiceManager',
-            id: 'memory_test_2',
-            options: {
+            node.game.memory2 = node.widgets.append('ChoiceManager', "input-div", {
+                id: 'memory_test_2',
+                // ref: 'controlQuestions',
+                mainText: '<div class="aligned"><a href="https://ibb.co/5Kv6GYQ"><img src="https://i.ibb.co/g4w3mv0/rope02.jpg" alt="rope02" border="0" width="500px" /></a></div>',
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/5TnNxqF"><img src="https://i.ibb.co/XX3hkm8/watermelon02b.jpg" alt="watermelon02b" border="0" width="500px" /></a></div>',
                 forms: [
                     {
                         id: 'mt2',
-                        mainText: '<span style="font-weight: normal;color:gray;">T2</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T2</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
                 ]
+            });
+        },
+        done: function() {
+            node.game.bonusMemory2 = 0;
+            var q1, q2;
+            q1 = node.game.memory2;
+            var answer = q1.formsById.mt2.getValues().value
+            console.log(answer);
+
+            if (answer === 'Yes'){
+                node.game.bonusMemory2 = 0.02;
             }
+
+            q2 = q1.formsById.mt2;
+            if (q2.isHidden()) {
+                q2.reset(); // removes error.
+                q2.show();
+                return false;
+            }
+            q1.hide();
+            return { bonus: node.game.bonusMemory2 };
         }
     });
 
+
+    //////////////////////////////////////////////////////////////////
+
     stager.extendStep('memory_test3', {
+        name: 'Memory Task',
+        frame: 'memory.htm',
         cb: function() {
-            W.cssRule('table.choicetable td { text-align: center !important; ' +
-            'font-weight: normal; padding-left: 10px; }');
-        },
-        widget: {
-            name: 'ChoiceManager',
-            id: 'memory_test_3',
-            options: {
+            node.game.memory3 = node.widgets.append('ChoiceManager', "input-div", {
+                id: 'memory_test_3',
+                // ref: 'controlQuestions',
+                mainText: '<div class="aligned"><a href="https://ibb.co/NZh0B2H"><img src="https://i.ibb.co/6ghKC0f/calculator02c.jpg" alt="calculator02c" border="0" width="500px" /></a></div>',
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/wy4xVQ6"><img src="https://i.ibb.co/Mn73r1N/paintbrush03a.jpg" alt="paintbrush03a" border="0" width="500px"/></a></div>',
                 forms: [
                     {
                         id: 'mt3',
-                        mainText: '<span style="font-weight: normal;color:gray;">T3</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T3</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
                 ]
+            });
+        },
+        done: function() {
+            node.game.bonusMemory3 = 0;
+            var q1, q2;
+            q1 = node.game.memory3;
+            var answer = q1.formsById.mt3.getValues().value
+            console.log(answer);
+
+            if (answer === 'Yes'){
+                node.game.bonusMemory3 = 0.02;
             }
+
+            q2 = q1.formsById.mt3;
+            if (q2.isHidden()) {
+                q2.reset(); // removes error.
+                q2.show();
+                return false;
+            }
+            q1.hide();
+            return { bonus: node.game.bonusMemory3 };
         }
     });
 
     stager.extendStep('memory_test4', {
+        name: 'Memory Task',
+        frame: 'memory.htm',
         cb: function() {
-            W.cssRule('table.choicetable td { text-align: center !important; ' +
-            'font-weight: normal; padding-left: 10px; }');
-        },
-        widget: {
-            name: 'ChoiceManager',
-            id: 'memory_test_4',
-            options: {
+            node.game.memory4 = node.widgets.append('ChoiceManager', "input-div", {
+                id: 'memory_test_4',
+                // ref: 'controlQuestions',
+                mainText: '<div class="aligned"><a href="https://ibb.co/K54MVf9"><img src="https://i.ibb.co/51pNsS5/envelope02b.jpg" alt="envelope02b" border="0" width="500px" /></a></div>',
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/ySSyZyT"><img src="https://i.ibb.co/TLL878X/ladle02b.jpg" alt="ladle02b" border="0" width="500px"/></a></div>',
                 forms: [
                     {
                         id: 'mt4',
-                        mainText: '<span style="font-weight: normal;color:gray;">T4</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T4</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
                 ]
+            });
+        },
+        done: function() {
+            node.game.bonusMemory4 = 0;
+            var q1, q2;
+            q1 = node.game.memory4;
+            var answer = q1.formsById.mt4.getValues().value
+            console.log(answer);
+
+            if (answer === 'No'){
+                node.game.bonusMemory4 = 0.02;
             }
+
+            q2 = q1.formsById.mt4;
+            if (q2.isHidden()) {
+                q2.reset(); // removes error.
+                q2.show();
+                return false;
+            }
+            q1.hide();
+            return { bonus: node.game.bonusMemory4 };
         }
     });
 
     stager.extendStep('memory_test5', {
+        name: 'Memory Task',
+        frame: 'memory.htm',
         cb: function() {
-            W.cssRule('table.choicetable td { text-align: center !important; ' +
-            'font-weight: normal; padding-left: 10px; }');
-        },
-        widget: {
-            name: 'ChoiceManager',
-            id: 'memory_test_5',
-            options: {
+            node.game.memory5 = node.widgets.append('ChoiceManager', "input-div", {
+                id: 'memory_test_5',
+                // ref: 'controlQuestions',
+                mainText: '<div class="aligned"><a href="https://ibb.co/SBJtJQ1"><img src="https://i.ibb.co/89XrXzR/dice02a.jpg" alt="dice02a" border="0" width="500px" /></a></div>',
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/4TpmKL7"><img src="https://i.ibb.co/vPkwVWH/usbcable01b.jpg" alt="usbcable01b" border="0" width="500px" /></a></div>',
                 forms: [
                     {
                         id: 'mt5',
-                        mainText: '<span style="font-weight: normal;color:gray;">T5</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T5</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
                 ]
+            });
+        },
+        done: function() {
+            node.game.bonusMemory5 = 0;
+            var q1, q2;
+            q1 = node.game.memory5;
+            var answer = q1.formsById.mt5.getValues().value
+            console.log(answer);
+
+            if (answer === 'Yes'){
+                node.game.bonusMemory5 = 0.02;
             }
+
+            q2 = q1.formsById.mt5;
+            if (q2.isHidden()) {
+                q2.reset(); // removes error.
+                q2.show();
+                return false;
+            }
+            q1.hide();
+            return { bonus: node.game.bonusMemory5 };
         }
     });
 
     stager.extendStep('memory_test6', {
+        name: 'Memory Task',
+        frame: 'memory.htm',
         cb: function() {
-            W.cssRule('table.choicetable td { text-align: center !important; ' +
-            'font-weight: normal; padding-left: 10px; }');
-        },
-        widget: {
-            name: 'ChoiceManager',
-            id: 'memory_test_6',
-            options: {
+            node.game.memory6 = node.widgets.append('ChoiceManager', "input-div", {
+                id: 'memory_test_6',
+                // ref: 'controlQuestions',
+                mainText: '<div class="aligned"><a href="https://ibb.co/CVg22LX"><img src="https://i.ibb.co/xzWHHZc/watermelon02b.jpg" alt="watermelon02b" border="0" width="500px" /></a></div>',
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/0ZTFxRQ"><img src="https://i.ibb.co/tcgx9T3/spatula01.jpg" alt="spatula01" border="0" width="500px"/></a></div>',
                 forms: [
                     {
                         id: 'mt6',
-                        mainText: '<span style="font-weight: normal;color:gray;">T6</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T6</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
                 ]
+            });
+        },
+        done: function() {
+            node.game.bonusMemory6 = 0;
+            var q1, q2;
+            q1 = node.game.memory6;
+            var answer = q1.formsById.mt6.getValues().value
+            console.log(answer);
+
+            if (answer === 'No'){
+                node.game.bonusMemory6 = 0.02;
             }
+
+            q2 = q1.formsById.mt6;
+            if (q2.isHidden()) {
+                q2.reset(); // removes error.
+                q2.show();
+                return false;
+            }
+            q1.hide();
+            return { bonus: node.game.bonusMemory6 };
         }
     });
 
     stager.extendStep('memory_test7', {
+        name: 'Memory Task',
+        frame: 'memory.htm',
         cb: function() {
-            W.cssRule('table.choicetable td { text-align: center !important; ' +
-            'font-weight: normal; padding-left: 10px; }');
-        },
-        widget: {
-            name: 'ChoiceManager',
-            id: 'memory_test_7',
-            options: {
+            node.game.memory7 = node.widgets.append('ChoiceManager', "input-div", {
+                id: 'memory_test_7',
+                // ref: 'controlQuestions',
+                mainText: '<div class="aligned"><a href="https://ibb.co/h1Lm9pt"><img src="https://i.ibb.co/vvVjq2K/paintbrush03a.jpg" alt="paintbrush03a" border="0" width="500px" /></a></div>',
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/sQY5v2s"><img src="https://i.ibb.co/tcrZM4Y/pot02b.jpg" alt="pot02b" border="0" width="500px"></a></div>',
                 forms: [
                     {
                         id: 'mt7',
-                        mainText: '<span style="font-weight: normal;color:gray;">T7</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T7</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
                 ]
+            });
+        },
+        done: function() {
+            node.game.bonusMemory7 = 0;
+            var q1, q2;
+            q1 = node.game.memory7;
+            var answer = q1.formsById.mt7.getValues().value
+            console.log(answer);
+
+            if (answer === 'Yes'){
+                node.game.bonusMemory7 = 0.02;
             }
+
+            q2 = q1.formsById.mt7;
+            if (q2.isHidden()) {
+                q2.reset(); // removes error.
+                q2.show();
+                return false;
+            }
+            q1.hide();
+            return { bonus: node.game.bonusMemory7 };
         }
     });
 
     stager.extendStep('memory_test8', {
+        name: 'Memory Task',
+        frame: 'memory.htm',
         cb: function() {
-            W.cssRule('table.choicetable td { text-align: center !important; ' +
-            'font-weight: normal; padding-left: 10px; }');
-        },
-        widget: {
-            name: 'ChoiceManager',
-            id: 'memory_test_8',
-            options: {
+            node.game.memory8 = node.widgets.append('ChoiceManager', "input-div", {
+                id: 'memory_test_8',
+                // ref: 'controlQuestions',
+                mainText: '<div class="aligned"><a href="https://ibb.co/TvcHpcM"><img src="https://i.ibb.co/C1BnNBK/sponge02a.jpg" alt="sponge02a" border="0" width="500px" /></a></div>',
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/X82xby2"><img src="https://i.ibb.co/74YtXgY/carbattery.jpg" alt="carbattery" border="0" width="500px" /></a></a></div>',
                 forms: [
                     {
                         id: 'mt8',
-                        mainText: '<span style="font-weight: normal;color:gray;">T8</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T8</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
                 ]
+            });
+        },
+        done: function() {
+            node.game.bonusMemory8 = 0;
+            var q1, q2;
+            q1 = node.game.memory8;
+            var answer = q1.formsById.mt8.getValues().value
+            console.log(answer);
+
+            if (answer === 'Yes'){
+                node.game.bonusMemory8 = 0.02;
             }
+
+            q2 = q1.formsById.mt8;
+            if (q2.isHidden()) {
+                q2.reset(); // removes error.
+                q2.show();
+                return false;
+            }
+            q1.hide();
+            return { bonus: node.game.bonusMemory8 };
         }
     });
 
     stager.extendStep('memory_test9', {
+        name: 'Memory Task',
+        frame: 'memory.htm',
         cb: function() {
-            W.cssRule('table.choicetable td { text-align: center !important; ' +
-            'font-weight: normal; padding-left: 10px; }');
-        },
-        widget: {
-            name: 'ChoiceManager',
-            id: 'memory_test_9',
-            options: {
+            node.game.memory9 = node.widgets.append('ChoiceManager', "input-div", {
+                id: 'memory_test_9',
+                // ref: 'controlQuestions',
+                mainText: '<div class="aligned"><a href="https://ibb.co/PGhMPKc"><img src="https://i.ibb.co/nMcBY97/lighter03b.jpg" alt="lighter03b" border="0" width="500px" /></a></div>',
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/4K0c8Hb"><img src="https://i.ibb.co/DzjN9ZB/sponge02a.jpg" alt="sponge02a" border="0" width="500px" /></a></a></div>',
                 forms: [
                     {
                         id: 'mt9',
-                        mainText: '<span style="font-weight: normal;color:gray;">T9</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T9</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
                 ]
+            });
+        },
+        done: function() {
+            node.game.bonusMemory9 = 0;
+            var q1, q2;
+            q1 = node.game.memory9;
+            var answer = q1.formsById.mt9.getValues().value
+            console.log(answer);
+
+            if (answer === 'No'){
+                node.game.bonusMemory9 = 0.02;
             }
+
+            q2 = q1.formsById.mt9;
+            if (q2.isHidden()) {
+                q2.reset(); // removes error.
+                q2.show();
+                return false;
+            }
+            q1.hide();
+            return { bonus: node.game.bonusMemory9 };
         }
     });
 
     stager.extendStep('memory_test10', {
+        name: 'Memory Task',
+        frame: 'memory.htm',
         cb: function() {
-            W.cssRule('table.choicetable td { text-align: center !important; ' +
-            'font-weight: normal; padding-left: 10px; }');
-        },
-        widget: {
-            name: 'ChoiceManager',
-            id: 'memory_test_10',
-            options: {
+            node.game.memory10 = node.widgets.append('ChoiceManager', "input-div", {
+                id: 'memory_test_10',
+                // ref: 'controlQuestions',
+                mainText: '<div class="aligned"><a href="https://ibb.co/FzV0f3z"><img src="https://i.ibb.co/vkYQrqk/boxtruck.jpg" alt="boxtruck" border="0" width="500px" /></a></div>',
                 simplify: true,
-                mainText: '<div class="aligned"><a href="https://ibb.co/2cmcwyw"><img src="https://i.ibb.co/NWQWXsX/boxtruck.jpg" alt="boxtruck" border="0" width="500px" /></a></a></div>',
                 forms: [
                     {
                         id: 'mt10',
-                        mainText: '<span style="font-weight: normal;color:gray;">T10</span> Have you seen this item earlier in the task?',
+                        mainText: '<span style="font-weight: normal;color:gray;">T10</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
                 ]
+            });
+        },
+        done: function() {
+            node.game.bonusMemory10 = 0;
+            var q1, q2;
+            q1 = node.game.memory10;
+            var answer = q1.formsById.mt10.getValues().value
+            console.log(answer);
+
+            if (answer === 'No'){
+                node.game.bonusMemory10 = 0.02;
             }
+
+            q2 = q1.formsById.mt10;
+            if (q2.isHidden()) {
+                q2.reset(); // removes error.
+                q2.show();
+                return false;
+            }
+            q1.hide();
+            return { bonus: node.game.bonusMemory10 };
         }
     });
+
+    stager.extendStep('memory_test11', {
+        name: 'Memory Task',
+        frame: 'memory.htm',
+        cb: function() {
+            node.game.memory11 = node.widgets.append('ChoiceManager', "input-div", {
+                id: 'memory_test_11',
+                // ref: 'controlQuestions',
+                mainText: '<div class="aligned"><a href="https://ibb.co/Js3nt8D"><img src="https://i.ibb.co/HHh74R5/candelabra.jpg" alt="candelabra" border="0" width="500px" /></a></div>',
+                simplify: true,
+                forms: [
+                    {
+                        id: 'mt11',
+                        mainText: '<span style="font-weight: normal;color:gray;">T11</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        choices: ['No', 'Yes'],
+                        requiredChoice: true
+                    }
+                ]
+            });
+        },
+        done: function() {
+            node.game.bonusMemory11 = 0;
+            var q1, q2;
+            q1 = node.game.memory11;
+            var answer = q1.formsById.mt11.getValues().value
+            console.log(answer);
+
+            if (answer === 'Yes'){
+                node.game.bonusMemory11 = 0.02;
+            }
+
+            q2 = q1.formsById.mt11;
+            if (q2.isHidden()) {
+                q2.reset(); // removes error.
+                q2.show();
+                return false;
+            }
+            q1.hide();
+            return { bonus: node.game.bonusMemory11 };
+        }
+    });
+
+    stager.extendStep('memory_test12', {
+        name: 'Memory Task',
+        frame: 'memory.htm',
+        cb: function() {
+            node.game.memory12 = node.widgets.append('ChoiceManager', "input-div", {
+                id: 'memory_test_12',
+                // ref: 'controlQuestions',
+                mainText: '<div class="aligned"><a href="https://ibb.co/fkYkhRv"><img src="https://i.ibb.co/y6n6wTS/spatula01.jpg" alt="spatula01" border="0" width="500px" /></a></div>',
+                simplify: true,
+                forms: [
+                    {
+                        id: 'mt12',
+                        mainText: '<span style="font-weight: normal;color:gray;">T12</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        choices: ['No', 'Yes'],
+                        requiredChoice: true
+                    }
+                ]
+            });
+        },
+        done: function() {
+            node.game.bonusMemory12 = 0;
+            var q1, q2;
+            q1 = node.game.memory12;
+            var answer = q1.formsById.mt12.getValues().value
+            console.log(answer);
+
+            if (answer === 'No'){
+                node.game.bonusMemory12 = 0.02;
+            }
+
+            q2 = q1.formsById.mt12;
+            if (q2.isHidden()) {
+                q2.reset(); // removes error.
+                q2.show();
+                return false;
+            }
+            q1.hide();
+            return { bonus: node.game.bonusMemory12 };
+        }
+    });
+
+    stager.extendStep('memory_test13', {
+        name: 'Memory Task',
+        frame: 'memory.htm',
+        cb: function() {
+            node.game.memory13 = node.widgets.append('ChoiceManager', "input-div", {
+                id: 'memory_test_13',
+                // ref: 'controlQuestions',
+                mainText: '<div class="aligned"><a href="https://ibb.co/QjQVF77"><img src="https://i.ibb.co/G3pDvff/butterfly.jpg" alt="butterfly" border="0" width="500px" /></a></div>',
+                simplify: true,
+                forms: [
+                    {
+                        id: 'mt13',
+                        mainText: '<span style="font-weight: normal;color:gray;">T13</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        choices: ['No', 'Yes'],
+                        requiredChoice: true
+                    }
+                ]
+            });
+        },
+        done: function() {
+            node.game.bonusMemory13 = 0;
+            var q1, q2;
+            q1 = node.game.memory13;
+            var answer = q1.formsById.mt13.getValues().value
+            console.log(answer);
+
+            if (answer === 'No'){
+                node.game.bonusMemory13 = 0.02;
+            }
+
+            q2 = q1.formsById.mt13;
+            if (q2.isHidden()) {
+                q2.reset(); // removes error.
+                q2.show();
+                return false;
+            }
+            q1.hide();
+            return { bonus: node.game.bonusMemory13 };
+        }
+    });
+
+    stager.extendStep('memory_test14', {
+        name: 'Memory Task',
+        frame: 'memory.htm',
+        cb: function() {
+            node.game.memory14 = node.widgets.append('ChoiceManager', "input-div", {
+                id: 'memory_test_14',
+                // ref: 'controlQuestions',
+                mainText: '<div class="aligned"><a href="https://ibb.co/86YzD9V"><img src="https://i.ibb.co/NZT16Kz/thumbtack02b.jpg" alt="thumbtack02b" border="0" width="500px" /></a></div>',
+                simplify: true,
+                forms: [
+                    {
+                        id: 'mt14',
+                        mainText: '<span style="font-weight: normal;color:gray;">T14</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        choices: ['No', 'Yes'],
+                        requiredChoice: true
+                    }
+                ]
+            });
+        },
+        done: function() {
+            node.game.bonusMemory14 = 0;
+            var q1, q2;
+            q1 = node.game.memory14;
+            var answer = q1.formsById.mt14.getValues().value
+            console.log(answer);
+
+            if (answer === 'Yes'){
+                node.game.bonusMemory14 = 0.02;
+            }
+
+            q2 = q1.formsById.mt14;
+            if (q2.isHidden()) {
+                q2.reset(); // removes error.
+                q2.show();
+                return false;
+            }
+            q1.hide();
+            return { bonus: node.game.bonusMemory14 };
+        }
+    });
+
+    stager.extendStep('memory_test15', {
+        name: 'Memory Task',
+        frame: 'memory.htm',
+        cb: function() {
+            node.game.memory15 = node.widgets.append('ChoiceManager', "input-div", {
+                id: 'memory_test_15',
+                // ref: 'controlQuestions',
+                mainText: '<div class="aligned"><a href="https://ibb.co/VSNJyVt"><img src="https://i.ibb.co/wWLBHyR/carbattery.jpg" alt="carbattery" border="0" width="500px" /></a></div>',
+                simplify: true,
+                forms: [
+                    {
+                        id: 'mt15',
+                        mainText: '<span style="font-weight: normal;color:gray;">T15</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        choices: ['No', 'Yes'],
+                        requiredChoice: true
+                    }
+                ]
+            });
+        },
+        done: function() {
+            node.game.bonusMemory15 = 0;
+            var q1, q2;
+            q1 = node.game.memory15;
+            var answer = q1.formsById.mt15.getValues().value
+            console.log(answer);
+
+            if (answer === 'Yes'){
+                node.game.bonusMemory15 = 0.02;
+            }
+
+            q2 = q1.formsById.mt15;
+            if (q2.isHidden()) {
+                q2.reset(); // removes error.
+                q2.show();
+                return false;
+            }
+            q1.hide();
+            return { bonus: node.game.bonusMemory15 };
+        }
+    });
+
 
 
     //////////////////////////////////////////////////////////////////
