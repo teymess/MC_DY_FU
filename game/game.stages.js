@@ -89,20 +89,20 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             'Part2_Protection_measures_T2',
             'Part2_Info_Choice_Nicaragua'
         ])
-        stager.skip('Part_1_Survey')
-        stager.skip('Part2_Info_Pollution')
-        stager.skip('Part3')
-        stager.skip('Part4')
+        // stager.skip('Part_1_Survey')
+        // stager.skip('Part2_Info_Pollution')
+        // stager.skip('Part3')
+        // stager.skip('Part4')
     }
     else if (treatmentName === 'info_twice_austria') {
         stager.skip('Part2_Info_Pollution', [
             'Part2_Prior_LYL_Nicaragua',
             'Part2_Info_Choice_Nicaragua'
         ])
-        stager.skip('Part_1_Survey')
-        stager.skip('Part2_Info_Pollution')
-        stager.skip('Part3')
-        stager.skip('Part4')
+        // stager.skip('Part_1_Survey')
+        // stager.skip('Part2_Info_Pollution')
+        // stager.skip('Part3')
+        // stager.skip('Part4')
         //stager.skip('memory')
     }
     else if (treatmentName === 'info_once_nicaragua') {
@@ -112,19 +112,19 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             'Part2_Protection_measures_T2',
             'Part2_Info_Choice_Austria'
         ])
-        stager.skip('Part_1_Survey')
-        stager.skip('Part2_Info_Pollution')
-        stager.skip('Part3')
-        stager.skip('Part4')
+        // stager.skip('Part_1_Survey')
+        // stager.skip('Part2_Info_Pollution')
+        // stager.skip('Part3')
+        // stager.skip('Part4')
     }
     else if (treatmentName === 'info_twice_nicaragua') {
         stager.skip('Part2_Info_Pollution', [
             'Part2_Prior_LYL_Austria',
             'Part2_Info_Choice_Austria'
         ])
-        stager.skip('Part_1_Survey')
-        stager.skip('Part2_Info_Pollution')
-        stager.skip('Part3')
-        stager.skip('Part4')
+        // stager.skip('Part_1_Survey')
+        // stager.skip('Part2_Info_Pollution')
+        // stager.skip('Part3')
+        // stager.skip('Part4')
     }
 };
