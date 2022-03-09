@@ -30,7 +30,7 @@ module.exports = {
      */
      TIMER: {
 
-         'memory_learn': 40950,
+         'memory_learn': 60250,
 
          'Part_3_Filler_Task': 120000,
      },

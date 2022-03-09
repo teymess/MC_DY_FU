@@ -74,6 +74,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('memory_test8')
     .step('memory_test9')
     .step('memory_test10')
+    .step('memory_test11')
+    .step('memory_test12')
+    .step('memory_test13')
+    .step('memory_test14')
+    .step('memory_test15')
 
 
     stager
@@ -103,7 +108,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         // stager.skip('Part2_Info_Pollution')
         // stager.skip('Part3')
         // stager.skip('Part4')
-        //stager.skip('memory')
     }
     else if (treatmentName === 'info_once_nicaragua') {
         stager.skip('Part2_Info_Pollution', [
