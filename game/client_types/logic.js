@@ -145,6 +145,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
             else if (step === 'Part4_Posterior_LYL') {
                 let bonus = msg.data.bonus;
+                console.log(bonus);
                 gameRoom.updateWin(id, bonus);
             }
 

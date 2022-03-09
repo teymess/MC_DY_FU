@@ -2369,7 +2369,9 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 });
             },
             done: function() {
-                var w, q1, result, guessBonus;
+                var w, q1, result;
+
+                node.game.gueeBonus = 0;
 
                 w = node.game.LYL_post;
 
@@ -2382,17 +2384,14 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 }
 
                 if (node.game.contributionAmount == node.game.lifeLost) {
-                    guessBonus = 0.50
+                    node.game.guessBonus = 0.50
                     W.setInnerHTML('payoff', '<img src="success.png" width="50px"> Your answer is <b>correct</b>! You receive a bonus of <b>$0.50</b>.<br>')
-                    return guessBonus;
                 }
                 else if ((node.game.contributionAmount != node.game.lifeLost) && (node.game.contributionAmount >= (node.game.lifeLost - 0.5)) && (node.game.contributionAmount<= (node.game.lifeLost + 0.5))) {
-                    guessBonus = 0.20
+                    node.game.guessBonus = 0.20
                     W.setInnerHTML('payoff', '<img src="almost_correct.png" width="50px"> Your answer is within half a year of the correct value! You receive a bonus of <b>$0.20</b>.<br>')
-                    return guessBonus;
                 }
                 else {
-                    guessBonus = 0.00
                     W.setInnerHTML('payoff', '<img src="failure.png" width="50px"> Your answer is <b>not correct</b>. Therefore, you receive no bonus for this question.<br>')
                 }
                 result = W.gid('result');
@@ -2402,7 +2401,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 }
                 return {
                     values: w.getValues(),
-                    bonus: guessBonus
+                    bonus: node.game.guessBonus
                 }
             }
         });
