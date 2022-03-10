@@ -80,6 +80,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('memory_test13')
     .step('memory_test14')
     .step('memory_test15')
+    .step('memory_results')
 
 
     stager
