@@ -91,6 +91,9 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     stager.extendStep('memory_learn', {
         frame: 'memory_learn.htm',
         donebutton: false,
+        cb: function() {
+            W.setInnerHTML('bonus', node.game.settings.MEMORY_BONUS);
+        },
         init: function() {
             this.visualTimer = node.widgets.append('VisualTimer', W.getHeader());
         },
