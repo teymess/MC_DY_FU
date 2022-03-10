@@ -37,7 +37,7 @@ module.exports = {
 
     BASE_PAY: 1,
     TASK_2_BONUS: 0.05,
-    MEMORY_BONUS: 0.05,
+    MEMORY_BONUS: 0.02,
 
     // Exchange rate coins to dollars.
     EXCHANGE_RATE: 1,

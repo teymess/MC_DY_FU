@@ -50,7 +50,7 @@
     // Index every district for faster retrieval.
     pollutionDb.index('district');
 
-    pollutionDb.loadSync(path.join(dir, 'private', 'combined_pollution_data.csv'), {
+    pollutionDb.loadSync(path.join(dir, 'private', 'input_data_Kaggle.csv'), {
         lineBreak: '\r\n'
     });
     console.log("Loaded csv file into database");

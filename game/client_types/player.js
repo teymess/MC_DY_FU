@@ -2177,6 +2177,19 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             },
         });
 
+        stager.extendStep('Part_3_Results', {
+            name: 'Part 3: A fun exercise - Your results',
+            frame: 'effort_results.htm',
+            cb: function() {
+                var effort_payoff;
+                effort_payoff = node.game.correct * node.game.settings.TASK_2_BONUS;
+                effort_payoff = effort_payoff.toFixed(2);
+                W.setInnerHTML('bonus', node.game.settings.TASK_2_BONUS);
+                W.setInnerHTML('correct', node.game.correct);
+                W.setInnerHTML('payoff', effort_payoff);
+            }
+        });
+
 
         ////////////////////////////////////////////////////////////////////////////////
         // PRIOR LYL
