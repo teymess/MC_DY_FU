@@ -130,12 +130,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory1 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_1',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/V93T77H"><img src="https://i.ibb.co/Pjtg77T/usbcable01b.jpg" alt="usbcable01b" border="0" width="500px" /></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/V93T77H"><img src="https://i.ibb.co/Pjtg77T/usbcable01b.jpg" alt="usbcable01b" border="0" width="350px" /></a></div>',
                 simplify: true,
                 forms: [
                     {
                         id: 'mt1',
-                        mainText: '<span style="font-weight: normal;color:gray;">T1</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        mainText: '<span style="font-weight: normal;color:gray;">T1</span> Have you seen this item earlier in the task? (You get $'+ node.game.settings.MEMORY_BONUS + ' if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -150,7 +150,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             console.log(answer);
 
             if (answer === 'No'){
-                node.game.bonusMemory1 = 0.02;
+                node.game.bonusMemory1 = node.game.settings.MEMORY_BONUS;
             }
 
             q2 = q1.formsById.mt1;
@@ -171,12 +171,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory2 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_2',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/5Kv6GYQ"><img src="https://i.ibb.co/g4w3mv0/rope02.jpg" alt="rope02" border="0" width="500px" /></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/5Kv6GYQ"><img src="https://i.ibb.co/g4w3mv0/rope02.jpg" alt="rope02" border="0" width="350px" /></a></div>',
                 simplify: true,
                 forms: [
                     {
                         id: 'mt2',
-                        mainText: '<span style="font-weight: normal;color:gray;">T2</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        mainText: '<span style="font-weight: normal;color:gray;">T2</span> Have you seen this item earlier in the task? (You get $'+ node.game.settings.MEMORY_BONUS + ' if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -191,7 +191,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             console.log(answer);
 
             if (answer === 'Yes'){
-                node.game.bonusMemory2 = 0.02;
+                node.game.bonusMemory2 = node.game.settings.MEMORY_BONUS;
             }
 
             q2 = q1.formsById.mt2;
@@ -215,12 +215,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory3 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_3',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/NZh0B2H"><img src="https://i.ibb.co/6ghKC0f/calculator02c.jpg" alt="calculator02c" border="0" width="500px" /></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/NZh0B2H"><img src="https://i.ibb.co/6ghKC0f/calculator02c.jpg" alt="calculator02c" border="0" width="350px" /></a></div>',
                 simplify: true,
                 forms: [
                     {
                         id: 'mt3',
-                        mainText: '<span style="font-weight: normal;color:gray;">T3</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        mainText: '<span style="font-weight: normal;color:gray;">T3</span> Have you seen this item earlier in the task? (You get $'+ node.game.settings.MEMORY_BONUS + ' if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -235,7 +235,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             console.log(answer);
 
             if (answer === 'Yes'){
-                node.game.bonusMemory3 = 0.02;
+                node.game.bonusMemory3 = node.game.settings.MEMORY_BONUS;
             }
 
             q2 = q1.formsById.mt3;
@@ -256,12 +256,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory4 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_4',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/K54MVf9"><img src="https://i.ibb.co/51pNsS5/envelope02b.jpg" alt="envelope02b" border="0" width="500px" /></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/K54MVf9"><img src="https://i.ibb.co/51pNsS5/envelope02b.jpg" alt="envelope02b" border="0" width="350px" /></a></div>',
                 simplify: true,
                 forms: [
                     {
                         id: 'mt4',
-                        mainText: '<span style="font-weight: normal;color:gray;">T4</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        mainText: '<span style="font-weight: normal;color:gray;">T4</span> Have you seen this item earlier in the task? (You get $'+ node.game.settings.MEMORY_BONUS + ' if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -276,7 +276,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             console.log(answer);
 
             if (answer === 'No'){
-                node.game.bonusMemory4 = 0.02;
+                node.game.bonusMemory4 = node.game.settings.MEMORY_BONUS;
             }
 
             q2 = q1.formsById.mt4;
@@ -297,12 +297,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory5 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_5',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/SBJtJQ1"><img src="https://i.ibb.co/89XrXzR/dice02a.jpg" alt="dice02a" border="0" width="500px" /></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/SBJtJQ1"><img src="https://i.ibb.co/89XrXzR/dice02a.jpg" alt="dice02a" border="0" width="350px" /></a></div>',
                 simplify: true,
                 forms: [
                     {
                         id: 'mt5',
-                        mainText: '<span style="font-weight: normal;color:gray;">T5</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        mainText: '<span style="font-weight: normal;color:gray;">T5</span> Have you seen this item earlier in the task? (You get $'+ node.game.settings.MEMORY_BONUS + ' if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -317,7 +317,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             console.log(answer);
 
             if (answer === 'Yes'){
-                node.game.bonusMemory5 = 0.02;
+                node.game.bonusMemory5 = node.game.settings.MEMORY_BONUS;
             }
 
             q2 = q1.formsById.mt5;
@@ -338,12 +338,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory6 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_6',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/CVg22LX"><img src="https://i.ibb.co/xzWHHZc/watermelon02b.jpg" alt="watermelon02b" border="0" width="500px" /></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/CVg22LX"><img src="https://i.ibb.co/xzWHHZc/watermelon02b.jpg" alt="watermelon02b" border="0" width="350px" /></a></div>',
                 simplify: true,
                 forms: [
                     {
                         id: 'mt6',
-                        mainText: '<span style="font-weight: normal;color:gray;">T6</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        mainText: '<span style="font-weight: normal;color:gray;">T6</span> Have you seen this item earlier in the task? (You get $'+ node.game.settings.MEMORY_BONUS + ' if if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -358,7 +358,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             console.log(answer);
 
             if (answer === 'No'){
-                node.game.bonusMemory6 = 0.02;
+                node.game.bonusMemory6 = node.game.settings.MEMORY_BONUS;
             }
 
             q2 = q1.formsById.mt6;
@@ -379,12 +379,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory7 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_7',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/h1Lm9pt"><img src="https://i.ibb.co/vvVjq2K/paintbrush03a.jpg" alt="paintbrush03a" border="0" width="500px" /></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/h1Lm9pt"><img src="https://i.ibb.co/vvVjq2K/paintbrush03a.jpg" alt="paintbrush03a" border="0" width="350px" /></a></div>',
                 simplify: true,
                 forms: [
                     {
                         id: 'mt7',
-                        mainText: '<span style="font-weight: normal;color:gray;">T7</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        mainText: '<span style="font-weight: normal;color:gray;">T7</span> Have you seen this item earlier in the task? (You get $'+ node.game.settings.MEMORY_BONUS + ' if if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -399,7 +399,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             console.log(answer);
 
             if (answer === 'Yes'){
-                node.game.bonusMemory7 = 0.02;
+                node.game.bonusMemory7 = node.game.settings.MEMORY_BONUS;
             }
 
             q2 = q1.formsById.mt7;
@@ -420,12 +420,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory8 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_8',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/TvcHpcM"><img src="https://i.ibb.co/C1BnNBK/sponge02a.jpg" alt="sponge02a" border="0" width="500px" /></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/TvcHpcM"><img src="https://i.ibb.co/C1BnNBK/sponge02a.jpg" alt="sponge02a" border="0" width="350px" /></a></div>',
                 simplify: true,
                 forms: [
                     {
                         id: 'mt8',
-                        mainText: '<span style="font-weight: normal;color:gray;">T8</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        mainText: '<span style="font-weight: normal;color:gray;">T8</span> Have you seen this item earlier in the task? (You get $'+ node.game.settings.MEMORY_BONUS + ' if if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -440,7 +440,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             console.log(answer);
 
             if (answer === 'Yes'){
-                node.game.bonusMemory8 = 0.02;
+                node.game.bonusMemory8 = node.game.settings.MEMORY_BONUS;
             }
 
             q2 = q1.formsById.mt8;
@@ -461,12 +461,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory9 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_9',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/PGhMPKc"><img src="https://i.ibb.co/nMcBY97/lighter03b.jpg" alt="lighter03b" border="0" width="500px" /></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/PGhMPKc"><img src="https://i.ibb.co/nMcBY97/lighter03b.jpg" alt="lighter03b" border="0" width="350px" /></a></div>',
                 simplify: true,
                 forms: [
                     {
                         id: 'mt9',
-                        mainText: '<span style="font-weight: normal;color:gray;">T9</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        mainText: '<span style="font-weight: normal;color:gray;">T9</span> Have you seen this item earlier in the task? (You get $'+ node.game.settings.MEMORY_BONUS + ' if if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -481,7 +481,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             console.log(answer);
 
             if (answer === 'No'){
-                node.game.bonusMemory9 = 0.02;
+                node.game.bonusMemory9 = node.game.settings.MEMORY_BONUS;
             }
 
             q2 = q1.formsById.mt9;
@@ -502,12 +502,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory10 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_10',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/FzV0f3z"><img src="https://i.ibb.co/vkYQrqk/boxtruck.jpg" alt="boxtruck" border="0" width="500px" /></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/FzV0f3z"><img src="https://i.ibb.co/vkYQrqk/boxtruck.jpg" alt="boxtruck" border="0" width="350px" /></a></div>',
                 simplify: true,
                 forms: [
                     {
                         id: 'mt10',
-                        mainText: '<span style="font-weight: normal;color:gray;">T10</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        mainText: '<span style="font-weight: normal;color:gray;">T10</span> Have you seen this item earlier in the task? (You get $'+ node.game.settings.MEMORY_BONUS + ' if if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -522,7 +522,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             console.log(answer);
 
             if (answer === 'No'){
-                node.game.bonusMemory10 = 0.02;
+                node.game.bonusMemory10 = node.game.settings.MEMORY_BONUS;
             }
 
             q2 = q1.formsById.mt10;
@@ -543,12 +543,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory11 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_11',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/Js3nt8D"><img src="https://i.ibb.co/HHh74R5/candelabra.jpg" alt="candelabra" border="0" width="500px" /></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/Js3nt8D"><img src="https://i.ibb.co/HHh74R5/candelabra.jpg" alt="candelabra" border="0" width="350px" /></a></div>',
                 simplify: true,
                 forms: [
                     {
                         id: 'mt11',
-                        mainText: '<span style="font-weight: normal;color:gray;">T11</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        mainText: '<span style="font-weight: normal;color:gray;">T11</span> Have you seen this item earlier in the task? (You get $'+ node.game.settings.MEMORY_BONUS + ' if if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -563,7 +563,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             console.log(answer);
 
             if (answer === 'Yes'){
-                node.game.bonusMemory11 = 0.02;
+                node.game.bonusMemory11 = node.game.settings.MEMORY_BONUS;
             }
 
             q2 = q1.formsById.mt11;
@@ -584,12 +584,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory12 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_12',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/fkYkhRv"><img src="https://i.ibb.co/y6n6wTS/spatula01.jpg" alt="spatula01" border="0" width="500px" /></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/fkYkhRv"><img src="https://i.ibb.co/y6n6wTS/spatula01.jpg" alt="spatula01" border="0" width="350px" /></a></div>',
                 simplify: true,
                 forms: [
                     {
                         id: 'mt12',
-                        mainText: '<span style="font-weight: normal;color:gray;">T12</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        mainText: '<span style="font-weight: normal;color:gray;">T12</span> Have you seen this item earlier in the task? (You get $'+ node.game.settings.MEMORY_BONUS + ' if if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -604,7 +604,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             console.log(answer);
 
             if (answer === 'No'){
-                node.game.bonusMemory12 = 0.02;
+                node.game.bonusMemory12 = node.game.settings.MEMORY_BONUS;
             }
 
             q2 = q1.formsById.mt12;
@@ -625,12 +625,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory13 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_13',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/QjQVF77"><img src="https://i.ibb.co/G3pDvff/butterfly.jpg" alt="butterfly" border="0" width="500px" /></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/QjQVF77"><img src="https://i.ibb.co/G3pDvff/butterfly.jpg" alt="butterfly" border="0" width="350px" /></a></div>',
                 simplify: true,
                 forms: [
                     {
                         id: 'mt13',
-                        mainText: '<span style="font-weight: normal;color:gray;">T13</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        mainText: '<span style="font-weight: normal;color:gray;">T13</span> Have you seen this item earlier in the task? (You get $'+ node.game.settings.MEMORY_BONUS + ' if if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -645,7 +645,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             console.log(answer);
 
             if (answer === 'No'){
-                node.game.bonusMemory13 = 0.02;
+                node.game.bonusMemory13 = node.game.settings.MEMORY_BONUS;
             }
 
             q2 = q1.formsById.mt13;
@@ -666,12 +666,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory14 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_14',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/86YzD9V"><img src="https://i.ibb.co/NZT16Kz/thumbtack02b.jpg" alt="thumbtack02b" border="0" width="500px" /></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/86YzD9V"><img src="https://i.ibb.co/NZT16Kz/thumbtack02b.jpg" alt="thumbtack02b" border="0" width="350px" /></a></div>',
                 simplify: true,
                 forms: [
                     {
                         id: 'mt14',
-                        mainText: '<span style="font-weight: normal;color:gray;">T14</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        mainText: '<span style="font-weight: normal;color:gray;">T14</span> Have you seen this item earlier in the task? (You get $'+ node.game.settings.MEMORY_BONUS + ' if if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -686,7 +686,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             console.log(answer);
 
             if (answer === 'Yes'){
-                node.game.bonusMemory14 = 0.02;
+                node.game.bonusMemory14 = node.game.settings.MEMORY_BONUS;
             }
 
             q2 = q1.formsById.mt14;
@@ -707,12 +707,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory15 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_15',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/VSNJyVt"><img src="https://i.ibb.co/wWLBHyR/carbattery.jpg" alt="carbattery" border="0" width="500px" /></a></div>',
+                mainText: '<div class="aligned"><a href="https://ibb.co/VSNJyVt"><img src="https://i.ibb.co/wWLBHyR/carbattery.jpg" alt="carbattery" border="0" width="350px" /></a></div>',
                 simplify: true,
                 forms: [
                     {
                         id: 'mt15',
-                        mainText: '<span style="font-weight: normal;color:gray;">T15</span> Have you seen this item earlier in the task? (You get $0.02 if you answer correctly.)',
+                        mainText: '<span style="font-weight: normal;color:gray;">T15</span> Have you seen this item earlier in the task? (You get $'+ node.game.settings.MEMORY_BONUS + ' if if you answer correctly.)',
                         choices: ['No', 'Yes'],
                         requiredChoice: true
                     }
@@ -727,7 +727,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             console.log(answer);
 
             if (answer === 'Yes'){
-                node.game.bonusMemory15 = 0.02;
+                node.game.bonusMemory15 = node.game.settings.MEMORY_BONUS;
             }
 
             q2 = q1.formsById.mt15;
@@ -738,6 +738,25 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             }
             q1.hide();
             return { bonus: node.game.bonusMemory15 };
+        }
+    });
+
+    stager.extendStep('memory_results', {
+        name: 'Memory Task - Your results',
+        frame: 'memory_results.htm',
+        cb: function() {
+            var h1, memory_payoff, memory_correct;
+            h1 = node.game;
+            memory_correct = h1.bonusMemory1 + h1.bonusMemory2 + h1.bonusMemory3 + h1.bonusMemory4 + h1.bonusMemory5 +
+            h1.bonusMemory6 + h1.bonusMemory7 + h1.bonusMemory8 + h1.bonusMemory9 + h1.bonusMemory10 + h1.bonusMemory11 +
+            h1.bonusMemory12 + h1.bonusMemory13 + h1.bonusMemory14 + h1.bonusMemory15;
+            memory_correct = memory_correct * 50;
+            memory_correct = memory_correct.toFixed();
+            memory_payoff = memory_correct * node.game.settings.MEMORY_BONUS;
+            memory_payoff = memory_payoff.toFixed(2);
+            W.setInnerHTML('bonus', node.game.settings.MEMORY_BONUS);
+            W.setInnerHTML('correct', memory_correct);
+            W.setInnerHTML('payoff', memory_payoff);
         }
     });
 
