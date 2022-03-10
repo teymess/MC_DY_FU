@@ -1521,7 +1521,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         orientation: 'H',
                         mainText: '<span style="font-weight: normal;color:gray;">Q3</span> Now, think about all people living in Nicaragua, a country in central America.<br><br>' +
                                   'In your opinion, how many years of life do people living in ' +
-                                   'Austria lose on average because of air pollution?',
+                                   'Nicaragua lose on average because of air pollution?',
                         choices: ['0','1','2','3','4','5','6','7','8','9','10','11','12'],
                         requiredChoice: true,
                         shuffleChoices: false,
@@ -2666,7 +2666,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
           widget: {
               name: 'EndScreen',
               options: {
-                  feedback: false
+                  feedback: false,
+                  showEmailForm: false
               }
           },
           init: function() {
