@@ -2702,7 +2702,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
               name: 'EndScreen',
               options: {
                   feedback: false,
-                  showEmailForm: false
+                  showEmailForm: false,
+                  texts: {
+                      message: 'You have now completed this task and your data has been saved.' +
+                      ' Please go back to the Amazon Mechanical Turk web site and submit the HIT.<br><br>' +
+                      ' <b>Reminder: We will post another HIT with a follow-up survey in 2 weeks!<b>'
+                  },
               }
           },
           init: function() {
