@@ -84,7 +84,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     //////////////////////////////////////////////////////////////////
     stager.extendStep('memory_intro', {
-        frame: 'instructions_memory.htm'
+        frame: 'instructions_memory.htm',
+        cb: function() {
+            W.setInnerHTML('bonus', node.game.settings.MEMORY_BONUS);
+        }
     });
 
     //////////////////////////////////////////////////////////////////
