@@ -1549,10 +1549,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     // ref: 'controlQuestions',
                     mainText:
                     // '<img src="choice.png" width="100px"> <span style="font-weight: bold;font-size:24px;color:#5c30af;">What do you want to read about next?</span><br/><br/>' +
-                    'On the next page, you will receive information about <b>air pollution levels</b> and the <b>number of life years lost ' +
+                    'On the next page, you will receive information about the <b>number of life years lost ' +
                     'because of air pollution</b> in a specific region. <br> <br>' +
                     'You now have the opportunity to <b><span style="font-size:25px;color:#ee6933;">indicate which of two regions</span></b> you prefer to read about. ' +
-                    '<br> <br><img src="dices.png" width="40px"> However, your selection will only be implemented with a <b>60% probability</b>.<br> With a 40% probability, we will show you information on the other option.<br> <br>',
+                    '<br> <br><img src="dices.png" width="40px"> However, your preferred option will be implemented with a <b>60% chance</b><br><br>.',
+                    // <br> With a 40% probability, we will show you information on the other option.<br> <br>',
                     simplify: true,
                     forms: [
                       {
@@ -1992,7 +1993,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                             forms: [
                                 {
                                     id: 'LYL_posterior_1',
-                                    mainText: '<span style="color:#07aa34;font-size:25px">Bonus question:</span> ' +
+                                    mainText:
+                                    // '<span style="color:#07aa34;font-size:25px">Bonus question:</span> ' +
                                     '<span style="font-size:25px">How many years of life do people living in Austria' +
                                     ' lose on average because of air pollution?</span><br>' +
                                     '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
@@ -2048,7 +2050,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                             forms: [
                                 {
                                     id: 'LYL_posterior_1',
-                                    mainText: '<span style="color:#07aa34;font-size:25px">Bonus question:</span> ' +
+                                    mainText:
+                                    // '<span style="color:#07aa34;font-size:25px">Bonus question:</span> ' +
                                     '<span style="font-size:25px">How many years of life do people living in Nicaragua' +
                                     ' lose on average because of air pollution?</span><br>' +
                                     '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
