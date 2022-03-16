@@ -853,7 +853,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         name: 'Dropdown',
                         id: 'district',
                         mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Select the district in which you currently live. <span style="font-weight: normal;">*</span>' +
-                        '<br><span style="font-weight: normal;">In case you cannot find your district in the list, please choose the nearest one.</span>', 
+                        '<br><span style="font-weight: normal;">In case you cannot find your district in the list, please choose the nearest one.</span>',
                         tag: 'select', // 'datalist'
                         // Will be auto-filled later.
                         choices: [ '--' ],
@@ -897,7 +897,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'q4_2',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q7</span> What is the highest educational level that you have completed?',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> What is the highest educational level that you have completed?',
                         choices: ['No formal education','Primary school','Secondary school','Vocational training','Bachelor degree','Masters degree or higher'],
                         shuffleChoices: false,
                         requiredChoice: true
@@ -905,7 +905,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         name: 'CustomInput',
                         id: 'q4_1',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How many people live in your household?<br>',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q7</span> How many people live in your household?<br>',
                         hint: '(Think about everyone that lives at least eight months per year in your house. Answer should include yourself.)',
                         width: '95%',
                         type: 'int',
@@ -936,60 +936,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
 
-
-    // //////////////////////////////////////////////////////////////////////////
-    // // PAST ILLNESSES
-    // stager.extendStep('Part_1_q8', {
-    //     name: "Part 1: Survey",
-    //     cb: function() {
-    //         W.cssRule('table.choicetable td { text-align: left !important; ' +
-    //         'font-weight: normal; padding-left: 10px; }');
-    //     },
-    //     // Make a widget step.
-    //     widget: {
-    //         name: 'ChoiceManager',
-    //         id: 'q8',
-    //         options: {
-    //             simplify: true,
-    //             mainText: '',
-    //             forms: [
-    //                 {
-    //                     name: 'ChoiceTable',
-    //                     id: 'q8_1',
-    //                     orientation: 'H',
-    //                     mainText: '<span style="font-weight: normal;color:gray;">Q9</span> How often do you do physical exercise?<br>',
-    //                     hint:'(Think of when you play sports, go jogging, go to the gym, practice yoga/pilates at home etc.)',
-    //                     choices: [ 'Never','Very rarely','Once a month','Every week','Several times per week'],
-    //                     shuffleChoices: false,
-    //                     requiredChoice: true
-    //                 },
-    //                 {
-    //                     name: 'ChoiceTable',
-    //                     id: 'q8_2',
-    //                     orientation: 'H',
-    //                     mainText: '<span style="font-weight: normal;color:gray;">Q15</span> Do you smoke tobacco (cigarettes, hookah, bidi, etc.)?',
-    //                     choices: [ 'Yes','No'],
-    //                     shuffleChoices: false,
-    //                     requiredChoice: true
-    //                 },
-    //                 {
-    //                     name: 'ChoiceTable',
-    //                     id: 'q8_3',
-    //                     orientation: 'V',
-    //                     mainText: '<span style="font-weight: normal;color:gray;">Q16</span> In the past 5 years, did YOU have any of the following health conditions?<br>',
-    //                     hint: '(Select <strong><em>all</strong></em> that apply.)',
-    //                     choices: ["Allergies",'High blood pressure','Heart disease','Lung disease','Diabetes','None','Prefer not to say'],
-    //                     shuffleChoices: false,
-    //                     requiredChoice: true,
-    //                     selectMultiple: true
-    //                 }
-    //             ]
-    //         }
-    //     }
-    // });
-
-
-
     //////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////
     // PART II
@@ -1014,13 +960,13 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             id: 'P1_q',
             options: {
                 simplify: true,
-                mainText: 'Based on the information provided in the box above, find the correct answer to the questions below.<br>' +
+                mainText: 'Based on the box above, find the correct answer to the questions below.<br>' +
                 '<span style="color:gray;font-size:14px;">(All your answers need to be correct in order to be able to proceed to the next page.) </span>',
                 forms: [
                     {
                         id: 'P1_q1',
                         orientation: 'V',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q1</span> Which of the following statements is correct?',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q1</span> Which of the following statements is correct? <span style="font-weight: normal;">*</span>',
                         choices: ['Air pollution is mostly generated outdoors, but not indoors.',
                         'Air pollution can be generated both indoors and outdoors.',
                         'Air pollution is mostly generated indoors, but not outdoors.'],
@@ -1029,9 +975,9 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'P1_q2',
                         orientation: 'V',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q2</span> Which of the following statements is correct?',
-                        choices: ['In India, only industries cause air pollution.',
-                        'In India, air pollution is generated by many sources and everyone is responsible to different degrees for the air pollution problem.'],
+                        mainText: '<span style="font-weight: normal;color:gray;">Q2</span> Which of the following statements is correct? <span style="font-weight: normal;">*</span>',
+                        choices: ['Only industries cause air pollution.',
+                        'Air pollution is generated by many sources and everyone is responsible to different degrees for the air pollution problem.'],
                         correctChoice: 1,
                     }
                 ]
@@ -1049,21 +995,20 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             id: 'P2_q',
             options: {
                 simplify: true,
-                mainText: 'Based on the information provided in the box above, find the correct answer to the questions below.<br>' +
-                '<span style="color:gray;font-size:14px;">(All your answers need to be correct in order to be able to proceed to the next page.) </span>',
+                mainText: 'Based on the box above, find the correct answer to the questions below.<br>',
                 forms: [
                     {
                         id: 'P2_q1',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How many years of life do we lose on average by being exposed for a long time to air pollution that is 10 &mu;/m<sup>3</sup> higher than the WHO recommended level?<br>',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How many years of life do we lose on average by being exposed for a long time to air pollution that is 10 &mu;/m<sup>3</sup> higher than the WHO recommended level? <span style="font-weight: normal;">*</span>',
                         choices: ["0 years", "0.25 years", "0.5 years", "1 year", "2 years"],
                         correctChoice: 3,
                     },
                     {
                         id: 'P2_q2',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q7</span> How many years of life do we lose on average by being exposed for a long time to air pollution that is 30 &mu;/m<sup>3</sup> higher than the WHO recommended level?<br>',
-                        choices: ["0 years", "1 year", "2 years", "3 years", "5 years"],
+                        mainText: '<span style="font-weight: normal;color:gray;">Q7</span> What is the world average number of life years lost due to air pollution? <span style="font-weight: normal;">*</span>',
+                        choices: ["0 years", "1 year", "1.6 years", "1.9 years", "5 years"],
                         correctChoice: 3,
                     }
                 ]
