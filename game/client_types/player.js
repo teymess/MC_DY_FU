@@ -1121,14 +1121,14 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                       '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
                       hint: false,
                       name: 'Slider',
-                      hidden: true,
+                      hidden: false,
                       requiredChoice: true,
                       initialValue: 0,
                       min: 0,
                       max: 120,
                       left: '0 years',
                       right: '12 years',
-                      displayNoChange: false,
+                      /*displayNoChange: false,*/
                       type: 'flat',
                       panel: false,
                       texts: {
