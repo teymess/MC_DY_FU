@@ -1000,9 +1000,9 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'P2_q1',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">CQ3</span> How many years of life do we lose on average by being exposed for a long time to air pollution that is 10 &mu;/m<sup>3</sup> higher than the WHO recommended level? <span style="font-weight: normal;">*</span>',
+                        mainText: '<span style="font-weight: normal;color:gray;">CQ3</span> How many years of life do people lose on average by being exposed to annual air pollution concentrations that are 20 &mu;/m<sup>3</sup> higher than the WHO recommended level? <span style="font-weight: normal;">*</span>',
                         choices: ["0 years", "0.25 years", "0.5 years", "1 year", "2 years"],
-                        correctChoice: 3,
+                        correctChoice: 4,
                     },
                     {
                         id: 'P2_q2',
@@ -1113,7 +1113,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             // DISPLAY 3
             q3 = w.formsById.LYL_prior_Austria;
             if (!q3) {
-                if (q3) q3.disable();
+                // if (q3) q3.disable();
                 node.widgets.last.addForm({
                       id: 'LYL_prior_Austria',
                       mainText: '<span style="font-weight: normal;color:gray;">Q:</span> How many years of life do people living in Austria, a ' +
@@ -1277,7 +1277,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 // DISPLAY 3
                 q3 = w.formsById.LYL_prior_Nicaragua;
                 if (!q3) {
-                    if (q3) q3.disable();
+                    // if (q3) q3.disable();
                     node.widgets.last.addForm({
                       id: 'LYL_prior_Nicaragua',
                       mainText: '<span style="font-weight: normal;color:gray;">Q:</span> How many years of life do people living in Nicaragua, a ' +
@@ -1386,13 +1386,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             id: 'P4_q',
             options: {
                 simplify: true,
-                mainText: 'Based on the information provided in the box above, find the correct answer to the questions below.<br>' +
-                '<span style="color:gray;font-size:14px;">(All your answers need to be correct in order to be able to proceed to the next page.) </span>',
+                mainText: 'Based on the box above, find the correct answer to the questions below.<br>',
                 forms: [
                     {
                         id: 'P4_q1',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which of the following measures help with protecting your health from air pollution?<br>',
+                        mainText: '<span style="font-weight: normal;color:gray;">CQ6</span> Which of the following measures help with protecting your health from air pollution?<br>',
                         hint: '<span style="color:gray;font-size:14px;">(There are several correct answers and you have to find all of them.)</span>',
                         // Number of choices per row/column.
                         choicesSetSize: 5,
@@ -1421,7 +1420,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'P4_T_q2',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Which protective measure(s) from the leaflet above are the MOST CONVENIENT for you to implement?<br>',
+                        mainText: 'Which protective measure(s) from the leaflet above are the MOST CONVENIENT for you to implement?<br>',
                         hint: '<span style="color:gray;font-size:14px;">(Select at least 1.)</span>',
                         // Number of choices per row/column.
                         choicesSetSize: 4,
@@ -1443,7 +1442,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'P4_T_q3',
                         orientation: 'V',
-                        mainText: '<div class="aligned"><img src="Leaflet_images/exclamation-mark.png" width="40px"><span> Read again the leaflet above and try to memorize it.' +
+                        mainText: '<div class="aligned"><img src="Leaflet_images/exclamation-mark.png" width="40px"><span> Read again the leaflet above.' +
                         ' You will be asked to summarize it on the next page.<br><br>' +
                         'What task will you be required to do on the next page?',
                         choices: [
@@ -1475,8 +1474,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         requiredChoice: true,
                         showSubmit: false,
                         minChars: 50,
-                        // width: '95%',
-                        // min: 50,
                     }
                 ]
             },
@@ -1500,21 +1497,22 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 node.game.RegionC = node.widgets.append('ChoiceManager', "RegionOfChoice", {
                     id: 'PC_q',
                     // ref: 'controlQuestions',
-                    mainText: '<img src="choice.png" width="100px"> <span style="font-weight: bold;font-size:24px;color:#5c30af;">What do you want to read about next?</span><br/><br/>' +
-                    'On the next page, you will receive an information leaflet on <b>air pollution levels</b> and its <b>measured impact ' +
-                    'on health</b> in a specific region. <br> <br>' +
-                    'You have now the opportunity to <b><span style="font-size:25px;color:#ee6933;">choose the region</span></b> that will be presented on the next page. ' +
-                    '<br> <br><img src="dices.png" width="40px"> However, your selection will only be implemented with a <b>60% probability</b>.<br> With a 40 % probability, we will show you information on the other option.<br> <br>',
+                    mainText:
+                    // '<img src="choice.png" width="100px"> <span style="font-weight: bold;font-size:24px;color:#5c30af;">What do you want to read about next?</span><br/><br/>' +
+                    'On the next page, you will receive information about <b>air pollution levels</b> and the <b>number of life years lost ' +
+                    'because of air pollution</b> in a specific region. <br> <br>' +
+                    'You now have the opportunity to <b><span style="font-size:25px;color:#ee6933;">indicate which of two regions</span></b> you prefer to read about. ' +
+                    '<br> <br><img src="dices.png" width="40px"> However, your selection will only be implemented with a <b>60% probability</b>.<br> With a 40% probability, we will show you information on the other option.<br> <br>',
                     simplify: true,
                     forms: [
                       {
                           id: 'PC_q1_austria',
                           orientation: 'V',
-                          mainText: '<span style="font-weight: normal;color:gray;font-size:30px;">Q5</span> <span style="font-size:30px;">Which region would you like to read information on air pollution and health impacts about?</span>',
+                          mainText: '<span style="font-size:30px;"> What do you prefer?</span>',
                          // hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
                           choices: [
-                            ['home', data.district  + ' (' + data.state + ')'],
-                            ['decoy', "Austria (a country in central Europe)"]
+                            ['home', 'I prefer to receive information about the number of life years lost due to air pollution in ' + data.district  + ' (' + data.state + ').'],
+                            ['decoy', "I prefer to receive information about the number of life years lost due to air pollution in Austria (a country in central Europe)."]
                             // ['home', "<span style="font-size:25px;color:#ee6933;">" + data.district + '</span>' + ' (' + data.state + ')'],
                             // ['decoy', "<span style="font-size:25px;color:#ee6933;">Austria</span> (a country in central Europe)"]
                           ],
@@ -1549,21 +1547,21 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 node.game.RegionC = node.widgets.append('ChoiceManager', "RegionOfChoice", {
                     id: 'PC_q',
                     // ref: 'controlQuestions',
-                    mainText: '<img src="choice.png" width="100px"> <span style="font-weight: bold;font-size:24px;color:#5c30af;">What do you want to read about next?</span><br/><br/>' +
-                    'On the next page, you will receive an information leaflet on <b>air pollution levels</b> and its <b>measured impact ' +
-                    'on health</b> in a specific region. <br> <br>' +
-                    'You have now the opportunity to <b><span style="font-size:25px;color:#ee6933;">choose the region</span></b> that will be presented on the next page. ' +
-                    '<br> <br><img src="dices.png" width="40px"> However, your selection will only be implemented with a <b>60% probability</b>.<br> With a 40 % probability, we will show you information on the other option.<br> <br>',
+                    mainText:
+                    // '<img src="choice.png" width="100px"> <span style="font-weight: bold;font-size:24px;color:#5c30af;">What do you want to read about next?</span><br/><br/>' +
+                    'On the next page, you will receive information about <b>air pollution levels</b> and the <b>number of life years lost ' +
+                    'because of air pollution</b> in a specific region. <br> <br>' +
+                    'You now have the opportunity to <b><span style="font-size:25px;color:#ee6933;">indicate which of two regions</span></b> you prefer to read about. ' +
+                    '<br> <br><img src="dices.png" width="40px"> However, your selection will only be implemented with a <b>60% probability</b>.<br> With a 40% probability, we will show you information on the other option.<br> <br>',
                     simplify: true,
                     forms: [
                       {
                           id: 'PC_q1_nicaragua',
                           orientation: 'V',
-                          mainText: '<span style="font-weight: normal;color:gray;font-size:30px;">Q5</span> <span style="font-size:30px;">Which region would you like to read information on air pollution and health impacts about?</span>',
-                         // hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
+                          mainText: '<span style="font-size:30px;"> What do you prefer?</span>',
                           choices: [
-                            ['home',  data.district + ' (' + data.state + ')'],
-                            ['decoy', "Nicaragua (a country in Central America)"]
+                            ['home', 'I prefer to receive information about the number of life years lost due to air pollution in ' + data.district  + ' (' + data.state + ').'],
+                            ['decoy', "I prefer to receive information about the number of life years lost due to air pollution in Nicaragua (a country in Central America)."]
                           ],
                           requiredChoice: true,
                           shuffleChoices: true
@@ -1632,22 +1630,9 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     node.game.controlQuestions = node.widgets.append('ChoiceManager', "ComprehquestionsL5", {
                         id: 'p5_q',
                         // ref: 'controlQuestions',
-                        mainText: 'Based on the information provided in the box above, find the correct answer to the question below.<br>' +
-                        '<span style="color:gray;font-size:14px;">(Your answer needs to be correct in order to be able to proceed to the next page.) </span>',
+                        mainText: 'Based on the information provided above, find the correct answer to the question below.',
                         simplify: true,
                         forms: [
-                            // {
-                            //     id: 'p5_q1',
-                            //     orientation: 'H',
-                            //     mainText: '<span style="font-weight: normal;color:gray;">Q8</span> What is the WHO recommendation for the annual average PM 2.5 concentrations?<br>',
-                            //     choices: [
-                            //         ['0', "0 &mu;g/m<sup>3</sup>"],
-                            //         ['5', "5 &mu;g/m<sup>3</sup>"],
-                            //         ['15', "15 &mu;g/m<sup>3</sup>"],
-                            //         ['30', "30 &mu;g/m<sup>3</sup>"],
-                            //     ],
-                            //     correctChoice: 1,
-                            // },
                             {
                                 id: 'p5_q1',
                                 orientation: 'H',
@@ -1687,26 +1672,13 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     node.game.controlQuestions = node.widgets.append('ChoiceManager', "ComprehquestionsL5", {
                         id: 'p5_q',
                         // ref: 'controlQuestions',
-                        mainText: 'Based on the information provided in the box above, find the correct answer to the question below.<br>' +
-                        '<span style="color:gray;font-size:14px;">(Your answer needs to be correct in order to be able to proceed to the next page.) </span>',
+                        mainText: 'Based on the information provided box above, find the correct answer to the question below.',
                         simplify: true,
                         forms: [
-                            // {
-                            //     id: 'p5_q1',
-                            //     orientation: 'H',
-                            //     mainText: '<span style="font-weight: normal;color:gray;">Q8</span> What is the WHO recommendation for the annual average PM 2.5 concentrations?<br>',
-                            //     choices: [
-                            //         ['0', "0 &mu;g/m<sup>3</sup>"],
-                            //         ['5', "5 &mu;g/m<sup>3</sup>"],
-                            //         ['15', "15 &mu;g/m<sup>3</sup>"],
-                            //         ['30', "30 &mu;g/m<sup>3</sup>"],
-                            //     ],
-                            //     correctChoice: 1,
-                            // },
                             {
                                 id: 'p5_q1',
                                 orientation: 'H',
-                                mainText: '<span style="font-weight: normal;color:gray;">Q8</span> On average, how many years of life does a person living in Nicaragua lose because of air pollution?<br>',
+                                mainText: '<span style="font-weight: normal;color:gray;">Q8</span> On average, how many years of life does a person living in Nicaragua lose because of air pollution?',
                                 choices: [
                                     (0.3 * 0.5).toFixed(1) + ' years',
                                     (0.3 * 0.8).toFixed(1) + ' years',
@@ -1717,9 +1689,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                 correctChoice: 2,
                             }
                         ]
-                        // formsOptions: {
-                        //     requiredChoice: true
-                        // }
                     });
                 }
                 else {
@@ -1752,22 +1721,9 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     node.game.controlQuestions = node.widgets.append('ChoiceManager', "ComprehquestionsL5", {
                         id: 'p5_q',
                         // ref: 'controlQuestions',
-                        mainText: 'Based on the information provided in the box above, find the correct answer to the question below.<br>' +
-                        '<span style="color:gray;font-size:14px;">(Your answer needs to be correct in order to be able to proceed to the next page.) </span>',
+                        mainText: 'Based on the information provided above, find the correct answer to the question below.',
                         simplify: true,
                         forms: [
-                            // {
-                            //     id: 'p5_q1',
-                            //     orientation: 'H',
-                            //     mainText: '<span style="font-weight: normal;color:gray;">Q8</span> What is the WHO recommendation for the annual average PM 2.5 concentrations?<br>',
-                            //     choices: [
-                            //         ['0', "0 &mu;g/m<sup>3</sup>"],
-                            //         ['5', "5 &mu;g/m<sup>3</sup>"],
-                            //         ['15', "15 &mu;g/m<sup>3</sup>"],
-                            //         ['30', "30 &mu;g/m<sup>3</sup>"],
-                            //     ],
-                            //     correctChoice: 1,
-                            // },
                             {
                                 id: 'p5_q1',
                                 orientation: 'H',
@@ -1782,9 +1738,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                 correctChoice: 2,
                             }
                         ]
-                        // formsOptions: {
-                        //     requiredChoice: true
-                        // }
                     });
                 }
                 W.show('data', 'flex');
