@@ -25,10 +25,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('Part_1_q2')
     .step('Part_1_q3')
     .step('Part_1_q4')
-    // .step('Part_1_q5')
-    // .step('Part_1_q6')
-    .step('Part_1_q7')
-    .step('Part_1_q8')
+    // .step('Part_1_q8')
 
     stager
     .stage('Part2_Info_Pollution')
@@ -59,7 +56,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('Part4_LOC2')
     .step('Part4_LOC3')
     .step('Part4_PC')
-    .step('Part4_Age_Caste')
 
     stager
     .stage('memory')
