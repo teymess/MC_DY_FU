@@ -1552,7 +1552,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     'On the next page, you will receive information about the <b>number of life years lost ' +
                     'because of air pollution</b> in a specific region. <br> <br>' +
                     'You now have the opportunity to <b><span style="font-size:25px;color:#ee6933;">indicate which of two regions</span></b> you prefer to read about. ' +
-                    '<br> <br><img src="dices.png" width="40px"> However, your preferred option will be implemented with a <b>60% chance</b><br><br>.',
+                    '<br> <br><img src="dices.png" width="40px"> However, your preferred option will be implemented with a <b>60% chance</b>.<br><br>',
                     // <br> With a 40% probability, we will show you information on the other option.<br> <br>',
                     simplify: true,
                     forms: [
