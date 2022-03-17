@@ -1285,7 +1285,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                       '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
                       hint: false,
                       name: 'Slider',
-                      hidden: true,
+                      hidden: false,
                       requiredChoice: true,
                       initialValue: 0,
                       min: 0,
@@ -2334,8 +2334,9 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 options: {
                     title: false,
                     panel: false,
-                    minChars: 50,
+                    //minChars: 50,
                     showSubmit: false,
+                    requiredChoice: true,
                     mainText: 'Thank you for participating. ' +
                     '<br><br>' +
                     "If you want to get in touch with us for questions or suggestions, " +
