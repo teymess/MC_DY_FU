@@ -1025,6 +1025,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         cb: function() {
             node.get('districtData', function(data) {
 
+              let myDistrict = data.district;
+              let stringDistrict = String(myDistrict);
+              let coloredDistrict = stringDistrict.fontcolor("#ee6933");
+
             node.game.Q_impact = node.widgets.append('ChoiceManager', "T_impact", {
                     id: 'T_impact_q',
                     simplify: true,
@@ -1033,7 +1037,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                       {
                           id: 'LYL_prior_home',
                           mainText: '<span style="font-weight: normal;color:gray;">Q:</span> How many years of life do people living in ' +
-                          data.district + ' lose on average because of air pollution?<br>' +
+                          coloredDistrict + ' lose on average because of air pollution?<br>' +
+                          //data.district + ' lose on average because of air pollution?<br>' +
                           '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
                           hint: false,
                           name: 'Slider',
@@ -1116,7 +1121,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 // if (q3) q3.disable();
                 node.widgets.last.addForm({
                       id: 'LYL_prior_Austria',
-                      mainText: '<span style="font-weight: normal;color:gray;">Q:</span> How many years of life do people living in Austria, a ' +
+                      mainText: '<span style="font-weight: normal;color:gray;">Q:</span> How many years of life do people living in <span style="color:#ee6933;">Austria</span>, a ' +
                       'country in central Europe, lose on average because of air pollution?<br>' +
                       '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
                       hint: false,
@@ -1189,6 +1194,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             cb: function() {
                 node.get('districtData', function(data) {
 
+                  let myDistrict = data.district;
+                  let stringDistrict = String(myDistrict);
+                  let coloredDistrict = stringDistrict.fontcolor("#ee6933");
+
                 node.game.Q_impact = node.widgets.append('ChoiceManager', "T_impact", {
                         id: 'T_impact_q',
                         simplify: true,
@@ -1197,7 +1206,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                           {
                               id: 'LYL_prior_home',
                               mainText: '<span style="font-weight: normal;color:gray;">Q:</span> How many years of life do people living in ' +
-                              data.district + ' lose on average because of air pollution?<br>' +
+                              coloredDistrict + ' lose on average because of air pollution?<br>' +
+                              //data.district + ' lose on average because of air pollution?<br>' +
                               '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
                               hint: false,
                               name: 'Slider',
@@ -1280,7 +1290,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     // if (q3) q3.disable();
                     node.widgets.last.addForm({
                       id: 'LYL_prior_Nicaragua',
-                      mainText: '<span style="font-weight: normal;color:gray;">Q:</span> How many years of life do people living in Nicaragua, a ' +
+                      mainText: '<span style="font-weight: normal;color:gray;">Q:</span> How many years of life do people living in <span style="color:#ee6933;">Nicaragua</span>, a ' +
                       'country in Central America, lose on average because of air pollution?<br>' +
                       '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
                       hint: false,
