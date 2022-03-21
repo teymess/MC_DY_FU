@@ -1492,6 +1492,15 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
 
     //////////////////////////////////////////////////////////////////////////
+    // Instruction info acquisition
+    stager.extendStep('Part2_Info_Choice', {
+        name: 'Part 2: Reading and comprehension',
+        frame: 'info_choice.htm',
+    });
+
+
+    //////////////////////////////////////////////////////////////////////////
+
     // Region of CHOICE (Austria)
     stager.extendStep('Part2_Info_Choice_Austria', {
         name: 'Part 2: Reading and comprehension',
@@ -1507,12 +1516,14 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 node.game.RegionC = node.widgets.append('ChoiceManager', "RegionOfChoice", {
                     id: 'PC_q',
                     // ref: 'controlQuestions',
-                    mainText:
+                    mainText: '',
                     // '<img src="choice.png" width="100px"> <span style="font-weight: bold;font-size:24px;color:#5c30af;">What do you want to read about next?</span><br/><br/>' +
-                    'On the next page, you will receive information about <b>air pollution levels</b> and the <b>number of life years lost ' +
-                    'because of air pollution</b> in a specific region. <br> <br>' +
-                    'You now have the opportunity to <b><span style="font-size:25px;color:#ee6933;">indicate which of two regions</span></b> you prefer to read about. ' +
-                    '<br> <br><img src="dices.png" width="40px"> However, your selection will only be implemented with a <b>60% probability</b>.<br> With a 40% probability, we will show you information on the other option.<br> <br>',
+                    //'You now have the opportunity to receive information about <b>air pollution levels</b> and the <b>number of life years lost ' +
+                    //'because of air pollution</b> in a specific region. <br> <br>' +
+                    //'In the next screen, You will be asked to <b><span style="font-size:25px;color:#ee6933;">indicate which of two regions</span></b> you prefer to read about. ' +
+                    //'<br> <br> <b><u>How will your choice be implemented?</u></b> <br> <br>' +
+                    //'The computer program will draw a ball from a virtual urn containing 6 <span style="fontcolor:green">green</span> balls and 4 <span style="fontcolor:red">red</span> balls.' +
+                    //'<br> <br><img src="dices.png" width="40px"> However, your selection will only be implemented with a <b>60% probability</b>.<br> With a 40% probability, we will show you information on the other option.<br> <br>',
                     simplify: true,
                     forms: [
                       {
@@ -1557,12 +1568,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 node.game.RegionC = node.widgets.append('ChoiceManager', "RegionOfChoice", {
                     id: 'PC_q',
                     // ref: 'controlQuestions',
-                    mainText:
+                    mainText: '',
                     // '<img src="choice.png" width="100px"> <span style="font-weight: bold;font-size:24px;color:#5c30af;">What do you want to read about next?</span><br/><br/>' +
-                    'On the next page, you will receive information about the <b>number of life years lost ' +
-                    'because of air pollution</b> in a specific region. <br> <br>' +
-                    'You now have the opportunity to <b><span style="font-size:25px;color:#ee6933;">indicate which of two regions</span></b> you prefer to read about. ' +
-                    '<br> <br><img src="dices.png" width="40px"> However, your preferred option will be implemented with a <b>60% chance</b>.<br><br>',
+                    //'On the next page, you will receive information about the <b>number of life years lost ' +
+                    //'because of air pollution</b> in a specific region. <br> <br>' +
+                    //'You now have the opportunity to <b><span style="font-size:25px;color:#ee6933;">indicate which of two regions</span></b> you prefer to read about. ' +
+                    //'<br> <br><img src="dices.png" width="40px"> However, your preferred option will be implemented with a <b>60% chance</b>.<br><br>',
                     // <br> With a 40% probability, we will show you information on the other option.<br> <br>',
                     simplify: true,
                     forms: [
@@ -1598,7 +1609,16 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         //donebutton: false,
         cb: function() {
             node.get('districtData2', function(data) {
+
+              if (data.ball === 'green') {
+                  W.setInnerHTML('ball', "The computer drew a green ball. Your preferred choice was implemented");
+              }
+              else {
+                  W.setInnerHTML('ball', "The computer drew a red ball. Your preferred choice was not implemented");
+              }
+
                 if (data.chosen === 'Austria') {
+
                     W.setInnerHTML('choice', "Austria");
                     W.setInnerHTML('where', ", a country in central Europe");
                 }

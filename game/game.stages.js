@@ -37,6 +37,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('Part2_Protection_measures')
     .step('Part2_Protection_measures_T')
     .step('Part2_Protection_measures_T2')
+    .step('Part2_Info_Choice')
     .step('Part2_Info_Choice_Austria')
     .step('Part2_Info_Choice_Nicaragua')
     .step('Part2_choice_outcome')
