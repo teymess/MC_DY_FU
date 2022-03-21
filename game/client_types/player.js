@@ -1610,11 +1610,16 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         cb: function() {
             node.get('districtData2', function(data) {
 
+              W.hide('ball_green')
+              W.hide('ball_red')
+
               if (data.ball === 'green') {
-                  W.setInnerHTML('ball', "The computer drew a green ball. Your preferred choice was implemented");
+                  //W.setInnerHTML('ball', "The computer drew a green ball. Your preferred choice was implemented");
+                  W.show('ball_green')
               }
               else {
-                  W.setInnerHTML('ball', "The computer drew a red ball. Your preferred choice was not implemented");
+                W.show('ball_red')
+                  //W.setInnerHTML('ball', "The computer drew a red ball. Your preferred choice was not implemented");
               }
 
                 if (data.chosen === 'Austria') {
