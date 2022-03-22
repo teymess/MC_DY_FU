@@ -1133,7 +1133,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                       max: 120,
                       left: '0 years',
                       right: '12 years',
-                      /*displayNoChange: false,*/
+                      displayNoChange: false,
                       type: 'flat',
                       panel: false,
                       texts: {
@@ -1475,15 +1475,15 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             id: 'P4_T2_q',
             options: {
                 simplify: true,
-                mainText: '',
+                mainText: 'Think about the information you have read on the previous page.',
                 forms: [
                     {
                         name: 'Feedback',
                         id: 'P4_T_q4',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q10b</span> Please summarize the information you have read on the previous page.',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q10b</span> Which protection measures are effective against air pollution indoors and which are effective indoors? Summarize below.',
                         requiredChoice: true,
                         showSubmit: false,
-                        minChars: 50,
+                        minChars: 20,
                     }
                 ]
             },
@@ -1512,6 +1512,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 //console.log(data);
                 W.setInnerHTML('state', data.state);
                 W.setInnerHTML('district', data.district);
+                let myDistrict = data.district;
+                let stringDistrict = String(myDistrict);
+                let coloredDistrict = stringDistrict.fontcolor("#ee6933");
+                let bcoloredDistrict = coloredDistrict.bold();
 
                 node.game.RegionC = node.widgets.append('ChoiceManager', "RegionOfChoice", {
                     id: 'PC_q',
@@ -1532,8 +1536,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                           mainText: '<span style="font-size:30px;"><span style="font-weight: normal;color:gray;">Q11</span> What do you prefer?</span>',
                          // hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
                           choices: [
-                            ['home', 'I prefer to receive information about the number of life years lost due to air pollution in ' + data.district  + ' (' + data.state + ').'],
-                            ['decoy', "I prefer to receive information about the number of life years lost due to air pollution in Austria (a country in central Europe)."]
+                            ['home', 'I prefer to receive information about the number of life years lost due to air pollution in ' + bcoloredDistrict  + ' (' + data.state + ').'],
+                            ['decoy', 'I prefer to receive information about the number of life years lost due to air pollution in <span style="color:#ee6933;"><b>Austria</b></span> (a country in central Europe).']
                             // ['home', "<span style="font-size:25px;color:#ee6933;">" + data.district + '</span>' + ' (' + data.state + ')'],
                             // ['decoy', "<span style="font-size:25px;color:#ee6933;">Austria</span> (a country in central Europe)"]
                           ],
@@ -1564,6 +1568,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 //console.log(data);
                 W.setInnerHTML('state', data.state);
                 W.setInnerHTML('district', data.district);
+                let myDistrict = data.district;
+                let stringDistrict = String(myDistrict);
+                let coloredDistrict = stringDistrict.fontcolor("#ee6933");
+                let bcoloredDistrict = coloredDistrict.bold();
 
                 node.game.RegionC = node.widgets.append('ChoiceManager', "RegionOfChoice", {
                     id: 'PC_q',
@@ -1582,8 +1590,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                           orientation: 'V',
                           mainText: '<span style="font-size:30px;"><span style="font-weight: normal;color:gray;">Q11</span> What do you prefer?</span>',
                           choices: [
-                            ['home', 'I prefer to receive information about the number of life years lost due to air pollution in ' + data.district  + ' (' + data.state + ').'],
-                            ['decoy', "I prefer to receive information about the number of life years lost due to air pollution in Nicaragua (a country in Central America)."]
+                            ['home', 'I prefer to receive information about the number of life years lost due to air pollution in ' + bcoloredDistrict  + ' (' + data.state + ').'],
+                            ['decoy', 'I prefer to receive information about the number of life years lost due to air pollution in <span style="color:#ee6933;"><b>Nicaragua</b></span> (a country in Central America).']
                           ],
                           requiredChoice: true,
                           shuffleChoices: true
@@ -1942,7 +1950,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
 
         ////////////////////////////////////////////////////////////////////////////////
-        // PRIOR LYL
+        // Posterior LYL
         stager.extendStep('Part4_Posterior_LYL', {
             name: 'Part 4',
             frame: 'posterior_LYL.htm',
