@@ -1480,7 +1480,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         name: 'Feedback',
                         id: 'P4_T_q4',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q10b</span> Which protection measures are effective against air pollution indoors and which are effective indoors? Summarize below.',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q10b</span> Which actions can you take to protect yourself against air pollution outdoors and which actions can you take indoors? Summarize below.',
                         requiredChoice: true,
                         showSubmit: false,
                         minChars: 20,
