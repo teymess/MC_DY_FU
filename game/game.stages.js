@@ -24,6 +24,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .stage('Part_1_Survey')
     .step('Part_1_q2')
     .step('Part_1_q3')
+    .step('Part2_Info_Choice_Austria')
+    .step('Part2_Info_Choice_Nicaragua')
+    .step('Part2_choice_outcome')
+    .step('Part2_Pollution_in_your_district')
     .step('Part_1_q4')
 
     stager
