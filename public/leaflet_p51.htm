@@ -7,26 +7,24 @@
 <body>
   <br>
   <div id="container">
+    <img id="L5" src="#" width="100%"/>
+    <br>
+    <div id="data" style="display: none; display: flex">
+        <div id="map">
+          <br><br/>
 
-
-
-<table id="dataTable">
-  <tr>
-    <td colspan="2"><img id="L5" src="#" width="100%"/></td>
-  </tr>
-  <tr>
-<td style="text-align:center; vertical-align: middle" width="50%">
-  <div id="data" style="display: none; display: flex">
-      <div id="map" style="height: 400px; align-content: center; margin: 0 auto; line-height: 400px">
-  <img id="img" src="#" style="max-height: 400px; max-width:100%" />
-        </div>
+          <table style="height: 300px; width: 100%">
+            <tr>
+<td>
+    <img id="img" src="#" style="max-height:100%; max-width:100%" />
 </td>
-<td style="text-align:center" width="50%">
+<td>
   <div id="text">
       <!-- <img id="banner" src="#" width="400px" /> -->
       <!-- <b>How do PM2.5 concentrations in <span id="districtAgainAgain">-</span> compare to the WHO recommended levels?</b> -->
       <b>Air pollution in <span id="districtAgain">-</span> is about <span id="higher">-</span> times higher
       than the WHO recommended level.</b>
+      <br/>
       <!-- <p style="font-size:18px;line-height:160%;margin-bottom:0.25cm;">
         &nbsp;&nbsp; - WHO recommendation = <strong>5 &mu;/m<sup>3</sup></strong>
         <br/>
@@ -35,23 +33,23 @@
   </div>
 </td>
     </tr>
-    <tr>
-      <td colspan="2"><img src="Leaflet_images/banner_health_implic.png" width="100%" /></td>
-    </tr>
-        <tr>
-          <td colspan="2"><div id="LYL info">
-            <p style="font-size:18px;line-height:140%;margin-bottom:0.15cm;">
-            </p>
-            <p style="border: 2px solid #f5b7b1;padding:4px;line-height:140%;">
-                <img src="Leaflet_images/exclamation-mark.png" width="25px" /> <strong>People
-                living in <span id="districtAgainAgainAgain">-</span> lose on average <span style='color:#ff0000'><span id="years">-</span>
-                    years of their life</span> because of air pollution.</strong>
-            </p>
-          </div></td>
-        </tr>
           </table>
 
+        </div>
 
+    </div>
+
+    <div id="LYL info">
+      <br/>
+      <p style="font-size:18px;line-height:140%;margin-bottom:0.15cm;">
+          <img src="Leaflet_images/banner_health_implic.png" width="835px" />
+      </p>
+      <p style="border: 2px solid #f5b7b1;padding:4px;line-height:140%;">
+          <img src="Leaflet_images/exclamation-mark.png" width="25px" /> <strong>People
+          living in <span id="districtAgainAgainAgain">-</span> lose on average <span style='color:#ff0000'><span id="years">-</span>
+              years of their life</span> because of air pollution.</strong>
+      </p>
+    </div>
     <div id="Sources">
           <p style="color:gray;font-size:14px;margin-bottom:0.2cm;">
               Data Sources: Hammer et al. (2020) <a style="font-size:14px;line-height:100%;" href="https://sites.wustl.edu/acag/datasets/surface-pm2-5/#V4.GL.03" target="_blank">https://sites.wustl.edu/acag/datasets/surface-pm2-5/#V4.GL.03</a>;
@@ -61,20 +59,15 @@
     <br>
    <div id="ComprehquestionsL5"></div>
   </div>
-
-      </div>
-
 </body>
 
 
 <style>
 
-
-.table#dataTable {
-            margin-left: auto;
-            margin-right: auto;
-            width: 100%;
-            table-layout:fixed;
-        }
+td {
+  text-align: center;
+  vertical-align: middle;
+  width: 50%;
+}
 
 </style>
