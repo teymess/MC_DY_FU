@@ -1016,180 +1016,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         }
     });
 
-////////////////////////////////////////////////////////////////////////////////
-// PRIOR LYL
-    stager.extendStep('Part2_Prior_LYL_Austria', {
-        name: 'Part 2',
-        frame: 'prior_LYL.htm',
-        donebutton: false,
-        cb: function() {
-            node.get('districtData', function(data) {
-
-              let myDistrict = data.district;
-              let stringDistrict = String(myDistrict);
-              let coloredDistrict = stringDistrict.fontcolor("#ee6933");
-
-            node.game.Q_impact = node.widgets.append('ChoiceManager', "T_impact", {
-                    id: 'T_impact_q',
-                    simplify: true,
-                    panel: false,
-                    forms: [
-                      {
-                          id: 'LYL_prior_home',
-                          mainText: '<span style="font-weight: normal;color:gray;">Q5</span> How many years of life do people living in ' +
-                          coloredDistrict + ' lose on average because of air pollution?<br>' +
-                          //data.district + ' lose on average because of air pollution?<br>' +
-                          '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
-                          hint: false,
-                          name: 'Slider',
-                          hidden: true,
-                          requiredChoice: true,
-                          initialValue: 0,
-                          min: 0,
-                          max: 120,
-                          left: '0 years',
-                          right: '12 years',
-                          displayNoChange: false,
-                          type: 'flat',
-                          panel: false,
-                          texts: {
-                              currentValue: function(widget, value) {
-                                  let LYL = [
-                                      '0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9',
-                                      '1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9',
-                                      '2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9',
-                                      '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9',
-                                      '4.0', '4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9',
-                                      '5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9',
-                                      '6.0', '6.1', '6.2', '6.3', '6.4', '6.5', '6.6', '6.7', '6.8', '6.9',
-                                      '7.0', '7.1', '7.2', '7.3', '7.4', '7.5', '7.6', '7.7', '7.8', '7.9',
-                                      '8.0', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6', '8.7', '8.8', '8.9',
-                                      '9.0', '9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8', '9.9',
-                                      '10.0', '10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7', '10.8', '10.9',
-                                      '11.0', '11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9',
-                                      '12'
-                                  ];
-                                  node.game.contributionAmount = LYL[(value)];
-                                  return '<span style=\'font-size:20px;\'>You think people living in ' +
-                                  data.district + ' lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
-                              }
-                          }
-                      },
-                    ]
-                });
-
-                W.show('data', 'flex');
-                node.game.doneButton.enable();
-            });
-        },
-        done: function() {
-            var w, q1, q2, q3, q4;
-
-            w = node.game.Q_impact;
-
-            // DISPLAY 1
-            q1 = w.formsById.LYL_prior_home;
-            if (q1.isHidden()) {
-                q1.reset(); // removes error.
-                q1.show();
-                return false;
-            }
-
-            // DISPLAY 2
-            q2 = w.formsById.T_confident;
-            if (!q2) {
-                node.widgets.last.addForm({
-                    id: 'T_confident',
-                    orientation: 'H',
-                    mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How confident are you about your answer to the previous question?</span>',
-                    choices: [
-                      ['1', 'Not confident at all'],
-                      ['2', 'Not very confident'],
-                      ['3', 'Neutral'],
-                      ['4', 'Quite confident'],
-                      ['5', 'Completely confident']
-                    ],
-                    shuffleChoices: false,
-                    requiredChoice: true,
-                });
-                return false;
-            }
-
-            // DISPLAY 3
-            q3 = w.formsById.LYL_prior_Austria;
-            if (!q3) {
-                // if (q3) q3.disable();
-                node.widgets.last.addForm({
-                      id: 'LYL_prior_Austria',
-                      mainText: '<span style="font-weight: normal;color:gray;">Q7</span> How many years of life do people living in <span style="color:#ee6933;">Austria</span>, a ' +
-                      'country in central Europe, lose on average because of air pollution?<br>' +
-                      '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
-                      hint: false,
-                      name: 'Slider',
-                      hidden: false,
-                      requiredChoice: true,
-                      initialValue: 0,
-                      min: 0,
-                      max: 120,
-                      left: '0 years',
-                      right: '12 years',
-                      displayNoChange: false,
-                      type: 'flat',
-                      panel: false,
-                      texts: {
-                          currentValue: function(widget, value) {
-                              let LYL = [
-                                  '0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9',
-                                  '1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9',
-                                  '2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9',
-                                  '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9',
-                                  '4.0', '4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9',
-                                  '5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9',
-                                  '6.0', '6.1', '6.2', '6.3', '6.4', '6.5', '6.6', '6.7', '6.8', '6.9',
-                                  '7.0', '7.1', '7.2', '7.3', '7.4', '7.5', '7.6', '7.7', '7.8', '7.9',
-                                  '8.0', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6', '8.7', '8.8', '8.9',
-                                  '9.0', '9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8', '9.9',
-                                  '10.0', '10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7', '10.8', '10.9',
-                                  '11.0', '11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9',
-                                  '12'
-                              ];
-                              node.game.contributionAmount = LYL[(value)];
-                              return '<span style=\'font-size:20px;\'>You think people living in Austria' +
-                              ' lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
-                          }
-                      }
-                });
-                return false;
-            }
-
-            // DISPLAY 4 -- How confident?
-            q4 = w.formsById.T_confident_Austria;
-            if (!q4) {
-                node.widgets.last.addForm({
-                    id: 'T_confident_Austria',
-                    orientation: 'H',
-                    mainText: '<span style="font-weight: normal;color:gray;">Q8</span> How confident are you about your answer to the previous question?</span>',
-                    choices: [
-                      ['1', 'Not confident at all'],
-                      ['2', 'Not very confident'],
-                      ['3', 'Neutral'],
-                      ['4', 'Quite confident'],
-                      ['5', 'Completely confident']
-                    ],
-                    shuffleChoices: false,
-                    requiredChoice: true,
-                });
-                return false;
-            }
-            return w.getValues();
-        }
-    });
-
     ////////////////////////////////////////////////////////////////////////////////
     // PRIOR LYL
-        stager.extendStep('Part2_Prior_LYL_Nicaragua', {
+        stager.extendStep('Part2_Prior_LYL_home', {
             name: 'Part 2',
-            frame: 'prior_LYL.htm',
+            frame: 'prior_home.htm',
             donebutton: false,
             cb: function() {
                 node.get('districtData', function(data) {
@@ -1207,7 +1038,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                               id: 'LYL_prior_home',
                               mainText: '<span style="font-weight: normal;color:gray;">Q5</span> How many years of life do people living in ' +
                               coloredDistrict + ' lose on average because of air pollution?<br>' +
-                              //data.district + ' lose on average because of air pollution?<br>' +
                               '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
                               hint: false,
                               name: 'Slider',
@@ -1252,7 +1082,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 });
             },
             done: function() {
-                var w, q1, q2, q3, q4;
+                var w, q1, q2;
 
                 w = node.game.Q_impact;
 
@@ -1284,60 +1114,192 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     return false;
                 }
 
-                // DISPLAY 3
-                q3 = w.formsById.LYL_prior_Nicaragua;
-                if (!q3) {
-                    // if (q3) q3.disable();
-                    node.widgets.last.addForm({
-                      id: 'LYL_prior_Nicaragua',
-                      mainText: '<span style="font-weight: normal;color:gray;">Q7</span> How many years of life do people living in <span style="color:#ee6933;">Nicaragua</span>, a ' +
-                      'country in Central America, lose on average because of air pollution?<br>' +
-                      '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
-                      hint: false,
-                      name: 'Slider',
-                      hidden: false,
-                      requiredChoice: true,
-                      initialValue: 0,
-                      min: 0,
-                      max: 120,
-                      left: '0 years',
-                      right: '12 years',
-                      displayNoChange: false,
-                      type: 'flat',
-                      panel: false,
-                      texts: {
-                          currentValue: function(widget, value) {
-                              let LYL = [
-                                  '0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9',
-                                  '1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9',
-                                  '2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9',
-                                  '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9',
-                                  '4.0', '4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9',
-                                  '5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9',
-                                  '6.0', '6.1', '6.2', '6.3', '6.4', '6.5', '6.6', '6.7', '6.8', '6.9',
-                                  '7.0', '7.1', '7.2', '7.3', '7.4', '7.5', '7.6', '7.7', '7.8', '7.9',
-                                  '8.0', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6', '8.7', '8.8', '8.9',
-                                  '9.0', '9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8', '9.9',
-                                  '10.0', '10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7', '10.8', '10.9',
-                                  '11.0', '11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9',
-                                  '12'
-                              ];
-                              node.game.contributionAmount = LYL[(value)];
-                              return '<span style=\'font-size:20px;\'>You think people living in Nicaragua' +
-                              ' lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
-                          }
-                      }
-                    });
-                    return false;
-                }
+                return w.getValues();
+            }
+        });
 
-                // DISPLAY 4 -- How confident?
-                q4 = w.formsById.T_confident_Nicaragua;
-                if (!q4) {
+
+////////////////////////////////////////////////////////////////////////////////
+// PRIOR LYL
+    stager.extendStep('Part2_Prior_LYL_Austria', {
+        name: 'Part 2',
+        frame: 'prior_LYL.htm',
+        donebutton: true,
+        cb: function() {
+        //    node.get('districtData', function(data) {
+
+            node.game.Q_impact = node.widgets.append('ChoiceManager', "T_impact", {
+                    id: 'T_impact_q',
+                    simplify: true,
+                    panel: false,
+                    forms: [
+                      {
+                          id: 'LYL_prior_Austria',
+                          mainText: '<span style="font-weight: normal;color:gray;">Q7</span> How many years of life do people living in <span style="color:#ee6933;">Austria</span>, a ' +
+                          'country in central Europe, lose on average because of air pollution?<br>' +
+                          '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
+                          hint: false,
+                          name: 'Slider',
+                          hidden: false,
+                          requiredChoice: true,
+                          initialValue: 0,
+                          min: 0,
+                          max: 120,
+                          left: '0 years',
+                          right: '12 years',
+                          displayNoChange: false,
+                          type: 'flat',
+                          panel: false,
+                          texts: {
+                              currentValue: function(widget, value) {
+                                  let LYL = [
+                                      '0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9',
+                                      '1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9',
+                                      '2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9',
+                                      '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9',
+                                      '4.0', '4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9',
+                                      '5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9',
+                                      '6.0', '6.1', '6.2', '6.3', '6.4', '6.5', '6.6', '6.7', '6.8', '6.9',
+                                      '7.0', '7.1', '7.2', '7.3', '7.4', '7.5', '7.6', '7.7', '7.8', '7.9',
+                                      '8.0', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6', '8.7', '8.8', '8.9',
+                                      '9.0', '9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8', '9.9',
+                                      '10.0', '10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7', '10.8', '10.9',
+                                      '11.0', '11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9',
+                                      '12'
+                                  ];
+                                  node.game.contributionAmount = LYL[(value)];
+                                  return '<span style=\'font-size:20px;\'>You think people living in Austria' +
+                                  ' lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+                              }
+                          }
+                      },
+                    ]
+                });
+
+              //  W.show('data', 'flex');
+                node.game.doneButton.enable();
+          //  });
+        },
+        done: function() {
+            //var w, q1, q2;
+            var w, q2;
+
+            w = node.game.Q_impact;
+
+            // DISPLAY 1
+            //q1 = w.formsById.LYL_prior_Austria;
+            //if (q1.isHidden()) {
+              //  q1.reset(); // removes error.
+              //  q1.show();
+            //    return false;
+            //}
+
+            // DISPLAY 2
+            q2 = w.formsById.T_confident;
+            if (!q2) {
+                node.widgets.last.addForm({
+                    id: 'T_confident',
+                    orientation: 'H',
+                    mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How confident are you about your answer to the previous question?</span>',
+                    choices: [
+                      ['1', 'Not confident at all'],
+                      ['2', 'Not very confident'],
+                      ['3', 'Neutral'],
+                      ['4', 'Quite confident'],
+                      ['5', 'Completely confident']
+                    ],
+                    shuffleChoices: false,
+                    requiredChoice: true,
+                });
+                return false;
+            }
+
+            return w.getValues();
+        }
+    });
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // PRIOR LYL
+        stager.extendStep('Part2_Prior_LYL_Nicaragua', {
+            name: 'Part 2',
+            frame: 'prior_LYL.htm',
+            donebutton: true,
+            cb: function() {
+                //node.get('districtData', function(data) {
+
+                node.game.Q_impact = node.widgets.append('ChoiceManager', "T_impact", {
+                        id: 'T_impact_q',
+                        simplify: true,
+                        panel: false,
+                        forms: [
+                          {
+                            id: 'LYL_prior_Nicaragua',
+                            mainText: '<span style="font-weight: normal;color:gray;">Q7</span> How many years of life do people living in <span style="color:#ee6933;">Nicaragua</span>, a ' +
+                            'country in Central America, lose on average because of air pollution?<br>' +
+                            '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
+                            hint: false,
+                            name: 'Slider',
+                            hidden: false,
+                            requiredChoice: true,
+                            initialValue: 0,
+                            min: 0,
+                            max: 120,
+                            left: '0 years',
+                            right: '12 years',
+                            displayNoChange: false,
+                            type: 'flat',
+                            panel: false,
+                            texts: {
+                                currentValue: function(widget, value) {
+                                    let LYL = [
+                                        '0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9',
+                                        '1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9',
+                                        '2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9',
+                                        '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9',
+                                        '4.0', '4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9',
+                                        '5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9',
+                                        '6.0', '6.1', '6.2', '6.3', '6.4', '6.5', '6.6', '6.7', '6.8', '6.9',
+                                        '7.0', '7.1', '7.2', '7.3', '7.4', '7.5', '7.6', '7.7', '7.8', '7.9',
+                                        '8.0', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6', '8.7', '8.8', '8.9',
+                                        '9.0', '9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8', '9.9',
+                                        '10.0', '10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7', '10.8', '10.9',
+                                        '11.0', '11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9',
+                                        '12'
+                                    ];
+                                    node.game.contributionAmount = LYL[(value)];
+                                    return '<span style=\'font-size:20px;\'>You think people living in Nicaragua' +
+                                    ' lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+                                }
+                              }
+                          },
+                        ]
+                    });
+
+                    //W.show('data', 'flex');
+                    //node.game.doneButton.enable();
+                //});
+            },
+            done: function() {
+                //var w, q1, q2;
+                var w, q2;
+
+                w = node.game.Q_impact;
+
+                // DISPLAY 1
+                //q1 = w.formsById.LYL_prior_Austria;
+                //if (q1.isHidden()) {
+                  //  q1.reset(); // removes error.
+                  //  q1.show();
+                //    return false;
+                //}
+
+                // DISPLAY 2
+                q2 = w.formsById.T_confident;
+                if (!q2) {
                     node.widgets.last.addForm({
-                        id: 'T_confident_Nicaragua',
+                        id: 'T_confident',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q8</span> How confident are you about your answer to the previous question?</span>',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How confident are you about your answer to the previous question?</span>',
                         choices: [
                           ['1', 'Not confident at all'],
                           ['2', 'Not very confident'],
@@ -1350,6 +1312,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     });
                     return false;
                 }
+
                 return w.getValues();
             }
         });
