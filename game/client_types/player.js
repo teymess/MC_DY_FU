@@ -921,11 +921,14 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         '- wages and salaries from all jobs <br>' +
                         '- the revenue from self-employment <br>' +
                         '- all income from casual labour.</span>',
-                        choices: ['Less than 2,00,000 INR',
-                                  '2,00,000 INR – 5,00,000 INR',
-                                  '5,00,000 INR – 10,00,000 INR',
-                                  '10,00,000 INR – 20,00,000 INR',
-                                  '20,00,000 INR or more'],
+                        choices: ['Less than 45,000 INR',
+                        '45,000 INR – 90,000 INR',
+                        '90,000 INR – 1,25,000 INR',
+                        '1,25,000 INR – 2,00,000 INR',
+                        '2,00,000 INR – 2,40,000 INR',
+                        '2,40,000 INR – 2,95,000 INR',
+                        '2,95,000 INR – 4,05,000 INR',
+                        'More than 4,05,000 INR'],
                         shuffleChoices: false,
                         requiredChoice: true,
                         choicesSetSize: 2
