@@ -1638,13 +1638,13 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     // W.gid('banner').src = "Leaflet_images/banner_PM25_Austria.png";
 
                     node.game.controlQuestions = node.widgets.append('ChoiceManager', "ComprehquestionsL5", {
-                        id: 'p5_q',
+                        id: 'p5_q_austria',
                         // ref: 'controlQuestions',
                         mainText: 'Based on the information provided above, find the correct answer to the question below.',
                         simplify: true,
                         forms: [
                             {
-                                id: 'p5_q1',
+                                id: 'p5_q1_austria',
                                 orientation: 'H',
                                 mainText: '<span style="font-weight: normal;color:gray;">Q12</span> On average, how many years of life does a person living in Austria lose because of air pollution?<br>',
                                 choices: [
@@ -1680,13 +1680,13 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     // W.gid('banner').src = "Leaflet_images/banner_PM25_Nicaragua.png";
 
                     node.game.controlQuestions = node.widgets.append('ChoiceManager', "ComprehquestionsL5", {
-                        id: 'p5_q',
+                        id: 'p5_q_nicaragua',
                         // ref: 'controlQuestions',
                         mainText: 'Based on the information provided box above, find the correct answer to the question below.',
                         simplify: true,
                         forms: [
                             {
-                                id: 'p5_q1',
+                                id: 'p5_q1_nicaragua',
                                 orientation: 'H',
                                 mainText: '<span style="font-weight: normal;color:gray;">Q12</span> On average, how many years of life does a person living in Nicaragua lose because of air pollution?',
                                 choices: [
@@ -1729,13 +1729,13 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
 
                     node.game.controlQuestions = node.widgets.append('ChoiceManager', "ComprehquestionsL5", {
-                        id: 'p5_q',
+                        id: 'p5_q_home',
                         // ref: 'controlQuestions',
                         mainText: 'Based on the information provided above, find the correct answer to the question below.',
                         simplify: true,
                         forms: [
                             {
-                                id: 'p5_q1',
+                                id: 'p5_q1_home',
                                 orientation: 'H',
                                 mainText: '<span style="font-weight: normal;color:gray;">Q12</span> On average, how many years of life does a person living in your district lose because of air pollution?<br>',
                                 choices: [
