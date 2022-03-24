@@ -1388,7 +1388,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             id: 'P4_T_q',
             options: {
                 simplify: true,
-                mainText: 'This time, think about <b>yourself</b> and <b>your opinion</b> on how to protect yourself against air pollution.<br>',
+                mainText: 'Now, we are interested in <b>your opinion</b>.',
                 forms: [
                     {
                         id: 'P4_T_q2',
