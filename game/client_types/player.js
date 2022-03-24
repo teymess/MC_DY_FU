@@ -136,7 +136,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory1 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_1',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/V93T77H"><img src="https://i.ibb.co/Pjtg77T/usbcable01b.jpg" alt="usbcable01b" border="0" width="40%" /></a></div>',
+                mainText: '<div class="aligned"><img src="https://i.ibb.co/Pjtg77T/usbcable01b.jpg" alt="usbcable01b" border="0" width="40%" /></div>',
                 simplify: true,
                 forms: [
                     {
@@ -177,7 +177,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory2 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_2',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/5Kv6GYQ"><img src="https://i.ibb.co/g4w3mv0/rope02.jpg" alt="rope02" border="0" width="40%" /></a></div>',
+                mainText: '<div class="aligned"><img src="https://i.ibb.co/g4w3mv0/rope02.jpg" alt="rope02" border="0" width="40%" /></div>',
                 simplify: true,
                 forms: [
                     {
@@ -221,7 +221,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory3 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_3',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/NZh0B2H"><img src="https://i.ibb.co/6ghKC0f/calculator02c.jpg" alt="calculator02c" border="0" width="40%" /></a></div>',
+                mainText: '<div class="aligned"><img src="https://i.ibb.co/6ghKC0f/calculator02c.jpg" alt="calculator02c" border="0" width="40%" /></div>',
                 simplify: true,
                 forms: [
                     {
@@ -262,7 +262,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory4 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_4',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/K54MVf9"><img src="https://i.ibb.co/51pNsS5/envelope02b.jpg" alt="envelope02b" border="0" width="40%" /></a></div>',
+                mainText: '<div class="aligned"><img src="https://i.ibb.co/51pNsS5/envelope02b.jpg" alt="envelope02b" border="0" width="40%" /></div>',
                 simplify: true,
                 forms: [
                     {
@@ -303,7 +303,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory5 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_5',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/SBJtJQ1"><img src="https://i.ibb.co/89XrXzR/dice02a.jpg" alt="dice02a" border="0" width="40%" /></a></div>',
+                mainText: '<div class="aligned"><img src="https://i.ibb.co/89XrXzR/dice02a.jpg" alt="dice02a" border="0" width="40%" /></div>',
                 simplify: true,
                 forms: [
                     {
@@ -344,7 +344,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory6 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_6',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/CVg22LX"><img src="https://i.ibb.co/xzWHHZc/watermelon02b.jpg" alt="watermelon02b" border="0" width="40%" /></a></div>',
+                mainText: '<div class="aligned"><img src="https://i.ibb.co/xzWHHZc/watermelon02b.jpg" alt="watermelon02b" border="0" width="40%" /></div>',
                 simplify: true,
                 forms: [
                     {
@@ -385,7 +385,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory7 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_7',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/h1Lm9pt"><img src="https://i.ibb.co/vvVjq2K/paintbrush03a.jpg" alt="paintbrush03a" border="0" width="40%" /></a></div>',
+                mainText: '<div class="aligned"><img src="https://i.ibb.co/vvVjq2K/paintbrush03a.jpg" alt="paintbrush03a" border="0" width="40%" /></div>',
                 simplify: true,
                 forms: [
                     {
@@ -426,7 +426,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory8 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_8',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/TvcHpcM"><img src="https://i.ibb.co/C1BnNBK/sponge02a.jpg" alt="sponge02a" border="0" width="40%" /></a></div>',
+                mainText: '<div class="aligned"><img src="https://i.ibb.co/C1BnNBK/sponge02a.jpg" alt="sponge02a" border="0" width="40%" /></div>',
                 simplify: true,
                 forms: [
                     {
@@ -467,7 +467,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory9 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_9',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/PGhMPKc"><img src="https://i.ibb.co/nMcBY97/lighter03b.jpg" alt="lighter03b" border="0" width="40%" /></a></div>',
+                mainText: '<div class="aligned"><img src="https://i.ibb.co/nMcBY97/lighter03b.jpg" alt="lighter03b" border="0" width="40%" /></div>',
                 simplify: true,
                 forms: [
                     {
@@ -508,7 +508,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory10 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_10',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/FzV0f3z"><img src="https://i.ibb.co/vkYQrqk/boxtruck.jpg" alt="boxtruck" border="0" width="40%" /></a></div>',
+                mainText: '<div class="aligned"><img src="https://i.ibb.co/vkYQrqk/boxtruck.jpg" alt="boxtruck" border="0" width="40%" /></div>',
                 simplify: true,
                 forms: [
                     {
@@ -549,7 +549,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory11 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_11',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/Js3nt8D"><img src="https://i.ibb.co/HHh74R5/candelabra.jpg" alt="candelabra" border="0" width="40%" /></a></div>',
+                mainText: '<div class="aligned"><img src="https://i.ibb.co/HHh74R5/candelabra.jpg" alt="candelabra" border="0" width="40%" /></div>',
                 simplify: true,
                 forms: [
                     {
@@ -590,7 +590,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory12 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_12',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/fkYkhRv"><img src="https://i.ibb.co/y6n6wTS/spatula01.jpg" alt="spatula01" border="0" width="40%" /></a></div>',
+                mainText: '<div class="aligned"><img src="https://i.ibb.co/y6n6wTS/spatula01.jpg" alt="spatula01" border="0" width="40%" /></div>',
                 simplify: true,
                 forms: [
                     {
@@ -631,7 +631,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory13 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_13',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/QjQVF77"><img src="https://i.ibb.co/G3pDvff/butterfly.jpg" alt="butterfly" border="0" width="40%" /></a></div>',
+                mainText: '<div class="aligned"><img src="https://i.ibb.co/G3pDvff/butterfly.jpg" alt="butterfly" border="0" width="40%" /></div>',
                 simplify: true,
                 forms: [
                     {
@@ -672,7 +672,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory14 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_14',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/86YzD9V"><img src="https://i.ibb.co/NZT16Kz/thumbtack02b.jpg" alt="thumbtack02b" border="0" width="40%" /></a></div>',
+                mainText: '<div class="aligned"><img src="https://i.ibb.co/NZT16Kz/thumbtack02b.jpg" alt="thumbtack02b" border="0" width="40%" /></div>',
                 simplify: true,
                 forms: [
                     {
@@ -713,7 +713,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.memory15 = node.widgets.append('ChoiceManager', "input-div", {
                 id: 'memory_test_15',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><a href="https://ibb.co/VSNJyVt"><img src="https://i.ibb.co/wWLBHyR/carbattery.jpg" alt="carbattery" border="0" width="40%" /></a></div>',
+                mainText: '<div class="aligned"><img src="https://i.ibb.co/wWLBHyR/carbattery.jpg" alt="carbattery" border="0" width="40%" /></div>',
                 simplify: true,
                 forms: [
                     {
@@ -1862,11 +1862,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     if (count === zeros) {
                         message1 = 'The answer is <strong>correct.</strong>';
                         node.game.correct += 1;
-                        message2='So far, you had '+ node.game.correct+ ' correct tables';
+                        message2='So far, you had '+ node.game.correct+ ' correct tables.';
                     }
                     else {
                         message1 = 'The answer is <string>wrong.</strong>';
-                        message2 = 'So far, you had '+ node.game.correct+ ' correct tables';
+                        message2 = 'So far, you had '+ node.game.correct+ ' correct tables.';
                     }
                     //                alert(message);
                     // Hide element with id above.
