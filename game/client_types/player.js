@@ -2315,7 +2315,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                 'Indicate how much control do you think you have over the impacts of air pollution on your health.',
                                 forms: [
                                     {
-                                        id: 'LOC_q6',
+                                        id: 'LOC_q8',
                                         mainText: '<span style="font-weight: normal;">Please choose the answer that best completes the following sentence:</span><br><br/>' +
                                         '"The impact of air pollution on my own health is ..."',
                                         choices: [
