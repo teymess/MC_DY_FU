@@ -166,7 +166,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 return false;
             }
             q1.hide();
-            return { bonus: node.game.bonusMemory1 };
+            return { m1_bonus: node.game.bonusMemory1 };
         }
     });
 
@@ -207,7 +207,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 return false;
             }
             q1.hide();
-            return { bonus: node.game.bonusMemory2 };
+            return { m2_bonus: node.game.bonusMemory2 };
         }
     });
 
@@ -251,7 +251,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 return false;
             }
             q1.hide();
-            return { bonus: node.game.bonusMemory3 };
+            return { m3_bonus: node.game.bonusMemory3 };
         }
     });
 
@@ -292,7 +292,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 return false;
             }
             q1.hide();
-            return { bonus: node.game.bonusMemory4 };
+            return { m4_bonus: node.game.bonusMemory4 };
         }
     });
 
@@ -333,7 +333,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 return false;
             }
             q1.hide();
-            return { bonus: node.game.bonusMemory5 };
+            return { m5_bonus: node.game.bonusMemory5 };
         }
     });
 
@@ -374,7 +374,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 return false;
             }
             q1.hide();
-            return { bonus: node.game.bonusMemory6 };
+            return { m6_bonus: node.game.bonusMemory6 };
         }
     });
 
@@ -415,7 +415,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 return false;
             }
             q1.hide();
-            return { bonus: node.game.bonusMemory7 };
+            return { m7_bonus: node.game.bonusMemory7 };
         }
     });
 
@@ -456,7 +456,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 return false;
             }
             q1.hide();
-            return { bonus: node.game.bonusMemory8 };
+            return { m8_bonus: node.game.bonusMemory8 };
         }
     });
 
@@ -497,7 +497,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 return false;
             }
             q1.hide();
-            return { bonus: node.game.bonusMemory9 };
+            return { m9_bonus: node.game.bonusMemory9 };
         }
     });
 
@@ -538,7 +538,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 return false;
             }
             q1.hide();
-            return { bonus: node.game.bonusMemory10 };
+            return { m10_bonus: node.game.bonusMemory10 };
         }
     });
 
@@ -579,7 +579,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 return false;
             }
             q1.hide();
-            return { bonus: node.game.bonusMemory11 };
+            return { m11_bonus: node.game.bonusMemory11 };
         }
     });
 
@@ -620,7 +620,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 return false;
             }
             q1.hide();
-            return { bonus: node.game.bonusMemory12 };
+            return { m12_bonus: node.game.bonusMemory12 };
         }
     });
 
@@ -661,7 +661,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 return false;
             }
             q1.hide();
-            return { bonus: node.game.bonusMemory13 };
+            return { m13_bonus: node.game.bonusMemory13 };
         }
     });
 
@@ -702,7 +702,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 return false;
             }
             q1.hide();
-            return { bonus: node.game.bonusMemory14 };
+            return { m14_bonus: node.game.bonusMemory14 };
         }
     });
 
@@ -743,7 +743,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 return false;
             }
             q1.hide();
-            return { bonus: node.game.bonusMemory15 };
+            return { m15_bonus: node.game.bonusMemory15 };
         }
     });
 
