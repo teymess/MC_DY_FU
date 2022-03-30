@@ -63,77 +63,77 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             let step = node.game.getStepId(msg.stage);
 
             if (step === 'memory_test1') {
-                let bonus = msg.data.bonus;
+                let bonus = msg.data.m1_bonus;
                 console.log(bonus);
                 gameRoom.updateWin(id, bonus);
             }
             else if (step === 'memory_test2') {
-                let bonus = msg.data.bonus;
+                let bonus = msg.data.m2_bonus;
                 console.log(bonus);
                 gameRoom.updateWin(id, bonus);
             }
             else if (step === 'memory_test3') {
-                let bonus = msg.data.bonus;
+                let bonus = msg.data.m3_bonus;
                 console.log(bonus);
                 gameRoom.updateWin(id, bonus);
             }
             else if (step === 'memory_test4') {
-                let bonus = msg.data.bonus;
+                let bonus = msg.data.m4_bonus;
                 console.log(bonus);
                 gameRoom.updateWin(id, bonus);
             }
             else if (step === 'memory_test5') {
-                let bonus = msg.data.bonus;
+                let bonus = msg.data.m5_bonus;
                 console.log(bonus);
                 gameRoom.updateWin(id, bonus);
             }
             else if (step === 'memory_test6') {
-                let bonus = msg.data.bonus;
+                let bonus = msg.data.m6_bonus;
                 console.log(bonus);
                 gameRoom.updateWin(id, bonus);
             }
             else if (step === 'memory_test7') {
-                let bonus = msg.data.bonus;
+                let bonus = msg.data.m7_bonus;
                 console.log(bonus);
                 gameRoom.updateWin(id, bonus);
             }
             else if (step === 'memory_test8') {
-                let bonus = msg.data.bonus;
+                let bonus = msg.data.m8_bonus;
                 console.log(bonus);
                 gameRoom.updateWin(id, bonus);
             }
             else if (step === 'memory_test9') {
-                let bonus = msg.data.bonus;
+                let bonus = msg.data.m9_bonus;
                 console.log(bonus);
                 gameRoom.updateWin(id, bonus);
             }
             else if (step === 'memory_test10') {
-                let bonus = msg.data.bonus;
+                let bonus = msg.data.m10_bonus;
                 console.log(bonus);
                 gameRoom.updateWin(id, bonus);
             }
             else if (step === 'memory_test11') {
-                let bonus = msg.data.bonus;
+                let bonus = msg.data.m11_bonus;
                 console.log(bonus);
                 gameRoom.updateWin(id, bonus);
             }
             else if (step === 'memory_test12') {
-                let bonus = msg.data.bonus;
+                let bonus = msg.data.m12_bonus;
                 console.log(bonus);
                 gameRoom.updateWin(id, bonus);
             }
             else if (step === 'memory_test13') {
-                let bonus = msg.data.bonus;
+                let bonus = msg.data.m13_bonus;
                 console.log(bonus);
                 gameRoom.updateWin(id, bonus);
             }
             else if (step === 'memory_test14') {
-                let bonus = msg.data.bonus;
+                let bonus = msg.data.m14_bonus;
                 console.log(bonus);
                 gameRoom.updateWin(id, bonus);
             }
             else if (step === 'memory_test15') {
-                let bonus = msg.data.bonus;
+                let bonus = msg.data.m15_bonus;
                 console.log(bonus);
                 gameRoom.updateWin(id, bonus);
             }
