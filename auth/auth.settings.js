@@ -46,7 +46,7 @@ module.exports = {
      * Modes: 'dummy', 'auto'
      * Default: 100
      */
-    // nCodes: 20,
+     nCodes: 500,
 
     /**
      * ## addPwd
