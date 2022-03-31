@@ -1198,12 +1198,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             //}
 
             // DISPLAY 2
-            q2 = w.formsById.T_confident;
+            q2 = w.formsById.T_confident_decoy;
             if (!q2) {
                 node.widgets.last.addForm({
-                    id: 'T_confident',
+                    id: 'T_confident_decoy',
                     orientation: 'H',
-                    mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How confident are you about your answer to the previous question?</span>',
+                    mainText: '<span style="font-weight: normal;color:gray;">Q8</span> How confident are you about your answer to the previous question?</span>',
                     choices: [
                       ['1', 'Not confident at all'],
                       ['2', 'Not very confident'],
@@ -1297,12 +1297,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 //}
 
                 // DISPLAY 2
-                q2 = w.formsById.T_confident;
+                q2 = w.formsById.T_confident_decoy;
                 if (!q2) {
                     node.widgets.last.addForm({
-                        id: 'T_confident',
+                        id: 'T_confident_decoy',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How confident are you about your answer to the previous question?</span>',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q8</span> How confident are you about your answer to the previous question?</span>',
                         choices: [
                           ['1', 'Not confident at all'],
                           ['2', 'Not very confident'],
