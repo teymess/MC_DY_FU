@@ -118,7 +118,7 @@ module.exports = {
      *
      * Default: FALSE
      */
-    // claimId: true,
+     claimId: true,
 
     /**
      * ## claimIdValidateRequest
