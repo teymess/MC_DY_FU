@@ -52,7 +52,7 @@ module.exports = {
      * to use the real channel name, so you will need to pass it explicitly:
      * `node.connect('/gameName').
      */
-    // alias: [],
+     alias: ['survey'],
 
     /**
      * ## playerServer (object|string) Optional
