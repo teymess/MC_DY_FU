@@ -1072,8 +1072,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                           '12'
                                       ];
                                       node.game.contributionAmount = LYL[(value)];
+                                      let myAnswer = LYL[(value)];
+                                      let stringAnswer = String(myAnswer);
+                                      let coloredAnswer = stringAnswer.fontcolor("#ee6933");
                                       return '<span style=\'font-size:20px;\'>You think people living in ' +
-                                      data.district + ' lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+                                      //data.district + ' lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+                                      data.district + ' lose on average ' + coloredAnswer + ' years of life due to air pollution.</span>';
                                   }
                               }
                           },
@@ -1171,8 +1175,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                       '12'
                                   ];
                                   node.game.contributionAmount = LYL[(value)];
+                                  let myAnswer = LYL[(value)];
+                                  let stringAnswer = String(myAnswer);
+                                  let coloredAnswer = stringAnswer.fontcolor("#ee6933");
                                   return '<span style=\'font-size:20px;\'>You think people living in Austria' +
-                                  ' lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+                                  ' lose on average ' + coloredAnswer + ' years of life due to air pollution.</span>';
                               }
                           }
                       },
@@ -1198,12 +1205,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             //}
 
             // DISPLAY 2
-            q2 = w.formsById.T_confident;
+            q2 = w.formsById.T_confident_decoy;
             if (!q2) {
                 node.widgets.last.addForm({
-                    id: 'T_confident',
+                    id: 'T_confident_decoy',
                     orientation: 'H',
-                    mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How confident are you about your answer to the previous question?</span>',
+                    mainText: '<span style="font-weight: normal;color:gray;">Q8</span> How confident are you about your answer to the previous question?</span>',
                     choices: [
                       ['1', 'Not confident at all'],
                       ['2', 'Not very confident'],
@@ -1270,8 +1277,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                         '12'
                                     ];
                                     node.game.contributionAmount = LYL[(value)];
+                                    let myAnswer = LYL[(value)];
+                                    let stringAnswer = String(myAnswer);
+                                    let coloredAnswer = stringAnswer.fontcolor("#ee6933");
                                     return '<span style=\'font-size:20px;\'>You think people living in Nicaragua' +
-                                    ' lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+                                    ' lose on average ' + coloredAnswer + ' years of life due to air pollution.</span>';
                                 }
                               }
                           },
@@ -1297,12 +1307,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 //}
 
                 // DISPLAY 2
-                q2 = w.formsById.T_confident;
+                q2 = w.formsById.T_confident_decoy;
                 if (!q2) {
                     node.widgets.last.addForm({
-                        id: 'T_confident',
+                        id: 'T_confident_decoy',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How confident are you about your answer to the previous question?</span>',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q8</span> How confident are you about your answer to the previous question?</span>',
                         choices: [
                           ['1', 'Not confident at all'],
                           ['2', 'Not very confident'],
@@ -1979,8 +1989,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                                 '12'
                                             ];
                                             node.game.contributionAmount = LYL[(value)];
+                                            let myAnswer = LYL[(value)];
+                                            let stringAnswer = String(myAnswer);
+                                            let coloredAnswer = stringAnswer.fontcolor("#ee6933");
                                             return '<span style=\'font-size:20px;\'>You think people living in ' +
-                                            data.district + ' lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+                                            data.district + ' lose on average ' + coloredAnswer + ' years of life due to air pollution.</span>';
                                         }
                                     }
                                 },
@@ -2037,7 +2050,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                                 '12'
                                             ];
                                             node.game.contributionAmount = LYL[(value)];
-                                            return '<span style=\'font-size:20px;\'>You think people living in Austria lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+                                            let myAnswer = LYL[(value)];
+                                            let stringAnswer = String(myAnswer);
+                                            let coloredAnswer = stringAnswer.fontcolor("#ee6933");
+                                            return '<span style=\'font-size:20px;\'>You think people living in Austria lose on average ' + coloredAnswer + ' years of life due to air pollution.</span>';
                                         }
                                     }
                                 },
@@ -2094,7 +2110,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                                 '12'
                                             ];
                                             node.game.contributionAmount = LYL[(value)];
-                                            return '<span style=\'font-size:20px;\'>You think people living in Nicaragua lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+                                            let myAnswer = LYL[(value)];
+                                            let stringAnswer = String(myAnswer);
+                                            let coloredAnswer = stringAnswer.fontcolor("#ee6933");
+                                            return '<span style=\'font-size:20px;\'>You think people living in Nicaragua lose on average ' + coloredAnswer + ' years of life due to air pollution.</span>';
                                         }
                                     }
                                 },
@@ -2343,7 +2362,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 options: {
                     title: false,
                     panel: false,
-                    //minChars: 50,
+                    minChars: 2,
                     showSubmit: false,
                     requiredChoice: true,
                     mainText: 'Thank you for participating. ' +
@@ -2359,7 +2378,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     'uncomfortable?</li>' +
                     '<li>Did you experience any technical difficulty?</li>' +
                     '<li>Were the images and maps loading correctly?</li>' +
-                    '<li>How can we improve the study?</li></ol>'
+                    '<li>How can we improve the study?</li></ol>' +
+                    "If you do not have any comment, just type 'N/A' in the box below."
                 }
             }
         });
