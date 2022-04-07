@@ -208,8 +208,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             if ((treatmentName === 'info_once_austria' || treatmentName === 'info_twice_austria')) {
                 var choice_aus = memory.choice_austria.get(msg.from);
 
-                //console.log(choice);
                 choice_aus = choice_aus.PC_q1_austria.value;
+                console.log(choice_aus);
 
                 if (choice_aus === 'decoy' && random > 0.4) {
                     return {
@@ -217,40 +217,41 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         chosen: "Austria",
                         row: setup.pollutionDb.district.get(district)
                     }
-                  }
+                }
 
                 else if (choice_aus === 'decoy' && random <= 0.4) {
                     return {
-                      ball: "red",
-                      chosen: "Home",
-                      row: setup.pollutionDb.district.get(district)
+                        ball: "red",
+                        chosen: "Home",
+                        row: setup.pollutionDb.district.get(district)
 
                     }
-                  }
+                }
 
                 else if (choice_aus === 'home' && random > 0.4) {
-                  return {
-                      ball: "green",
-                      chosen: "Home",
-                      row: setup.pollutionDb.district.get(district)
+                    return {
+                        ball: "green",
+                        chosen: "Home",
+                        row: setup.pollutionDb.district.get(district)
 
                     }
-                  }
+                }
 
                 else {
-                        return {
-                          ball: "red",
-                            chosen: "Austria",
-                            row: setup.pollutionDb.district.get(district)
-                      }
+                    return {
+                        ball: "red",
+                        chosen: "Austria",
+                        row: setup.pollutionDb.district.get(district)
+                    }
                 }
-              }
+            }
 
             else if (treatmentName === 'info_once_nicaragua' || treatmentName === 'info_twice_nicaragua') {
                 var choice_nic = memory.choice_nicaragua.get(msg.from);
 
                 //console.log(choice);
                 choice_nic = choice_nic.PC_q1_nicaragua.value;
+                console.log(choice_nic);
 
                 // let district = memory.district_player.get(msg.from);
                 //
@@ -263,33 +264,33 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         chosen: "Nicaragua",
                         row: setup.pollutionDb.district.get(district)
                     }
-                  }
+                }
 
                 else if (choice_nic === 'decoy' && random <= 0.4) {
-                  return {
-                      ball: "red",
-                      chosen: "Home",
-                      row: setup.pollutionDb.district.get(district)
-                    }
-                  }
-
-                else if (choice_nic === 'home' && random > 0.4) {
-                  return {
-                      ball: "green",
-                      chosen: "Home",
-                      row: setup.pollutionDb.district.get(district)
-                    }
-                  }
-
-                else {
-                        return {
-                          ball: "red",
-                            chosen: "Nicaragua",
-                            row: setup.pollutionDb.district.get(district)
-
-                          }
+                    return {
+                        ball: "red",
+                        chosen: "Home",
+                        row: setup.pollutionDb.district.get(district)
                     }
                 }
+
+                else if (choice_nic === 'home' && random > 0.4) {
+                    return {
+                        ball: "green",
+                        chosen: "Home",
+                        row: setup.pollutionDb.district.get(district)
+                    }
+                }
+
+                else {
+                    return {
+                        ball: "red",
+                        chosen: "Nicaragua",
+                        row: setup.pollutionDb.district.get(district)
+
+                    }
+                }
+            }
         });
     });
 
