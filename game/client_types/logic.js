@@ -17,8 +17,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     let node = gameRoom.node;
     let channel = gameRoom.channel;
     let memory = node.game.memory;
-    var random = Math.random();
-    console.log(random);
+
 
     // Make the logic independent from players position in the game.
     stager.setDefaultStepRule(ngc.stepRules.SOLO);
@@ -204,6 +203,9 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             var district = memory.district_player.get(msg.from);
             //console.log(district);
             district = district.forms.district.value;
+
+            var random = Math.random();
+            console.log(random);
 
             if ((treatmentName === 'info_once_austria' || treatmentName === 'info_twice_austria')) {
                 var choice_aus = memory.choice_austria.get(msg.from);
