@@ -1640,9 +1640,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         //donebutton: false,
         cb: function() {
             node.get('districtData', function(data) {
-                    console.log('home randomly selected!')
-
-                    node.game.Choice = 'Home';
                     var state_fig = data.state.replace(/ /g, '_');
                     state_fig = state_fig.replace(/&/g, 'and');
                     state_fig = state_fig.replace(/-/g, '_');
@@ -1872,7 +1869,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
                     //console.log(data);
 
-                    if (node.game.Choice === 'Home') {
                         W.setInnerHTML('district', data.district);
                         W.setInnerHTML('districtAgain', data.district);
 
@@ -1931,7 +1927,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                 },
                             ]
                         });
-                    }
+
                     //     W.setInnerHTML('district', 'Austria');
                     //     W.setInnerHTML('districtAgain', 'Austria');
                     //     W.setInnerHTML('correct', 0.7);
