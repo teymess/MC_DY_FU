@@ -48,13 +48,13 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             if (item.stepId === 'Part_1_q4') return item.player;
         });
 
-        memory.index('choice_austria', item => {
-            if (item.stepId === 'Part2_Info_Choice_Austria') return item.player;
+        memory.index('choice_decision', item => {
+            if (item.stepId === 'Part2_Info_Choice_Decision') return item.player;
         });
 
-        memory.index('choice_nicaragua', item => {
-            if (item.stepId === 'Part2_Info_Choice_Nicaragua') return item.player;
-        });
+        // memory.index('choice_nicaragua', item => {
+        //     if (item.stepId === 'Part2_Info_Choice_Nicaragua') return item.player;
+        // });
 
         node.on.data('done', function(msg) {
 
@@ -199,98 +199,42 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
 
         node.on('get.districtData2', function(msg) {
-
             var district = memory.district_player.get(msg.from);
-            //console.log(district);
             district = district.forms.district.value;
+
+            var choice = memory.choice_decision.get(msg.from);
+            choice = choice.PC_q1_choice.value;
+            console.log(choice);
 
             var random = Math.random();
             console.log(random);
 
-            if ((treatmentName === 'info_once_austria' || treatmentName === 'info_twice_austria')) {
-                var choice_aus = memory.choice_austria.get(msg.from);
-
-                choice_aus = choice_aus.PC_q1_austria.value;
-                console.log(choice_aus);
-
-                if (choice_aus === 'decoy' && random > 0.4) {
-                    return {
-                        ball: "green",
-                        chosen: "Austria",
-                        row: setup.pollutionDb.district.get(district)
-                    }
-                }
-
-                else if (choice_aus === 'decoy' && random <= 0.4) {
-                    return {
-                        ball: "red",
-                        chosen: "Home",
-                        row: setup.pollutionDb.district.get(district)
-
-                    }
-                }
-
-                else if (choice_aus === 'home' && random > 0.4) {
-                    return {
-                        ball: "green",
-                        chosen: "Home",
-                        row: setup.pollutionDb.district.get(district)
-
-                    }
-                }
-
-                else {
-                    return {
-                        ball: "red",
-                        chosen: "Austria",
-                        row: setup.pollutionDb.district.get(district)
-                    }
+            if (choice === 'nothing' && random > 0.4) {
+                return {
+                    ball: "green",
+                    chosen: "nothing",
+                    row: setup.pollutionDb.district.get(district)
                 }
             }
-
-            else if (treatmentName === 'info_once_nicaragua' || treatmentName === 'info_twice_nicaragua') {
-                var choice_nic = memory.choice_nicaragua.get(msg.from);
-
-                //console.log(choice);
-                choice_nic = choice_nic.PC_q1_nicaragua.value;
-                console.log(choice_nic);
-
-                // let district = memory.district_player.get(msg.from);
-                //
-                // //console.log(district);
-                // district = district.forms.district.value;
-
-                if (choice_nic === 'decoy' && random > 0.4) {
-                    return {
-                        ball: "green",
-                        chosen: "Nicaragua",
-                        row: setup.pollutionDb.district.get(district)
-                    }
+            else if (choice === 'nothing' && random <= 0.4) {
+                return {
+                    ball: "red",
+                    chosen: "home",
+                    row: setup.pollutionDb.district.get(district)
                 }
-
-                else if (choice_nic === 'decoy' && random <= 0.4) {
-                    return {
-                        ball: "red",
-                        chosen: "Home",
-                        row: setup.pollutionDb.district.get(district)
-                    }
+            }
+            else if (choice === ' home' && random > 0.4) {
+                return {
+                    ball: "green",
+                    chosen: "home",
+                    row: setup.pollutionDb.district.get(district)
                 }
-
-                else if (choice_nic === 'home' && random > 0.4) {
-                    return {
-                        ball: "green",
-                        chosen: "Home",
-                        row: setup.pollutionDb.district.get(district)
-                    }
-                }
-
-                else {
-                    return {
-                        ball: "red",
-                        chosen: "Nicaragua",
-                        row: setup.pollutionDb.district.get(district)
-
-                    }
+            }
+            else if (choice === ' home' && random <= 0.4) {
+                return {
+                    ball: "red",
+                    chosen: "nothing",
+                    row: setup.pollutionDb.district.get(district)
                 }
             }
         });
