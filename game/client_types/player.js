@@ -1513,7 +1513,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                          // hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
                           choices: [
                             ['home', 'I prefer to receive information about the number of life years lost due to air pollution in ' + bcoloredDistrict  + ' (' + data.state + ').'],
-                            ['nothing', 'I prefer to <b>not</b> receive information about the number of life years lost due to air pollution in ' + bcoloredDistrict  + ' (' + data.state + ').']
+                            ['nothing', 'I prefer not to receive any information.']
+                            //['nothing', 'I prefer to <b>not</b> receive information about the number of life years lost due to air pollution in ' + bcoloredDistrict  + ' (' + data.state + ').']
                             // ['home', "<span style="font-size:25px;color:#ee6933;">" + data.district + '</span>' + ' (' + data.state + ')'],
                             // ['decoy', "<span style="font-size:25px;color:#ee6933;">Austria</span> (a country in central Europe)"]
                           ],
@@ -1595,6 +1596,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.get('districtData2', function(data) {
                 W.hide('ball_green')
                 W.hide('ball_red')
+                W.hide('home')
+                W.hide('none')
 
                 if (data.ball === 'green') {
                     //W.setInnerHTML('ball', "The computer drew a green ball. Your preferred choice was implemented");
@@ -1606,15 +1609,17 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 }
 
                 if (data.chosen === 'nothing') {
-                    W.setInnerHTML('choice', data.row.district);
-                    W.setInnerHTML('where', ", your home district");
-                    W.setInnerHTML('operator', "<b>not</b> receive")
+                    W.show('none')
+                    //W.setInnerHTML('choice', data.row.district);
+                    //W.setInnerHTML('where', ", your home district");
+                    //W.setInnerHTML('operator', "<b>not</b> receive")
                     node.game.choice_outcome = 'nothing';
                 }
                 else {
+                    W.show('home')
                     W.setInnerHTML('choice', data.row.district);
                     W.setInnerHTML('where', ", your home district");
-                    W.setInnerHTML('operator', "receive")
+                    //W.setInnerHTML('operator', "receive")
                     node.game.choice_outcome = 'home';
                 }
                 W.show('data', 'flex');
