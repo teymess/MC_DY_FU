@@ -223,14 +223,14 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     row: setup.pollutionDb.district.get(district)
                 }
             }
-            else if (choice === ' home' && random > 0.4) {
+            else if (choice === 'home' && random > 0.4) {
                 return {
                     ball: "green",
                     chosen: "home",
                     row: setup.pollutionDb.district.get(district)
                 }
             }
-            else if (choice === ' home' && random <= 0.4) {
+            else if (choice === 'home' && random <= 0.4) {
                 return {
                     ball: "red",
                     chosen: "nothing",
