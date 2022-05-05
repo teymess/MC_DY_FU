@@ -1007,121 +1007,181 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         choices: ["0 years", "0.25 years", "0.5 years", "1 year", "2 years"],
                         correctChoice: 4,
                     },
-                    {
-                        id: 'P2_q2',
-                        orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> What is the world average number of life years lost due to air pollution? <span style="font-weight: normal;">*</span>',
-                        choices: ["0 years", "1 year", "1.6 years", "1.9 years", "5 years"],
-                        correctChoice: 3,
-                    }
+                    // {
+                    //     id: 'P2_q2',
+                    //     orientation: 'H',
+                    //     mainText: '<span style="font-weight: normal;color:gray;">Q4</span> What is the world average number of life years lost due to air pollution? <span style="font-weight: normal;">*</span>',
+                    //     choices: ["0 years", "1 year", "1.6 years", "1.9 years", "5 years"],
+                    //     correctChoice: 3,
+                    // }
                 ]
             }
         }
     });
 
-    ////////////////////////////////////////////////////////////////////////////////
-    // PRIOR LYL
+    // ////////////////////////////////////////////////////////////////////////////////
+    // // PRIOR LYL
+    //     stager.extendStep('Part2_Prior_LYL_home', {
+    //         name: 'Part 2',
+    //         frame: 'prior_home.htm',
+    //         donebutton: false,
+    //         cb: function() {
+    //             node.get('districtData', function(data) {
+    //
+    //               let myDistrict = data.district;
+    //               let stringDistrict = String(myDistrict);
+    //               let coloredDistrict = stringDistrict.fontcolor("#ee6933");
+    //
+    //             node.game.Q_impact = node.widgets.append('ChoiceManager', "T_impact", {
+    //                     id: 'T_impact_q',
+    //                     simplify: true,
+    //                     panel: false,
+    //                     forms: [
+    //                       {
+    //                           id: 'LYL_prior_home',
+    //                           mainText: '<span style="font-weight: normal;color:gray;">Q5</span> How many years of life do people living in ' +
+    //                           coloredDistrict + ' lose on average because of air pollution?<br>' +
+    //                           '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
+    //                           hint: false,
+    //                           name: 'Slider',
+    //                           hidden: true,
+    //                           requiredChoice: true,
+    //                           initialValue: 0,
+    //                           min: 0,
+    //                           max: 120,
+    //                           left: '0 years',
+    //                           right: '12 years',
+    //                           displayNoChange: false,
+    //                           type: 'flat',
+    //                           panel: false,
+    //                           texts: {
+    //                               currentValue: function(widget, value) {
+    //                                   let LYL = [
+    //                                       '0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9',
+    //                                       '1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9',
+    //                                       '2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9',
+    //                                       '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9',
+    //                                       '4.0', '4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9',
+    //                                       '5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9',
+    //                                       '6.0', '6.1', '6.2', '6.3', '6.4', '6.5', '6.6', '6.7', '6.8', '6.9',
+    //                                       '7.0', '7.1', '7.2', '7.3', '7.4', '7.5', '7.6', '7.7', '7.8', '7.9',
+    //                                       '8.0', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6', '8.7', '8.8', '8.9',
+    //                                       '9.0', '9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8', '9.9',
+    //                                       '10.0', '10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7', '10.8', '10.9',
+    //                                       '11.0', '11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9',
+    //                                       '12'
+    //                                   ];
+    //                                   node.game.contributionAmount = LYL[(value)];
+    //                                   let myAnswer = LYL[(value)];
+    //                                   let stringAnswer = String(myAnswer);
+    //                                   let coloredAnswer = stringAnswer.fontcolor("#ee6933");
+    //                                   return '<span style=\'font-size:20px;\'>You think people living in ' +
+    //                                   //data.district + ' lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
+    //                                   data.district + ' lose on average ' + coloredAnswer + ' years of life due to air pollution.</span>';
+    //                               }
+    //                           }
+    //                       },
+    //                     ]
+    //                 });
+    //
+    //                 W.show('data', 'flex');
+    //                 node.game.doneButton.enable();
+    //             });
+    //         },
+    //         done: function() {
+    //             var w, q1, q2;
+    //
+    //             w = node.game.Q_impact;
+    //
+    //             // DISPLAY 1
+    //             q1 = w.formsById.LYL_prior_home;
+    //             if (q1.isHidden()) {
+    //                 q1.reset(); // removes error.
+    //                 q1.show();
+    //                 return false;
+    //             }
+    //
+    //             // DISPLAY 2
+    //             q2 = w.formsById.T_confident;
+    //             if (!q2) {
+    //                 node.widgets.last.addForm({
+    //                     id: 'T_confident',
+    //                     orientation: 'H',
+    //                     mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How confident are you about your answer to the previous question?</span>',
+    //                     choices: [
+    //                       ['1', 'Not confident at all'],
+    //                       ['2', 'Not very confident'],
+    //                       ['3', 'Neutral'],
+    //                       ['4', 'Quite confident'],
+    //                       ['5', 'Completely confident']
+    //                     ],
+    //                     shuffleChoices: false,
+    //                     requiredChoice: true,
+    //                 });
+    //                 return false;
+    //             }
+    //
+    //             return w.getValues();
+    //         }
+    //     });
+
+        ////////////////////////////////////////////////////
+        // LYL Prior: Deciles of Pollution
+        //////////////////////////////////////
         stager.extendStep('Part2_Prior_LYL_home', {
-            name: 'Part 2',
-            frame: 'prior_home.htm',
-            donebutton: false,
+            name: "Part 2",
             cb: function() {
-                node.get('districtData', function(data) {
-
-                  let myDistrict = data.district;
-                  let stringDistrict = String(myDistrict);
-                  let coloredDistrict = stringDistrict.fontcolor("#ee6933");
-
-                node.game.Q_impact = node.widgets.append('ChoiceManager', "T_impact", {
-                        id: 'T_impact_q',
-                        simplify: true,
-                        panel: false,
-                        forms: [
-                          {
-                              id: 'LYL_prior_home',
-                              mainText: '<span style="font-weight: normal;color:gray;">Q5</span> How many years of life do people living in ' +
-                              coloredDistrict + ' lose on average because of air pollution?<br>' +
-                              '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
-                              hint: false,
-                              name: 'Slider',
-                              hidden: true,
-                              requiredChoice: true,
-                              initialValue: 0,
-                              min: 0,
-                              max: 120,
-                              left: '0 years',
-                              right: '12 years',
-                              displayNoChange: false,
-                              type: 'flat',
-                              panel: false,
-                              texts: {
-                                  currentValue: function(widget, value) {
-                                      let LYL = [
-                                          '0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9',
-                                          '1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9',
-                                          '2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9',
-                                          '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9',
-                                          '4.0', '4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9',
-                                          '5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9',
-                                          '6.0', '6.1', '6.2', '6.3', '6.4', '6.5', '6.6', '6.7', '6.8', '6.9',
-                                          '7.0', '7.1', '7.2', '7.3', '7.4', '7.5', '7.6', '7.7', '7.8', '7.9',
-                                          '8.0', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6', '8.7', '8.8', '8.9',
-                                          '9.0', '9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8', '9.9',
-                                          '10.0', '10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7', '10.8', '10.9',
-                                          '11.0', '11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9',
-                                          '12'
-                                      ];
-                                      node.game.contributionAmount = LYL[(value)];
-                                      let myAnswer = LYL[(value)];
-                                      let stringAnswer = String(myAnswer);
-                                      let coloredAnswer = stringAnswer.fontcolor("#ee6933");
-                                      return '<span style=\'font-size:20px;\'>You think people living in ' +
-                                      //data.district + ' lose on average ' + LYL[(value)] + ' years of life due to air pollution.</span>';
-                                      data.district + ' lose on average ' + coloredAnswer + ' years of life due to air pollution.</span>';
-                                  }
-                              }
-                          },
-                        ]
-                    });
-
-                    W.show('data', 'flex');
-                    node.game.doneButton.enable();
-                });
+                W.cssRule('table.choicetable td { text-align: center !important; ' +
+                'font-weight: normal; padding-left: 10px; }');
             },
-            done: function() {
-                var w, q1, q2;
-
-                w = node.game.Q_impact;
-
-                // DISPLAY 1
-                q1 = w.formsById.LYL_prior_home;
-                if (q1.isHidden()) {
-                    q1.reset(); // removes error.
-                    q1.show();
-                    return false;
+            widget: {
+                name: 'ChoiceManager',
+                id: 'LYL_prior_home',
+                options: { // https://i.ibb.co/5LcmLcf/10-pollution-groups.png
+                    simplify: true,
+                    mainText: '<span style=\'font-size:18px;font-weight:normal;\'>Think of all the places in the world where people live. ' +
+                              'Now, imagine all these places are groupped into 10 equally-sized areas, depending on how polluted the air '+
+                              'in each place is. The figure below illustrates ' +
+                              'the 10 groups, ordered from left to right from the the most polluted '+
+                              'air to the least polluted air.' +
+                    '</span><br><br><img src="https://i.ibb.co/xgrDGYQ/10-pollution-groups-v2.png" alt="Indian-groups" border="0" width="800px"></a><br><br>',
+                    forms: [
+                        {
+                            id: 'LYL_prior',
+                            orientation: 'H',
+                            mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Think of <span style="color:red;">YOUR district </span> now. ' +
+                                      'In your opinion, which group is your district part of?',
+                            choices: [
+                              ['Group 1', '<span style=\'font-size:14px;font-weight:normal;\'>Group 1</span>'],
+                              ['Group 2', '<span style=\'font-size:14px;font-weight:normal;\'>Group 2</span>'],
+                              ['Group 3', '<span style=\'font-size:14px;font-weight:normal;\'>Group 3</span>'],
+                              ['Group 4', '<span style=\'font-size:14px;font-weight:normal;\'>Group 4</span>'],
+                              ['Group 5', '<span style=\'font-size:14px;font-weight:normal;\'>Group 5</span>'],
+                              ['Group 6', '<span style=\'font-size:14px;font-weight:normal;\'>Group 6</span>'],
+                              ['Group 7', '<span style=\'font-size:14px;font-weight:normal;\'>Group 7</span>'],
+                              ['Group 8', '<span style=\'font-size:14px;font-weight:normal;\'>Group 8</span>'],
+                              ['Group 9', '<span style=\'font-size:14px;font-weight:normal;\'>Group 9</span>'],
+                              ['Group 10', '<span style=\'font-size:14px;font-weight:normal;\'>Group 10</span>'],
+                                ],
+                            shuffleChoices: false,
+                            requiredChoice: true
+                        },
+                        {
+                          id: 'T_confident',
+                          orientation: 'H',
+                          mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How confident are you about your answer to the previous question?</span>',
+                          choices: [
+                            ['1', 'Not confident at all'],
+                            ['2', 'Not very confident'],
+                            ['3', 'Neutral'],
+                            ['4', 'Quite confident'],
+                            ['5', 'Completely confident']
+                          ],
+                          shuffleChoices: false,
+                          requiredChoice: true,
+                        }
+                    ]
                 }
-
-                // DISPLAY 2
-                q2 = w.formsById.T_confident;
-                if (!q2) {
-                    node.widgets.last.addForm({
-                        id: 'T_confident',
-                        orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How confident are you about your answer to the previous question?</span>',
-                        choices: [
-                          ['1', 'Not confident at all'],
-                          ['2', 'Not very confident'],
-                          ['3', 'Neutral'],
-                          ['4', 'Quite confident'],
-                          ['5', 'Completely confident']
-                        ],
-                        shuffleChoices: false,
-                        requiredChoice: true,
-                    });
-                    return false;
-                }
-
-                return w.getValues();
             }
         });
 
