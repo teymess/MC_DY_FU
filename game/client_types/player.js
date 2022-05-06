@@ -1453,78 +1453,78 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     //////////////////////////////////////////////////////////////////////////
     // LEAFLET Protection measures Treatment
-    stager.extendStep('Part2_Protection_measures_T', {
-        name: 'Part 2: Reading and comprehension',
-        frame: 'leaflet_protection_T.htm',
-        widget: {
-            name: 'ChoiceManager',
-            id: 'P4_T_q',
-            options: {
-                simplify: true,
-                mainText: 'Now, we are interested in <b>your opinion</b>.',
-                forms: [
-                    {
-                        id: 'P4_T_q2',
-                        orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q10a</span> Which protective measure(s) from the leaflet above are the MOST CONVENIENT for you to implement?<br>',
-                        hint: '<span style="color:gray;font-size:14px;">(Select at least 1.)</span>',
-                        // Number of choices per row/column.
-                        choicesSetSize: 4,
-                        choices: [
-                          ['1', '<div class="aligned"><img src="face_mask.png" width="140px"><span>'],
-                          ['2', '<div class="aligned"><img src="no_exercise.png" width="140px"><span>'],
-                          ['3', '<div class="aligned"><img src="no_congested.png" width="140px"><span>'],
-                          ['4', '<div class="aligned"><img src="nature.png" width="120px"><span>'],
-                          ['5', '<div class="aligned"><img src="no_dust.png" width="140px"><span>'],
-                          ['6', '<div class="aligned"><img src="AP.png" width="140px"><span>'],
-                          ['7', '<div class="aligned"><img src="clean_fuels.png" width="120px"><span>'],
-                          ['8', '<div class="aligned"><img src="ventilate.png" width="140px"><span>']],
-                        // choices: ["Wear a face mask", "Avoid exercising outdoors in congested areas",
-                        // "Check the air quality and avoid congested areas", "Spend time in nature",
-                        // "Remove dust often", "Use an air purifier", "Use clean cooking and heating fuels", "Ventilate well the kitchen"],
-                        selectMultiple: true,
-                        shuffleChoices: false
-                    },
-                    {
-                        id: 'P4_T_q3',
-                        orientation: 'V',
-                        mainText: '<div class="aligned"><img src="Leaflet_images/exclamation-mark.png" width="40px"><span> Read again the leaflet above.' +
-                        ' You will be asked to summarize it on the next page.<br><br>' +
-                        'What task will you be required to do on the next page?',
-                        choices: [
-                          ['1', 'Summarize the leaflet.'],
-                          ['2', 'Do a task unrelated to the leaflet.']],
-                        correctChoice: 0,
-                    }
-                ]
-            },
-        },
-    });
+    // stager.extendStep('Part2_Protection_measures_T', {
+    //     name: 'Part 2: Reading and comprehension',
+    //     frame: 'leaflet_protection_T.htm',
+    //     widget: {
+    //         name: 'ChoiceManager',
+    //         id: 'P4_T_q',
+    //         options: {
+    //             simplify: true,
+    //             mainText: 'Now, we are interested in <b>your opinion</b>.',
+    //             forms: [
+    //                 {
+    //                     id: 'P4_T_q2',
+    //                     orientation: 'H',
+    //                     mainText: '<span style="font-weight: normal;color:gray;">Q10a</span> Which protective measure(s) from the leaflet above are the MOST CONVENIENT for you to implement?<br>',
+    //                     hint: '<span style="color:gray;font-size:14px;">(Select at least 1.)</span>',
+    //                     // Number of choices per row/column.
+    //                     choicesSetSize: 4,
+    //                     choices: [
+    //                       ['1', '<div class="aligned"><img src="face_mask.png" width="140px"><span>'],
+    //                       ['2', '<div class="aligned"><img src="no_exercise.png" width="140px"><span>'],
+    //                       ['3', '<div class="aligned"><img src="no_congested.png" width="140px"><span>'],
+    //                       ['4', '<div class="aligned"><img src="nature.png" width="120px"><span>'],
+    //                       ['5', '<div class="aligned"><img src="no_dust.png" width="140px"><span>'],
+    //                       ['6', '<div class="aligned"><img src="AP.png" width="140px"><span>'],
+    //                       ['7', '<div class="aligned"><img src="clean_fuels.png" width="120px"><span>'],
+    //                       ['8', '<div class="aligned"><img src="ventilate.png" width="140px"><span>']],
+    //                     // choices: ["Wear a face mask", "Avoid exercising outdoors in congested areas",
+    //                     // "Check the air quality and avoid congested areas", "Spend time in nature",
+    //                     // "Remove dust often", "Use an air purifier", "Use clean cooking and heating fuels", "Ventilate well the kitchen"],
+    //                     selectMultiple: true,
+    //                     shuffleChoices: false
+    //                 },
+    //                 {
+    //                     id: 'P4_T_q3',
+    //                     orientation: 'V',
+    //                     mainText: '<div class="aligned"><img src="Leaflet_images/exclamation-mark.png" width="40px"><span> Read again the leaflet above.' +
+    //                     ' You will be asked to summarize it on the next page.<br><br>' +
+    //                     'What task will you be required to do on the next page?',
+    //                     choices: [
+    //                       ['1', 'Summarize the leaflet.'],
+    //                       ['2', 'Do a task unrelated to the leaflet.']],
+    //                     correctChoice: 0,
+    //                 }
+    //             ]
+    //         },
+    //     },
+    // });
 
     //////////////////////////////////////////////////////////////////////////
     // LEAFLET Protection measures Treatment
-    stager.extendStep('Part2_Protection_measures_T2', {
-        name: 'Part 2: Reading and comprehension',
-        // frame: 'leaflet_protection_T.htm',
-        widget: {
-            name: 'ChoiceManager',
-            id: 'P4_T2_q',
-            options: {
-                simplify: true,
-                mainText: 'Think about the information you have read on the previous page.',
-                forms: [
-                    {
-                        name: 'Feedback',
-                        id: 'P4_T_q4',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q10b</span> Which actions can you take to protect yourself against air pollution outdoors and which actions can you take indoors? Summarize below.',
-                        requiredChoice: true,
-                        showSubmit: false,
-                        minChars: 20,
-                    }
-                ]
-            },
-        },
-    });
+    // stager.extendStep('Part2_Protection_measures_T2', {
+    //     name: 'Part 2: Reading and comprehension',
+    //     // frame: 'leaflet_protection_T.htm',
+    //     widget: {
+    //         name: 'ChoiceManager',
+    //         id: 'P4_T2_q',
+    //         options: {
+    //             simplify: true,
+    //             mainText: 'Think about the information you have read on the previous page.',
+    //             forms: [
+    //                 {
+    //                     name: 'Feedback',
+    //                     id: 'P4_T_q4',
+    //                     mainText: '<span style="font-weight: normal;color:gray;">Q10b</span> Which actions can you take to protect yourself against air pollution outdoors and which actions can you take indoors? Summarize below.',
+    //                     requiredChoice: true,
+    //                     showSubmit: false,
+    //                     minChars: 20,
+    //                 }
+    //             ]
+    //         },
+    //     },
+    // });
 
 
     //////////////////////////////////////////////////////////////////////////
