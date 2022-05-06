@@ -1684,16 +1684,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 }
                 W.show('data', 'flex');
             });
-        },
-        done: function() {
-            console.log(node.game.choice_outcome);
-            if (node.game.choice_outcome === 'nothing') {
-                console.log('I will skip something now!');
-                node.game.gotoStep('Part3.Part_3_Instructions');
-            }
-            else {
-                console.log('I dont skip anything!');
-            }
         }
     });
 
@@ -1704,6 +1694,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         frame: 'leaflet_p5.htm',
         //donebutton: false,
         cb: function() {
+            if (node.game.choice_outcome === 'nothing') {
+              node.done();
+            }
+            else {
             node.get('districtData', function(data) {
                     var state_fig = data.state.replace(/ /g, '_');
                     state_fig = state_fig.replace(/&/g, 'and');
@@ -1752,6 +1746,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 // W.show('data', 'flex');
                 // node.game.doneButton.enable();
             });
+          }
         },
         // done: function() {
         //     return node.game.controlQuestions.getValues();
@@ -1910,11 +1905,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 W.setInnerHTML('bonus', node.game.settings.TASK_2_BONUS);
                 W.setInnerHTML('correct', node.game.correct);
                 W.setInnerHTML('payoff', effort_payoff);
-            },
-            done: function() {
-                if (node.game.choice_outcome === 'nothing') {
-                    node.game.gotoStep('Part4.Part4_LOC1');
-                }
             }
         });
 
@@ -1926,6 +1916,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             frame: 'posterior_LYL.htm',
             donebutton: false,
             cb: function() {
+              if (node.game.choice_outcome === 'nothing') {
+                node.done();
+              }
+              else {
                 node.get('districtData', function(data) {
 
                     var left, right, lifeLost;
@@ -2114,6 +2108,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     W.show('data', 'flex');
                     node.game.doneButton.enable();
                 });
+              }
             },
             done: function() {
                 var w, q1, result;
