@@ -1143,7 +1143,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                               'Now image that all people in the world are grouped into 10 equally sized groups, depending on how big the <b>impact of air polluion ' +
                               'is on their health.</b><br> The figure below shows the 10 groups, ordered from left to right, from the biggest impact because of the most ' +
                               'polluted air to the smallest impact because of the cleanest air.' +
-                              '</span><br><br><img src="https://i.ibb.co/84BVsXX/10-pollution-groups-v4.png" alt="Indian-groups" border="0" width="800px"></a><br><br>',
+                              '</span><br><br><img src="https://i.ibb.co/ww4S3NL/10-pollution-groups-v4.png" alt="Indian-groups" border="0" width="800px"></a><br><br>',
                     // mainText: '<span style=\'font-size:18px;font-weight:normal;\'>Think of all the places in the world where people live. ' +
                     //           'Now, imagine all these places are grouped into 10 equally-sized areas, depending on how big the impact of air pollution '+
                     //           'on the health of the population living in each place is. The figure below illustrates ' +
