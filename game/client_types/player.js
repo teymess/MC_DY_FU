@@ -1460,14 +1460,14 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'P4_q1',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q10</span> Which of the following measures help with protecting your health from air pollution?<br>',
-                        hint: '<span style="color:gray;font-size:14px;">(There are several correct answers and you have to find all of them.)</span>',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q10</span> Which of the following two sentences is correct?<br>',
+                        hint: '',
                         // Number of choices per row/column.
                         choicesSetSize: 5,
-                        choices: ["Ventilating the kitchen", "Using clean cooking and heating fuels",
-                        "Wearing a face mask while outdoors", "Drinking cold water"],
-                        selectMultiple: true,
-                        correctChoice: [0,1,2],
+                        choices: ["There are <b>many things</b> one can do to protect oneself effectively against air pollution, both indoors and outdoors.",
+                                  "There is <b>nothing</b> one can do to protect onself effectively against air pollution."],
+                        correctChoice: [0],
+                        freeText: "Please take another careful look at the information provided above. You will be asked to give a summary on the next page."
                     }
                 ]
             }
@@ -1928,6 +1928,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 W.setInnerHTML('bonus', node.game.settings.TASK_2_BONUS);
                 W.setInnerHTML('correct', node.game.correct);
                 W.setInnerHTML('payoff', effort_payoff);
+            },
+            done: function() {
+                if (node.game.choice_outcome === 'nothing') {
+                    node.game.gotoStep('Part4.Part4_LOC1');
+                }
             }
         });
 
@@ -1939,10 +1944,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             frame: 'posterior_LYL.htm',
             donebutton: false,
             cb: function() {
-              if (node.game.choice_outcome === 'nothing') {
-                node.done();
-              }
-              else {
                 node.get('districtData', function(data) {
 
                     var left, right, lifeLost;
@@ -2131,7 +2132,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     W.show('data', 'flex');
                     node.game.doneButton.enable();
                 });
-              }
             },
             done: function() {
                 var w, q1, result;
