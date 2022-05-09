@@ -30,14 +30,14 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .stage('Part2_Info_Pollution')
     .step('Instructions_Part_2')
     .step('Part2_Air_pollution_and_its_sources')
+    .step('Part2_Air_pollution_damages_your_health')
     .step('Part2_Pollution_and_life_expectancy')
-    .step('Part2_Prior_LYL_home')
     // .step('Part2_Prior_LYL_Austria')
     // .step('Part2_Prior_LYL_Nicaragua')
-    .step('Part2_Air_pollution_damages_your_health')
+    .step('Part2_Prior_LYL_home')
     .step('Part2_Protection_measures')
     //.step('Part2_Protection_measures_T')
-    //.step('Part2_Protection_measures_T2')
+    .step('Part2_Protection_measures_T2')
     .step('Part2_Info_Choice')
     .step('Part2_Info_Choice_Decision')
     .step('Part2_choice_outcome')
@@ -87,7 +87,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     if (treatmentName === 'control') {
         stager.skip('Part2_Info_Pollution', [
-            'Part2_Protection_measures'
+            'Part2_Protection_measures',
+            'Part2_Protection_measures_T2'
             // 'Part2_Protection_measures_T',
             // 'Part2_Protection_measures_T2',
         ])

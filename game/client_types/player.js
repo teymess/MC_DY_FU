@@ -1130,65 +1130,91 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         //////////////////////////////////////
         stager.extendStep('Part2_Prior_LYL_home', {
             name: "Part 2",
+            frame: 'prior_LYL.htm',
+            donebutton: false,
             cb: function() {
-                W.cssRule('table.choicetable td { text-align: center !important; ' +
-                'font-weight: normal; padding-left: 10px; }');
-            },
-            widget: {
-                name: 'ChoiceManager',
-                id: 'LYL_prior_home',
-                options: { // https://i.ibb.co/5LcmLcf/10-pollution-groups.png https://i.ibb.co/xgrDGYQ/10-pollution-groups-v2.png https://i.ibb.co/SKtKMYs/10-pollution-groups-v3.png
+              node.get('districtData', function(data) {
+
+                  //console.log(data);
+                  W.setInnerHTML('district', data.district);
+                  let myDistrict = data.district;
+                  let stringDistrict = String(myDistrict);
+
+                  node.game.Qprior = node.widgets.append('ChoiceManager', "container", {
+                    id: 'LYL_prior_home',
                     simplify: true,
-                    mainText: '<span style=\'font-size:18px;font-weight:normal;\'>Think of all the people in the world and the air pollution in the places where they live.<br> ' +
-                              'Now image that all people in the world are grouped into 10 equally sized groups, depending on how big the <b>impact of air polluion ' +
-                              'is on their health.</b><br> The figure below shows the 10 groups, ordered from left to right, from the biggest impact because of the most ' +
-                              'polluted air to the smallest impact because of the cleanest air.' +
-                              '</span><br><br><img src="https://i.ibb.co/ww4S3NL/10-pollution-groups-v4.png" alt="Indian-groups" border="0" width="800px"></a><br><br>',
-                    // mainText: '<span style=\'font-size:18px;font-weight:normal;\'>Think of all the places in the world where people live. ' +
-                    //           'Now, imagine all these places are grouped into 10 equally-sized areas, depending on how big the impact of air pollution '+
-                    //           'on the health of the population living in each place is. The figure below illustrates ' +
-                    //           'the 10 groups, ordered from left to right from the the most unhealthy place because of air pollution '+
-                    //           'to the healthiest in terms of air pollution.' +
-                    //'</span><br><br><img src="https://i.ibb.co/SKtKMYs/10-pollution-groups-v3.png" alt="Indian-groups" border="0" width="800px"></a><br><br>',
-                    forms: [
-                        {
-                            id: 'LYL_prior',
-                            orientation: 'H',
-                            mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Think of <span style="color:red;">YOUR district </span> now. ' +
-                                      'In your opinion, which group is your district part of?',
-                            choices: [
-                              ['Group 1', '<span style=\'font-size:14px;font-weight:normal;\'>Group 1</span>'],
-                              ['Group 2', '<span style=\'font-size:14px;font-weight:normal;\'>Group 2</span>'],
-                              ['Group 3', '<span style=\'font-size:14px;font-weight:normal;\'>Group 3</span>'],
-                              ['Group 4', '<span style=\'font-size:14px;font-weight:normal;\'>Group 4</span>'],
-                              ['Group 5', '<span style=\'font-size:14px;font-weight:normal;\'>Group 5</span>'],
-                              ['Group 6', '<span style=\'font-size:14px;font-weight:normal;\'>Group 6</span>'],
-                              ['Group 7', '<span style=\'font-size:14px;font-weight:normal;\'>Group 7</span>'],
-                              ['Group 8', '<span style=\'font-size:14px;font-weight:normal;\'>Group 8</span>'],
-                              ['Group 9', '<span style=\'font-size:14px;font-weight:normal;\'>Group 9</span>'],
-                              ['Group 10', '<span style=\'font-size:14px;font-weight:normal;\'>Group 10</span>'],
-                                ],
-                            shuffleChoices: false,
-                            requiredChoice: true
-                        },
-                        {
-                          id: 'T_confident',
-                          orientation: 'H',
-                          mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How confident are you about your answer to the previous question?</span>',
-                          choices: [
-                            ['1', 'Not confident at all'],
-                            ['2', 'Not very confident'],
-                            ['3', 'Neutral'],
-                            ['4', 'Quite confident'],
-                            ['5', 'Completely confident']
-                          ],
-                          shuffleChoices: false,
-                          requiredChoice: true,
-                        }
-                    ]
-                }
-            }
+                    panel: false,
+                    options: { // https://i.ibb.co/5LcmLcf/10-pollution-groups.png https://i.ibb.co/xgrDGYQ/10-pollution-groups-v2.png https://i.ibb.co/SKtKMYs/10-pollution-groups-v3.png
+                        mainText: '<span style=\'font-size:18px;font-weight:normal;\'>Think of all the places in the world where people live. ' +
+                                  'Now, imagine all these places are grouped into 10 equally-sized areas, depending on how big the impact of air pollution '+
+                                 'on the health of the population living in each place is. The figure below illustrates ' +
+                                 'the 10 groups, ordered from left to right from the the most unhealthy place because of air pollution '+
+                                 'to the healthiest in terms of air pollution.' +
+                        '</span><br><br><img src="https://i.ibb.co/SKtKMYs/10-pollution-groups-v3.png" alt="Indian-groups" border="0" width="800px"></a><br><br>',
+                        forms: [
+                            {
+                                id: 'LYL_prior',
+                                orientation: 'H',
+                                mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Think of <span style="color:red;">YOUR district </span> now. ' +
+                                          'In your opinion, which group is your district, ' + stringDistrict + ', part of?',
+                                choices: [
+                                  ['Group 1', '<span style=\'font-size:14px;font-weight:normal;\'>Group 1</span>'],
+                                  ['Group 2', '<span style=\'font-size:14px;font-weight:normal;\'>Group 2</span>'],
+                                  ['Group 3', '<span style=\'font-size:14px;font-weight:normal;\'>Group 3</span>'],
+                                  ['Group 4', '<span style=\'font-size:14px;font-weight:normal;\'>Group 4</span>'],
+                                  ['Group 5', '<span style=\'font-size:14px;font-weight:normal;\'>Group 5</span>'],
+                                  ['Group 6', '<span style=\'font-size:14px;font-weight:normal;\'>Group 6</span>'],
+                                  ['Group 7', '<span style=\'font-size:14px;font-weight:normal;\'>Group 7</span>'],
+                                  ['Group 8', '<span style=\'font-size:14px;font-weight:normal;\'>Group 8</span>'],
+                                  ['Group 9', '<span style=\'font-size:14px;font-weight:normal;\'>Group 9</span>'],
+                                  ['Group 10', '<span style=\'font-size:14px;font-weight:normal;\'>Group 10</span>'],
+                                    ],
+                                shuffleChoices: false,
+                                requiredChoice: true
+                            }
+                        ]
+                    }
+            });
+            W.show('data', 'flex');
+            node.game.doneButton.enable();
         });
+        },
+        done: function() {
+            var w, q1, q2;
+
+            w = node.game.Qprior;
+
+                        // DISPLAY 1
+          //   q1 = w.formsById.LYL_prior;
+          //   if (q1.isHidden()) {
+          //   q1.reset(); // removes error.
+          //   q1.show();
+          //   return false;
+          // }
+
+                        // DISPLAY 2
+                        q2 = w.formsById.T_confident;
+                        if (!q2) {
+                            node.widgets.last.addForm({
+                                id: 'T_confident',
+                                orientation: 'H',
+                                mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How confident are you about your answer to the previous question?</span>',
+                                choices: [
+                                  ['1', 'Not confident at all'],
+                                  ['2', 'Not very confident'],
+                                  ['3', 'Neutral'],
+                                  ['4', 'Quite confident'],
+                                  ['5', 'Completely confident']
+                                ],
+                                shuffleChoices: false,
+                                requiredChoice: true,
+                            });
+                            return false;
+                        }
+
+                        return w.getValues();
+                    }
+                });
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1506,30 +1532,30 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //     },
     // });
 
-    //////////////////////////////////////////////////////////////////////////
-    // LEAFLET Protection measures Treatment
-    // stager.extendStep('Part2_Protection_measures_T2', {
-    //     name: 'Part 2: Reading and comprehension',
-    //     // frame: 'leaflet_protection_T.htm',
-    //     widget: {
-    //         name: 'ChoiceManager',
-    //         id: 'P4_T2_q',
-    //         options: {
-    //             simplify: true,
-    //             mainText: 'Think about the information you have read on the previous page.',
-    //             forms: [
-    //                 {
-    //                     name: 'Feedback',
-    //                     id: 'P4_T_q4',
-    //                     mainText: '<span style="font-weight: normal;color:gray;">Q10b</span> Which actions can you take to protect yourself against air pollution outdoors and which actions can you take indoors? Summarize below.',
-    //                     requiredChoice: true,
-    //                     showSubmit: false,
-    //                     minChars: 20,
-    //                 }
-    //             ]
-    //         },
-    //     },
-    // });
+    ////////////////////////////////////////////////////////////////////////
+    //LEAFLET Protection measures Treatment
+    stager.extendStep('Part2_Protection_measures_T2', {
+        name: 'Part 2: Reading and comprehension',
+        // frame: 'leaflet_protection_T.htm',
+        widget: {
+            name: 'ChoiceManager',
+            id: 'P4_T2_q',
+            options: {
+                simplify: true,
+                mainText: 'Think about the information you have read on the previous page.',
+                forms: [
+                    {
+                        name: 'Feedback',
+                        id: 'P4_T_q4',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q10b</span> Which actions can you take to protect yourself against air pollution outdoors and which actions can you take indoors? Summarize below.',
+                        requiredChoice: true,
+                        showSubmit: false,
+                        minChars: 20,
+                    }
+                ]
+            },
+        },
+    });
 
 
     //////////////////////////////////////////////////////////////////////////
