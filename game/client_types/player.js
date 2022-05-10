@@ -1462,11 +1462,9 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         orientation: 'H',
                         mainText: '<span style="font-weight: normal;color:gray;">Q10</span> Which of the following two sentences is correct?<br>',
                         hint: '',
-                        // Number of choices per row/column.
-                        choicesSetSize: 5,
-                        choices: ["There are <b>many things</b> one can do to protect oneself effectively against air pollution, both indoors and outdoors.",
-                                  "There is <b>nothing</b> one can do to protect onself effectively against air pollution."],
-                        correctChoice: [0],
+                        choices: ["There is <b>nothing</b> one can do to protect onself effectively against air pollution.",
+                      "There are <b>many things</b> one can do to protect oneself effectively against air pollution, both indoors and outdoors."],
+                        correctChoice: 1,
                         freeText: "Please take another careful look at the information provided above. You will be asked to give a summary on the next page."
                     }
                 ]
