@@ -1460,12 +1460,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'P4_q1',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q10</span> Which of the following two sentences is correct?<br>',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q10</span> Which of the following two sentences is correct?*<br>',
                         hint: '',
                         choices: ["There is <b>nothing</b> one can do to protect onself effectively against air pollution.",
                       "There are <b>many things</b> one can do to protect oneself effectively against air pollution, both indoors and outdoors."],
                         correctChoice: 1,
-                        freeText: "Please take another careful look at the information provided above. You will be asked to give a summary on the next page."
+                        freeText: "Please take another careful look at the information provided in the box above. You will be asked to give a summary on the next page."
                     }
                 ]
             }
