@@ -86,16 +86,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .gameover();
 
     if (treatmentName === 'control') {
-        stager.skip('Part_1_Survey'),
-        stager.skip('Part3'),
-        stager.skip('Part4'),
-        stager.skip('Part2_Info_Pollution')
-        // , [
-        //     'Part2_Protection_measures',
-        //     'Part2_Protection_measures_T2'
-            // 'Part2_Protection_measures_T',
-            // 'Part2_Protection_measures_T2',
-        //])
+        stager.skip('Part2_Info_Pollution', [
+            'Part2_Protection_measures',
+            'Part2_Protection_measures_T2'
+        ])
     }
     // if (treatmentName === 'info_once_austria') {
     //     stager.skip('Part2_Info_Pollution', [
