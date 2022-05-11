@@ -131,12 +131,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager.extendStep('memory_test1', {
         name: 'Memory Task',
-        frame: 'memory.htm',
+        frame: 'memory1.htm',
         cb: function() {
-            node.game.memory1 = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory1 = node.widgets.append('ChoiceManager', "container", {
                 id: 'memory_test_1',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><img src="https://i.ibb.co/Pjtg77T/usbcable01b.jpg" alt="usbcable01b" border="0" width="40%" /></div>',
+                mainText: '',
                 simplify: true,
                 forms: [
                     {
@@ -172,12 +172,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager.extendStep('memory_test2', {
         name: 'Memory Task',
-        frame: 'memory.htm',
+        frame: 'memory2.htm',
         cb: function() {
-            node.game.memory2 = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory2 = node.widgets.append('ChoiceManager', "container", {
                 id: 'memory_test_2',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><img src="https://i.ibb.co/g4w3mv0/rope02.jpg" alt="rope02" border="0" width="40%" /></div>',
+                mainText: '',
                 simplify: true,
                 forms: [
                     {
@@ -216,12 +216,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager.extendStep('memory_test3', {
         name: 'Memory Task',
-        frame: 'memory.htm',
+        frame: 'memory3.htm',
         cb: function() {
-            node.game.memory3 = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory3 = node.widgets.append('ChoiceManager', "container", {
                 id: 'memory_test_3',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><img src="https://i.ibb.co/6ghKC0f/calculator02c.jpg" alt="calculator02c" border="0" width="40%" /></div>',
+                mainText: '',
                 simplify: true,
                 forms: [
                     {
@@ -257,12 +257,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager.extendStep('memory_test4', {
         name: 'Memory Task',
-        frame: 'memory.htm',
+        frame: 'memory4.htm',
         cb: function() {
-            node.game.memory4 = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory4 = node.widgets.append('ChoiceManager', "container", {
                 id: 'memory_test_4',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><img src="https://i.ibb.co/51pNsS5/envelope02b.jpg" alt="envelope02b" border="0" width="40%" /></div>',
+                mainText: '',
                 simplify: true,
                 forms: [
                     {
@@ -298,12 +298,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager.extendStep('memory_test5', {
         name: 'Memory Task',
-        frame: 'memory.htm',
+        frame: 'memory5.htm',
         cb: function() {
-            node.game.memory5 = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory5 = node.widgets.append('ChoiceManager', "container", {
                 id: 'memory_test_5',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><img src="https://i.ibb.co/89XrXzR/dice02a.jpg" alt="dice02a" border="0" width="40%" /></div>',
+                mainText: '',
                 simplify: true,
                 forms: [
                     {
@@ -339,12 +339,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager.extendStep('memory_test6', {
         name: 'Memory Task',
-        frame: 'memory.htm',
+        frame: 'memory6.htm',
         cb: function() {
-            node.game.memory6 = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory6 = node.widgets.append('ChoiceManager', "container", {
                 id: 'memory_test_6',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><img src="https://i.ibb.co/xzWHHZc/watermelon02b.jpg" alt="watermelon02b" border="0" width="40%" /></div>',
+                mainText: '',
                 simplify: true,
                 forms: [
                     {
@@ -380,12 +380,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager.extendStep('memory_test7', {
         name: 'Memory Task',
-        frame: 'memory.htm',
+        frame: 'memory7.htm',
         cb: function() {
-            node.game.memory7 = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory7 = node.widgets.append('ChoiceManager', "container", {
                 id: 'memory_test_7',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><img src="https://i.ibb.co/vvVjq2K/paintbrush03a.jpg" alt="paintbrush03a" border="0" width="40%" /></div>',
+                mainText: '',
                 simplify: true,
                 forms: [
                     {
@@ -421,12 +421,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager.extendStep('memory_test8', {
         name: 'Memory Task',
-        frame: 'memory.htm',
+        frame: 'memory8.htm',
         cb: function() {
-            node.game.memory8 = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory8 = node.widgets.append('ChoiceManager', "container", {
                 id: 'memory_test_8',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><img src="https://i.ibb.co/C1BnNBK/sponge02a.jpg" alt="sponge02a" border="0" width="40%" /></div>',
+                mainText: '',
                 simplify: true,
                 forms: [
                     {
@@ -462,12 +462,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager.extendStep('memory_test9', {
         name: 'Memory Task',
-        frame: 'memory.htm',
+        frame: 'memory9.htm',
         cb: function() {
-            node.game.memory9 = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory9 = node.widgets.append('ChoiceManager', "container", {
                 id: 'memory_test_9',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><img src="https://i.ibb.co/nMcBY97/lighter03b.jpg" alt="lighter03b" border="0" width="40%" /></div>',
+                mainText: '',
                 simplify: true,
                 forms: [
                     {
@@ -503,12 +503,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager.extendStep('memory_test10', {
         name: 'Memory Task',
-        frame: 'memory.htm',
+        frame: 'memory10.htm',
         cb: function() {
-            node.game.memory10 = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory10 = node.widgets.append('ChoiceManager', "container", {
                 id: 'memory_test_10',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><img src="https://i.ibb.co/vkYQrqk/boxtruck.jpg" alt="boxtruck" border="0" width="40%" /></div>',
+                mainText: '',
                 simplify: true,
                 forms: [
                     {
@@ -544,12 +544,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager.extendStep('memory_test11', {
         name: 'Memory Task',
-        frame: 'memory.htm',
+        frame: 'memory11.htm',
         cb: function() {
-            node.game.memory11 = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory11 = node.widgets.append('ChoiceManager', "container", {
                 id: 'memory_test_11',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><img src="https://i.ibb.co/HHh74R5/candelabra.jpg" alt="candelabra" border="0" width="40%" /></div>',
+                mainText: '',
                 simplify: true,
                 forms: [
                     {
@@ -585,12 +585,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager.extendStep('memory_test12', {
         name: 'Memory Task',
-        frame: 'memory.htm',
+        frame: 'memory12.htm',
         cb: function() {
-            node.game.memory12 = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory12 = node.widgets.append('ChoiceManager', "container", {
                 id: 'memory_test_12',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><img src="https://i.ibb.co/y6n6wTS/spatula01.jpg" alt="spatula01" border="0" width="40%" /></div>',
+                mainText: '',
                 simplify: true,
                 forms: [
                     {
@@ -626,12 +626,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager.extendStep('memory_test13', {
         name: 'Memory Task',
-        frame: 'memory.htm',
+        frame: 'memory13.htm',
         cb: function() {
-            node.game.memory13 = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory13 = node.widgets.append('ChoiceManager', "container", {
                 id: 'memory_test_13',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><img src="https://i.ibb.co/G3pDvff/butterfly.jpg" alt="butterfly" border="0" width="40%" /></div>',
+                mainText: '',
                 simplify: true,
                 forms: [
                     {
@@ -667,12 +667,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager.extendStep('memory_test14', {
         name: 'Memory Task',
-        frame: 'memory.htm',
+        frame: 'memory14.htm',
         cb: function() {
-            node.game.memory14 = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory14 = node.widgets.append('ChoiceManager', "container", {
                 id: 'memory_test_14',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><img src="https://i.ibb.co/NZT16Kz/thumbtack02b.jpg" alt="thumbtack02b" border="0" width="40%" /></div>',
+                mainText: '',
                 simplify: true,
                 forms: [
                     {
@@ -708,12 +708,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     stager.extendStep('memory_test15', {
         name: 'Memory Task',
-        frame: 'memory.htm',
+        frame: 'memory15.htm',
         cb: function() {
-            node.game.memory15 = node.widgets.append('ChoiceManager', "input-div", {
+            node.game.memory15 = node.widgets.append('ChoiceManager', "container", {
                 id: 'memory_test_15',
                 // ref: 'controlQuestions',
-                mainText: '<div class="aligned"><img src="https://i.ibb.co/wWLBHyR/carbattery.jpg" alt="carbattery" border="0" width="40%" /></div>',
+                mainText: '',
                 simplify: true,
                 forms: [
                     {
