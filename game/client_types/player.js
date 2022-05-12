@@ -1450,26 +1450,26 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     stager.extendStep('Part2_Protection_measures', {
         name: 'Part 2: Reading and comprehension',
         frame: 'leaflet_protection.htm',
-        widget: {
-            name: 'ChoiceManager',
-            id: 'P4_q',
-            options: {
+        cb: function() {
+                  //console.log(data);
+            node.game.leafProt = node.widgets.append('ChoiceManager', "container", {
+                id: 'leafProt',
                 simplify: true,
-                mainText: 'Based on the box above, find the correct answer to the questions below.<br>',
+                panel: false,
                 forms: [
-                    {
-                        id: 'P4_q1',
-                        orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q10</span> Which of the following two sentences is correct?*<br>',
-                        hint: '',
-                        choices: ["There is <b>nothing</b> one can do to protect onself effectively against air pollution.",
-                      "There are <b>many things</b> one can do to protect oneself effectively against air pollution, both indoors and outdoors."],
-                        correctChoice: 1,
-                        freeText: "Please take another careful look at the information provided in the box above. You will be asked to give a summary on the next page."
-                    }
-                ]
-            }
-        }
+                        {
+                            id: 'P4_q',
+                            orientation: 'H',
+                            mainText: '<span style="font-weight: normal;color:gray;">Q10</span> Which of the following two sentences is correct?*<br>',
+                            choices: ["There is <b>nothing</b> one can do to protect onself effectively against air pollution.",
+                          "There are <b>many things</b> one can do to protect oneself effectively against air pollution, both indoors and outdoors."],
+                            correctChoice: 1
+                        }
+                    ]
+        });
+        W.show('data', 'flex');
+        node.game.doneButton.enable();
+    },
     });
 
     //////////////////////////////////////////////////////////////////////////
