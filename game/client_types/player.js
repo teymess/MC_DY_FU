@@ -1470,7 +1470,36 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         W.show('data', 'flex');
         node.game.doneButton.enable();
     },
-    });
+    done: function() {
+        var w, q2;
+
+        w = node.game.leafProt;
+
+                    // DISPLAY 1
+      //   q1 = w.formsById.LYL_prior;
+      //   if (q1.isHidden()) {
+      //   q1.reset(); // removes error.
+      //   q1.show();
+      //   return false;
+      // }
+
+                    // DISPLAY 2
+                    q2 = w.formsById.P4_T_q4;
+                    if (!q2) {
+                        node.widgets.last.addForm({
+                          name: 'Feedback',
+                          id: 'P4_T_q4',
+                          mainText: '<span style="font-weight: normal;color:gray;">Q10b</span> Which actions can you take to protect yourself against air pollution outdoors and which actions can you take indoors? Summarize below.',
+                          requiredChoice: true,
+                          showSubmit: false,
+                          minChars: 20,
+                        });
+                        return false;
+                    }
+
+                    return w.getValues();
+                }
+            });
 
     //////////////////////////////////////////////////////////////////////////
     // LEAFLET Protection measures Treatment
@@ -1524,28 +1553,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     ////////////////////////////////////////////////////////////////////////
     //LEAFLET Protection measures Treatment
-    stager.extendStep('Part2_Protection_measures_T2', {
-        name: 'Part 2: Reading and comprehension',
-        // frame: 'leaflet_protection_T.htm',
-        widget: {
-            name: 'ChoiceManager',
-            id: 'P4_T2_q',
-            options: {
-                simplify: true,
-                mainText: 'Think about the information you have read on the previous page.',
-                forms: [
-                    {
-                        name: 'Feedback',
-                        id: 'P4_T_q4',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q10b</span> Which actions can you take to protect yourself against air pollution outdoors and which actions can you take indoors? Summarize below.',
-                        requiredChoice: true,
-                        showSubmit: false,
-                        minChars: 20,
-                    }
-                ]
-            },
-        },
-    });
+
 
 
     //////////////////////////////////////////////////////////////////////////

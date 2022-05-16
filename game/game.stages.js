@@ -37,7 +37,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('Part2_Prior_LYL_home')
     .step('Part2_Protection_measures')
     //.step('Part2_Protection_measures_T')
-    .step('Part2_Protection_measures_T2')
+    //.step('Part2_Protection_measures_T2')
     .step('Part2_Info_Choice')
     .step('Part2_Info_Choice_Decision')
     .step('Part2_choice_outcome')
@@ -88,7 +88,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     if (treatmentName === 'control') {
         stager.skip('Part2_Info_Pollution', [
             'Part2_Protection_measures',
-            'Part2_Protection_measures_T2'
+            //'Part2_Protection_measures_T2'
         ])
     }
     // if (treatmentName === 'info_once_austria') {
