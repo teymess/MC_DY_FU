@@ -25,6 +25,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('Part_1_q2')
     .step('Part_1_q3')
     .step('Part_1_q4')
+    .step('Part_1_q5')
 
     stager
     .stage('Part2_Info_Pollution')
@@ -32,12 +33,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('Part2_Air_pollution_and_its_sources')
     .step('Part2_Air_pollution_damages_your_health')
     .step('Part2_Pollution_and_life_expectancy')
-    // .step('Part2_Prior_LYL_Austria')
-    // .step('Part2_Prior_LYL_Nicaragua')
     .step('Part2_Prior_LYL_home')
     .step('Part2_Protection_measures')
-    //.step('Part2_Protection_measures_T')
-    //.step('Part2_Protection_measures_T2')
     .step('Part2_Info_Choice')
     .step('Part2_Info_Choice_Decision')
     .step('Part2_choice_outcome')
@@ -91,32 +88,4 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             //'Part2_Protection_measures_T2'
         ])
     }
-    // if (treatmentName === 'info_once_austria') {
-    //     stager.skip('Part2_Info_Pollution', [
-    //         'Part2_Prior_LYL_Nicaragua',
-    //         'Part2_Protection_measures_T',
-    //         'Part2_Protection_measures_T2',
-    //         'Part2_Info_Choice_Nicaragua'
-    //     ])
-    // }
-    // else if (treatmentName === 'info_twice_austria') {
-    //     stager.skip('Part2_Info_Pollution', [
-    //         'Part2_Prior_LYL_Nicaragua',
-    //         'Part2_Info_Choice_Nicaragua'
-    //     ])
-    // }
-    // else if (treatmentName === 'info_once_nicaragua') {
-    //     stager.skip('Part2_Info_Pollution', [
-    //         'Part2_Prior_LYL_Austria',
-    //         'Part2_Protection_measures_T',
-    //         'Part2_Protection_measures_T2',
-    //         'Part2_Info_Choice_Austria'
-    //     ])
-    // }
-    // else if (treatmentName === 'info_twice_nicaragua') {
-    //     stager.skip('Part2_Info_Pollution', [
-    //         'Part2_Prior_LYL_Austria',
-    //         'Part2_Info_Choice_Austria'
-    //     ])
-    // }
 };

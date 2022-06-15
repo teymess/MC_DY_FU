@@ -810,6 +810,15 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         mainText: '<span style="font-weight: normal;color:gray;">Q2</span> What is your gender?',
                         choices: ['Male', 'Female', 'Other','Prefer not to say'],
                         requiredChoice: true
+                    },
+                    {
+                      id: 'q2_3',
+                      orientation: 'H',
+                      mainText: '<span style="font-weight: normal;color:gray;">Q3</span> In general, how worried are you about air pollution?',
+                      left: 'Not worried at all',
+                      right: 'Very worried',
+                      choices: [ '1', '2', '3', '4', '5', '6', '7'],
+                      requiredChoice: true,
                     }
                 ]
             }
@@ -832,7 +841,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         name: 'Dropdown',
                         id: 'state',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q3</span> Select the state in which you currently live. <span style="font-weight: normal;">*</span>',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Select the state in which you currently live. <span style="font-weight: normal;">*</span>',
                         choices: setup.states,
                         tag: 'select', // 'datalist'
                         placeholder: '--',
@@ -852,7 +861,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         name: 'Dropdown',
                         id: 'district',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Select the district in which you currently live. <span style="font-weight: normal;">*</span>' +
+                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Select the district in which you currently live. <span style="font-weight: normal;">*</span>' +
                         '<br><span style="font-weight: normal;">In case you cannot find your district in the list, please choose the nearest one.</span>',
                         tag: 'select', // 'datalist'
                         // Will be auto-filled later.
@@ -868,7 +877,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'q3_3',
                         // orientation: 'V',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Do you live in a village or a town/city?',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> Do you live in a village or a town/city?',
                         choices: [ 'Village', 'Town/city'],
                         shuffleChoices: true,
                         requiredChoice: true
@@ -897,7 +906,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'q4_2',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> What is the highest educational level that you have completed?',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q7</span> What is the highest educational level that you have completed?',
                         choices: ['No formal education','Primary school','Secondary school','Vocational training','Bachelor degree','Masters degree or higher'],
                         shuffleChoices: false,
                         requiredChoice: true
@@ -905,7 +914,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         name: 'CustomInput',
                         id: 'q4_1',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q7</span> How many people live in your household?<br>',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q8</span> How many people live in your household?<br>',
                         hint: '(Think about everyone that lives at least eight months per year in your house. Answer should include yourself.)',
                         width: '95%',
                         type: 'int',
@@ -915,7 +924,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     { // THIS NEEDS TO BE MADE CONDITIONAL ON DISTRICT
                         id: 'q4_3',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q8</span> In 2021, what was the total annual income of your household?<br>' +
+                        mainText: '<span style="font-weight: normal;color:gray;">Q9</span> In 2021, what was the total annual income of your household?<br>' +
                         '<span style="font-weight: normal;"> Please refer to the total income of ALL members living in your household in 2021, ' +
                         'before any taxes or deductions. This includes:<br> '+
                         '- wages and salaries from all jobs <br>' +
@@ -934,6 +943,69 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         choicesSetSize: 2
                     }
                 ]
+            }
+        }
+    });
+
+    stager.extendStep('Part_1_q5', {
+        name: "Part 3: Your opinion",
+        widget: {
+            name: 'ChoiceManager',
+            options: {
+                id: 'q5',
+                mainText: '',
+                simplify: true,
+                forms: [
+                    {
+                        name: 'ChoiceTableGroup',
+                        id: 'q5_prior',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q10</span> <span style=\'font-size:18px;font-weight:normal;\'>In your daily life, how often do you engage in the following activitites?</span>',
+                        choices: [
+                            'Never', 'Very rarely', 'About once per week',
+                            'More than once per week', 'Every day'
+                        ],
+                        items: [
+                          {
+                            id: 'mask',
+                            left: '<span style=\'font-size:16px;font-weight:bold;\'>Wear a face mask</span>'
+                          },
+                          {
+                              id: 'air_pur',
+                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Use an air purifier indoors</span>'
+                          },
+                          {
+                              id: 'check',
+                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Check the air quality in your area</span>'
+                          },
+                          {
+                              id: 'change',
+                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Change your commute route or time schedule to avoid high pollution areas</span>'
+                          },
+                          {
+                              id: 'ventilate',
+                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Opening the window to ventilate rooms</span>'
+                          },
+                          {
+                              id: 'nature',
+                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Spend time in nature</span>'
+                          },
+                          {
+                              id: 'cooking',
+                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Use clean cooking fuels (gas or electricity)</span>'
+                          },
+                          {
+                              id: 'dust',
+                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Remove dust in your household</span>'
+                          }
+                        ],
+                        shuffleChoices: false
+                    }
+                ],
+                formsOptions: {
+                    requiredChoice: true,
+                    shuffleChoices: true
+                },
+                className: 'centered'
             }
         }
     });
