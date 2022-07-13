@@ -930,14 +930,18 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         '- wages and salaries from all jobs <br>' +
                         '- the revenue from self-employment <br>' +
                         '- all income from casual labour.</span>',
-                        choices: ['Less than 45,000 INR',
-                        '45,000 INR – 90,000 INR',
-                        '90,000 INR – 1,25,000 INR',
-                        '1,25,000 INR – 2,00,000 INR',
-                        '2,00,000 INR – 2,40,000 INR',
-                        '2,40,000 INR – 2,95,000 INR',
-                        '2,95,000 INR – 4,05,000 INR',
-                        'More than 4,05,000 INR'],
+                        choices: [
+                          ["Group 1", 'Less than $15,600'],
+                          ["Group 2", '$15,600 – $27,026'],
+                          ["Group 3", '$27,026 – $39,535'],
+                          ["Group 4", '$39,535 – $52,179'],
+                          ["Group 5", '$52,179 – $67,521'],
+                          ["Group 6", '$67,521 – $85,076'],
+                          ["Group 7", '$85,076 – $107,908'],
+                          ["Group 8", '$107,908 - $141,110'],
+                          ["Group 9", '$141,110 - $201,126'],
+                          ["Group 10", 'More than $201,126']
+                      ],
                         shuffleChoices: false,
                         requiredChoice: true,
                         choicesSetSize: 2
