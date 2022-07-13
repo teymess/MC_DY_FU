@@ -1220,8 +1220,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                             {
                                 id: 'LYL_prior',
                                 orientation: 'H',
-                                mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Think of <span style="color:red;">YOUR district </span> now. ' +
-                                          'In your opinion, which group is your district, ' + stringDistrict + ', part of?',
+                                mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Think of <span style="color:red;">YOUR county </span> now. ' +
+                                          'In your opinion, which group is your county, ' + stringDistrict + ', part of?',
                                 choices: [
                                   ['Group 1', '<span style=\'font-size:14px;font-weight:normal;\'>Group 1</span>'],
                                   ['Group 2', '<span style=\'font-size:14px;font-weight:normal;\'>Group 2</span>'],
@@ -1779,7 +1779,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 else {
                     W.show('home')
                     W.setInnerHTML('choice', data.row.district);
-                    W.setInnerHTML('where', ", your home district");
+                    W.setInnerHTML('where', ", your home county");
                     //W.setInnerHTML('operator', "receive")
                     node.game.choice_outcome = 'home';
                 }
