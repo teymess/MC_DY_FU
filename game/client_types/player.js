@@ -1822,7 +1822,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     W.setInnerHTML('years', data.life_lost.toFixed(1));
 
                     W.gid('img').src = 'district_maps/' + state_fig + '_' + district_fig + '.png';
-                    W.gid('L5').src = "Leaflet_images/L5_your_district.png";
+                    W.gid('L5').src = "Leaflet_images/L5_district.png";
                     // W.gid('banner').src = "Leaflet_images/banner_PM25_comp.png";
 
 
