@@ -952,7 +952,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('Part_1_q5', {
-        name: "Part 3: Your opinion",
+        name: "Part 1: Survey",
         widget: {
             name: 'ChoiceManager',
             options: {
