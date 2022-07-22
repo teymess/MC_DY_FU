@@ -861,8 +861,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         name: 'Dropdown',
                         id: 'district',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Select the district in which you currently live. <span style="font-weight: normal;">*</span>' +
-                        '<br><span style="font-weight: normal;">In case you cannot find your district in the list, please choose the nearest one.</span>',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Select the county in which you currently live. <span style="font-weight: normal;">*</span>' +
+                        '<br><span style="font-weight: normal;">In case you cannot find your county in the list, please choose the nearest one.</span>',
                         tag: 'select', // 'datalist'
                         // Will be auto-filled later.
                         choices: [ '--' ],
@@ -907,7 +907,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         id: 'q4_2',
                         orientation: 'H',
                         mainText: '<span style="font-weight: normal;color:gray;">Q7</span> What is the highest educational level that you have completed?',
-                        choices: ['No formal education','Primary school','Secondary school','Vocational training','Bachelor degree','Masters degree or higher'],
+                        choices: ['No formal education','Primary school','High School','Bachelor degree','Masters degree','Doctorate or higher'],
                         shuffleChoices: false,
                         requiredChoice: true
                     },
