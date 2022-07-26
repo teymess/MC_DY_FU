@@ -994,8 +994,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                               left: '<span style=\'font-size:16px;font-weight:bold;\'>Spend time in nature</span>'
                           },
                           {
-                              id: 'cooking',
-                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Use clean cooking fuels (gas or electricity)</span>'
+                              id: 'fires',
+                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Avoid open fires and waste burning</span>'
                           },
                           {
                               id: 'dust',
