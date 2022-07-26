@@ -1818,7 +1818,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     W.setInnerHTML('districtAgainAgain', data.district);
                     W.setInnerHTML('districtAgainAgainAgain', data.district);
                     W.setInnerHTML('pm25', data.pm25.toFixed(2));
-                    W.setInnerHTML('higher', (data.pm25 / 5).toFixed(0));
+                    W.setInnerHTML('higher', (data.pm25 / 5).toFixed(1));
                     W.setInnerHTML('years', data.life_lost.toFixed(1));
 
                     W.gid('img').src = 'district_maps/' + state_fig + '_' + district_fig + '.png';
