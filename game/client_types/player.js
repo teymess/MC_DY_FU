@@ -877,8 +877,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'q3_3',
                         // orientation: 'V',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> Do you live in a village or a town/city?',
-                        choices: [ 'Village', 'Town/city'],
+                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> Do you live in rural or urban area?',
+                        choices: [ 'Rural', 'Urban'],
                         shuffleChoices: true,
                         requiredChoice: true
                     }
@@ -907,7 +907,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         id: 'q4_2',
                         orientation: 'H',
                         mainText: '<span style="font-weight: normal;color:gray;">Q7</span> What is the highest educational level that you have completed?',
-                        choices: ['No formal education','Primary school','High School','Bachelor degree','Masters degree','Doctorate or higher'],
+                        choices: ['High School','Bachelor degree','Masters degree','Doctorate or higher'],
                         shuffleChoices: false,
                         requiredChoice: true
                     },
@@ -995,7 +995,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                           },
                           {
                               id: 'fires',
-                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Avoid open fires and waste burning</span>'
+                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Waste burning or handling of open fires</span>'
                           },
                           {
                               id: 'dust',
@@ -1537,8 +1537,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                             id: 'P4_q',
                             orientation: 'H',
                             mainText: '<span style="font-weight: normal;color:gray;">Q10</span> Which of the following two sentences is correct?*<br>',
-                            choices: ["There is <b>nothing</b> one can do to protect onself effectively against air pollution.",
-                          "There are <b>many things</b> one can do to protect oneself effectively against air pollution, both indoors and outdoors."],
+                            choices: ["There is <b>nothing</b> I can do to protect myself effectively against air pollution.",
+                          "There are <b>many things</b> I can do to protect myself effectively against air pollution, both indoors and outdoors."],
                             correctChoice: 1
                         }
                     ]
@@ -1783,7 +1783,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 else {
                     W.show('home')
                     W.setInnerHTML('choice', data.row.district);
-                    W.setInnerHTML('where', ", your home county");
+                    W.setInnerHTML('where', ", your county");
                     //W.setInnerHTML('operator', "receive")
                     node.game.choice_outcome = 'home';
                 }
@@ -2338,7 +2338,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 options: {
                     title: false,
                     panel: false,
-                    minChars: 2,
+                    minChars: 5,
                     showSubmit: false,
                     requiredChoice: true,
                     mainText: 'Thank you for participating. ' +
