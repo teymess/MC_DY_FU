@@ -784,7 +784,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////////////
     // Page 1. Age and gender
     stager.extendStep('Part_1_q2', {
-        name: "Part 1: Survey",
+        name: "Part 1",
         cb: function() {
             W.cssRule('table.choicetable td { text-align: center !important; ' +
             'font-weight: normal; padding-left: 10px; }');
@@ -821,7 +821,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////////////
     // Page 3. LOCATION
     stager.extendStep('Part_1_q3', {
-        name: "Part 1: Survey",
+        name: "Part 1",
         cb: function() {
             W.cssRule('table.choicetable td { text-align: center !important; ' +
             'font-weight: normal; padding-left: 10px; }');
@@ -883,7 +883,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////////////
     // Page 4. Nr household members + HH INCOME
     stager.extendStep('Part_1_q4', {
-        name: "Part 1: Survey",
+        name: "Part 1",
         cb: function() {
             W.cssRule('table.choicetable td { text-align: center !important; ' +
             'font-weight: normal; padding-left: 10px; }');
@@ -945,7 +945,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('Part_1_q5', {
-        name: "Part 1: Survey",
+        name: "Part 1",
         widget: {
             name: 'ChoiceManager',
             options: {
@@ -1024,7 +1024,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////////////
     // LEAFLET P1
     stager.extendStep('Part2_Air_pollution_and_its_sources', {
-        name: 'Part 2: Reading and comprehension',
+        name: 'Part 2',
         frame: 'leaflet_p1.htm',
         // Make a widget step.
         widget: {
@@ -1060,7 +1060,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////////////
     // LEAFLET P2
     stager.extendStep('Part2_Pollution_and_life_expectancy', {
-        name: 'Part 2: Reading and comprehension',
+        name: 'Part 2',
         frame: 'leaflet_p4.htm',
         widget: {
             name: 'ChoiceManager',
@@ -1198,7 +1198,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         // LYL Prior: Deciles of Pollution
         //////////////////////////////////////
         stager.extendStep('Part2_Prior_LYL_home', {
-            name: "Part 2: Reading and comprehension",
+            name: "Part 2",
             frame: 'prior_LYL.htm',
             donebutton: false,
             cb: function() {
@@ -1495,7 +1495,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////////////
     // LEAFLET P3
     stager.extendStep('Part2_Air_pollution_damages_your_health', {
-        name: 'Part 2: Reading and comprehension',
+        name: 'Part 2',
         frame: 'leaflet_p3.htm',
         widget: {
             name: 'ChoiceManager',
@@ -1524,7 +1524,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////////////
     // LEAFLET Protection measures ALL
     stager.extendStep('Part2_Protection_measures', {
-        name: 'Part 2: Reading and comprehension',
+        name: 'Part 2',
         frame: 'leaflet_protection.htm',
         cb: function() {
                   //console.log(data);
@@ -1635,7 +1635,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////////////
     // Instruction info acquisition
     stager.extendStep('Part2_Info_Choice', {
-        name: 'Part 2: Reading and comprehension',
+        name: 'Part 2',
         frame: 'info_choice.htm',
     });
 
@@ -1644,7 +1644,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     // Region of CHOICE (Austria)
     stager.extendStep('Part2_Info_Choice_Decision', {
-        name: 'Part 2: Reading and comprehension',
+        name: 'Part 2',
         frame: 'choice_region.htm',
         donebutton: false,
         cb: function() {
@@ -1754,7 +1754,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     ////////////////////////////////////////////////////////////////////////////
     stager.extendStep('Part2_choice_outcome', {
-        name: 'Part 2: Reading and comprehension',
+        name: 'Part 2',
         frame: 'choice_outcome.htm',
         //donebutton: false,
         cb: function() {
@@ -1795,7 +1795,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////////////
     // Pollution in your district
     stager.extendStep('Part2_Pollution_in_your_district', {
-        name: 'Part 2: Reading and comprehension',
+        name: 'Part 2',
         frame: 'leaflet_p5.htm',
         //donebutton: false,
         cb: function() {
@@ -1863,7 +1863,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     ///////////////////////////////////////////////////////////////////
         // Explanation of counting task
         stager.extendStep('Part_3_Instructions', {
-            name: 'Part 3: A fun exercise',
+            name: 'Part 3',
             frame: 'instructions_filler_task.htm',
             cb: function() {
                 W.setInnerHTML('bonus', node.game.settings.TASK_2_BONUS);
@@ -1874,7 +1874,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         /////////////////////////////////////////////////////////////////////////
         // Effort task - Counting zeros
         stager.extendStep('Part_3_Filler_Task', {
-            name: 'Part 3: A fun exercise',
+            name: 'Part 3',
             donebutton: false,
             frame: 'effort.html',
             done: function() {
@@ -2001,7 +2001,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         });
 
         stager.extendStep('Part_3_Results', {
-            name: 'Part 3: A fun exercise - Your results',
+            name: 'Part 3 - Your results',
             frame: 'effort_results.htm',
             cb: function() {
                 var effort_payoff;
@@ -2146,7 +2146,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     // LOCUS of CONTROL 1
         stager.extendStep('Part4_LOC1', {
-            name: "Part 4: Your opinion",
+            name: "Part 4",
             widget: {
                 name: 'ChoiceManager',
                 id: 'Part4_LOC1',
@@ -2207,7 +2207,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         ///////////////////////////////////////////////
         // LOCUS of CONTROL 2
             stager.extendStep('Part4_LOC2', {
-                name: "Part 4: Your opinion",
+                name: "Part 4",
                 widget: {
                     name: 'ChoiceManager',
                     id: 'Part4_LOC2',
@@ -2253,7 +2253,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             ///////////////////////////////////////////////
             // LOCUS of CONTROL 3
                 stager.extendStep('Part4_LOC3', {
-                    name: "Part 4: Your opinion",
+                    name: "Part 4",
                     widget: {
                         name: 'ChoiceManager',
                         id: 'Part4_LOC3',
@@ -2300,7 +2300,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 ///////////////////////////////////////////////
                 // Perceived Control
                     stager.extendStep('Part4_PC', {
-                        name: "Part 4: Your opinion",
+                        name: "Part 4",
                         widget: {
                             name: 'ChoiceManager',
                             id: 'Part4_PC',
@@ -2340,7 +2340,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     panel: false,
                     minChars: 5,
                     showSubmit: false,
-                    requiredChoice: true,
+                    //requiredChoice: true,
                     mainText: 'Thank you for participating. ' +
                     '<br><br>' +
                     "If you want to get in touch with us for questions or suggestions, " +
@@ -2355,7 +2355,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     '<li>Did you experience any technical difficulty?</li>' +
                     '<li>Were the images and maps loading correctly?</li>' +
                     '<li>How can we improve the study?</li></ol>' +
-                    "If you do not have any comment, just type 'N/A' in the box below."
+                    "If you do not have any comment, just type 'nothing' in the box below."
                 }
             }
         });
