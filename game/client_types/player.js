@@ -85,6 +85,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////
     stager.extendStep('memory_intro', {
         frame: 'instructions_memory.htm',
+        name: 'Part 5',
         cb: function() {
             W.setInnerHTML('bonus', node.game.settings.MEMORY_BONUS);
         }
@@ -93,6 +94,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////
     stager.extendStep('memory_learn', {
         frame: 'memory_learn.htm',
+        name: 'Part 5',
         donebutton: false,
         cb: function() {
             W.setInnerHTML('bonus', node.game.settings.MEMORY_BONUS);
@@ -130,7 +132,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
 
     stager.extendStep('memory_test1', {
-        name: 'Memory Task',
+        name: 'Part 5',
         frame: 'memory1.htm',
         cb: function() {
             node.game.memory1 = node.widgets.append('ChoiceManager', "container", {
@@ -171,7 +173,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test2', {
-        name: 'Memory Task',
+        name: 'Part 5',
         frame: 'memory2.htm',
         cb: function() {
             node.game.memory2 = node.widgets.append('ChoiceManager', "container", {
@@ -215,7 +217,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////
 
     stager.extendStep('memory_test3', {
-        name: 'Memory Task',
+        name: 'Part 5',
         frame: 'memory3.htm',
         cb: function() {
             node.game.memory3 = node.widgets.append('ChoiceManager', "container", {
@@ -256,7 +258,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test4', {
-        name: 'Memory Task',
+        name: 'Part 5',
         frame: 'memory4.htm',
         cb: function() {
             node.game.memory4 = node.widgets.append('ChoiceManager', "container", {
@@ -297,7 +299,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test5', {
-        name: 'Memory Task',
+        name: 'Part 5',
         frame: 'memory5.htm',
         cb: function() {
             node.game.memory5 = node.widgets.append('ChoiceManager', "container", {
@@ -338,7 +340,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test6', {
-        name: 'Memory Task',
+        name: 'Part 5',
         frame: 'memory6.htm',
         cb: function() {
             node.game.memory6 = node.widgets.append('ChoiceManager', "container", {
@@ -379,7 +381,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test7', {
-        name: 'Memory Task',
+        name: 'Part 5',
         frame: 'memory7.htm',
         cb: function() {
             node.game.memory7 = node.widgets.append('ChoiceManager', "container", {
@@ -420,7 +422,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test8', {
-        name: 'Memory Task',
+        name: 'Part 5',
         frame: 'memory8.htm',
         cb: function() {
             node.game.memory8 = node.widgets.append('ChoiceManager', "container", {
@@ -461,7 +463,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test9', {
-        name: 'Memory Task',
+        name: 'Part 5',
         frame: 'memory9.htm',
         cb: function() {
             node.game.memory9 = node.widgets.append('ChoiceManager', "container", {
@@ -502,7 +504,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test10', {
-        name: 'Memory Task',
+        name: 'Part 5',
         frame: 'memory10.htm',
         cb: function() {
             node.game.memory10 = node.widgets.append('ChoiceManager', "container", {
@@ -543,7 +545,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test11', {
-        name: 'Memory Task',
+        name: 'Part 5',
         frame: 'memory11.htm',
         cb: function() {
             node.game.memory11 = node.widgets.append('ChoiceManager', "container", {
@@ -584,7 +586,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test12', {
-        name: 'Memory Task',
+        name: 'Part 5',
         frame: 'memory12.htm',
         cb: function() {
             node.game.memory12 = node.widgets.append('ChoiceManager', "container", {
@@ -625,7 +627,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test13', {
-        name: 'Memory Task',
+        name: 'Part 5',
         frame: 'memory13.htm',
         cb: function() {
             node.game.memory13 = node.widgets.append('ChoiceManager', "container", {
@@ -666,7 +668,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test14', {
-        name: 'Memory Task',
+        name: 'Part 5',
         frame: 'memory14.htm',
         cb: function() {
             node.game.memory14 = node.widgets.append('ChoiceManager', "container", {
@@ -707,7 +709,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test15', {
-        name: 'Memory Task',
+        name: 'Part 5',
         frame: 'memory15.htm',
         cb: function() {
             node.game.memory15 = node.widgets.append('ChoiceManager', "container", {
@@ -748,7 +750,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_results', {
-        name: 'Memory Task - Your results',
+        name: 'Part 5 - Your results',
         frame: 'memory_results.htm',
         cb: function() {
             var h1, memory_payoff, memory_correct;
@@ -810,15 +812,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         mainText: '<span style="font-weight: normal;color:gray;">Q2</span> What is your gender?',
                         choices: ['Male', 'Female', 'Other','Prefer not to say'],
                         requiredChoice: true
-                    },
-                    {
-                      id: 'q2_3',
-                      orientation: 'H',
-                      mainText: '<span style="font-weight: normal;color:gray;">Q3</span> In general, how worried are you about air pollution?',
-                      left: 'Not worried at all',
-                      right: 'Very worried',
-                      choices: [ '1', '2', '3', '4', '5', '6', '7'],
-                      requiredChoice: true,
                     }
                 ]
             }
@@ -1205,7 +1198,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         // LYL Prior: Deciles of Pollution
         //////////////////////////////////////
         stager.extendStep('Part2_Prior_LYL_home', {
-            name: "Part 2",
+            name: "Part 2: Reading and comprehension",
             frame: 'prior_LYL.htm',
             donebutton: false,
             cb: function() {
@@ -1215,6 +1208,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                   W.setInnerHTML('district', data.district);
                   let myDistrict = data.district;
                   let stringDistrict = String(myDistrict);
+
 
                   node.game.Qprior = node.widgets.append('ChoiceManager', "container", {
                     id: 'LYL_prior_home',
@@ -1239,50 +1233,56 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                   ['Group 10', '<span style=\'font-size:14px;font-weight:normal;\'>Group 10</span>'],
                                     ],
                                 shuffleChoices: false,
-                                requiredChoice: true
-                            }
-                        ]
+                                requiredChoice: true,
+                                onclick: function(value, removed) {
+                                  var w, forms, len;
+                                  forms = node.widgets.lastAppended.formsById
+                                  // len = forms.P3_q1_1.choices.length - 1;
+                                  w = forms.T_confident;
+                                  w.show();
+                                  // w.hide();
+                                }
+                              },
+                              {
+                                  id: 'T_confident',
+                                  orientation: 'H',
+                                  mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How confident are you about your answer to the previous question?</span>',
+                                  choices: [
+                                    ['1', 'Not confident at all'],
+                                    ['2', 'Not very confident'],
+                                    ['3', 'Neutral'],
+                                    ['4', 'Quite confident'],
+                                    ['5', 'Completely confident']
+                                  ],
+                                  shuffleChoices: false,
+                                  requiredChoice: true,
+                                  hidden: true,
+                                  onclick: function(value, removed) {
+                                    var w, forms, len;
+                                    forms = node.widgets.lastAppended.formsById
+                                    // len = forms.P3_q1_1.choices.length - 1;
+                                    w = forms.pollution_worry;
+                                    w.show();
+                                    // w.hide();
+                                  }
+                                },
+                                {
+                                id: 'pollution_worry',
+                                orientation: 'H',
+                                mainText: '<span style="font-weight: normal;color:gray;">Q3</span> In general, how worried are you about air pollution?',
+                                left: 'Not worried at all',
+                                right: 'Very worried',
+                                choices: [ '1', '2', '3', '4', '5', '6', '7'],
+                                requiredChoice: true,
+                                hidden: true
+                              }
+                  ]
             });
             W.show('data', 'flex');
             node.game.doneButton.enable();
         });
         },
-        done: function() {
-            var w, q1, q2;
-
-            w = node.game.Qprior;
-
-                        // DISPLAY 1
-          //   q1 = w.formsById.LYL_prior;
-          //   if (q1.isHidden()) {
-          //   q1.reset(); // removes error.
-          //   q1.show();
-          //   return false;
-          // }
-
-                        // DISPLAY 2
-                        q2 = w.formsById.T_confident;
-                        if (!q2) {
-                            node.widgets.last.addForm({
-                                id: 'T_confident',
-                                orientation: 'H',
-                                mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How confident are you about your answer to the previous question?</span>',
-                                choices: [
-                                  ['1', 'Not confident at all'],
-                                  ['2', 'Not very confident'],
-                                  ['3', 'Neutral'],
-                                  ['4', 'Quite confident'],
-                                  ['5', 'Completely confident']
-                                ],
-                                shuffleChoices: false,
-                                requiredChoice: true,
-                            });
-                            return false;
-                        }
-
-                        return w.getValues();
-                    }
-                });
+});
 
 
 ////////////////////////////////////////////////////////////////////////////////
