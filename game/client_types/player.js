@@ -1677,7 +1677,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                           mainText: '<span style="font-size:30px;"><span style="font-weight: normal;color:gray;">Q11</span> What do you prefer?</span>',
                          // hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
                           choices: [
-                            ['home', 'I prefer to receive information about the number of life years lost due to air pollution in ' + bcoloredDistrict  + ' (' + data.state + ').'],
+                            ['home', 'I prefer to receive information about how much of my life I am expected to lose due to air pollution in ' + bcoloredDistrict  + ' (' + data.state + ').'],
                             ['nothing', 'I prefer not to receive any information.']
                             //['nothing', 'I prefer to <b>not</b> receive information about the number of life years lost due to air pollution in ' + bcoloredDistrict  + ' (' + data.state + ').']
                             // ['home', "<span style="font-size:25px;color:#ee6933;">" + data.district + '</span>' + ' (' + data.state + ')'],
