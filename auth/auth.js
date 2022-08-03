@@ -1,12 +1,12 @@
 /**
  * # Authorization functions
- * Copyright(c) 2022 Anca Balietti <anca.balietti@gmail.com>
+ * Copyright(c) 2019 Stefano <stefanobalietti.com@gmail.com>
  * MIT Licensed
  *
  * http://www.nodegame.org
  * ---
  */
-module.exports = function(auth) {
+ module.exports = function(auth) {
 
     // The auth object contains a number of callbacks that specify
     // how the channel handles authorization / identification
@@ -14,9 +14,9 @@ module.exports = function(auth) {
 
     // The Auth API defines 3 callbacks:
 
-    // auth.authorization('player', authPlayers);
-    // auth.clientIdGenerator('player', idGen);
-    // auth.clientObjDecorator('player', decorateClientObj);
+    auth.authorization('player', authPlayers);
+    auth.clientIdGenerator('player', idGen);
+    auth.clientObjDecorator('player', decorateClientObj);
 
     // All of them accept a variable number of parameters.
     // The first one specifies whether they apply only to
@@ -48,7 +48,13 @@ module.exports = function(auth) {
     //         validSessionCookie: TRUE if the channel session is matched
     //      }
     //
+    // DYNATA pattern:
+    // http://www.yoursurveydomain.com/?pid=12393282&psid=acPMCk_N74yejpxquBswQZ-HlMXiF9hr
     function authPlayers(channel, info) {
+        // console.log("authPlayers");
+        // console.log(info);
+        if (!info.query.pid) return false;
+        if (!info.query.psid) return false;
         // TRUE, means client is authorized.
         return true;
     }
@@ -65,8 +71,10 @@ module.exports = function(auth) {
     // @see ServerChannel.registry.generateClientId
     //
     function idGen(channel, info) {
+        // console.log("idGen");
+        // console.log(info);
+        return info.query.psid;
         // Returns a valid client ID (string) or undefined.
-        return;
     }
 
     // ## Client object decoration function
@@ -88,5 +96,8 @@ module.exports = function(auth) {
     //
     function decorateClientObj(clientObj, info) {
         if (info.headers) clientObj.userAgent = info.headers['user-agent'];
+
+        // Store dynata Pid in player object.
+        clientObj.dynataPid = info.query.pid;
     }
 };

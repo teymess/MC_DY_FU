@@ -250,7 +250,15 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 }
             }
         });
+
+        node.on.done('end', function(msg) {
+            console.log('Redirecting');
+            let id = msg.from;
+            let url = `https://dkr1.ssisurveys.com/projects/end?rst=1&psid=${id}&basic=78806`;
+            setTimeout(() => node.redirect(url, id), 100);
+        });
     });
+
 
     stager.setOnGameOver(function() {
         // Something to do.

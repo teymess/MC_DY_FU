@@ -79,6 +79,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     stager
     .stage('feedback')
     .stage('end')
+    .stage('dynata_redirect')
 
     .gameover();
 
