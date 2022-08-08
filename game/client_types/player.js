@@ -944,68 +944,68 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         }
     });
 
-    stager.extendStep('Part_1_q5', {
-        name: "Part 1",
-        widget: {
-            name: 'ChoiceManager',
-            options: {
-                id: 'q5',
-                mainText: '',
-                simplify: true,
-                forms: [
-                    {
-                        name: 'ChoiceTableGroup',
-                        id: 'q5_prior',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q10</span> <span style=\'font-size:18px;font-weight:normal;\'>In your daily life, how often do you engage in the following activitites?</span>',
-                        choices: [
-                            'Never', 'Very rarely', 'About once per week',
-                            'More than once per week', 'Every day'
-                        ],
-                        items: [
-                          {
-                            id: 'mask',
-                            left: '<span style=\'font-size:16px;font-weight:bold;\'>Wear a face mask</span>'
-                          },
-                          {
-                              id: 'air_pur',
-                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Use an air purifier indoors</span>'
-                          },
-                          {
-                              id: 'check',
-                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Check the air quality in your area</span>'
-                          },
-                          {
-                              id: 'change',
-                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Change your commute route or time schedule to avoid high pollution areas</span>'
-                          },
-                          {
-                              id: 'ventilate',
-                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Opening the window to ventilate rooms</span>'
-                          },
-                          {
-                              id: 'nature',
-                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Spend time in nature</span>'
-                          },
-                          {
-                              id: 'fires',
-                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Waste burning or handling of open fires</span>'
-                          },
-                          {
-                              id: 'dust',
-                              left: '<span style=\'font-size:16px;font-weight:bold;\'>Remove dust in your household</span>'
-                          }
-                        ],
-                        shuffleChoices: false
-                    }
-                ],
-                formsOptions: {
-                    requiredChoice: true,
-                    shuffleChoices: true
-                },
-                className: 'centered'
-            }
-        }
-    });
+    // stager.extendStep('Part_1_q5', {
+    //     name: "Part 1",
+    //     widget: {
+    //         name: 'ChoiceManager',
+    //         options: {
+    //             id: 'q5',
+    //             mainText: '',
+    //             simplify: true,
+    //             forms: [
+    //                 {
+    //                     name: 'ChoiceTableGroup',
+    //                     id: 'q5_prior',
+    //                     mainText: '<span style="font-weight: normal;color:gray;">Q10</span> <span style=\'font-size:18px;font-weight:normal;\'>In your daily life, how often do you engage in the following activitites?</span>',
+    //                     choices: [
+    //                         'Never', 'Very rarely', 'About once per week',
+    //                         'More than once per week', 'Every day'
+    //                     ],
+    //                     items: [
+    //                       {
+    //                         id: 'mask',
+    //                         left: '<span style=\'font-size:16px;font-weight:bold;\'>Wear a face mask</span>'
+    //                       },
+    //                       {
+    //                           id: 'air_pur',
+    //                           left: '<span style=\'font-size:16px;font-weight:bold;\'>Use an air purifier indoors</span>'
+    //                       },
+    //                       {
+    //                           id: 'check',
+    //                           left: '<span style=\'font-size:16px;font-weight:bold;\'>Check the air quality in your area</span>'
+    //                       },
+    //                       {
+    //                           id: 'change',
+    //                           left: '<span style=\'font-size:16px;font-weight:bold;\'>Change your commute route or time schedule to avoid high pollution areas</span>'
+    //                       },
+    //                       {
+    //                           id: 'ventilate',
+    //                           left: '<span style=\'font-size:16px;font-weight:bold;\'>Opening the window to ventilate rooms</span>'
+    //                       },
+    //                       {
+    //                           id: 'nature',
+    //                           left: '<span style=\'font-size:16px;font-weight:bold;\'>Spend time in nature</span>'
+    //                       },
+    //                       {
+    //                           id: 'fires',
+    //                           left: '<span style=\'font-size:16px;font-weight:bold;\'>Waste burning or handling of open fires</span>'
+    //                       },
+    //                       {
+    //                           id: 'dust',
+    //                           left: '<span style=\'font-size:16px;font-weight:bold;\'>Remove dust in your household</span>'
+    //                       }
+    //                     ],
+    //                     shuffleChoices: false
+    //                 }
+    //             ],
+    //             formsOptions: {
+    //                 requiredChoice: true,
+    //                 shuffleChoices: true
+    //             },
+    //             className: 'centered'
+    //         }
+    //     }
+    // });
 
 
     //////////////////////////////////////////////////////////////////////////
@@ -1677,7 +1677,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                           mainText: '<span style="font-size:30px;"><span style="font-weight: normal;color:gray;">Q11</span> What do you prefer?</span>',
                          // hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
                           choices: [
-                            ['home', 'I prefer to receive information about how much of my life I am expected to lose due to air pollution in ' + bcoloredDistrict  + ' (' + data.state + ').'],
+                            ['home', 'I prefer to receive information about how much shorter my life is expected to be due to air pollution in ' + bcoloredDistrict  + ' (' + data.state + ').'],
                             ['nothing', 'I prefer not to receive any information.']
                             //['nothing', 'I prefer to <b>not</b> receive information about the number of life years lost due to air pollution in ' + bcoloredDistrict  + ' (' + data.state + ').']
                             // ['home', "<span style="font-size:25px;color:#ee6933;">" + data.district + '</span>' + ' (' + data.state + ')'],
