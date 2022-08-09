@@ -900,7 +900,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         id: 'q4_2',
                         orientation: 'H',
                         mainText: '<span style="font-weight: normal;color:gray;">Q6</span> What is the highest educational level that you have completed?',
-                        choices: ['Lower than high school','High school','Bachelor degree','Masters degree','Doctorate or higher'],
+                        choices: ['None','High school','Bachelor degree','Masters degree','Doctorate or higher'],
                         shuffleChoices: false,
                         requiredChoice: true
                     },
