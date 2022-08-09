@@ -1282,6 +1282,9 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             node.game.doneButton.enable();
         });
         },
+        done: function() {
+            return node.game.Qprior.getValues();
+        }
 });
 
 
