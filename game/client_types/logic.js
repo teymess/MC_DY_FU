@@ -142,7 +142,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
               console.log(state);
               state = state.forms.state.value;
 
-                if (state === 'California') {
+                if (state !== 'Texas') {
                     let clientObj = channel.registry.getClient(id);
                     clientObj.allowReconnect = false;
                     node.redirect('location_error.htm', id);
