@@ -2333,14 +2333,19 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         ////////////////////////////////////////////////////////////////////////////
         // FEEDBACK
         stager.extendStep('feedback', {
-            widget: {
-                name: 'Feedback',
-                options: {
-                    title: false,
-                    panel: false,
+      widget: {
+          name: 'ChoiceManager',
+          id: 'feedback',
+          options: {
+              simplify: true,
+              mainText: '',
+              forms: [
+                  {
+                    name: 'Feedback',
+                    id: 'feedback1',
                     minChars: 5,
+                    requiredChoice: true,
                     showSubmit: false,
-                    //requiredChoice: true,
                     mainText: 'Thank you for participating. ' +
                     '<br><br>' +
                     "If you want to get in touch with us for questions or suggestions, " +
@@ -2357,7 +2362,9 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     '<li>How can we improve the study?</li></ol>' +
                     "If you do not have any comment, just type 'nothing' in the box below."
                 }
+              ]
             }
+          }
         });
 
 
