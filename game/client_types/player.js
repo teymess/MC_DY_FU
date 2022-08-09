@@ -834,7 +834,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         name: 'Dropdown',
                         id: 'state',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Select the state in which you currently live. <span style="font-weight: normal;">*</span>',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q3</span> Select the state in which you currently live. <span style="font-weight: normal;">*</span>',
                         choices: setup.states,
                         tag: 'select', // 'datalist'
                         placeholder: '--',
@@ -854,7 +854,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         name: 'Dropdown',
                         id: 'district',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Select the county in which you currently live. <span style="font-weight: normal;">*</span>' +
+                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Select the county in which you currently live. <span style="font-weight: normal;">*</span>' +
                         '<br><span style="font-weight: normal;">In case you cannot find your county in the list, please choose the nearest one.</span>',
                         tag: 'select', // 'datalist'
                         // Will be auto-filled later.
@@ -870,7 +870,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'q3_3',
                         // orientation: 'V',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> Do you live in rural or urban area?',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Do you live in rural or urban area?',
                         choices: [ 'Rural', 'Urban'],
                         shuffleChoices: true,
                         requiredChoice: true
@@ -899,15 +899,15 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         id: 'q4_2',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q7</span> What is the highest educational level that you have completed?',
-                        choices: ['High School','Bachelor degree','Masters degree','Doctorate or higher'],
+                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> What is the highest educational level that you have completed?',
+                        choices: ['Lower than high school','High school','Bachelor degree','Masters degree','Doctorate or higher'],
                         shuffleChoices: false,
                         requiredChoice: true
                     },
                     {
                         name: 'CustomInput',
                         id: 'q4_1',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q8</span> How many people live in your household?<br>',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q7</span> How many people live in your household?<br>',
                         hint: '(Think about everyone that lives at least eight months per year in your house. Answer should include yourself.)',
                         width: '95%',
                         type: 'int',
@@ -917,7 +917,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     { // THIS NEEDS TO BE MADE CONDITIONAL ON DISTRICT
                         id: 'q4_3',
                         orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q9</span> In 2021, what was the total annual income of your household?<br>' +
+                        mainText: '<span style="font-weight: normal;color:gray;">Q8</span> In 2021, what was the total annual income of your household?<br>' +
                         '<span style="font-weight: normal;"> Please refer to the total income of ALL members living in your household in 2021, ' +
                         'before any taxes or deductions. This includes:<br> '+
                         '- wages and salaries from all jobs <br>' +
