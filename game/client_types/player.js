@@ -2104,7 +2104,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             done: function() {
                 var w, q1, result;
 
-                node.game.gueeBonus = 0;
+                node.game.guessBonus = 0;
 
                 w = node.game.LYL_post;
 
