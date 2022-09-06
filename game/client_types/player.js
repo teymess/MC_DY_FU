@@ -85,7 +85,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////
     stager.extendStep('memory_intro', {
         frame: 'instructions_memory.htm',
-        name: 'Part 5',
+        name: 'Part 4',
         cb: function() {
             W.setInnerHTML('bonus', node.game.settings.MEMORY_BONUS);
         }
@@ -94,7 +94,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////
     stager.extendStep('memory_learn', {
         frame: 'memory_learn.htm',
-        name: 'Part 5',
+        name: 'Part 4',
         donebutton: false,
         cb: function() {
             W.setInnerHTML('bonus', node.game.settings.MEMORY_BONUS);
@@ -132,7 +132,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
 
     stager.extendStep('memory_test1', {
-        name: 'Part 5',
+        name: 'Part 4',
         frame: 'memory1.htm',
         cb: function() {
             node.game.memory1 = node.widgets.append('ChoiceManager', "container", {
@@ -173,7 +173,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test2', {
-        name: 'Part 5',
+        name: 'Part 4',
         frame: 'memory2.htm',
         cb: function() {
             node.game.memory2 = node.widgets.append('ChoiceManager', "container", {
@@ -217,7 +217,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////
 
     stager.extendStep('memory_test3', {
-        name: 'Part 5',
+        name: 'Part 4',
         frame: 'memory3.htm',
         cb: function() {
             node.game.memory3 = node.widgets.append('ChoiceManager', "container", {
@@ -258,7 +258,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test4', {
-        name: 'Part 5',
+        name: 'Part 4',
         frame: 'memory4.htm',
         cb: function() {
             node.game.memory4 = node.widgets.append('ChoiceManager', "container", {
@@ -299,7 +299,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test5', {
-        name: 'Part 5',
+        name: 'Part 4',
         frame: 'memory5.htm',
         cb: function() {
             node.game.memory5 = node.widgets.append('ChoiceManager', "container", {
@@ -340,7 +340,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test6', {
-        name: 'Part 5',
+        name: 'Part 4',
         frame: 'memory6.htm',
         cb: function() {
             node.game.memory6 = node.widgets.append('ChoiceManager', "container", {
@@ -381,7 +381,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test7', {
-        name: 'Part 5',
+        name: 'Part 4',
         frame: 'memory7.htm',
         cb: function() {
             node.game.memory7 = node.widgets.append('ChoiceManager', "container", {
@@ -422,7 +422,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test8', {
-        name: 'Part 5',
+        name: 'Part 4',
         frame: 'memory8.htm',
         cb: function() {
             node.game.memory8 = node.widgets.append('ChoiceManager', "container", {
@@ -463,7 +463,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test9', {
-        name: 'Part 5',
+        name: 'Part 4',
         frame: 'memory9.htm',
         cb: function() {
             node.game.memory9 = node.widgets.append('ChoiceManager', "container", {
@@ -504,7 +504,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test10', {
-        name: 'Part 5',
+        name: 'Part 4',
         frame: 'memory10.htm',
         cb: function() {
             node.game.memory10 = node.widgets.append('ChoiceManager', "container", {
@@ -545,7 +545,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test11', {
-        name: 'Part 5',
+        name: 'Part 4',
         frame: 'memory11.htm',
         cb: function() {
             node.game.memory11 = node.widgets.append('ChoiceManager', "container", {
@@ -586,7 +586,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test12', {
-        name: 'Part 5',
+        name: 'Part 4',
         frame: 'memory12.htm',
         cb: function() {
             node.game.memory12 = node.widgets.append('ChoiceManager', "container", {
@@ -627,7 +627,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test13', {
-        name: 'Part 5',
+        name: 'Part 4',
         frame: 'memory13.htm',
         cb: function() {
             node.game.memory13 = node.widgets.append('ChoiceManager', "container", {
@@ -668,7 +668,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test14', {
-        name: 'Part 5',
+        name: 'Part 4',
         frame: 'memory14.htm',
         cb: function() {
             node.game.memory14 = node.widgets.append('ChoiceManager', "container", {
@@ -709,7 +709,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_test15', {
-        name: 'Part 5',
+        name: 'Part 4',
         frame: 'memory15.htm',
         cb: function() {
             node.game.memory15 = node.widgets.append('ChoiceManager', "container", {
@@ -750,7 +750,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
     stager.extendStep('memory_results', {
-        name: 'Part 5 - Your results',
+        name: 'Part 4 - Your results',
         frame: 'memory_results.htm',
         cb: function() {
             var h1, memory_payoff, memory_correct;
@@ -1198,7 +1198,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         // LYL Prior: Deciles of Pollution
         //////////////////////////////////////
         stager.extendStep('Part2_Prior_LYL_home', {
-            name: "Part 2",
+            name: "Part 1",
             frame: 'prior_LYL.htm',
             donebutton: false,
             cb: function() {
@@ -1527,7 +1527,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////////////
     // LEAFLET Protection measures ALL
     stager.extendStep('Part2_Protection_measures', {
-        name: 'Part 2',
+        name: 'Part 1',
         frame: 'leaflet_protection.htm',
         cb: function() {
                   //console.log(data);
@@ -1638,7 +1638,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////////////
     // Instruction info acquisition
     stager.extendStep('Part2_Info_Choice', {
-        name: 'Part 2',
+        name: 'Part 1',
         frame: 'info_choice.htm',
     });
 
@@ -1647,7 +1647,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     // Region of CHOICE (Austria)
     stager.extendStep('Part2_Info_Choice_Decision', {
-        name: 'Part 2',
+        name: 'Part 1',
         frame: 'choice_region.htm',
         donebutton: false,
         cb: function() {
@@ -1701,63 +1701,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         }
     });
 
-    //////////////////////////////////////////////////////////////////////////
-    // Region of CHOICE (Nicaragua)
-    // stager.extendStep('Part2_Info_Choice_Nicaragua', {
-    //     name: 'Part 2: Reading and comprehension',
-    //     frame: 'choice_region.htm',
-    //     donebutton: false,
-    //     cb: function() {
-    //         node.get('districtData', function(data) {
-    //
-    //             //console.log(data);
-    //             W.setInnerHTML('state', data.state);
-    //             W.setInnerHTML('district', data.district);
-    //             let myDistrict = data.district;
-    //             let stringDistrict = String(myDistrict);
-    //             let coloredDistrict = stringDistrict.fontcolor("#ee6933");
-    //             let bcoloredDistrict = coloredDistrict.bold();
-    //
-    //             node.game.RegionC = node.widgets.append('ChoiceManager', "RegionOfChoice", {
-    //                 id: 'PC_q',
-    //                 // ref: 'controlQuestions',
-    //                 mainText: '',
-    //                 // '<img src="choice.png" width="100px"> <span style="font-weight: bold;font-size:24px;color:#5c30af;">What do you want to read about next?</span><br/><br/>' +
-    //                 //'On the next page, you will receive information about the <b>number of life years lost ' +
-    //                 //'because of air pollution</b> in a specific region. <br> <br>' +
-    //                 //'You now have the opportunity to <b><span style="font-size:25px;color:#ee6933;">indicate which of two regions</span></b> you prefer to read about. ' +
-    //                 //'<br> <br><img src="dices.png" width="40px"> However, your preferred option will be implemented with a <b>60% chance</b>.<br><br>',
-    //                 // <br> With a 40% probability, we will show you information on the other option.<br> <br>',
-    //                 simplify: true,
-    //                 forms: [
-    //                   {
-    //                       id: 'PC_q1_nicaragua',
-    //                       orientation: 'V',
-    //                       mainText: '<span style="font-size:30px;"><span style="font-weight: normal;color:gray;">Q11</span> What do you prefer?</span>',
-    //                       choices: [
-    //                         ['home', 'I prefer to receive information about the number of life years lost due to air pollution in ' + bcoloredDistrict  + ' (' + data.state + ').'],
-    //                         ['decoy', 'I prefer to receive information about the number of life years lost due to air pollution in <span style="color:#ee6933;"><b>Nicaragua</b></span> (a country in Central America).']
-    //                       ],
-    //                       requiredChoice: true,
-    //                       shuffleChoices: true
-    //                   }
-    //                 ]
-    //                 // formsOptions: {
-    //                 //     requiredChoice: true
-    //                 // }
-    //             });
-    //             W.show('data', 'flex');
-    //             node.game.doneButton.enable();
-    //         });
-    //     },
-    //     done: function() {
-    //         return node.game.RegionC.getValues();
-    //     }
-    // });
+
 
     ////////////////////////////////////////////////////////////////////////////
     stager.extendStep('Part2_choice_outcome', {
-        name: 'Part 2',
+        name: 'Part 1',
         frame: 'choice_outcome.htm',
         //donebutton: false,
         cb: function() {
@@ -1798,7 +1746,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////////////
     // Pollution in your district
     stager.extendStep('Part2_Pollution_in_your_district', {
-        name: 'Part 2',
+        name: 'Part 1',
         frame: 'leaflet_p5.htm',
         //donebutton: false,
         cb: function() {
@@ -1866,7 +1814,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     ///////////////////////////////////////////////////////////////////
         // Explanation of counting task
         stager.extendStep('Part_3_Instructions', {
-            name: 'Part 3',
+            name: 'Part 2',
             frame: 'instructions_filler_task.htm',
             cb: function() {
                 W.setInnerHTML('bonus', node.game.settings.TASK_2_BONUS);
@@ -1877,7 +1825,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         /////////////////////////////////////////////////////////////////////////
         // Effort task - Counting zeros
         stager.extendStep('Part_3_Filler_Task', {
-            name: 'Part 3',
+            name: 'Part 2',
             donebutton: false,
             frame: 'effort.html',
             done: function() {
@@ -2004,7 +1952,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         });
 
         stager.extendStep('Part_3_Results', {
-            name: 'Part 3 - Your results',
+            name: 'Part 2 - Your results',
             frame: 'effort_results.htm',
             cb: function() {
                 var effort_payoff;
@@ -2030,7 +1978,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         ////////////////////////////////////////////////////////////////////////////////
         // Posterior LYL
         stager.extendStep('Part4_Posterior_LYL', {
-            name: 'Part 4',
+            name: 'Part 3',
             frame: 'posterior_LYL.htm',
             donebutton: false,
             cb: function() {
@@ -2149,7 +2097,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     // LOCUS of CONTROL 1
         stager.extendStep('Part4_LOC1', {
-            name: "Part 4",
+            name: "Part 3",
             widget: {
                 name: 'ChoiceManager',
                 id: 'Part4_LOC1',
@@ -2210,7 +2158,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         ///////////////////////////////////////////////
         // LOCUS of CONTROL 2
             stager.extendStep('Part4_LOC2', {
-                name: "Part 4",
+                name: "Part 3",
                 widget: {
                     name: 'ChoiceManager',
                     id: 'Part4_LOC2',
@@ -2256,7 +2204,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             ///////////////////////////////////////////////
             // LOCUS of CONTROL 3
                 stager.extendStep('Part4_LOC3', {
-                    name: "Part 4",
+                    name: "Part 3",
                     widget: {
                         name: 'ChoiceManager',
                         id: 'Part4_LOC3',
@@ -2303,7 +2251,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 ///////////////////////////////////////////////
                 // Perceived Control
                     stager.extendStep('Part4_PC', {
-                        name: "Part 4",
+                        name: "Part 3",
                         widget: {
                             name: 'ChoiceManager',
                             id: 'Part4_PC',
