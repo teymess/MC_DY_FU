@@ -1,4 +1,4 @@
-# Motivated_cognition_US
+# Motivated_cognition_US2
 Anca Balietti <anca.balietti@gmail.com>
 
 ## Description
