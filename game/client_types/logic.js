@@ -209,7 +209,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
         node.on('get.districtData2', function(msg) {
 
-            let { county } = getStateCounty(msg.from);
+            let { state, county } = getStateCounty(msg.from);
+            let countyIdx = setup.getCountyIdx(state, county);
 
             var choice = memory.choice_decision.get(msg.from);
             choice = choice.PC_q1_choice.value;
@@ -218,32 +219,34 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             var random = Math.random();
             console.log(random);
 
+            let row = setup.pollutionDb.county.get(countyIdx);
+
             if (choice === 'nothing' && random > 0.4) {
                 return {
                     ball: "green",
                     chosen: "nothing",
-                    row: setup.pollutionDb.county.get(county)
+                    row: row
                 }
             }
             else if (choice === 'nothing' && random <= 0.4) {
                 return {
                     ball: "red",
                     chosen: "home",
-                    row: setup.pollutionDb.county.get(county)
+                    row: row
                 }
             }
             else if (choice === 'home' && random > 0.4) {
                 return {
                     ball: "green",
                     chosen: "home",
-                    row: setup.pollutionDb.county.get(county)
+                    row: row
                 }
             }
             else if (choice === 'home' && random <= 0.4) {
                 return {
                     ball: "red",
                     chosen: "nothing",
-                    row: setup.pollutionDb.county.get(county)
+                    row: row
                 }
             }
         });
@@ -251,7 +254,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
     function getStateCounty(playerId) {
         let info = memory.county_player.get(playerId);
-        // console.log(info);
+        console.log(info);
         let state = info.forms.state.value;
         let county = info.forms.district.value;
         return { state, county };

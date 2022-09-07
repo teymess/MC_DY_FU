@@ -34,6 +34,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         header = W.generateHeader();
         W.generateFrame();
 
+        node.widgets.add('Goto', document.body, { docked: true });
+
         // Add widgets.
         this.visualStage = node.widgets.append('VisualStage', header, {
             next: false
