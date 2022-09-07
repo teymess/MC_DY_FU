@@ -1808,7 +1808,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                   {
                     name: 'Feedback',
                     id: 'feedback2',
-                    mainText: '<ol start="3"><li>What do you think this study is about?</li></ol>',
+                    mainText: 'What do you think this study is about?',
                     requiredChoice: true,
                     minChars: 5,
                     showSubmit: false
