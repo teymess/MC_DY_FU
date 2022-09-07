@@ -976,7 +976,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                             {
                                 id: 'LYL_prior',
                                 orientation: 'H',
-                                mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Think of <span style="color:red;">your county </span> now. ' +
+                                mainText: '<span style="font-weight: normal;color:gray;">Q9</span> Think of <span style="color:red;">your county </span> now. ' +
                                           'In your opinion, which group is ' + stringDistrict +  ' (' + data.state + ') part of?',
                                 choices: [
                                   ['Group 1', '<span style=\'font-size:14px;font-weight:normal;\'>Group 1</span>'],
@@ -1004,7 +1004,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                               {
                                   id: 'T_confident',
                                   orientation: 'H',
-                                  mainText: '<span style="font-weight: normal;color:gray;">Q6</span> How confident are you about your answer to the previous question?</span>',
+                                  mainText: '<span style="font-weight: normal;color:gray;">Q10</span> How confident are you about your answer to the previous question?</span>',
                                   choices: [
                                     ['1', 'Not confident at all'],
                                     ['2', 'Not very confident'],
@@ -1027,7 +1027,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                 {
                                 id: 'pollution_worry',
                                 orientation: 'H',
-                                mainText: '<span style="font-weight: normal;color:gray;">Q7</span> In general, how worried are you about the air pollution in ' + stringDistrict +  ' (' + data.state + ')?',
+                                mainText: '<span style="font-weight: normal;color:gray;">Q11</span> In general, how worried are you about the air pollution in ' + stringDistrict +  ' (' + data.state + ')?',
                                 left: 'Not worried at all',
                                 right: 'Very worried',
                                 choices: [ '1', '2', '3', '4', '5', '6', '7'],
@@ -1063,7 +1063,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                             id: 'P4_q',
                             orientation: 'H',
                             mainText: '<span style="font-weight: normal;"> Based on the leaflet above, choose the correct answer to the questions below.</span><br><br>' +
-                            '<span style="font-weight: normal;color:gray;">Q8</span> Which of the following two sentences is correct?*<br>',
+                            '<span style="font-weight: normal;color:gray;">Q12</span> Which of the following two sentences is correct?*<br>',
                             choices: ["There is <b>nothing</b> I can do to protect myself effectively against air pollution.",
                           "There are <b>many things</b> I can do to protect myself effectively against air pollution, both indoors and outdoors."],
                             correctChoice: 1
@@ -1085,7 +1085,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         node.widgets.last.addForm({
                           name: 'Feedback',
                           id: 'P4_T_q4',
-                          mainText: '<span style="font-weight: normal;color:gray;">Q8b</span> Which actions can you take to protect yourself against air pollution outdoors and which actions can you take indoors? Summarize below.',
+                          mainText: '<span style="font-weight: normal;color:gray;">Q13</span> Which actions can you take to protect yourself against air pollution outdoors and which actions can you take indoors? Summarize below.',
                           requiredChoice: true,
                           showSubmit: false,
                           minChars: 20,

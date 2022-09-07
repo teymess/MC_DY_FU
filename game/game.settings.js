@@ -35,7 +35,7 @@ module.exports = {
          'Part_3_Filler_Task': 120000,
      },
 
-    BASE_PAY: 4,
+    BASE_PAY: 3,
     TASK_2_BONUS: 0.05,
     MEMORY_BONUS: 0.02,
 
