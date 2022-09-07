@@ -1755,7 +1755,7 @@ stager.extendStep('feedback', {
                 mainText: 'Thank you for participating. ' +
                 '<br><br>' +
                 "If you want to get in touch with us for questions or suggestions, " +
-                "please write us an email at <em><span style='color:#bf2b42'>academic.research.India@gmail.com</span></em>." +
+                "please write us an email at <em><span style='color:#bf2b42'>pob.heidelberg@gmail.com</span></em>." +
                 '<br><br>' +
                 'We are very interested in ' +
                 'hearing your <strong>feedback</strong> about the ' +
