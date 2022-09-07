@@ -2042,8 +2042,8 @@ stager.extendStep('feedback', {
               {
                 name: 'Feedback',
                 id: 'feedback1',
-                minChars: 5,
-                requiredChoice: true,
+                minChars: 7,
+                required: true,
                 showSubmit: false,
                 mainText: 'Thank you for participating. ' +
                 '<br><br>' +
