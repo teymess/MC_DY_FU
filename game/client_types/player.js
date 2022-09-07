@@ -900,7 +900,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         id: 'q4_2',
                         orientation: 'H',
                         mainText: '<span style="font-weight: normal;color:gray;">Q6</span> What is the highest educational level that you have completed?',
-                        choices: ['None','High school','Bachelor degree','Masters degree','Doctorate or higher'],
+                        choices: ['Eighth grade or less','High school','College degree','Masters degree','Doctorate or higher'],
                         shuffleChoices: false,
                         requiredChoice: true
                     },
@@ -1014,11 +1014,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     //////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////
 
-    // Instructions Part II
-    stager.extendStep('Instructions_Part_2', {
-        name: 'Part 2: Instructions',
-        frame: 'instructions_part2.htm'
-    });
+    // // Instructions Part II
+    // stager.extendStep('Instructions_Part_2', {
+    //     name: 'Part 2: Instructions',
+    //     frame: 'instructions_part2.htm'
+    // });
 
 
     //////////////////////////////////////////////////////////////////////////
@@ -1206,8 +1206,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
                   //console.log(data);
                   W.setInnerHTML('district', data.district);
+                  W.setInnerHTML('state', data.state);
                   let myDistrict = data.district;
                   let stringDistrict = String(myDistrict);
+                  // State
+                  let myState = data.state;
+                  let stringState = String(myState);
 
 
                   node.game.Qprior = node.widgets.append('ChoiceManager', "container", {
@@ -1218,8 +1222,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                             {
                                 id: 'LYL_prior',
                                 orientation: 'H',
-                                mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Think of <span style="color:red;">YOUR county </span> now. ' +
-                                          'In your opinion, which group is your county, ' + stringDistrict + ', part of?',
+                                mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Think of <span style="color:red;">your county </span> now. ' +
+                                          'In your opinion, which group is ' + stringDistrict +  ' (' + data.state + ') part of?',
                                 choices: [
                                   ['Group 1', '<span style=\'font-size:14px;font-weight:normal;\'>Group 1</span>'],
                                   ['Group 2', '<span style=\'font-size:14px;font-weight:normal;\'>Group 2</span>'],
@@ -1269,7 +1273,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                 {
                                 id: 'pollution_worry',
                                 orientation: 'H',
-                                mainText: '<span style="font-weight: normal;color:gray;">Q3</span> In general, how worried are you about air pollution?',
+                                mainText: '<span style="font-weight: normal;color:gray;">Q7</span> In general, how worried are you about the air pollution in ' + stringDistrict +  ' (' + data.state + ')?',
                                 left: 'Not worried at all',
                                 right: 'Very worried',
                                 choices: [ '1', '2', '3', '4', '5', '6', '7'],
@@ -1288,241 +1292,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 });
 
 
-////////////////////////////////////////////////////////////////////////////////
-// PRIOR LYL
-    // stager.extendStep('Part2_Prior_LYL_Austria', {
-    //     name: 'Part 2',
-    //     frame: 'prior_LYL.htm',
-    //     donebutton: true,
-    //     cb: function() {
-    //     //    node.get('districtData', function(data) {
-    //
-    //         node.game.Q_impact = node.widgets.append('ChoiceManager', "T_impact", {
-    //                 id: 'T_impact_q',
-    //                 simplify: true,
-    //                 panel: false,
-    //                 forms: [
-    //                   {
-    //                       id: 'LYL_prior_Austria',
-    //                       mainText: '<span style="font-weight: normal;color:gray;">Q7</span> How many years of life do people living in <span style="color:#ee6933;">Austria</span>, a ' +
-    //                       'country in central Europe, lose on average because of air pollution?<br>' +
-    //                       '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
-    //                       hint: false,
-    //                       name: 'Slider',
-    //                       hidden: false,
-    //                       requiredChoice: true,
-    //                       initialValue: 0,
-    //                       min: 0,
-    //                       max: 120,
-    //                       left: '0 years',
-    //                       right: '12 years',
-    //                       displayNoChange: false,
-    //                       type: 'flat',
-    //                       panel: false,
-    //                       texts: {
-    //                           currentValue: function(widget, value) {
-    //                               let LYL = [
-    //                                   '0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9',
-    //                                   '1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9',
-    //                                   '2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9',
-    //                                   '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9',
-    //                                   '4.0', '4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9',
-    //                                   '5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9',
-    //                                   '6.0', '6.1', '6.2', '6.3', '6.4', '6.5', '6.6', '6.7', '6.8', '6.9',
-    //                                   '7.0', '7.1', '7.2', '7.3', '7.4', '7.5', '7.6', '7.7', '7.8', '7.9',
-    //                                   '8.0', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6', '8.7', '8.8', '8.9',
-    //                                   '9.0', '9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8', '9.9',
-    //                                   '10.0', '10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7', '10.8', '10.9',
-    //                                   '11.0', '11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9',
-    //                                   '12'
-    //                               ];
-    //                               node.game.contributionAmount = LYL[(value)];
-    //                               let myAnswer = LYL[(value)];
-    //                               let stringAnswer = String(myAnswer);
-    //                               let coloredAnswer = stringAnswer.fontcolor("#ee6933");
-    //                               return '<span style=\'font-size:20px;\'>You think people living in Austria' +
-    //                               ' lose on average ' + coloredAnswer + ' years of life due to air pollution.</span>';
-    //                           }
-    //                       }
-    //                   },
-    //                 ]
-    //             });
-    //
-    //           //  W.show('data', 'flex');
-    //             node.game.doneButton.enable();
-    //       //  });
-    //     },
-    //     done: function() {
-    //         //var w, q1, q2;
-    //         var w, q2;
-    //
-    //         w = node.game.Q_impact;
-    //
-    //         // DISPLAY 1
-    //         //q1 = w.formsById.LYL_prior_Austria;
-    //         //if (q1.isHidden()) {
-    //           //  q1.reset(); // removes error.
-    //           //  q1.show();
-    //         //    return false;
-    //         //}
-    //
-    //         // DISPLAY 2
-    //         q2 = w.formsById.T_confident_decoy;
-    //         if (!q2) {
-    //             node.widgets.last.addForm({
-    //                 id: 'T_confident_decoy',
-    //                 orientation: 'H',
-    //                 mainText: '<span style="font-weight: normal;color:gray;">Q8</span> How confident are you about your answer to the previous question?</span>',
-    //                 choices: [
-    //                   ['1', 'Not confident at all'],
-    //                   ['2', 'Not very confident'],
-    //                   ['3', 'Neutral'],
-    //                   ['4', 'Quite confident'],
-    //                   ['5', 'Completely confident']
-    //                 ],
-    //                 shuffleChoices: false,
-    //                 requiredChoice: true,
-    //             });
-    //             return false;
-    //         }
-    //
-    //         return w.getValues();
-    //     }
-    // });
-    //
-    // ////////////////////////////////////////////////////////////////////////////////
-    // // PRIOR LYL
-    //     stager.extendStep('Part2_Prior_LYL_Nicaragua', {
-    //         name: 'Part 2',
-    //         frame: 'prior_LYL.htm',
-    //         donebutton: true,
-    //         cb: function() {
-    //             //node.get('districtData', function(data) {
-    //
-    //             node.game.Q_impact = node.widgets.append('ChoiceManager', "T_impact", {
-    //                     id: 'T_impact_q',
-    //                     simplify: true,
-    //                     panel: false,
-    //                     forms: [
-    //                       {
-    //                         id: 'LYL_prior_Nicaragua',
-    //                         mainText: '<span style="font-weight: normal;color:gray;">Q7</span> How many years of life do people living in <span style="color:#ee6933;">Nicaragua</span>, a ' +
-    //                         'country in Central America, lose on average because of air pollution?<br>' +
-    //                         '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
-    //                         hint: false,
-    //                         name: 'Slider',
-    //                         hidden: false,
-    //                         requiredChoice: true,
-    //                         initialValue: 0,
-    //                         min: 0,
-    //                         max: 120,
-    //                         left: '0 years',
-    //                         right: '12 years',
-    //                         displayNoChange: false,
-    //                         type: 'flat',
-    //                         panel: false,
-    //                         texts: {
-    //                             currentValue: function(widget, value) {
-    //                                 let LYL = [
-    //                                     '0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9',
-    //                                     '1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9',
-    //                                     '2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9',
-    //                                     '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9',
-    //                                     '4.0', '4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9',
-    //                                     '5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9',
-    //                                     '6.0', '6.1', '6.2', '6.3', '6.4', '6.5', '6.6', '6.7', '6.8', '6.9',
-    //                                     '7.0', '7.1', '7.2', '7.3', '7.4', '7.5', '7.6', '7.7', '7.8', '7.9',
-    //                                     '8.0', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6', '8.7', '8.8', '8.9',
-    //                                     '9.0', '9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8', '9.9',
-    //                                     '10.0', '10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7', '10.8', '10.9',
-    //                                     '11.0', '11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9',
-    //                                     '12'
-    //                                 ];
-    //                                 node.game.contributionAmount = LYL[(value)];
-    //                                 let myAnswer = LYL[(value)];
-    //                                 let stringAnswer = String(myAnswer);
-    //                                 let coloredAnswer = stringAnswer.fontcolor("#ee6933");
-    //                                 return '<span style=\'font-size:20px;\'>You think people living in Nicaragua' +
-    //                                 ' lose on average ' + coloredAnswer + ' years of life due to air pollution.</span>';
-    //                             }
-    //                           }
-    //                       },
-    //                     ]
-    //                 });
-    //
-    //                 //W.show('data', 'flex');
-    //                 //node.game.doneButton.enable();
-    //             //});
-    //         },
-    //         done: function() {
-    //             //var w, q1, q2;
-    //             var w, q2;
-    //
-    //             w = node.game.Q_impact;
-    //
-    //             // DISPLAY 1
-    //             //q1 = w.formsById.LYL_prior_Austria;
-    //             //if (q1.isHidden()) {
-    //               //  q1.reset(); // removes error.
-    //               //  q1.show();
-    //             //    return false;
-    //             //}
-    //
-    //             // DISPLAY 2
-    //             q2 = w.formsById.T_confident_decoy;
-    //             if (!q2) {
-    //                 node.widgets.last.addForm({
-    //                     id: 'T_confident_decoy',
-    //                     orientation: 'H',
-    //                     mainText: '<span style="font-weight: normal;color:gray;">Q8</span> How confident are you about your answer to the previous question?</span>',
-    //                     choices: [
-    //                       ['1', 'Not confident at all'],
-    //                       ['2', 'Not very confident'],
-    //                       ['3', 'Neutral'],
-    //                       ['4', 'Quite confident'],
-    //                       ['5', 'Completely confident']
-    //                     ],
-    //                     shuffleChoices: false,
-    //                     requiredChoice: true,
-    //                 });
-    //                 return false;
-    //             }
-    //
-    //             return w.getValues();
-    //         }
-    //     });
-
-
-
-
-    //////////////////////////////////////////////////////////////////////////
-    // // LEAFLET P3
-    // stager.extendStep('Part2_Air_pollution_damages_your_health', {
-    //     name: 'Part 2',
-    //     frame: 'leaflet_p3.htm',
-    //     widget: {
-    //         name: 'ChoiceManager',
-    //         id: 'P3_q',
-    //         options: {
-    //             simplify: true,
-    //             mainText: 'Based on the box above, find the correct answer to the questions below.<br>',
-    //             forms: [
-    //                 {
-    //                     id: 'P3_q1',
-    //                     orientation: 'H',
-    //                     mainText: '<span style="font-weight: normal;color:gray;">Q9</span> Which of the following health conditions are caused by exposure to air pollution?<br>',
-    //                     hint: '<span style="color:gray;font-size:14px;">(There are several correct answers and you have to find all of them.)</span>',
-    //                     // Number of choices per row/column.
-    //                     choicesSetSize: 6,
-    //                     choices: ["HIV/AIDS", "Hepatitis",
-    //                     "Lung cancer", "Heart disease", "Respiratory infections"],
-    //                     selectMultiple: true,
-    //                     correctChoice: [2,3,4],
-    //                 }
-    //             ]
-    //         }
-    //     }
-    // });
 
     //////////////////////////////////////////////////////////////////////////
     // LEAFLET Protection measures ALL
@@ -1539,7 +1308,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         {
                             id: 'P4_q',
                             orientation: 'H',
-                            mainText: '<span style="font-weight: normal;color:gray;">Q10</span> Which of the following two sentences is correct?*<br>',
+                            mainText: '<span style="font-weight: normal;"> Based on the leaflet above, choose the correct answer to the questions below.</span><br><br>' +
+                            '<span style="font-weight: normal;color:gray;">Q8</span> Which of the following two sentences is correct?*<br>',
                             choices: ["There is <b>nothing</b> I can do to protect myself effectively against air pollution.",
                           "There are <b>many things</b> I can do to protect myself effectively against air pollution, both indoors and outdoors."],
                             correctChoice: 1
@@ -1554,13 +1324,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
         w = node.game.leafProt;
 
-                    // DISPLAY 1
-      //   q1 = w.formsById.LYL_prior;
-      //   if (q1.isHidden()) {
-      //   q1.reset(); // removes error.
-      //   q1.show();
-      //   return false;
-      // }
 
                     // DISPLAY 2
                     q2 = w.formsById.P4_T_q4;
@@ -1568,7 +1331,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         node.widgets.last.addForm({
                           name: 'Feedback',
                           id: 'P4_T_q4',
-                          mainText: '<span style="font-weight: normal;color:gray;">Q10b</span> Which actions can you take to protect yourself against air pollution outdoors and which actions can you take indoors? Summarize below.',
+                          mainText: '<span style="font-weight: normal;color:gray;">Q8b</span> Which actions can you take to protect yourself against air pollution outdoors and which actions can you take indoors? Summarize below.',
                           requiredChoice: true,
                           showSubmit: false,
                           minChars: 20,
@@ -1579,59 +1342,6 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     return w.getValues();
                 }
             });
-
-    //////////////////////////////////////////////////////////////////////////
-    // LEAFLET Protection measures Treatment
-    // stager.extendStep('Part2_Protection_measures_T', {
-    //     name: 'Part 2: Reading and comprehension',
-    //     frame: 'leaflet_protection_T.htm',
-    //     widget: {
-    //         name: 'ChoiceManager',
-    //         id: 'P4_T_q',
-    //         options: {
-    //             simplify: true,
-    //             mainText: 'Now, we are interested in <b>your opinion</b>.',
-    //             forms: [
-    //                 {
-    //                     id: 'P4_T_q2',
-    //                     orientation: 'H',
-    //                     mainText: '<span style="font-weight: normal;color:gray;">Q10a</span> Which protective measure(s) from the leaflet above are the MOST CONVENIENT for you to implement?<br>',
-    //                     hint: '<span style="color:gray;font-size:14px;">(Select at least 1.)</span>',
-    //                     // Number of choices per row/column.
-    //                     choicesSetSize: 4,
-    //                     choices: [
-    //                       ['1', '<div class="aligned"><img src="face_mask.png" width="140px"><span>'],
-    //                       ['2', '<div class="aligned"><img src="no_exercise.png" width="140px"><span>'],
-    //                       ['3', '<div class="aligned"><img src="no_congested.png" width="140px"><span>'],
-    //                       ['4', '<div class="aligned"><img src="nature.png" width="120px"><span>'],
-    //                       ['5', '<div class="aligned"><img src="no_dust.png" width="140px"><span>'],
-    //                       ['6', '<div class="aligned"><img src="AP.png" width="140px"><span>'],
-    //                       ['7', '<div class="aligned"><img src="clean_fuels.png" width="120px"><span>'],
-    //                       ['8', '<div class="aligned"><img src="ventilate.png" width="140px"><span>']],
-    //                     // choices: ["Wear a face mask", "Avoid exercising outdoors in congested areas",
-    //                     // "Check the air quality and avoid congested areas", "Spend time in nature",
-    //                     // "Remove dust often", "Use an air purifier", "Use clean cooking and heating fuels", "Ventilate well the kitchen"],
-    //                     selectMultiple: true,
-    //                     shuffleChoices: false
-    //                 },
-    //                 {
-    //                     id: 'P4_T_q3',
-    //                     orientation: 'V',
-    //                     mainText: '<div class="aligned"><img src="Leaflet_images/exclamation-mark.png" width="40px"><span> Read again the leaflet above.' +
-    //                     ' You will be asked to summarize it on the next page.<br><br>' +
-    //                     'What task will you be required to do on the next page?',
-    //                     choices: [
-    //                       ['1', 'Summarize the leaflet.'],
-    //                       ['2', 'Do a task unrelated to the leaflet.']],
-    //                     correctChoice: 0,
-    //                 }
-    //             ]
-    //         },
-    //     },
-    // });
-
-    ////////////////////////////////////////////////////////////////////////
-    //LEAFLET Protection measures Treatment
 
 
 
@@ -1773,40 +1483,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     W.setInnerHTML('years', data.life_lost.toFixed(1));
 
                     W.gid('img').src = 'district_maps/' + state_fig + '_' + district_fig + '.png';
-                    W.gid('L5').src = "Leaflet_images/L5_district.png";
-                    // W.gid('banner').src = "Leaflet_images/banner_PM25_comp.png";
-
-
-
-                    // node.game.controlQuestions = node.widgets.append('ChoiceManager', "ComprehquestionsL5", {
-                    //     id: 'p5_q_home',
-                    //     // ref: 'controlQuestions',
-                    //     mainText: 'Based on the information provided above, find the correct answer to the question below.',
-                    //     simplify: true,
-                    //     forms: [
-                    //         {
-                    //             id: 'p5_q1_home',
-                    //             orientation: 'H',
-                    //             mainText: '<span style="font-weight: normal;color:gray;">Q12</span> On average, how many years of life does a person living in your district lose because of air pollution?<br>',
-                    //             choices: [
-                    //                 (data.row.life_lost * 0.5).toFixed(1) + ' years',
-                    //                 (data.row.life_lost * 0.8).toFixed(1) + ' years',
-                    //                 data.row.life_lost.toFixed(1) + ' years',
-                    //                 (data.row.life_lost * 1.2).toFixed(1) + ' years',
-                    //                 (data.row.life_lost * 1.5).toFixed(1) + ' years'
-                    //             ],
-                    //             correctChoice: 2,
-                    //         }
-                    //     ]
-                    // });
-                // W.show('data', 'flex');
-                // node.game.doneButton.enable();
+                    W.gid('L5').src = "Leaflet_images/banner_health_implic.png";
             });
           }
         },
-        // done: function() {
-        //     return node.game.controlQuestions.getValues();
-        // }
     });
 
 
@@ -2289,14 +1969,13 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                 id: 'Part4_Poll_Severe',
                                 options: {
                                     simplify: true,
-                                    mainText: [],
                                     forms: [
                                         {
                                             id: 'LOC_q9',
                                             mainText: '<span style="font-weight: normal;"><br><br>' +
                                             'Compare the <b>global health burden<\b> from air pollution to that from other major causes of death, such as ' +
-                                            "cummunicable diseases like tuberculosis " +
-                                            "and HIV/AIDS, illnesses caused by smoking and poor water sanitation, and death from conflicts and war" +
+                                            "communicable diseases like tuberculosis " +
+                                            "and HIV/AIDS, illnesses caused by smoking and poor water sanitation, and death from conflicts and war." +
                                             'In your opinion, how large is the death burden from air pollution?',
                                             choices: [
                                               ['1', 'Air pollution causes <b>more<\b> deaths than any of these other causes.'],
