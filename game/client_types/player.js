@@ -1387,7 +1387,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                       {
                           id: 'PC_q1_choice',
                           orientation: 'V',
-                          mainText: '<span style="font-size:30px;"><span style="font-weight: normal;color:gray;">Q11</span> What do you prefer?</span>',
+                          mainText: '<span style="font-size:30px;">What do you prefer?</span>',
                          // hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
                           choices: [
                             ['home', 'I prefer to receive information about how much shorter my life is expected to be due to air pollution in ' + bcoloredDistrict  + ' (' + data.state + ').'],
@@ -1972,15 +1972,16 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                     forms: [
                                         {
                                             id: 'LOC_q9',
+                                            orientation: 'V',
                                             mainText: '<span style="font-weight: normal;"><br><br>' +
-                                            'Compare the <b>global health burden<\b> from air pollution to that from other major causes of death, such as ' +
+                                            'Compare the <b>global health burden</b> from air pollution to that from other major causes of death, such as ' +
                                             "communicable diseases like tuberculosis " +
-                                            "and HIV/AIDS, illnesses caused by smoking and poor water sanitation, and death from conflicts and war." +
-                                            'In your opinion, how large is the death burden from air pollution?',
+                                            "and HIV/AIDS, illnesses caused by smoking and poor water sanitation, and death from conflicts and " +
+                                            'war. In your opinion, how large is the death burden from air pollution?',
                                             choices: [
-                                              ['1', 'Air pollution causes <b>more<\b> deaths than any of these other causes.'],
-                                              ['2', 'Air pollution causes <b>a similar number<\b> of deaths as these other causes.'],
-                                              ['3', 'Air pollution causes <b>less<\b> deaths than these other causes.'],
+                                              ['1', 'Air pollution causes <b>more</b> deaths than any of these other causes.'],
+                                              ['2', 'Air pollution causes <b>a similar number</b> of deaths as these other causes.'],
+                                              ['3', 'Air pollution causes <b>less</b> deaths than these other causes.'],
                                             ],
                                             requiredChoice: true,
                                             shuffleChoices: false,
@@ -1993,41 +1994,77 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
 
         ////////////////////////////////////////////////////////////////////////////
-        // FEEDBACK
-        stager.extendStep('feedback', {
-      widget: {
-          name: 'ChoiceManager',
-          id: 'feedback',
-          options: {
-              simplify: true,
-              mainText: '',
-              forms: [
-                  {
-                    name: 'Feedback',
-                    id: 'feedback1',
-                    minChars: 5,
-                    requiredChoice: true,
-                    showSubmit: false,
-                    mainText: 'Thank you for participating. ' +
-                    '<br><br>' +
-                    "If you want to get in touch with us for questions or suggestions, " +
-                    "please write us an email at <em><span style='color:#bf2b42'>academic.research.India@gmail.com</span></em>." +
-                    '<br><br>' +
-                    'We are very interested in ' +
-                    'hearing your <strong>feedback</strong> about the ' +
-                    'following points:<br/><br/><em><ol>' +
-                    '<li>Was the survey too long or too short?</li>' +
-                    '<li>Did you find any question unclear or ' +
-                    'uncomfortable?</li>' +
-                    '<li>Did you experience any technical difficulty?</li>' +
-                    '<li>Were the images and maps loading correctly?</li>' +
-                    '<li>How can we improve the study?</li></ol>' +
-                    "If you do not have any comment, just type 'nothing' in the box below."
-                }
-              ]
-            }
+      //   // FEEDBACK
+      //   stager.extendStep('feedback', {
+      // widget: {
+      //     name: 'ChoiceManager',
+      //     id: 'feedback',
+      //     options: {
+      //         simplify: true,
+      //         mainText: '',
+      //         forms: [
+      //             {
+      //               name: 'Feedback',
+      //               id: 'feedback1',
+      //               minChars: 5,
+      //               requiredChoice: true,
+      //               showSubmit: false,
+      //               mainText: 'Thank you for participating. ' +
+      //               '<br><br>' +
+      //               "If you want to get in touch with us for questions or suggestions, " +
+      //               "please write us an email at <em><span style='color:#bf2b42'>academic.research.India@gmail.com</span></em>." +
+      //               '<br><br>' +
+      //               'We are very interested in ' +
+      //               'hearing your <strong>feedback</strong> about the ' +
+      //               'following points:<br/><br/><em><ol>' +
+      //               '<li>Was the survey too long or too short?</li>' +
+      //               '<li>Did you find any question unclear or ' +
+      //               'uncomfortable?</li>' +
+      //               '<li>Did you experience any technical difficulty?</li>' +
+      //               '<li>Were the images and maps loading correctly?</li>' +
+      //               '<li>How can we improve the study?</li></ol>' +
+      //               "If you do not have any comment, just type 'nothing' in the box below."
+      //           }
+      //         ]
+      //       }
+      //     }
+      //   });
+
+// FEEDBACK
+stager.extendStep('feedback', {
+  widget: {
+      name: 'ChoiceManager',
+      id: 'feedback',
+      options: {
+          simplify: true,
+          mainText: '',
+          forms: [
+              {
+                name: 'Feedback',
+                id: 'feedback1',
+                minChars: 5,
+                requiredChoice: true,
+                showSubmit: false,
+                mainText: 'Thank you for participating. ' +
+                '<br><br>' +
+                "If you want to get in touch with us for questions or suggestions, " +
+                "please write us an email at <em><span style='color:#bf2b42'>academic.research.India@gmail.com</span></em>." +
+                '<br><br>' +
+                'We are very interested in ' +
+                'hearing your <strong>feedback</strong> about the ' +
+                'following points:<br/><br/><em><ol>' +
+                '<li>Was the survey too long or too short?</li>' +
+                '<li>Did you find any question unclear or ' +
+                'uncomfortable?</li>' +
+                '<li>Did you experience any technical difficulty?</li>' +
+                '<li>Were the images and maps loading correctly?</li>' +
+                '<li>How can we improve the study?</li></ol>' +
+                "If you do not have any comment, just type 'nothing' in the box below."
+              }
+            ]
           }
-        });
+        }
+});
 
 
         //////////////////////////////////////////////////////////////////////////////
