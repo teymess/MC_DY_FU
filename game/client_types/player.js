@@ -1992,49 +1992,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         });
 
 
-
-        ////////////////////////////////////////////////////////////////////////////
-      //   // FEEDBACK
-      //   stager.extendStep('feedback', {
-      // widget: {
-      //     name: 'ChoiceManager',
-      //     id: 'feedback',
-      //     options: {
-      //         simplify: true,
-      //         mainText: '',
-      //         forms: [
-      //             {
-      //               name: 'Feedback',
-      //               id: 'feedback1',
-      //               minChars: 5,
-      //               requiredChoice: true,
-      //               showSubmit: false,
-      //               mainText: 'Thank you for participating. ' +
-      //               '<br><br>' +
-      //               "If you want to get in touch with us for questions or suggestions, " +
-      //               "please write us an email at <em><span style='color:#bf2b42'>academic.research.India@gmail.com</span></em>." +
-      //               '<br><br>' +
-      //               'We are very interested in ' +
-      //               'hearing your <strong>feedback</strong> about the ' +
-      //               'following points:<br/><br/><em><ol>' +
-      //               '<li>Was the survey too long or too short?</li>' +
-      //               '<li>Did you find any question unclear or ' +
-      //               'uncomfortable?</li>' +
-      //               '<li>Did you experience any technical difficulty?</li>' +
-      //               '<li>Were the images and maps loading correctly?</li>' +
-      //               '<li>How can we improve the study?</li></ol>' +
-      //               "If you do not have any comment, just type 'nothing' in the box below."
-      //           }
-      //         ]
-      //       }
-      //     }
-      //   });
-
 // FEEDBACK
 stager.extendStep('feedback', {
   widget: {
       name: 'ChoiceManager',
       id: 'feedback',
+      required: true,
       options: {
           simplify: true,
           mainText: '',
