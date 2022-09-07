@@ -1,0 +1,40 @@
+"","ID_0","COUNTRY","NAME_1","NL_NAME_1","ID_2","NAME_2","VARNAME_2","NL_NAME_2","TYPE_2","ENGTYPE_2","CC_2","HASC_2","PM25pc","PM25pc_2019"
+"1","USA","United States","Washington",NA,"USA.48.1_1","Adams",NA,NA,"County","County",NA,"US.WA.AD",6.25590557391405,4.34821125402469
+"2","USA","United States","Washington",NA,"USA.48.2_1","Asotin",NA,NA,"County","County",NA,"US.WA.AS",7.54902511107461,5.36395470437943
+"3","USA","United States","Washington",NA,"USA.48.3_1","Benton",NA,NA,"County","County",NA,"US.WA.BE",7.95639029885317,5.246052567052
+"4","USA","United States","Washington",NA,"USA.48.4_1","Chelan",NA,NA,"County","County",NA,"US.WA.CH",7.14384392472462,4.79181303371416
+"5","USA","United States","Washington",NA,"USA.48.5_1","Clallam",NA,NA,"County","County",NA,"US.WA.CL",5.85277691172902,3.04201186271661
+"6","USA","United States","Washington",NA,"USA.48.6_1","Clark",NA,NA,"County","County",NA,"US.WA.CR",10.2143593375134,6.7866635543446
+"7","USA","United States","Washington",NA,"USA.48.7_1","Columbia",NA,NA,"County","County",NA,"US.WA.CM",6.59569568368834,4.27265341602092
+"8","USA","United States","Washington",NA,"USA.48.8_1","Cowlitz",NA,NA,"County","County",NA,"US.WA.CW",7.56012677212761,5.6012476146011
+"9","USA","United States","Washington",NA,"USA.48.9_1","Douglas",NA,NA,"County","County",NA,"US.WA.DO",7.2864370150685,4.83350960306214
+"10","USA","United States","Washington",NA,"USA.48.10_1","Ferry",NA,NA,"County","County",NA,"US.WA.FE",6.48415701643593,4.76669265293693
+"11","USA","United States","Washington",NA,"USA.48.11_1","Franklin",NA,NA,"County","County",NA,"US.WA.FR",7.94313578423547,5.16009512039685
+"12","USA","United States","Washington",NA,"USA.48.12_1","Garfield",NA,NA,"County","County",NA,"US.WA.GF",6.19264998693482,4.31804017967187
+"13","USA","United States","Washington",NA,"USA.48.13_1","Grant",NA,NA,"County","County",NA,"US.WA.GN",6.74608805627613,4.5942161955916
+"14","USA","United States","Washington",NA,"USA.48.14_1","Grays Harbor",NA,NA,"County","County",NA,"US.WA.GY",5.58993936226747,3.72000596427952
+"15","USA","United States","Washington",NA,"USA.48.15_1","Island",NA,NA,"County","County",NA,"US.WA.IS",4.40948228323788,1.18692497128072
+"16","USA","United States","Washington",NA,"USA.48.16_1","Jefferson",NA,NA,"County","County",NA,"US.WA.JE",4.98622748926679,1.49102500930138
+"17","USA","United States","Washington",NA,"USA.48.17_1","King",NA,NA,"County","County",NA,"US.WA.KN",6.45695057432309,5.11098579281881
+"18","USA","United States","Washington",NA,"USA.48.18_1","Kitsap",NA,NA,"County","County",NA,"US.WA.KS",5.84784780810707,5.05750996972657
+"19","USA","United States","Washington",NA,"USA.48.19_1","Kittitas",NA,NA,"County","County",NA,"US.WA.KT",7.02313759772004,4.79859353429608
+"20","USA","United States","Washington",NA,"USA.48.20_1","Klickitat",NA,NA,"County","County",NA,"US.WA.KL",8.2550829901544,4.5377374210204
+"21","USA","United States","Washington",NA,"USA.48.21_1","Lewis",NA,NA,"County","County",NA,"US.WA.LE",6.38787181847873,4.80742060797754
+"22","USA","United States","Washington",NA,"USA.48.22_1","Lincoln",NA,NA,"County","County",NA,"US.WA.LI",5.82752266062405,4.56044442357988
+"23","USA","United States","Washington",NA,"USA.48.23_1","Mason",NA,NA,"County","County",NA,"US.WA.MA",5.84144200445782,4.75394450421128
+"24","USA","United States","Washington",NA,"USA.48.24_1","Okanogan",NA,NA,"County","County",NA,"US.WA.OK",7.42401675337971,4.60082976024968
+"25","USA","United States","Washington",NA,"USA.48.25_1","Pacific",NA,NA,"County","County",NA,"US.WA.PA",5.97014128952691,2.23042210845175
+"26","USA","United States","Washington",NA,"USA.48.26_1","Pend Oreille",NA,NA,"County","County",NA,"US.WA.PE",6.62198768917827,4.98268431753431
+"27","USA","United States","Washington",NA,"USA.48.27_1","Pierce",NA,NA,"County","County",NA,"US.WA.PI",6.599592323353,6.0463944174623
+"28","USA","United States","Washington",NA,"USA.48.28_1","San Juan",NA,NA,"County","County",NA,"US.WA.SA",4.88768919286273,3.6666062254159
+"29","USA","United States","Washington",NA,"USA.48.29_1","Skagit",NA,NA,"County","County",NA,"US.WA.SG",4.66601152302436,4.61158588235748
+"30","USA","United States","Washington",NA,"USA.48.30_1","Skamania",NA,NA,"County","County",NA,"US.WA.SM",9.32728901239197,5.27015326237015
+"31","USA","United States","Washington",NA,"USA.48.31_1","Snohomish",NA,NA,"County","County",NA,"US.WA.SN",5.39572016019388,4.91145466306715
+"32","USA","United States","Washington",NA,"USA.48.32_1","Spokane",NA,NA,"County","County",NA,"US.WA.SP",6.96791910023213,5.45918838639186
+"33","USA","United States","Washington",NA,"USA.48.33_1","Stevens",NA,NA,"County","County",NA,"US.WA.ST",6.88750109663057,4.82930871080353
+"34","USA","United States","Washington",NA,"USA.48.34_1","Thurston",NA,NA,"County","County",NA,"US.WA.TH",6.24752422381461,5.37772167899352
+"35","USA","United States","Washington",NA,"USA.48.35_1","Wahkiakum",NA,NA,"County","County",NA,"US.WA.WH",6.73939624141362,4.68663273842705
+"36","USA","United States","Washington",NA,"USA.48.36_1","Walla Walla",NA,NA,"County","County",NA,"US.WA.WL",8.07210413407845,5.19015354481298
+"37","USA","United States","Washington",NA,"USA.48.37_1","Whatcom",NA,NA,"County","County",NA,"US.WA.WA",4.92259319095041,5.11219168534173
+"38","USA","United States","Washington",NA,"USA.48.38_1","Whitman",NA,NA,"County","County",NA,"US.WA.WI",6.01539588234654,4.43396572691696
+"39","USA","United States","Washington",NA,"USA.48.39_1","Yakima",NA,NA,"County","County",NA,"US.WA.YA",8.66600516782531,5.30194839903091

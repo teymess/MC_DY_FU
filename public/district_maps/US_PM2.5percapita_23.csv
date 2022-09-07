@@ -1,0 +1,88 @@
+"","ID_0","COUNTRY","NAME_1","NL_NAME_1","ID_2","NAME_2","VARNAME_2","NL_NAME_2","TYPE_2","ENGTYPE_2","CC_2","HASC_2","PM25pc","PM25pc_2019"
+"1","USA","United States","Michigan",NA,"USA.23.1_1","Alcona",NA,NA,"County","County",NA,"US.MI.AC",5.16886443854158,6.5213637535477
+"2","USA","United States","Michigan",NA,"USA.23.2_1","Alger",NA,NA,"County","County",NA,"US.MI.AG",4.26823914520376,4.68067351092508
+"3","USA","United States","Michigan",NA,"USA.23.3_1","Allegan",NA,NA,"County","County",NA,"US.MI.AL",6.57708082794259,8.62338360885588
+"4","USA","United States","Michigan",NA,"USA.23.4_1","Alpena",NA,NA,"County","County",NA,"US.MI.AP",5.4294578261205,4.99925414571866
+"5","USA","United States","Michigan",NA,"USA.23.5_1","Antrim",NA,NA,"County","County",NA,"US.MI.AN",4.92760092814205,5.36509081760511
+"6","USA","United States","Michigan",NA,"USA.23.6_1","Arenac",NA,NA,"County","County",NA,"US.MI.AR",5.87266914317121,6.56906175786404
+"7","USA","United States","Michigan",NA,"USA.23.7_1","Baraga",NA,NA,"County","County",NA,"US.MI.BA",4.16999621345113,5.09048743684818
+"8","USA","United States","Michigan",NA,"USA.23.8_1","Barry",NA,NA,"County","County",NA,"US.MI.BR",6.64428596950606,9.23389161266301
+"9","USA","United States","Michigan",NA,"USA.23.9_1","Bay",NA,NA,"County","County",NA,"US.MI.BY",6.38291323424104,8.71445317850283
+"10","USA","United States","Michigan",NA,"USA.23.10_1","Benzie",NA,NA,"County","County",NA,"US.MI.BE",4.78069551467551,5.75646438149903
+"11","USA","United States","Michigan",NA,"USA.23.11_1","Berrien",NA,NA,"County","County",NA,"US.MI.BN",7.08640695293679,6.81663997110292
+"12","USA","United States","Michigan",NA,"USA.23.12_1","Branch",NA,NA,"County","County",NA,"US.MI.BC",7.13735672675697,9.63092480642102
+"13","USA","United States","Michigan",NA,"USA.23.13_1","Calhoun",NA,NA,"County","County",NA,"US.MI.CU",6.90357019659935,9.37975654515163
+"14","USA","United States","Michigan",NA,"USA.23.14_1","Cass",NA,NA,"County","County",NA,"US.MI.CS",7.29409140292755,9.06533407405321
+"15","USA","United States","Michigan",NA,"USA.23.15_1","Charlevoix",NA,NA,"County","County",NA,"US.MI.CV",4.99438064743987,5.71520985834606
+"16","USA","United States","Michigan",NA,"USA.23.16_1","Cheboygan",NA,NA,"County","County",NA,"US.MI.CY",4.88151423607578,4.87223452856216
+"17","USA","United States","Michigan",NA,"USA.23.17_1","Chippewa",NA,NA,"County","County",NA,"US.MI.CP",5.0411512654259,6.05933174323256
+"18","USA","United States","Michigan",NA,"USA.23.18_1","Clare",NA,NA,"County","County",NA,"US.MI.CE",5.86603401076037,8.33993237937798
+"19","USA","United States","Michigan",NA,"USA.23.19_1","Clinton",NA,NA,"County","County",NA,"US.MI.CN",6.44136225416412,9.46182977866295
+"20","USA","United States","Michigan",NA,"USA.23.20_1","Crawford",NA,NA,"County","County",NA,"US.MI.CF",5.39690625436799,7.08437348518228
+"21","USA","United States","Michigan",NA,"USA.23.21_1","Delta",NA,NA,"County","County",NA,"US.MI.DE",5.00849001374392,4.81505612843582
+"22","USA","United States","Michigan",NA,"USA.23.22_1","Dickinson",NA,NA,"County","County",NA,"US.MI.DI",5.22357199395153,6.9386192791503
+"23","USA","United States","Michigan",NA,"USA.23.23_1","Eaton",NA,NA,"County","County",NA,"US.MI.EA",6.72919672189264,9.55897162305735
+"24","USA","United States","Michigan",NA,"USA.23.24_1","Emmet",NA,NA,"County","County",NA,"US.MI.EM",4.86209624974326,5.92334480558561
+"25","USA","United States","Michigan",NA,"USA.23.25_1","Genesee",NA,NA,"County","County",NA,"US.MI.GE",6.7810204902677,9.49142719291193
+"26","USA","United States","Michigan",NA,"USA.23.26_1","Gladwin",NA,NA,"County","County",NA,"US.MI.GL",5.83570048504627,8.27163479901246
+"27","USA","United States","Michigan",NA,"USA.23.27_1","Gogebic",NA,NA,"County","County",NA,"US.MI.GO",4.28867339118537,5.21370677422485
+"28","USA","United States","Michigan",NA,"USA.23.28_1","Grand Traverse",NA,NA,"County","County",NA,"US.MI.GN",5.33504550645604,5.90966302810363
+"29","USA","United States","Michigan",NA,"USA.23.29_1","Gratiot",NA,NA,"County","County",NA,"US.MI.GT",6.12256805039945,9.00003843413513
+"30","USA","United States","Michigan",NA,"USA.23.30_1","Hillsdale",NA,NA,"County","County",NA,"US.MI.HI",7.27677182342436,10.3712555388822
+"31","USA","United States","Michigan",NA,"USA.23.31_1","Houghton",NA,NA,"County","County",NA,"US.MI.HO",3.77893685328584,4.56806404596799
+"32","USA","United States","Michigan",NA,"USA.23.32_1","Huron",NA,NA,"County","County",NA,"US.MI.HU",5.82878371969534,5.64269723498111
+"33","USA","United States","Michigan",NA,"USA.23.33_1","Ingham",NA,NA,"County","County",NA,"US.MI.IH",6.8614569357407,9.70489213424257
+"34","USA","United States","Michigan",NA,"USA.23.34_1","Ionia",NA,NA,"County","County",NA,"US.MI.II",6.39075119859877,9.3965655613239
+"35","USA","United States","Michigan",NA,"USA.23.35_1","Iosco",NA,NA,"County","County",NA,"US.MI.IC",5.83632575639731,7.28101592241147
+"36","USA","United States","Michigan",NA,"USA.23.36_1","Iron",NA,NA,"County","County",NA,"US.MI.IR",4.92092016256912,6.22818564283573
+"37","USA","United States","Michigan",NA,"USA.23.37_1","Isabella",NA,NA,"County","County",NA,"US.MI.IB",6.06026183031512,8.69960758653715
+"38","USA","United States","Michigan",NA,"USA.23.38_1","Jackson",NA,NA,"County","County",NA,"US.MI.JA",6.99386077066849,10.2560401991846
+"39","USA","United States","Michigan",NA,"USA.23.39_1","Kalamazoo",NA,NA,"County","County",NA,"US.MI.KA",7.09249245862089,9.32685614188398
+"40","USA","United States","Michigan",NA,"USA.23.40_1","Kalkaska",NA,NA,"County","County",NA,"US.MI.KK",5.24299048870702,6.80330940304728
+"41","USA","United States","Michigan",NA,"USA.23.41_1","Kent",NA,NA,"County","County",NA,"US.MI.KN",6.82000140074835,10.0328266696719
+"42","USA","United States","Michigan",NA,"USA.23.42_1","Keweenaw",NA,NA,"County","County",NA,"US.MI.KW",3.62071942617153,3.30413295927735
+"43","USA","United States","Michigan",NA,"USA.23.43_1","Lake",NA,NA,"County","County",NA,"US.MI.LK",5.48842152782829,7.97206652959947
+"44","USA","United States","Michigan",NA,"USA.23.44_1","Lake Hurron",NA,NA,"Water body","Water body",NA,"US.MI.WB",4.93479388767598,1.86100850878852
+"45","USA","United States","Michigan",NA,"USA.23.45_1","Lake Michigan",NA,NA,"Water body","Water body",NA,"US.MI.WB",4.11694501555399,0.645098914009763
+"46","USA","United States","Michigan",NA,"USA.23.46_1","Lake St. Clair",NA,NA,"Water body","Water body",NA,"US.MI.WB",6.18351452139299,5.46430960025863
+"47","USA","United States","Michigan",NA,"USA.23.47_1","Lake Superior",NA,NA,"Water body","Water body",NA,"US.MI.WB",3.55754848722439,2.86586668245873
+"48","USA","United States","Michigan",NA,"USA.23.48_1","Lapeer",NA,NA,"County","County",NA,"US.MI.LP",6.54859221529128,8.91087402419662
+"49","USA","United States","Michigan",NA,"USA.23.49_1","Leelanau",NA,NA,"County","County",NA,"US.MI.LE",4.92981753161347,3.67150146139547
+"50","USA","United States","Michigan",NA,"USA.23.50_1","Lenawee",NA,NA,"County","County",NA,"US.MI.LN",7.18299642125188,10.3814650572341
+"51","USA","United States","Michigan",NA,"USA.23.51_1","Livingston",NA,NA,"County","County",NA,"US.MI.LI",7.43754246649942,9.98295015503855
+"52","USA","United States","Michigan",NA,"USA.23.52_1","Luce",NA,NA,"County","County",NA,"US.MI.LU",4.56864762974905,5.72850416736591
+"53","USA","United States","Michigan",NA,"USA.23.53_1","Mackinac",NA,NA,"County","County",NA,"US.MI.MK",4.76493727781072,3.9556945751719
+"54","USA","United States","Michigan",NA,"USA.23.54_1","Macomb",NA,NA,"County","County",NA,"US.MI.MB",7.62561602637222,10.3691607956833
+"55","USA","United States","Michigan",NA,"USA.23.55_1","Manistee",NA,NA,"County","County",NA,"US.MI.ME",5.2017465639069,3.83814843626857
+"56","USA","United States","Michigan",NA,"USA.23.56_1","Marquette",NA,NA,"County","County",NA,"US.MI.MQ",4.66629601787177,3.92074356726647
+"57","USA","United States","Michigan",NA,"USA.23.57_1","Mason",NA,NA,"County","County",NA,"US.MI.MN",5.35819138220689,5.15771838661859
+"58","USA","United States","Michigan",NA,"USA.23.58_1","Mecosta",NA,NA,"County","County",NA,"US.MI.MT",5.87841654169454,8.25594058472619
+"59","USA","United States","Michigan",NA,"USA.23.59_1","Menominee",NA,NA,"County","County",NA,"US.MI.MM",5.21212872771303,5.60752555763773
+"60","USA","United States","Michigan",NA,"USA.23.60_1","Midland",NA,NA,"County","County",NA,"US.MI.MD",6.11893568379041,8.70608157396035
+"61","USA","United States","Michigan",NA,"USA.23.61_1","Missaukee",NA,NA,"County","County",NA,"US.MI.MU",5.77504142226713,7.7963614189427
+"62","USA","United States","Michigan",NA,"USA.23.62_1","Monroe",NA,NA,"County","County",NA,"US.MI.MO",7.05479475713747,9.73526188735669
+"63","USA","United States","Michigan",NA,"USA.23.63_1","Montcalm",NA,NA,"County","County",NA,"US.MI.MC",6.12043145309924,9.07499021277625
+"64","USA","United States","Michigan",NA,"USA.23.64_1","Montmorency",NA,NA,"County","County",NA,"US.MI.MR",5.27995892030084,6.87143970846164
+"65","USA","United States","Michigan",NA,"USA.23.65_1","Muskegon",NA,NA,"County","County",NA,"US.MI.MG",5.90597714410991,7.70127586487157
+"66","USA","United States","Michigan",NA,"USA.23.66_1","Newaygo",NA,NA,"County","County",NA,"US.MI.NE",5.79404838485925,8.6258213209796
+"67","USA","United States","Michigan",NA,"USA.23.67_1","Oakland",NA,NA,"County","County",NA,"US.MI.OD",7.74103477646556,10.2399860853858
+"68","USA","United States","Michigan",NA,"USA.23.68_1","Oceana",NA,NA,"County","County",NA,"US.MI.OA",5.36439128249402,7.60571973981172
+"69","USA","United States","Michigan",NA,"USA.23.69_1","Ogemaw",NA,NA,"County","County",NA,"US.MI.OG",5.62090848914582,7.89075886076731
+"70","USA","United States","Michigan",NA,"USA.23.70_1","Ontonagon",NA,NA,"County","County",NA,"US.MI.ON",3.93091924658679,4.27653604204417
+"71","USA","United States","Michigan",NA,"USA.23.71_1","Osceola",NA,NA,"County","County",NA,"US.MI.OE",5.72477175674681,8.2657611786292
+"72","USA","United States","Michigan",NA,"USA.23.72_1","Oscoda",NA,NA,"County","County",NA,"US.MI.OO",5.40238868331264,7.0807983934587
+"73","USA","United States","Michigan",NA,"USA.23.73_1","Otsego",NA,NA,"County","County",NA,"US.MI.OS",5.33015648653124,6.83827589135968
+"74","USA","United States","Michigan",NA,"USA.23.74_1","Ottawa",NA,NA,"County","County",NA,"US.MI.OT",6.68498532416442,8.81202801629885
+"75","USA","United States","Michigan",NA,"USA.23.75_1","Presque Isle",NA,NA,"County","County",NA,"US.MI.PR",5.15709471797662,5.44474244283182
+"76","USA","United States","Michigan",NA,"USA.23.76_1","Roscommon",NA,NA,"County","County",NA,"US.MI.RO",5.36644712079702,4.65232353117829
+"77","USA","United States","Michigan",NA,"USA.23.77_1","Saginaw",NA,NA,"County","County",NA,"US.MI.SG",6.49640495339155,9.55582990881661
+"78","USA","United States","Michigan",NA,"USA.23.78_1","Saint Clair",NA,NA,"County","County",NA,"US.MI.SA",6.84919332005944,8.77740078912006
+"79","USA","United States","Michigan",NA,"USA.23.79_1","Saint Joseph",NA,NA,"County","County",NA,"US.MI.SJ",7.35757583930991,9.14475829656225
+"80","USA","United States","Michigan",NA,"USA.23.80_1","Sanilac",NA,NA,"County","County",NA,"US.MI.SL",6.28981316450619,8.61557217363036
+"81","USA","United States","Michigan",NA,"USA.23.81_1","Schoolcraft",NA,NA,"County","County",NA,"US.MI.SR",4.62370384238643,2.83032411678771
+"82","USA","United States","Michigan",NA,"USA.23.82_1","Shiawassee",NA,NA,"County","County",NA,"US.MI.SH",6.52656601016286,9.22841684484454
+"83","USA","United States","Michigan",NA,"USA.23.83_1","Tuscola",NA,NA,"County","County",NA,"US.MI.TU",5.99679371584186,8.61481580502951
+"84","USA","United States","Michigan",NA,"USA.23.84_1","Van Buren",NA,NA,"County","County",NA,"US.MI.VA",6.65266916282507,8.06257842037549
+"85","USA","United States","Michigan",NA,"USA.23.85_1","Washtenaw",NA,NA,"County","County",NA,"US.MI.WS",7.33757360560733,10.2071449599485
+"86","USA","United States","Michigan",NA,"USA.23.86_1","Wayne",NA,NA,"County","County",NA,"US.MI.WY",8.00811456477297,10.7588660910454
+"87","USA","United States","Michigan",NA,"USA.23.87_1","Wexford",NA,NA,"County","County",NA,"US.MI.WE",5.69977416109912,7.64698114774416

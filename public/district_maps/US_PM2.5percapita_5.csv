@@ -1,0 +1,59 @@
+"","ID_0","COUNTRY","NAME_1","NL_NAME_1","ID_2","NAME_2","VARNAME_2","NL_NAME_2","TYPE_2","ENGTYPE_2","CC_2","HASC_2","PM25pc","PM25pc_2019"
+"1","USA","United States","California",NA,"USA.5.1_1","Alameda",NA,NA,"County","County",NA,"US.CA.AA",9.95746065743211,6.99600602268612
+"2","USA","United States","California",NA,"USA.5.2_1","Alpine",NA,NA,"County","County",NA,"US.CA.AP",9.29629706674352,6.1318658384037
+"3","USA","United States","California",NA,"USA.5.3_1","Amador",NA,NA,"County","County",NA,"US.CA.AM",10.8860709546674,5.7263243133848
+"4","USA","United States","California",NA,"USA.5.4_1","Butte",NA,NA,"County","County",NA,"US.CA.BU",20.3390044527887,5.99407043522762
+"5","USA","United States","California",NA,"USA.5.5_1","Calaveras",NA,NA,"County","County",NA,"US.CA.CA",11.0664250003344,5.53654363652405
+"6","USA","United States","California",NA,"USA.5.6_1","Colusa",NA,NA,"County","County",NA,"US.CA.CL",15.665888561355,5.02330322458892
+"7","USA","United States","California",NA,"USA.5.7_1","Contra Costa",NA,NA,"County","County",NA,"US.CA.CN",10.1538472382808,6.95335029655837
+"8","USA","United States","California",NA,"USA.5.8_1","Del Norte",NA,NA,"County","County",NA,"US.CA.DE",11.2517116710093,2.3690029459687
+"9","USA","United States","California",NA,"USA.5.9_1","El Dorado",NA,NA,"County","County",NA,"US.CA.EL",10.5026777739566,4.82111619571673
+"10","USA","United States","California",NA,"USA.5.10_1","Fresno",NA,NA,"County","County",NA,"US.CA.FR",18.6433986123783,9.90456815248453
+"11","USA","United States","California",NA,"USA.5.11_1","Glenn",NA,NA,"County","County",NA,"US.CA.GL",20.2198685333545,5.29774747131171
+"12","USA","United States","California",NA,"USA.5.12_1","Humboldt",NA,NA,"County","County",NA,"US.CA.HU",12.6628305898897,2.80982447818926
+"13","USA","United States","California",NA,"USA.5.13_1","Imperial",NA,NA,"County","County",NA,"US.CA.IM",12.9798993329123,6.7241940695951
+"14","USA","United States","California",NA,"USA.5.14_1","Inyo",NA,NA,"County","County",NA,"US.CA.IN",12.4199693246994,5.99797814984829
+"15","USA","United States","California",NA,"USA.5.15_1","Kern",NA,NA,"County","County",NA,"US.CA.KE",16.8883174860461,8.98858649179253
+"16","USA","United States","California",NA,"USA.5.16_1","Kings",NA,NA,"County","County",NA,"US.CA.KI",15.0743028057397,8.27744652814838
+"17","USA","United States","California",NA,"USA.5.17_1","Lake",NA,NA,"County","County",NA,"US.CA.LK",12.6912599067815,3.09690079766808
+"18","USA","United States","California",NA,"USA.5.18_1","Lassen",NA,NA,"County","County",NA,"US.CA.LS",13.9124387560379,5.51919545529849
+"19","USA","United States","California",NA,"USA.5.19_1","Los Angeles",NA,NA,"County","County",NA,"US.CA.LO",13.4777562352271,10.4610131307171
+"20","USA","United States","California",NA,"USA.5.20_1","Madera",NA,NA,"County","County",NA,"US.CA.ME",19.7151004324323,7.91139672639877
+"21","USA","United States","California",NA,"USA.5.21_1","Marin",NA,NA,"County","County",NA,"US.CA.MN",9.42013731392688,5.82904769174478
+"22","USA","United States","California",NA,"USA.5.22_1","Mariposa",NA,NA,"County","County",NA,"US.CA.MP",23.1226374010734,5.78085172184446
+"23","USA","United States","California",NA,"USA.5.23_1","Mendocino",NA,NA,"County","County",NA,"US.CA.MI",18.9570000293737,2.68406179383026
+"24","USA","United States","California",NA,"USA.5.24_1","Merced",NA,NA,"County","County",NA,"US.CA.MD",16.0164356944879,8.9069349478726
+"25","USA","United States","California",NA,"USA.5.25_1","Modoc",NA,NA,"County","County",NA,"US.CA.MC",9.47452925539265,3.755515018656
+"26","USA","United States","California",NA,"USA.5.26_1","Mono",NA,NA,"County","County",NA,"US.CA.MO",19.2891004166468,6.31285986758694
+"27","USA","United States","California",NA,"USA.5.27_1","Monterey",NA,NA,"County","County",NA,"US.CA.MT",10.7301193305448,5.42740231232293
+"28","USA","United States","California",NA,"USA.5.28_1","Napa",NA,NA,"County","County",NA,"US.CA.NA",11.8814051294116,7.50558977227676
+"29","USA","United States","California",NA,"USA.5.29_1","Nevada",NA,NA,"County","County",NA,"US.CA.NE",12.4829741208431,5.35666658421802
+"30","USA","United States","California",NA,"USA.5.30_1","Orange",NA,NA,"County","County",NA,"US.CA.OR",12.0657829430539,9.38955435107317
+"31","USA","United States","California",NA,"USA.5.31_1","Placer",NA,NA,"County","County",NA,"US.CA.PA",12.1989723983568,6.46523740147554
+"32","USA","United States","California",NA,"USA.5.32_1","Plumas",NA,NA,"County","County",NA,"US.CA.PU",16.5844285699951,5.63965312764137
+"33","USA","United States","California",NA,"USA.5.33_1","Riverside",NA,NA,"County","County",NA,"US.CA.RI",11.2742671633893,8.68205870531585
+"34","USA","United States","California",NA,"USA.5.34_1","Sacramento",NA,NA,"County","County",NA,"US.CA.SC",12.6915244705587,8.36203871632975
+"35","USA","United States","California",NA,"USA.5.35_1","San Benito",NA,NA,"County","County",NA,"US.CA.SI",9.8502627537023,7.81537620483123
+"36","USA","United States","California",NA,"USA.5.36_1","San Bernardino",NA,NA,"County","County",NA,"US.CA.SA",12.2606715741667,10.2444314430766
+"37","USA","United States","California",NA,"USA.5.37_1","San Diego",NA,NA,"County","County",NA,"US.CA.SD",10.921806211942,6.42335151796297
+"38","USA","United States","California",NA,"USA.5.38_1","San Francisco",NA,NA,"County","County",NA,"US.CA.SF",9.96271259382999,2.09423910247585
+"39","USA","United States","California",NA,"USA.5.39_1","San Joaquin",NA,NA,"County","County",NA,"US.CA.SJ",11.2569523880769,9.01645436993452
+"40","USA","United States","California",NA,"USA.5.40_1","San Luis Obispo",NA,NA,"County","County",NA,"US.CA.SS",9.28414345226197,5.56208707824192
+"41","USA","United States","California",NA,"USA.5.41_1","San Mateo",NA,NA,"County","County",NA,"US.CA.SM",8.8586530806555,3.96876152609212
+"42","USA","United States","California",NA,"USA.5.42_1","Santa Barbara",NA,NA,"County","County",NA,"US.CA.SB",9.26498697302307,6.18988794520566
+"43","USA","United States","California",NA,"USA.5.43_1","Santa Clara",NA,NA,"County","County",NA,"US.CA.SL",10.6034971703019,8.59366170478611
+"44","USA","United States","California",NA,"USA.5.44_1","Santa Cruz",NA,NA,"County","County",NA,"US.CA.SZ",11.9427643866816,5.8252938856768
+"45","USA","United States","California",NA,"USA.5.45_1","Shasta",NA,NA,"County","County",NA,"US.CA.SH",17.9114605686996,5.00769268419143
+"46","USA","United States","California",NA,"USA.5.46_1","Sierra",NA,NA,"County","County",NA,"US.CA.SE",14.7827428746646,6.41009353710068
+"47","USA","United States","California",NA,"USA.5.47_1","Siskiyou",NA,NA,"County","County",NA,"US.CA.SK",11.3069345432367,4.09213680490373
+"48","USA","United States","California",NA,"USA.5.48_1","Solano",NA,NA,"County","County",NA,"US.CA.SN",11.5718417699615,7.90145054444096
+"49","USA","United States","California",NA,"USA.5.49_1","Sonoma",NA,NA,"County","County",NA,"US.CA.SO",11.4644282116234,7.25128319434169
+"50","USA","United States","California",NA,"USA.5.50_1","Stanislaus",NA,NA,"County","County",NA,"US.CA.ST",13.4862657189135,9.55101364667049
+"51","USA","United States","California",NA,"USA.5.51_1","Sutter",NA,NA,"County","County",NA,"US.CA.SU",15.677250156619,7.19795395023642
+"52","USA","United States","California",NA,"USA.5.52_1","Tehama",NA,NA,"County","County",NA,"US.CA.TE",19.9209623629097,4.88148998203618
+"53","USA","United States","California",NA,"USA.5.53_1","Trinity",NA,NA,"County","County",NA,"US.CA.TR",17.6851794385669,3.39116961809752
+"54","USA","United States","California",NA,"USA.5.54_1","Tulare",NA,NA,"County","County",NA,"US.CA.TL",17.0286733937313,9.4734018902945
+"55","USA","United States","California",NA,"USA.5.55_1","Tuolumne",NA,NA,"County","County",NA,"US.CA.TO",12.2999671566648,5.45292798785114
+"56","USA","United States","California",NA,"USA.5.56_1","Ventura",NA,NA,"County","County",NA,"US.CA.VE",9.95258159172542,7.72623845026362
+"57","USA","United States","California",NA,"USA.5.57_1","Yolo",NA,NA,"County","County",NA,"US.CA.YO",12.9080108218047,7.88457779914259
+"58","USA","United States","California",NA,"USA.5.58_1","Yuba",NA,NA,"County","County",NA,"US.CA.YU",15.1474617197837,6.42812204316222

@@ -1,0 +1,65 @@
+"","ID_0","COUNTRY","NAME_1","NL_NAME_1","ID_2","NAME_2","VARNAME_2","NL_NAME_2","TYPE_2","ENGTYPE_2","CC_2","HASC_2","PM25pc","PM25pc_2019"
+"1","USA","United States","Colorado",NA,"USA.6.1_1","Adams",NA,NA,"County","County",NA,"US.CO.AD",8.46498283481503,6.11778942390934
+"2","USA","United States","Colorado",NA,"USA.6.2_1","Alamosa",NA,NA,"County","County",NA,"US.CO.AL",6.39560980399243,6.10473469582644
+"3","USA","United States","Colorado",NA,"USA.6.3_1","Arapahoe",NA,NA,"County","County",NA,"US.CO.AA",7.26728447576396,6.16164381690006
+"4","USA","United States","Colorado",NA,"USA.6.4_1","Archuleta",NA,NA,"County","County",NA,"US.CO.AC",4.9464323485227,5.13370540064733
+"5","USA","United States","Colorado",NA,"USA.6.5_1","Baca",NA,NA,"County","County",NA,"US.CO.BA",5.30474224926288,5.5018790280696
+"6","USA","United States","Colorado",NA,"USA.6.6_1","Bent",NA,NA,"County","County",NA,"US.CO.BE",5.82076932423105,5.06418426313844
+"7","USA","United States","Colorado",NA,"USA.6.7_1","Boulder",NA,NA,"County","County",NA,"US.CO.BO",8.30210495464474,5.92354549168035
+"8","USA","United States","Colorado",NA,"USA.6.8_1","Broomfield",NA,NA,"City And County","City and County",NA,"US.CO.BR",8.53266069793919,6.0982421221323
+"9","USA","United States","Colorado",NA,"USA.6.9_1","Chaffee",NA,NA,"County","County",NA,"US.CO.CA",6.002238101413,5.59273500172033
+"10","USA","United States","Colorado",NA,"USA.6.10_1","Cheyenne",NA,NA,"County","County",NA,"US.CO.CE",5.74610228280344,4.97167656731575
+"11","USA","United States","Colorado",NA,"USA.6.11_1","Clear Creek",NA,NA,"County","County",NA,"US.CO.CL",7.46561941332429,4.76846434597224
+"12","USA","United States","Colorado",NA,"USA.6.12_1","Conejos",NA,NA,"County","County",NA,"US.CO.CN",6.22365610105687,5.42483048998704
+"13","USA","United States","Colorado",NA,"USA.6.13_1","Costilla",NA,NA,"County","County",NA,"US.CO.CS",5.35604897385752,5.21047428051935
+"14","USA","United States","Colorado",NA,"USA.6.14_1","Crowley",NA,NA,"County","County",NA,"US.CO.CR",5.38023236950335,4.72259725120708
+"15","USA","United States","Colorado",NA,"USA.6.15_1","Custer",NA,NA,"County","County",NA,"US.CO.CU",5.4349785529947,4.81209354716129
+"16","USA","United States","Colorado",NA,"USA.6.16_1","Delta",NA,NA,"County","County",NA,"US.CO.DT",5.98958153945303,5.05704781070749
+"17","USA","United States","Colorado",NA,"USA.6.17_1","Denver",NA,NA,"County","County",NA,"US.CO.DN",8.13779295830057,6.43023309829121
+"18","USA","United States","Colorado",NA,"USA.6.18_1","Dolores",NA,NA,"County","County",NA,"US.CO.DO",4.25698672812289,4.45369752855049
+"19","USA","United States","Colorado",NA,"USA.6.19_1","Douglas",NA,NA,"County","County",NA,"US.CO.DU",6.39444704654704,5.56651282817626
+"20","USA","United States","Colorado",NA,"USA.6.20_1","Eagle",NA,NA,"County","County",NA,"US.CO.EA",6.46461495003139,4.41078709087321
+"21","USA","United States","Colorado",NA,"USA.6.21_1","El Paso",NA,NA,"County","County",NA,"US.CO.EL",5.69643316061519,5.30325253579779
+"22","USA","United States","Colorado",NA,"USA.6.22_1","Elbert",NA,NA,"County","County",NA,"US.CO.EB",5.37536764281921,4.74806541788843
+"23","USA","United States","Colorado",NA,"USA.6.23_1","Fremont",NA,NA,"County","County",NA,"US.CO.FR",6.08073910407697,5.63907409953467
+"24","USA","United States","Colorado",NA,"USA.6.24_1","Garfield",NA,NA,"County","County",NA,"US.CO.GA",6.1281276246008,4.3895104882957
+"25","USA","United States","Colorado",NA,"USA.6.25_1","Gilpin",NA,NA,"County","County",NA,"US.CO.GI",7.48377124641323,4.90113295654368
+"26","USA","United States","Colorado",NA,"USA.6.26_1","Grand",NA,NA,"County","County",NA,"US.CO.GR",8.46260771050036,4.4894926712536
+"27","USA","United States","Colorado",NA,"USA.6.27_1","Gunnison",NA,NA,"County","County",NA,"US.CO.GU",5.5621603516414,4.81509385765286
+"28","USA","United States","Colorado",NA,"USA.6.28_1","Hinsdale",NA,NA,"County","County",NA,"US.CO.HI",5.40095106071915,5.08993370330498
+"29","USA","United States","Colorado",NA,"USA.6.29_1","Huerfano",NA,NA,"County","County",NA,"US.CO.HU",5.14188276049662,4.63518226301005
+"30","USA","United States","Colorado",NA,"USA.6.30_1","Jackson",NA,NA,"County","County",NA,"US.CO.JA",11.658909382109,4.39119342592126
+"31","USA","United States","Colorado",NA,"USA.6.31_1","Jefferson",NA,NA,"County","County",NA,"US.CO.JE",7.79575477950241,6.30495685193717
+"32","USA","United States","Colorado",NA,"USA.6.32_1","Kiowa",NA,NA,"County","County",NA,"US.CO.KO",5.30816897313809,5.01552754427862
+"33","USA","United States","Colorado",NA,"USA.6.33_1","Kit Carson",NA,NA,"County","County",NA,"US.CO.KT",5.9461642319338,4.71331628524725
+"34","USA","United States","Colorado",NA,"USA.6.34_1","La Plata",NA,NA,"County","County",NA,"US.CO.LA",4.49680882654702,5.28311778768729
+"35","USA","United States","Colorado",NA,"USA.6.35_1","Lake",NA,NA,"County","County",NA,"US.CO.LK",6.76057865660753,4.50741306892439
+"36","USA","United States","Colorado",NA,"USA.6.36_1","Larimer",NA,NA,"County","County",NA,"US.CO.LR",9.60425430195653,5.46753602623985
+"37","USA","United States","Colorado",NA,"USA.6.37_1","Las Animas",NA,NA,"County","County",NA,"US.CO.LS",4.64517688150774,5.29017121572814
+"38","USA","United States","Colorado",NA,"USA.6.38_1","Lincoln",NA,NA,"County","County",NA,"US.CO.LI",5.30460561792491,4.67025338467973
+"39","USA","United States","Colorado",NA,"USA.6.39_1","Logan",NA,NA,"County","County",NA,"US.CO.LO",5.71565468452024,4.38100374222649
+"40","USA","United States","Colorado",NA,"USA.6.40_1","Mesa",NA,NA,"County","County",NA,"US.CO.ME",6.53520734211637,5.38210638432752
+"41","USA","United States","Colorado",NA,"USA.6.41_1","Mineral",NA,NA,"County","County",NA,"US.CO.MI",5.26420183334012,5.30033246351776
+"42","USA","United States","Colorado",NA,"USA.6.42_1","Moffat",NA,NA,"County","County",NA,"US.CO.MF",5.46908837471934,3.83164642868163
+"43","USA","United States","Colorado",NA,"USA.6.43_1","Montezuma",NA,NA,"County","County",NA,"US.CO.MZ",4.70466702031276,4.59241068853892
+"44","USA","United States","Colorado",NA,"USA.6.44_1","Montrose",NA,NA,"County","County",NA,"US.CO.MO",5.50327169759736,5.23943649768831
+"45","USA","United States","Colorado",NA,"USA.6.45_1","Morgan",NA,NA,"County","County",NA,"US.CO.MN",6.25950058421582,4.86691811610196
+"46","USA","United States","Colorado",NA,"USA.6.46_1","Otero",NA,NA,"County","County",NA,"US.CO.OT",5.71568244623533,4.92231171039588
+"47","USA","United States","Colorado",NA,"USA.6.47_1","Ouray",NA,NA,"County","County",NA,"US.CO.OU",5.09033123996558,4.78187937870188
+"48","USA","United States","Colorado",NA,"USA.6.48_1","Park",NA,NA,"County","County",NA,"US.CO.PA",6.31468978140593,4.69819797943872
+"49","USA","United States","Colorado",NA,"USA.6.49_1","Phillips",NA,NA,"County","County",NA,"US.CO.PH",5.32289052196073,4.137115405293
+"50","USA","United States","Colorado",NA,"USA.6.50_1","Pitkin",NA,NA,"County","County",NA,"US.CO.PI",6.0677837115009,4.57841455950047
+"51","USA","United States","Colorado",NA,"USA.6.51_1","Prowers",NA,NA,"County","County",NA,"US.CO.PR",6.17507793507323,5.21994171883542
+"52","USA","United States","Colorado",NA,"USA.6.52_1","Pueblo",NA,NA,"County","County",NA,"US.CO.PU",6.40660320961981,5.41912411910411
+"53","USA","United States","Colorado",NA,"USA.6.53_1","Rio Blanco",NA,NA,"County","County",NA,"US.CO.RB",5.47639840028339,3.69991248979882
+"54","USA","United States","Colorado",NA,"USA.6.54_1","Rio Grande",NA,NA,"County","County",NA,"US.CO.RG",6.50954924976018,5.4781742904409
+"55","USA","United States","Colorado",NA,"USA.6.55_1","Routt",NA,NA,"County","County",NA,"US.CO.RT",7.05305557516889,4.30302027156211
+"56","USA","United States","Colorado",NA,"USA.6.56_1","Saguache",NA,NA,"County","County",NA,"US.CO.SG",6.43062940873789,5.3014036565019
+"57","USA","United States","Colorado",NA,"USA.6.57_1","San Juan",NA,NA,"County","County",NA,"US.CO.SJ",5.31892921269043,4.84801359338315
+"58","USA","United States","Colorado",NA,"USA.6.58_1","San Miguel",NA,NA,"County","County",NA,"US.CO.SM",4.96950390085501,4.65585271695797
+"59","USA","United States","Colorado",NA,"USA.6.59_1","Sedgwick",NA,NA,"County","County",NA,"US.CO.SE",5.63706764015553,4.41861870109792
+"60","USA","United States","Colorado",NA,"USA.6.60_1","Summit",NA,NA,"County","County",NA,"US.CO.SU",7.03181252897097,4.4740778104821
+"61","USA","United States","Colorado",NA,"USA.6.61_1","Teller",NA,NA,"County","County",NA,"US.CO.TE",5.89416377316415,4.79575897885124
+"62","USA","United States","Colorado",NA,"USA.6.62_1","Washington",NA,NA,"County","County",NA,"US.CO.WA",5.58842512073744,4.3939731892791
+"63","USA","United States","Colorado",NA,"USA.6.63_1","Weld",NA,NA,"County","County",NA,"US.CO.WE",8.74742516667194,5.24075055855239
+"64","USA","United States","Colorado",NA,"USA.6.64_1","Yuma",NA,NA,"County","County",NA,"US.CO.YU",5.49667222299467,4.29815659880656

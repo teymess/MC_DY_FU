@@ -1,0 +1,37 @@
+"","ID_0","COUNTRY","NAME_1","NL_NAME_1","ID_2","NAME_2","VARNAME_2","NL_NAME_2","TYPE_2","ENGTYPE_2","CC_2","HASC_2","PM25pc","PM25pc_2019"
+"1","USA","United States","Oregon",NA,"USA.38.1_1","Baker",NA,NA,"County","County",NA,"US.OR.BA",6.86007810014264,4.00004331447601
+"2","USA","United States","Oregon",NA,"USA.38.2_1","Benton",NA,NA,"County","County",NA,"US.OR.BE",9.99067131843362,5.80533217413765
+"3","USA","United States","Oregon",NA,"USA.38.3_1","Clackamas",NA,NA,"County","County",NA,"US.OR.CC",11.3827985987535,6.9083857351771
+"4","USA","United States","Oregon",NA,"USA.38.4_1","Clatsop",NA,NA,"County","County",NA,"US.OR.CT",6.59922384306293,1.84488929934171
+"5","USA","United States","Oregon",NA,"USA.38.5_1","Columbia",NA,NA,"County","County",NA,"US.OR.CL",8.18966690272297,5.6189966681386
+"6","USA","United States","Oregon",NA,"USA.38.6_1","Coos",NA,NA,"County","County",NA,"US.OR.CO",7.86250190335399,3.14206019998634
+"7","USA","United States","Oregon",NA,"USA.38.7_1","Crook",NA,NA,"County","County",NA,"US.OR.CR",9.40688213604465,5.21083517426888
+"8","USA","United States","Oregon",NA,"USA.38.8_1","Curry",NA,NA,"County","County",NA,"US.OR.CU",9.20785649812245,1.76841405104352
+"9","USA","United States","Oregon",NA,"USA.38.9_1","Deschutes",NA,NA,"County","County",NA,"US.OR.DE",10.3888194119175,5.13244600136185
+"10","USA","United States","Oregon",NA,"USA.38.10_1","Douglas",NA,NA,"County","County",NA,"US.OR.DO",12.3948985354952,4.57197550009496
+"11","USA","United States","Oregon",NA,"USA.38.11_1","Gilliam",NA,NA,"County","County",NA,"US.OR.GI",8.27647261687515,4.55262586949579
+"12","USA","United States","Oregon",NA,"USA.38.12_1","Grant",NA,NA,"County","County",NA,"US.OR.GR",7.37683397060259,3.88334322465179
+"13","USA","United States","Oregon",NA,"USA.38.13_1","Harney",NA,NA,"County","County",NA,"US.OR.HA",7.41727088690936,3.98049416757912
+"14","USA","United States","Oregon",NA,"USA.38.14_1","Hood River",NA,NA,"County","County",NA,"US.OR.HO",9.31780173653472,4.71596849069351
+"15","USA","United States","Oregon",NA,"USA.38.15_1","Jackson",NA,NA,"County","County",NA,"US.OR.JA",11.2303880356381,5.5631270137172
+"16","USA","United States","Oregon",NA,"USA.38.16_1","Jefferson",NA,NA,"County","County",NA,"US.OR.JE",10.9844021812055,4.62962976451534
+"17","USA","United States","Oregon",NA,"USA.38.17_1","Josephine",NA,NA,"County","County",NA,"US.OR.JO",11.1218686309906,4.918835320726
+"18","USA","United States","Oregon",NA,"USA.38.18_1","Klamath",NA,NA,"County","County",NA,"US.OR.KL",8.89960287567122,4.84483088856889
+"19","USA","United States","Oregon",NA,"USA.38.19_1","Lake",NA,NA,"County","County",NA,"US.OR.LK",8.48761746164444,3.94058360750546
+"20","USA","United States","Oregon",NA,"USA.38.20_1","Lane",NA,NA,"County","County",NA,"US.OR.LE",14.507775073876,5.82259615155847
+"21","USA","United States","Oregon",NA,"USA.38.21_1","Lincoln",NA,NA,"County","County",NA,"US.OR.LC",7.48717181852496,1.78633844810866
+"22","USA","United States","Oregon",NA,"USA.38.22_1","Linn",NA,NA,"County","County",NA,"US.OR.LN",11.6080315244774,5.61251356405819
+"23","USA","United States","Oregon",NA,"USA.38.23_1","Malheur",NA,NA,"County","County",NA,"US.OR.ML",8.30578941433369,4.63085502714169
+"24","USA","United States","Oregon",NA,"USA.38.24_1","Marion",NA,NA,"County","County",NA,"US.OR.MR",10.94629865079,6.40992123386984
+"25","USA","United States","Oregon",NA,"USA.38.25_1","Morrow",NA,NA,"County","County",NA,"US.OR.MO",8.32099906045842,3.40113004718022
+"26","USA","United States","Oregon",NA,"USA.38.26_1","Multnomah",NA,NA,"County","County",NA,"US.OR.MU",11.1282557384904,7.65305795422693
+"27","USA","United States","Oregon",NA,"USA.38.27_1","Polk",NA,NA,"County","County",NA,"US.OR.PO",9.87085970223688,5.75830559710959
+"28","USA","United States","Oregon",NA,"USA.38.28_1","Sherman",NA,NA,"County","County",NA,"US.OR.SH",8.08217727090368,4.69468110687141
+"29","USA","United States","Oregon",NA,"USA.38.29_1","Tillamook",NA,NA,"County","County",NA,"US.OR.TI",7.5027377062898,3.30167631326392
+"30","USA","United States","Oregon",NA,"USA.38.30_1","Umatilla",NA,NA,"County","County",NA,"US.OR.UM",8.33899312200102,4.72846290967843
+"31","USA","United States","Oregon",NA,"USA.38.31_1","Union",NA,NA,"County","County",NA,"US.OR.UN",7.56984563434351,4.52928066673955
+"32","USA","United States","Oregon",NA,"USA.38.32_1","Wallowa",NA,NA,"County","County",NA,"US.OR.WW",6.19894633370218,3.7409341923604
+"33","USA","United States","Oregon",NA,"USA.38.33_1","Wasco",NA,NA,"County","County",NA,"US.OR.WC",8.4303827524442,5.28777814239617
+"34","USA","United States","Oregon",NA,"USA.38.34_1","Washington",NA,NA,"County","County",NA,"US.OR.WI",10.2699826999419,7.38669087384008
+"35","USA","United States","Oregon",NA,"USA.38.35_1","Wheeler",NA,NA,"County","County",NA,"US.OR.WE",7.66534232381384,4.2051520370591
+"36","USA","United States","Oregon",NA,"USA.38.36_1","Yamhill",NA,NA,"County","County",NA,"US.OR.YA",9.30481843322039,6.09338538443073
