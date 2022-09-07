@@ -1387,7 +1387,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                       {
                           id: 'PC_q1_choice',
                           orientation: 'V',
-                          mainText: '<span style="font-size:30px;"><span style="font-weight: normal;color:gray;">Q11</span> What do you prefer?</span>',
+                          mainText: '<span style="font-size:30px;">What do you prefer?</span>',
                          // hint: '<span style="color:gray;font-size:14px;">(Attention: Your choice will be implemented with a 60% probability.)</span>',
                           choices: [
                             ['home', 'I prefer to receive information about how much shorter my life is expected to be due to air pollution in ' + bcoloredDistrict  + ' (' + data.state + ').'],
