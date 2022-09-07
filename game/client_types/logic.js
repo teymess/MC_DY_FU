@@ -40,7 +40,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             header: [ 'timestamp', 'player', 'email' ]
         });
 
-        memory.index('district_player', item => {
+        memory.index('county_player', item => {
             if (item.stepId === 'Part_1_q3') return item.player;
         });
 
@@ -138,9 +138,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             }
 
             else if (step === 'Part_1_q3') {
-              let state = memory.district_player.get(msg.from);
-              console.log(state);
-              state = state.forms.state.value;
+
+              let { state } = getStateCounty(msg.from);
 
                 if (state !== 'Texas') {
                     let clientObj = channel.registry.getClient(id);
@@ -196,23 +195,21 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
         node.on('get.districts', function(msg) {
             let state = msg.data;
-            return setup.districts[state];
+            return setup.counties[state];
         });
 
         node.on('get.districtData', function(msg) {
 
-            let district = memory.district_player.get(msg.from);
+            let { state, county } = getStateCounty(msg.from);
+            let countyIdx = setup.getCountyIdx(state, county);
 
-            //console.log(district);
-            district = district.forms.district.value;
-
-            return setup.pollutionDb.district.get(district)
+            return setup.pollutionDb.county.get(countyIdx);
         });
 
 
         node.on('get.districtData2', function(msg) {
-            var district = memory.district_player.get(msg.from);
-            district = district.forms.district.value;
+
+            let { county } = getStateCounty(msg.from);
 
             var choice = memory.choice_decision.get(msg.from);
             choice = choice.PC_q1_choice.value;
@@ -225,34 +222,38 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 return {
                     ball: "green",
                     chosen: "nothing",
-                    row: setup.pollutionDb.district.get(district)
+                    row: setup.pollutionDb.county.get(county)
                 }
             }
             else if (choice === 'nothing' && random <= 0.4) {
                 return {
                     ball: "red",
                     chosen: "home",
-                    row: setup.pollutionDb.district.get(district)
+                    row: setup.pollutionDb.county.get(county)
                 }
             }
             else if (choice === 'home' && random > 0.4) {
                 return {
                     ball: "green",
                     chosen: "home",
-                    row: setup.pollutionDb.district.get(district)
+                    row: setup.pollutionDb.county.get(county)
                 }
             }
             else if (choice === 'home' && random <= 0.4) {
                 return {
                     ball: "red",
                     chosen: "nothing",
-                    row: setup.pollutionDb.district.get(district)
+                    row: setup.pollutionDb.county.get(county)
                 }
             }
         });
     });
 
-    stager.setOnGameOver(function() {
-        // Something to do.
-    });
+    function getStateCounty(playerId) {
+        let info = memory.county_player.get(playerId);
+        // console.log(info);
+        let state = info.forms.state.value;
+        let county = info.forms.district.value;
+        return { state, county };
+    }
 };

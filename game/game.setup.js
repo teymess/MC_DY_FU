@@ -28,14 +28,21 @@
         promptOnleave: !setup.debug
     };
 
+    setup.getCountyIdx = (state, county) => {
+        return state + '_' + county;
+    };
+
     // Create DB.
 
     let pollutionDb = NDDB.db();
 
-    // Create a map of state/district for convenience.
-    setup.districts = {};
+    // COUNTY = DISTRICT in same place of the code.
+
+    // Create a map of state/counties for convenience.
+    setup.counties = {};
+
     pollutionDb.on('insert', item => {
-        let d = setup.districts;
+        let d = setup.counties;
         if (!d[item.state]) d[item.state] = [];
         d[item.state].push(item.district);
     });
@@ -48,7 +55,12 @@
     });
 
     // Index every district for faster retrieval.
-    pollutionDb.index('district');
+    // pollutionDb.index('district');
+
+    // Index every county for faster retrieval.
+    pollutionDb.index('county', item => {
+        return setup.getCountyIdx(item.state, item.district);
+    });
 
     pollutionDb.loadSync(path.join(dir, 'private', 'input_data_Kaggle.csv'), {
         lineBreak: '\r\n'
