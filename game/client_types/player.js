@@ -945,21 +945,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         id: 'q4_4',
                         orientation: 'H',
                         mainText: '<span style="font-weight: normal;color:gray;">Q9</span> What is your age group?',
-                        choices: [
-                          ['18 - 25'],
-                          ['26 - 25'],
-                          ['31 - 35'],
-                          ['36 - 40'],
-                          ['41 – 45'],
-                          ['46 – 50'],
-                          ['51 – 55'],
-                          ['56 – 60'],
-                          ['61 – 65'],
-                          ['66 +']
-                      ],
+                        choices: ['18 - 25','26 - 25','31 - 35','36 - 40','41 – 45','46 – 50','51 – 55','56 – 60','61 – 65','66 +'],
                         shuffleChoices: false,
                         requiredChoice: true,
-                        choicesSetSize: 2
+                        choicesSetSize: 4
                     }
                 ]
             }
@@ -1088,7 +1077,7 @@ stager.extendStep('Part2_Common_Info', {
                             id: 'P4_q',
                             orientation: 'H',
                             mainText: '<span style="font-weight: normal;"> Based on the leaflet above, choose the correct answer to the questions below.</span><br><br>' +
-                            '<span style="font-weight: normal;color:gray;">Q12</span> Which of the following two sentences is correct?*<br>',
+                            '<span style="font-weight: normal;color:gray;">Q13</span> Which of the following two sentences is correct?*<br>',
                             choices: ["There is <b>nothing</b> I can do to protect myself effectively against air pollution.",
                           "There are <b>many things</b> I can do to protect myself effectively against air pollution, both indoors and outdoors."],
                             correctChoice: 1
@@ -1110,7 +1099,7 @@ stager.extendStep('Part2_Common_Info', {
                         node.widgets.last.addForm({
                           name: 'Feedback',
                           id: 'P4_T_q4',
-                          mainText: '<span style="font-weight: normal;color:gray;">Q13</span> Which actions can you take to protect yourself against air pollution outdoors and which actions can you take indoors? Summarize below.',
+                          mainText: '<span style="font-weight: normal;color:gray;">Q14</span> Which actions can you take to protect yourself against air pollution outdoors and which actions can you take indoors? Summarize below.',
                           requiredChoice: true,
                           showSubmit: false,
                           minChars: 20,
@@ -1154,13 +1143,6 @@ stager.extendStep('Part2_Common_Info', {
                     id: 'PC_q',
                     // ref: 'controlQuestions',
                     mainText: '',
-                    // '<img src="choice.png" width="100px"> <span style="font-weight: bold;font-size:24px;color:#5c30af;">What do you want to read about next?</span><br/><br/>' +
-                    //'You now have the opportunity to receive information about <b>air pollution levels</b> and the <b>number of life years lost ' +
-                    //'because of air pollution</b> in a specific region. <br> <br>' +
-                    //'In the next screen, You will be asked to <b><span style="font-size:25px;color:#ee6933;">indicate which of two regions</span></b> you prefer to read about. ' +
-                    //'<br> <br> <b><u>How will your choice be implemented?</u></b> <br> <br>' +
-                    //'The computer program will draw a ball from a virtual urn containing 6 <span style="fontcolor:green">green</span> balls and 4 <span style="fontcolor:red">red</span> balls.' +
-                    //'<br> <br><img src="dices.png" width="40px"> However, your selection will only be implemented with a <b>60% probability</b>.<br> With a 40% probability, we will show you information on the other option.<br> <br>',
                     simplify: true,
                     forms: [
                       {
@@ -1171,9 +1153,6 @@ stager.extendStep('Part2_Common_Info', {
                           choices: [
                             ['home', 'I prefer to receive information about how much shorter my life is expected to be due to air pollution in ' + bcoloredDistrict  + ' (' + data.state + ').'],
                             ['nothing', 'I prefer not to receive any information.']
-                            //['nothing', 'I prefer to <b>not</b> receive information about the number of life years lost due to air pollution in ' + bcoloredDistrict  + ' (' + data.state + ').']
-                            // ['home', "<span style="font-size:25px;color:#ee6933;">" + data.district + '</span>' + ' (' + data.state + ')'],
-                            // ['decoy', "<span style="font-size:25px;color:#ee6933;">Austria</span> (a country in central Europe)"]
                           ],
                           requiredChoice: true,
                           shuffleChoices: true
