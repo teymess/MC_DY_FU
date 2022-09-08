@@ -33,6 +33,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     // .step('Part2_Air_pollution_damages_your_health')
     // .step('Part2_Pollution_and_life_expectancy')
     .step('Part2_Prior_LYL_home')
+    .step('Part2_Common_Info')
     .step('Part2_Protection_measures')
     .step('Part2_Info_Choice')
     .step('Part2_Info_Choice_Decision')

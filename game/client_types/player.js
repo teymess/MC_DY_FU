@@ -916,7 +916,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         requiredChoice: true,
                         min: 1
                     },
-                    { // THIS NEEDS TO BE MADE CONDITIONAL ON DISTRICT
+                    {
                         id: 'q4_3',
                         orientation: 'H',
                         mainText: '<span style="font-weight: normal;color:gray;">Q8</span> In 2021, what was the total annual income of your household?<br>' +
@@ -936,6 +936,26 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                           ["Group 8", '$110,000 - $140,000'],
                           ["Group 9", '$140,000 - $200,000'],
                           ["Group 10", 'More than $200,000']
+                      ],
+                        shuffleChoices: false,
+                        requiredChoice: true,
+                        choicesSetSize: 2
+                    },
+                    {
+                        id: 'q4_4',
+                        orientation: 'H',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q9</span> What is your age group?',
+                        choices: [
+                          ['18 - 25'],
+                          ['26 - 25'],
+                          ['31 - 35'],
+                          ['36 - 40'],
+                          ['41 – 45'],
+                          ['46 – 50'],
+                          ['51 – 55'],
+                          ['56 – 60'],
+                          ['61 – 65'],
+                          ['66 +']
                       ],
                         shuffleChoices: false,
                         requiredChoice: true,
@@ -976,7 +996,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                             {
                                 id: 'LYL_prior',
                                 orientation: 'H',
-                                mainText: '<span style="font-weight: normal;color:gray;">Q9</span> Think of <span style="color:red;">your county </span> now. ' +
+                                mainText: '<span style="font-weight: normal;color:gray;">Q10</span> Think of <span style="color:red;">your county </span> now. ' +
                                           'In your opinion, which group is ' + stringDistrict +  ' (' + data.state + ') part of?',
                                 choices: [
                                   ['Group 1', '<span style=\'font-size:14px;font-weight:normal;\'>Group 1</span>'],
@@ -1004,7 +1024,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                               {
                                   id: 'T_confident',
                                   orientation: 'H',
-                                  mainText: '<span style="font-weight: normal;color:gray;">Q10</span> How confident are you about your answer to the previous question?</span>',
+                                  mainText: '<span style="font-weight: normal;color:gray;">Q11</span> How confident are you about your answer to the previous question?</span>',
                                   choices: [
                                     ['1', 'Not confident at all'],
                                     ['2', 'Not very confident'],
@@ -1027,7 +1047,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                                 {
                                 id: 'pollution_worry',
                                 orientation: 'H',
-                                mainText: '<span style="font-weight: normal;color:gray;">Q11</span> In general, how worried are you about the air pollution in ' + stringDistrict +  ' (' + data.state + ')?',
+                                mainText: '<span style="font-weight: normal;color:gray;">Q12</span> In general, how worried are you about the air pollution in ' + stringDistrict +  ' (' + data.state + ')?',
                                 left: 'Not worried at all',
                                 right: 'Very worried',
                                 choices: [ '1', '2', '3', '4', '5', '6', '7'],
@@ -1045,7 +1065,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         }
 });
 
-
+//////////////////////////////////////////////////////////////////////////
+// LEAFLET Protection measures ALL
+stager.extendStep('Part2_Common_Info', {
+    name: 'Part 1',
+    frame: 'common_info_poll.htm'
+  });
 
     //////////////////////////////////////////////////////////////////////////
     // LEAFLET Protection measures ALL
