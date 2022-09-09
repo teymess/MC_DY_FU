@@ -29,12 +29,11 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     stager
     .stage('Part2')
     .step('Part4_Posterior_LYL')
-    .step('Part2_Prior_LYL_home')
     .step('Part4_LOC1')
     .step('Part4_LOC2')
     .step('Part4_LOC3')
     .step('Part4_PC')
-    .step('Part4_Poll_Severe')
+    .step('Part_1_q5')
 
     stager
     .stage('Part2_Protection_measures')

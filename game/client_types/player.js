@@ -339,8 +339,8 @@ stager.extendStep('Part4_Posterior_LYL', {
                                     let myAnswer = LYL[(value)];
                                     let stringAnswer = String(myAnswer);
                                     let coloredAnswer = stringAnswer.fontcolor("#ee6933");
-                                    let coloredAnswer2 = stringAnswer.fontsize("25");
-                                    return '<span style=\'font-size:20px;\'>You think people living in ' +
+                                    let coloredAnswer2 = coloredAnswer.fontsize("25");
+                                    return '<span style=\'font-size:18px;\'>You think people living in ' +
                                     data.district + ' lose on average ' + coloredAnswer2 + ' years of life due to air pollution.</span>';
                                 }
                             }
@@ -387,110 +387,6 @@ stager.extendStep('Part4_Posterior_LYL', {
             bonus: node.game.guessBonus
         }
     }
-});
-
-////////////////////////////////////////////////////
-// LYL: Deciles of Pollution
-//////////////////////////////////////
-stager.extendStep('Part2_Prior_LYL_home', {
-    name: "Survey",
-    frame: 'prior_LYL.htm',
-    donebutton: false,
-    cb: function() {
-      node.get('districtData', function(data) {
-
-          //console.log(data);
-          W.setInnerHTML('district', data.district);
-          W.setInnerHTML('state', data.state);
-          let myDistrict = data.district;
-          let stringDistrict = String(myDistrict);
-          // State
-          let myState = data.state;
-          let stringState = String(myState);
-
-
-          node.game.Qprior = node.widgets.append('ChoiceManager', "container", {
-            id: 'LYL_prior_home',
-            simplify: true,
-            panel: false,
-            forms: [
-                    {
-                        id: 'LYL_prior',
-                        orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q10</span> Think of <span style="color:red;">your county </span> now. ' +
-                                  'In your opinion, which group is ' + stringDistrict +  ' (' + data.state + ') part of?',
-                        choices: [
-                          ['Group 1', '<span style=\'font-size:14px;font-weight:normal;\'>Group 1</span>'],
-                          ['Group 2', '<span style=\'font-size:14px;font-weight:normal;\'>Group 2</span>'],
-                          ['Group 3', '<span style=\'font-size:14px;font-weight:normal;\'>Group 3</span>'],
-                          ['Group 4', '<span style=\'font-size:14px;font-weight:normal;\'>Group 4</span>'],
-                          ['Group 5', '<span style=\'font-size:14px;font-weight:normal;\'>Group 5</span>'],
-                          ['Group 6', '<span style=\'font-size:14px;font-weight:normal;\'>Group 6</span>'],
-                          ['Group 7', '<span style=\'font-size:14px;font-weight:normal;\'>Group 7</span>'],
-                          ['Group 8', '<span style=\'font-size:14px;font-weight:normal;\'>Group 8</span>'],
-                          ['Group 9', '<span style=\'font-size:14px;font-weight:normal;\'>Group 9</span>'],
-                          ['Group 10', '<span style=\'font-size:14px;font-weight:normal;\'>Group 10</span>'],
-                            ],
-                        shuffleChoices: false,
-                        requiredChoice: true,
-                        onclick: function(value, removed) {
-                          var w, forms, len;
-                          forms = node.widgets.lastAppended.formsById
-                          // len = forms.P3_q1_1.choices.length - 1;
-                          w = forms.T_confident;
-                          w.show();
-                          // w.hide();
-                        }
-                      },
-                      {
-                          id: 'T_confident',
-                          orientation: 'H',
-                          mainText: '<span style="font-weight: normal;color:gray;">Q11</span> How confident are you about your answer to the previous question?</span>',
-                          choices: [
-                            ['1', 'Not confident at all'],
-                            ['2', 'Not very confident'],
-                            ['3', 'Neutral'],
-                            ['4', 'Quite confident'],
-                            ['5', 'Completely confident']
-                          ],
-                          shuffleChoices: false,
-                          requiredChoice: true,
-                          hidden: true,
-                          onclick: function(value, removed) {
-                            var w, forms, len;
-                            forms = node.widgets.lastAppended.formsById
-                            // len = forms.P3_q1_1.choices.length - 1;
-                            w = forms.pollution_worry;
-                            w.show();
-                            // w.hide();
-                          }
-                        },
-                        {
-                        id: 'pollution_worry',
-                        orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q12</span> In general, how worried are you about the air pollution in ' + stringDistrict +  ' (' + data.state + ')?',
-                        left: 'Not worried at all',
-                        right: 'Very worried',
-                        choices: [ '1', '2', '3', '4', '5', '6', '7'],
-                        requiredChoice: true,
-                        hidden: true
-                      }
-          ]
-    });
-    W.show('data', 'flex');
-    node.game.doneButton.enable();
-});
-},
-done: function() {
-    return node.game.Qprior.getValues();
-}
-});
-
-//////////////////////////////////////////////////////////////////////////
-// LEAFLET Protection measures ALL
-stager.extendStep('Part2_Protection_measures', {
-    name: 'Disclaimer',
-    frame: 'leaflet_protection.htm',
 });
 
 
@@ -607,7 +503,7 @@ forms: [
 ///////////////////////////////////////////////
 // LOCUS of CONTROL 3
 stager.extendStep('Part4_LOC3', {
-name: "Part 3",
+name: "Survey",
 widget: {
 name: 'ChoiceManager',
 id: 'Part4_LOC3',
@@ -654,7 +550,7 @@ options: {
 ///////////////////////////////////////////////
 // Perceived Control
 stager.extendStep('Part4_PC', {
-name: "Part 3",
+name: "Survey",
 widget: {
     name: 'ChoiceManager',
     id: 'Part4_PC',
@@ -683,38 +579,82 @@ widget: {
 });
 
 
-///////////////////////////////////////////////
-// Perceived Control
-stager.extendStep('Part4_Poll_Severe', {
-    name: "Part 4",
-    widget: {
-        name: 'ChoiceManager',
-        id: 'Part4_Poll_Severe',
-        options: {
-            simplify: true,
-            forms: [
-                {
-                    id: 'LOC_q9',
-                    orientation: 'V',
-                    mainText: '<span style="font-weight: normal;"><br><br>' +
-                    'Compare the <b>global health burden</b> from air pollution to that from other major causes of death, such as ' +
-                    "communicable diseases like tuberculosis " +
-                    "and HIV/AIDS, illnesses caused by smoking and poor water sanitation, and death from conflicts and " +
-                    'war. In your opinion, how large is the death burden from air pollution?',
-                    choices: [
-                      ['1', 'Air pollution causes <b>more</b> deaths than any of these other causes.'],
-                      ['2', 'Air pollution causes <b>a similar number</b> of deaths as these other causes.'],
-                      ['3', 'Air pollution causes <b>less</b> deaths than these other causes.'],
-                    ],
-                    requiredChoice: true,
-                    shuffleChoices: false,
-                }
-            ]
-        }
-    }
+
+// /////////////////////////////////////////////////////////////////////////////
+// ANY CHANGES in HABITS
+stager.extendStep('Part_1_q5', {
+       name: "Survey",
+       widget: {
+           name: 'ChoiceManager',
+           options: {
+               id: 'q5',
+               mainText: '',
+               simplify: true,
+               forms: [
+                   {
+                       name: 'ChoiceTableGroup',
+                       id: 'q5_prior',
+                       mainText: '<span style=\'font-size:18px;font-weight:normal;\'>In your daily life, how often do you engage in the following activitites?</span>',
+                       choices: [
+                           'Never', 'Very rarely', 'About once per week',
+                           'More than once per week', 'Every day'
+                       ],
+                       items: [
+                         {
+                           id: 'mask',
+                           left: '<span style=\'font-size:16px;font-weight:bold;\'>Wear a face mask</span>'
+                         },
+                         {
+                             id: 'air_pur',
+                             left: '<span style=\'font-size:16px;font-weight:bold;\'>Use an air purifier indoors</span>'
+                         },
+                         {
+                             id: 'check',
+                             left: '<span style=\'font-size:16px;font-weight:bold;\'>Check the air quality in your area</span>'
+                         },
+                         {
+                             id: 'change',
+                             left: '<span style=\'font-size:16px;font-weight:bold;\'>Change your commute route or time schedule to avoid high pollution areas</span>'
+                         },
+                         {
+                             id: 'ventilate',
+                             left: '<span style=\'font-size:16px;font-weight:bold;\'>Open the windows to ventilate rooms</span>'
+                         },
+                         {
+                             id: 'dust',
+                             left: '<span style=\'font-size:16px;font-weight:bold;\'>Remove dust in your household</span>'
+                         },
+                         {
+                             id: 'nature',
+                             left: '<span style=\'font-size:16px;font-weight:bold;\'>Spend time in nature</span>'
+                         },
+                         {
+                             id: 'waste',
+                             left: '<span style=\'font-size:16px;font-weight:bold;\'>Burn waste</span>'
+                         },
+                         {
+                             id: 'fires',
+                             left: '<span style=\'font-size:16px;font-weight:bold;\'>Handle open fires</span>'
+                         },
+                       ],
+                       shuffleChoices: false
+                   }
+               ],
+               formsOptions: {
+                   requiredChoice: true,
+                   shuffleChoices: true
+               },
+               className: 'centered'
+           }
+       }
+   });
+
+//////////////////////////////////////////////////////////////////////////
+// LEAFLET Protection measures ALL
+stager.extendStep('Part2_Protection_measures', {
+   name: 'Disclaimer',
+   frame: 'leaflet_protection.htm',
 });
-
-
 
 ////////////////////////////////////////////////////////////////////////////
 // FEEDBACK
@@ -745,17 +685,7 @@ stager.extendStep('feedback', {
                 '<li>Did you find any question unclear or ' +
                 'uncomfortable?</li>' +
                 '<li>Did you experience any technical difficulty?</li>' +
-                '<li>Were the images and maps loading correctly?</li>' +
-                '<li>How can we improve the study?</li></ol>' +
                 "If you do not have any comment, just type 'nothing' in the box below.",
-              },
-              {
-                name: 'Feedback',
-                id: 'feedback2',
-                mainText: 'What do you think this study is about?',
-                requiredChoice: true,
-                minChars: 5,
-                showSubmit: false
               }
             ]
           }
