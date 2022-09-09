@@ -37,7 +37,7 @@ module.exports = {
      *
      * Default: the name of the game, as found in the package.json file.
      */
-    // name: 'Motivated_cognition_US2',
+    // name: 'MC_followup',
 
     /**
      * ## alias (string|array) Optional
@@ -52,7 +52,7 @@ module.exports = {
      * to use the real channel name, so you will need to pass it explicitly:
      * `node.connect('/gameName').
      */
-     alias: ['survey_USv2'],
+     alias: ['survey_US_followup'],
 
     /**
      * ## playerServer (object|string) Optional
@@ -68,7 +68,7 @@ module.exports = {
      */
     playerServer: {
 
-        endpoint: 'Motivated_cognition_US2',
+        endpoint: 'MC_followup',
 
         // Anti-spoofing, extra check to see if msg.from matches socket.id
         // on SocketIo socket connections. Spoofed messages are logged
@@ -89,7 +89,7 @@ module.exports = {
      *
      * Default: name-of-the-channel/admin
      */
-    // adminServer: 'Motivated_cognition_US2/admin',
+    // adminServer: 'MC_followup/admin',
 
     /**
      * ## getFromAdmins (boolean) Optional

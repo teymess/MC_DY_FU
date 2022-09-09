@@ -27,28 +27,9 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('Part_1_q4')
 
     stager
-    .stage('Part2_Info_Pollution')
-    // .step('Instructions_Part_2')
-    // .step('Part2_Air_pollution_and_its_sources')
-    // .step('Part2_Air_pollution_damages_your_health')
-    // .step('Part2_Pollution_and_life_expectancy')
-    .step('Part2_Prior_LYL_home')
-    .step('Part2_Common_Info')
-    .step('Part2_Protection_measures')
-    .step('Part2_Info_Choice')
-    .step('Part2_Info_Choice_Decision')
-    .step('Part2_choice_outcome')
-    .step('Part2_Pollution_in_your_district')
-
-    stager
-    .stage('Part3')
-    .step('Part_3_Instructions')
-    .step('Part_3_Filler_Task')
-    .step('Part_3_Results')
-
-    stager
-    .stage('Part4')
+    .stage('Part2')
     .step('Part4_Posterior_LYL')
+    .step('Part2_Prior_LYL_home')
     .step('Part4_LOC1')
     .step('Part4_LOC2')
     .step('Part4_LOC3')
@@ -56,37 +37,10 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     .step('Part4_Poll_Severe')
 
     stager
-    .stage('memory')
-    .step('memory_intro')
-    .step('memory_learn')
-    .step('memory_test1')
-    .step('memory_test2')
-    .step('memory_test3')
-    .step('memory_test4')
-    .step('memory_test5')
-    .step('memory_test6')
-    .step('memory_test7')
-    .step('memory_test8')
-    .step('memory_test9')
-    .step('memory_test10')
-    .step('memory_test11')
-    .step('memory_test12')
-    .step('memory_test13')
-    .step('memory_test14')
-    .step('memory_test15')
-    .step('memory_results')
-
-
-    stager
+    .stage('Part2_Protection_measures')
     .stage('feedback')
     .stage('end')
 
     .gameover();
 
-    if (treatmentName === 'control') {
-        stager.skip('Part2_Info_Pollution', [
-            'Part2_Protection_measures',
-            //'Part2_Protection_measures_T2'
-        ])
-    }
 };

@@ -35,7 +35,7 @@ module.exports = {
          'Part_3_Filler_Task': 120000,
      },
 
-    BASE_PAY: 3,
+    BASE_PAY: 1,
     TASK_2_BONUS: 0.05,
     MEMORY_BONUS: 0.02,
 
@@ -49,25 +49,12 @@ module.exports = {
 
     // If the `treatments` object is missing a treatment named _standard_
     // will be created automatically, and will contain all variables.
-    treatments: {
-        control: {
-            description: "No focus on perceived control"
-        },
-        treatment: {
-            description: "Added focus on perceived control"
-        }
-
-        // info_once_austria: {
-        //     description: "Self-defense information is displayed once x Austria"
-        // },
-        // info_twice_austria: {
-        //     description: "Self-defense information is displayed twice x Austria"
-        // },
-        // info_once_nicaragua: {
-        //     description: "Self-defense information is displayed once x Nicaragua"
-        // },
-        // info_twice_nicaragua: {
-        //     description: "Self-defense information is displayed twice x Nicaragua"
-        // }
-    }
+    // treatments: {
+    //     control: {
+    //         description: "No focus on perceived control"
+    //     },
+    //     treatment: {
+    //         description: "Added focus on perceived control"
+    //     }
+    // }
 };

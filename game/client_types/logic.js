@@ -141,7 +141,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 
               let { state } = getStateCounty(msg.from);
 
-                if (state !== 'Texas') {
+                if (state !== 'California') {
                     let clientObj = channel.registry.getClient(id);
                     clientObj.allowReconnect = false;
                     node.redirect('location_error.htm', id);
