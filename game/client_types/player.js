@@ -489,7 +489,7 @@ done: function() {
 //////////////////////////////////////////////////////////////////////////
 // LEAFLET Protection measures ALL
 stager.extendStep('Part2_Protection_measures', {
-    name: 'Part 1',
+    name: 'Disclaimer',
     frame: 'leaflet_protection.htm',
 });
 
