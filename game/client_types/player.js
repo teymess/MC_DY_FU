@@ -258,7 +258,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                         id: 'q4_4',
                         orientation: 'H',
                         mainText: '<span style="font-weight: normal;color:gray;">Q9</span> What is your age group?',
-                        choices: ['18 - 25','26 - 25','31 - 35','36 - 40','41 – 45','46 – 50','51 – 55','56 – 60','61 – 65','66 +'],
+                        choices: ['18 - 25','26 - 30','31 - 35','36 - 40','41 – 45','46 – 50','51 – 55','56 – 60','61 – 65','66 +'],
                         shuffleChoices: false,
                         requiredChoice: true,
                         choicesSetSize: 4
@@ -276,7 +276,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 ////////////////////////////////////////////////////////////////////////////////
 // Posterior LYL
 stager.extendStep('Part4_Posterior_LYL', {
-    name: 'Part 3',
+    name: 'Survey',
     frame: 'posterior_LYL.htm',
     donebutton: false,
     cb: function() {
@@ -634,7 +634,7 @@ stager.extendStep('Part_1_q5', {
                          },
                          {
                              id: 'fires',
-                             left: '<span style=\'font-size:16px;font-weight:bold;\'>Handle open fires</span>'
+                             left: '<span style=\'font-size:16px;font-weight:bold;\'>Handle open fires (e.g., barbecue, fireplace)</span>'
                          },
                        ],
                        shuffleChoices: false
