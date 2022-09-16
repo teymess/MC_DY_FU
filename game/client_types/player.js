@@ -181,92 +181,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                             node.game.doneButton.enable();
                         }
 
-                    },
-                    {
-                        id: 'q3_3',
-                        // orientation: 'V',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q5</span> Do you live in rural or urban area?',
-                        choices: [ 'Rural', 'Urban'],
-                        shuffleChoices: true,
-                        requiredChoice: true
                     }
                 ]
             }
         }
     });
 
-    //////////////////////////////////////////////////////////////////////////
-    // Page 4. Nr household members + HH INCOME
-    stager.extendStep('Part_1_q4', {
-        name: "Survey",
-        cb: function() {
-            W.cssRule('table.choicetable td { text-align: center !important; ' +
-            'font-weight: normal; padding-left: 10px; }');
-        },
-        // Make a widget step.
-        widget: {
-            name: 'ChoiceManager',
-            id: 'q4',
-            options: {
-                simplify: true,
-                mainText: '',
-                forms: [
-                    {
-                        id: 'q4_2',
-                        orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q6</span> What is the highest educational level that you have completed?',
-                        choices: ['Eighth grade or less','High school','College degree','Masters degree','Doctorate or higher'],
-                        shuffleChoices: false,
-                        requiredChoice: true
-                    },
-                    {
-                        name: 'CustomInput',
-                        id: 'q4_1',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q7</span> How many people live in your household?<br>',
-                        hint: '(Think about everyone that lives at least eight months per year in your house. Answer should include yourself.)',
-                        width: '95%',
-                        type: 'int',
-                        requiredChoice: true,
-                        min: 1
-                    },
-                    {
-                        id: 'q4_3',
-                        orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q8</span> In 2021, what was the total annual income of your household?<br>' +
-                        '<span style="font-weight: normal;"> Please refer to the total income of ALL members living in your household in 2021, ' +
-                        'before any taxes or deductions. This includes:<br> '+
-                        '- wages and salaries from all jobs <br>' +
-                        '- the revenue from self-employment <br>' +
-                        '- all income from casual labour.</span>',
-                        choices: [
-                          ["Group 1", 'Less than $15,000'],
-                          ["Group 2", '$15,000 – $25,000'],
-                          ["Group 3", '$25,000 – $40,000'],
-                          ["Group 4", '$40,000 – $50,000'],
-                          ["Group 5", '$50,000 – $70,000'],
-                          ["Group 6", '$70,000 – $85,000'],
-                          ["Group 7", '$85,000 – $110,000'],
-                          ["Group 8", '$110,000 - $140,000'],
-                          ["Group 9", '$140,000 - $200,000'],
-                          ["Group 10", 'More than $200,000']
-                      ],
-                        shuffleChoices: false,
-                        requiredChoice: true,
-                        choicesSetSize: 2
-                    },
-                    {
-                        id: 'q4_4',
-                        orientation: 'H',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q9</span> What is your age group?',
-                        choices: ['18 - 25','26 - 30','31 - 35','36 - 40','41 – 45','46 – 50','51 – 55','56 – 60','61 – 65','66 +'],
-                        shuffleChoices: false,
-                        requiredChoice: true,
-                        choicesSetSize: 4
-                    }
-                ]
-            }
-        }
-    });
 
 ////////////////////////////////////////////////////////////////////////////////
 // END OF Background SURVEY
@@ -303,7 +223,7 @@ stager.extendStep('Part4_Posterior_LYL', {
                     forms: [
                         {
                             id: 'LYL_posterior_1',
-                            mainText: '<span style="font-weight: normal;color:gray;">Q1</span> <span style="font-size:25px">How many years of life do people living in ' +
+                            mainText: '<span style="font-size:25px">How many years of life do people living in ' +
                             data.district + ' lose on average because of air pollution?</span><br>' +
                             '<span style="color:gray;font-weight: normal">(Move the slider to the desired position.)</span><br><br><br>',
                             hint: false,
@@ -395,189 +315,216 @@ stager.extendStep('Part4_Posterior_LYL', {
 // PART 4
 
 // LOCUS of CONTROL 1
-stager.extendStep('Part4_LOC1', {
-name: "Survey",
-widget: {
-name: 'ChoiceManager',
-id: 'Part4_LOC1',
-options: {
-simplify: true,
-mainText: '<br><br>' +
-'Indicate how much you agree or disagree with the following statements.',
-forms: [
-{
-    id: 'LOC_q1',
-    mainText: '<span style="font-weight: normal;color:gray;">Statement 1</span><br>' +
-    '"I have little control of the negative effects of air pollution on my health."',
-    choices: [
-      ['1', 'I strongly agree'],
-      ['2', 'I agree'],
-      ['3', 'I am neutral'],
-      ['4', 'I disagree'],
-      ['5', 'I strongly disagree'],
-    ],
-    requiredChoice: true,
-    shuffleChoices: false,
-},
-{
-    id: 'LOC_q2',
-    orientation: 'H',
-    mainText: '<span style="font-weight: normal;color:gray;">Statement 2</span><br>' +
-    '"There is really no way I can avoid negative effects from air pollution on my health."',
-    choices: [
-      ['1', 'I strongly agree'],
-      ['2', 'I agree'],
-      ['3', 'I am neutral'],
-      ['4', 'I disagree'],
-      ['5', 'I strongly disagree'],
-    ],
-    requiredChoice: true,
-    shuffleChoices: false,
-},
-{
-    id: 'LOC_q3',
-    orientation: 'H',
-    mainText: '<span style="font-weight: normal;color:gray;">Statement 3</span><br>' +
-    '"There is little I can do to reduce the negative effects from air pollution on my health."',
-    choices: [
-      ['1', 'I strongly agree'],
-      ['2', 'I agree'],
-      ['3', 'I am neutral'],
-      ['4', 'I disagree'],
-      ['5', 'I strongly disagree'],
-    ],
-    requiredChoice: true,
-    shuffleChoices: false,
-}
-]
-}
-}
-});
-
-///////////////////////////////////////////////
-// LOCUS of CONTROL 2
-stager.extendStep('Part4_LOC2', {
-name: "Survey",
-widget: {
-name: 'ChoiceManager',
-id: 'Part4_LOC2',
-options: {
-simplify: true,
-mainText: '<br><br>' +
-'Indicate how much you agree or disagree with the following statements.',
-forms: [
-    {
-        id: 'LOC_q4',
-        mainText: '<span style="font-weight: normal;color:gray;">Statement 4</span><br>' +
-        '"I often feel helpless when I think about air pollution and its effects on my health."',
-        choices: [
-          ['1', 'I strongly agree'],
-          ['2', 'I agree'],
-          ['3', 'I am neutral'],
-          ['4', 'I disagree'],
-          ['5', 'I strongly disagree'],
-        ],
-        requiredChoice: true,
-        shuffleChoices: false,
-    },
-    {
-        id: 'LOC_q5',
-        orientation: 'H',
-        mainText: '<span style="font-weight: normal;color:gray;">Statement 5</span><br>' +
-        '"Sometimes I feel that I’m forced to breathe polluted air."',
-        choices: [
-          ['1', 'I strongly agree'],
-          ['2', 'I agree'],
-          ['3', 'I am neutral'],
-          ['4', 'I disagree'],
-          ['5', 'I strongly disagree'],
-        ],
-        requiredChoice: true,
-        shuffleChoices: false,
-    }
-]
-}
-}
-});
-
-///////////////////////////////////////////////
-// LOCUS of CONTROL 3
-stager.extendStep('Part4_LOC3', {
-name: "Survey",
-widget: {
-name: 'ChoiceManager',
-id: 'Part4_LOC3',
-options: {
-    simplify: true,
-    mainText: '<br><br>' +
-    'Indicate how much you agree or disagree with the following statements.',
-    forms: [
-        {
-            id: 'LOC_q6',
-            mainText: '<span style="font-weight: normal;color:gray;">Statement 6</span><br>' +
-            '"How much air pollution will affect my health in the future mostly depends on me."',
-            choices: [
-              ['1', 'I strongly agree'],
-              ['2', 'I agree'],
-              ['3', 'I am neutral'],
-              ['4', 'I disagree'],
-              ['5', 'I strongly disagree'],
-            ],
-            requiredChoice: true,
-            shuffleChoices: false,
-        },
-        {
-            id: 'LOC_q7',
-            orientation: 'H',
-            mainText: '<span style="font-weight: normal;color:gray;">Statement 7</span><br>' +
-            '"I can reduce the negative effect of air pollution on my health as much as I want if I really set my mind to it."',
-            choices: [
-              ['1', 'I strongly agree'],
-              ['2', 'I agree'],
-              ['3', 'I am neutral'],
-              ['4', 'I disagree'],
-              ['5', 'I strongly disagree'],
-            ],
-            requiredChoice: true,
-            shuffleChoices: false,
+    stager.extendStep('Part4_LOC1', {
+        name: "Survey",
+        widget: {
+            name: 'ChoiceManager',
+            id: 'Part4_LOC1',
+            options: {
+                simplify: true,
+                mainText: '<br><br>' +
+                'Indicate how much you agree or disagree with the following statements.',
+                forms: [
+                    {
+                        id: 'LOC_q1',
+                        mainText: '<span style="font-weight: normal;color:gray;">Statement 1</span><br>' +
+                        '"I have little control of the negative effects of air pollution on my health."',
+                        choices: [
+                          ['1', 'I strongly agree'],
+                          ['2', 'I agree'],
+                          ['3', 'I am neutral'],
+                          ['4', 'I disagree'],
+                          ['5', 'I strongly disagree'],
+                        ],
+                        requiredChoice: true,
+                        shuffleChoices: false,
+                        onclick: function(value, removed) {
+                          var w, forms, len;
+                          forms = node.widgets.lastAppended.formsById
+                          w = forms.LOC_q2;
+                          w.show();
+                        }
+                    },
+                    {
+                        id: 'LOC_q2',
+                        orientation: 'H',
+                        mainText: '<span style="font-weight: normal;color:gray;">Statement 2</span><br>' +
+                        '"There is really no way I can avoid negative effects from air pollution on my health."',
+                        choices: [
+                          ['1', 'I strongly agree'],
+                          ['2', 'I agree'],
+                          ['3', 'I am neutral'],
+                          ['4', 'I disagree'],
+                          ['5', 'I strongly disagree'],
+                        ],
+                        requiredChoice: true,
+                        shuffleChoices: false,
+                        hidden: true,
+                        onclick: function(value, removed) {
+                          var w, forms, len;
+                          forms = node.widgets.lastAppended.formsById
+                          w = forms.LOC_q3;
+                          w.show();
+                        }
+                    },
+                    {
+                        id: 'LOC_q3',
+                        orientation: 'H',
+                        mainText: '<span style="font-weight: normal;color:gray;">Statement 3</span><br>' +
+                        '"There is little I can do to reduce the negative effects from air pollution on my health."',
+                        choices: [
+                          ['1', 'I strongly agree'],
+                          ['2', 'I agree'],
+                          ['3', 'I am neutral'],
+                          ['4', 'I disagree'],
+                          ['5', 'I strongly disagree'],
+                        ],
+                        requiredChoice: true,
+                        shuffleChoices: false,
+                        hidden: true,
+                    }
+                ]
+            }
         }
-    ]
-}
-}
-});
+    });
+
+    ///////////////////////////////////////////////
+    // LOCUS of CONTROL 2
+        stager.extendStep('Part4_LOC2', {
+            name: "Survey",
+            widget: {
+                name: 'ChoiceManager',
+                id: 'Part4_LOC2',
+                options: {
+                    simplify: true,
+                    mainText: '<br><br>' +
+                    'Indicate how much you agree or disagree with the following statements.',
+                    forms: [
+                        {
+                            id: 'LOC_q4',
+                            mainText: '<span style="font-weight: normal;color:gray;">Statement 4</span><br>' +
+                            '"I often feel helpless when I think about air pollution and its effects on my health."',
+                            choices: [
+                              ['1', 'I strongly agree'],
+                              ['2', 'I agree'],
+                              ['3', 'I am neutral'],
+                              ['4', 'I disagree'],
+                              ['5', 'I strongly disagree'],
+                            ],
+                            requiredChoice: true,
+                            shuffleChoices: false,
+                            onclick: function(value, removed) {
+                              var w, forms, len;
+                              forms = node.widgets.lastAppended.formsById
+                              w = forms.LOC_q5;
+                              w.show();
+                            }
+                        },
+                        {
+                            id: 'LOC_q5',
+                            orientation: 'H',
+                            mainText: '<span style="font-weight: normal;color:gray;">Statement 5</span><br>' +
+                            '"Sometimes I feel that I’m forced to breathe polluted air."',
+                            choices: [
+                              ['1', 'I strongly agree'],
+                              ['2', 'I agree'],
+                              ['3', 'I am neutral'],
+                              ['4', 'I disagree'],
+                              ['5', 'I strongly disagree'],
+                            ],
+                            requiredChoice: true,
+                            shuffleChoices: false,
+                            hidden: true,
+                        }
+                    ]
+                }
+            }
+        });
+
+    ///////////////////////////////////////////////
+    // LOCUS of CONTROL 3
+        stager.extendStep('Part4_LOC3', {
+            name: "Survey",
+            widget: {
+                name: 'ChoiceManager',
+                id: 'Part4_LOC3',
+                options: {
+                    simplify: true,
+                    mainText: '<br><br>' +
+                    'Indicate how much you agree or disagree with the following statements.',
+                    forms: [
+                        {
+                            id: 'LOC_q6',
+                            mainText: '<span style="font-weight: normal;color:gray;">Statement 6</span><br>' +
+                            '"How much air pollution will affect my health in the future mostly depends on me."',
+                            choices: [
+                              ['1', 'I strongly agree'],
+                              ['2', 'I agree'],
+                              ['3', 'I am neutral'],
+                              ['4', 'I disagree'],
+                              ['5', 'I strongly disagree'],
+                            ],
+                            requiredChoice: true,
+                            shuffleChoices: false,
+                            onclick: function(value, removed) {
+                              var w, forms, len;
+                              forms = node.widgets.lastAppended.formsById
+                              w = forms.LOC_q7;
+                              w.show();
+                            }
+                        },
+                        {
+                            id: 'LOC_q7',
+                            orientation: 'H',
+                            mainText: '<span style="font-weight: normal;color:gray;">Statement 7</span><br>' +
+                            '"I can reduce the negative effect of air pollution on my health as much as I want if I really set my mind to it."',
+                            choices: [
+                              ['1', 'I strongly agree'],
+                              ['2', 'I agree'],
+                              ['3', 'I am neutral'],
+                              ['4', 'I disagree'],
+                              ['5', 'I strongly disagree'],
+                            ],
+                            requiredChoice: true,
+                            shuffleChoices: false,
+                            hidden: true,
+                        }
+                    ]
+                }
+            }
+        });
 
 
 ///////////////////////////////////////////////
 // Perceived Control
-stager.extendStep('Part4_PC', {
-name: "Survey",
-widget: {
-    name: 'ChoiceManager',
-    id: 'Part4_PC',
-    options: {
-        simplify: true,
-        mainText: '<br><br>' +
-        'Indicate how much control do you think you have over the impacts of air pollution on your health.',
-        forms: [
-            {
-                id: 'LOC_q8',
-                mainText: '<span style="font-weight: normal;">Please choose the answer that best completes the following sentence:</span><br><br/>' +
-                '"The impact of air pollution on my own health is ..."',
-                choices: [
-                  ['1', 'Completely uncontrollable'],
-                  ['2', 'Mostly uncontrollable'],
-                  ['3', 'Neutral'],
-                  ['4', 'Mostly controllable'],
-                  ['5', 'Completely controllable'],
-                ],
-                requiredChoice: true,
-                shuffleChoices: false,
+    stager.extendStep('Part4_PC', {
+        name: "Survey",
+        widget: {
+            name: 'ChoiceManager',
+            id: 'Part4_PC',
+            options: {
+                simplify: true,
+                mainText: '<br><br>' +
+                'Indicate how much control do you think you have over the impacts of air pollution on your health.',
+                forms: [
+                    {
+                        id: 'LOC_q8',
+                        mainText: '<span style="font-weight: normal;">Please choose the answer that best completes the following sentence:</span><br><br/>' +
+                        '"The impact of air pollution on my own health is ..."',
+                        choices: [
+                          ['1', 'Completely uncontrollable'],
+                          ['2', 'Mostly uncontrollable'],
+                          ['3', 'Neutral'],
+                          ['4', 'Mostly controllable'],
+                          ['5', 'Completely controllable'],
+                        ],
+                        requiredChoice: true,
+                        shuffleChoices: false,
+                    }
+                ]
             }
-        ]
-    }
-}
-});
-
+        }
+    });
 
 
 // /////////////////////////////////////////////////////////////////////////////
@@ -614,7 +561,7 @@ stager.extendStep('Part_1_q5', {
                          },
                          {
                              id: 'change',
-                             left: '<span style=\'font-size:16px;font-weight:bold;\'>Change your commute route or time schedule to avoid high pollution areas</span>'
+                             left: '<span style=\'font-size:16px;font-weight:bold;\'>Avoid highy polluted areas when commuting</span>'
                          },
                          {
                              id: 'ventilate',
@@ -678,14 +625,17 @@ stager.extendStep('feedback', {
                 "If you want to get in touch with us for questions or suggestions, " +
                 "please write us an email at <em><span style='color:#bf2b42'>pob.heidelberg@gmail.com</span></em>." +
                 '<br><br>' +
-                'We are very interested in ' +
-                'hearing your <strong>feedback</strong> about the ' +
-                'following points:<br/><br/><em><ol>' +
-                '<li>Was the survey too long or too short?</li>' +
-                '<li>Did you find any question unclear or ' +
-                'uncomfortable?</li>' +
-                '<li>Did you experience any technical difficulty?</li>' +
-                "If you do not have any comment, just type 'nothing' in the box below.",
+                'Two final questions:<br/><br/>' +
+                '1. Which questions do you remember from the survey you took with us two weeks ago?',
+              },
+              {
+                name: 'Feedback',
+                id: 'feedback2',
+                minChars: 5,
+                requiredChoice: true,
+                showSubmit: false,
+                mainText: '' +
+                '2. What do you think this study was about?',
               }
             ]
           }
