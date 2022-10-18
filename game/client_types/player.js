@@ -169,8 +169,8 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                     {
                         name: 'Dropdown',
                         id: 'district',
-                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Select the county in which you currently live. <span style="font-weight: normal;">*</span>' +
-                        '<br><span style="font-weight: normal;">In case you cannot find your county in the list, please choose the nearest one.</span>',
+                        mainText: '<span style="font-weight: normal;color:gray;">Q4</span> Select the district in which you currently live. <span style="font-weight: normal;">*</span>' +
+                        '<br><span style="font-weight: normal;">In case you cannot find your district in the list, please choose the nearest one.</span>',
                         tag: 'select', // 'datalist'
                         // Will be auto-filled later.
                         choices: [ '--' ],
@@ -287,11 +287,11 @@ stager.extendStep('Part4_Posterior_LYL', {
         }
 
         if (node.game.contributionAmount == node.game.lifeLost) {
-            node.game.guessBonus = 0.50
+            node.game.guessBonus = 40
             W.setInnerHTML('payoff', '<img src="success.png" width="50px"> Your answer is <b>correct</b>! You receive a bonus of <b>$0.50</b>.<br>')
         }
         else if ((node.game.contributionAmount != node.game.lifeLost) && (node.game.contributionAmount >= (node.game.lifeLost - 0.5)) && (node.game.contributionAmount<= (node.game.lifeLost + 0.5))) {
-            node.game.guessBonus = 0.20
+            node.game.guessBonus = 20
             W.setInnerHTML('payoff', '<img src="almost_correct.png" width="50px"> Your answer is within half a year of the correct value! You receive a bonus of <b>$0.20</b>.<br>')
         }
         else {
@@ -581,7 +581,7 @@ stager.extendStep('Part_1_q5', {
                          },
                          {
                              id: 'fires',
-                             left: '<span style=\'font-size:16px;font-weight:bold;\'>Handle open fires (e.g., barbecue, fireplace)</span>'
+                             left: '<span style=\'font-size:16px;font-weight:bold;\'>Handle open fires (e.g., for cooking, heating)</span>'
                          },
                        ],
                        shuffleChoices: false
