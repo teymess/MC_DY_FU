@@ -68,7 +68,7 @@ module.exports = {
      */
     playerServer: {
 
-        endpoint: 'MC_DYN_FU',
+        endpoint: 'MC_DY_FU',
 
         // Anti-spoofing, extra check to see if msg.from matches socket.id
         // on SocketIo socket connections. Spoofed messages are logged

@@ -60,13 +60,18 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
                 node.game.pause('Disconnection detected. Please refresh ' +
                 'to reconnect.');
                 alert('Disconnection detected. Please refresh the page ' +
-                'to continue. You might have to use the original link provided on MTurk.');
+                'to continue. You might have to use the original link provided by Dynata.');
             },
             connectCb: function() {
                 // If the user refresh the page, this is not called, it
                 // is a normal (re)connect.
                 if (node.game.isPaused()) node.game.resume();
             }
+        });
+
+        node.on('CONSENT_REJECTING', function() {
+            console.log('Rejection detected!')
+            node.widgets.destroyAll();
         });
 
         // No need to show the wait for other players screen in single-player
@@ -79,10 +84,13 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     });
 
 /////////////////////////////////////////////////////////////////////////////////
-    stager.extendStep('consent', {
-        donebutton: false,
-        widget: 'Consent'
-    });
+stager.extendStep('consent', {
+    donebutton: false,
+    widget: {
+        name: 'Consent',
+        disconnect: false
+    }
+});
 
 
     //////////////////////////////////////////////////////////////////
