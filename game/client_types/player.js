@@ -669,7 +669,7 @@ stager.extendStep('end', {
         }
     },
     init: function() {
-        node.game.doneButton.destroy();
+        //node.game.doneButton.destroy();
         node.say('end');
     }
 });
