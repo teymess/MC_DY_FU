@@ -658,12 +658,14 @@ stager.extendStep('end', {
     widget: {
         name: 'EndScreen',
         options: {
-            feedback: false,
-            showEmailForm: false,
-            texts: {
-                message: 'You have now completed this task and your data has been saved.' +
-                ' Please go back to the Amazon Mechanical Turk web site and submit the HIT.<br><br>'
-            },
+          feedback: false,
+                  showEmailForm: false,
+                  showTotalWin: false,
+                  showExitCode: false,
+                      texts: {
+                          message: 'You have now completed this task and your data has been saved.' +
+                          ' Please click "Next" to be redirected to the panel page.<br><br>'
+                      },
         }
     },
     init: function() {
