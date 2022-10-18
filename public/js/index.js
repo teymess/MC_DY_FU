@@ -34,5 +34,5 @@ window.onload = function() {
     // Connect to channel.
     // (If using an alias if default channel, must pass the channel name
     // as parameter to connect).
-    node.connect('/MC_followup');
+    node.connect('/MC_DY_FU');
 };

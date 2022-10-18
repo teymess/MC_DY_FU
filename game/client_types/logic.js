@@ -22,11 +22,95 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
     // Make the logic independent from players position in the game.
     stager.setDefaultStepRule(ngc.stepRules.SOLO);
 
+    const redirectUrls = {
+        completed: 'https://dkr1.ssisurveys.com/projects/end?rst=1&psid=',
+        screenOut: 'https://dkr1.ssisurveys.com/projects/end?rst=2&psid=',
+        //quotaFull: 'https://dkr1.ssisurveys.com/projects/end?rst=3&psid=',
+    };
+
+    const redirect = (id, action) => {
+        // Build redirect url.
+        //console.log('Arrived at redirect function');
+        let url = redirectUrls[action];
+        url = `${url}${id}`;
+
+        if (action === 'completed') {
+            url = `${url}&basic=52463`
+        }
+
+        let client = channel.registry.getClient(id);
+        // // Check if there is demographic data.
+        //let demoData = memory.demo_player.get(id);
+
+        // Decrease quota if necessary. TODO: check condition.
+        // if (action !== 'completed' && action !== 'reconnect' && demoData && !client.redirected) {
+        //     console.log('Removing from quota...');
+        //     setup.decreaseQuota(demoData);
+        // }
+        //
+        // // Increase quota if necessary (on reconnect)
+        // if (action === 'reconnect' && demoData) {
+        //   console.log('Adding to quota...');
+        //   setup.increaseQuota(demoData);
+        // }
+
+        // redirect if player was not redirected before
+        if (action !== 'disconnect' && action !== 'reconnect' && !client.redirected) {
+
+        // Mark player redirected.
+        client.redirected = true;
+
+        // Client cannot reconnect.
+        client.allowReconnect = false;
+        // Redirect.
+            console.log('Redirecting...');
+            console.log(id);
+            setTimeout(() => node.redirect(url, id), 100);
+        }
+    };
+
     // Must implement the stages here.
 
     stager.setOnInit(function() {
 
+      function diffMinutes(dt2, dt1) {
+          let diff = (dt2 - dt1) / 1000;
+          diff /= 60;
+          return Math.abs(Math.round(diff));
+      }
+
+      setInterval(connectionCheck, 300000);
+
+      function connectionCheck(msg) {
+          let d = new Date().getTime();
+          node.game.pl.forEach(p=> {
+              let id = p.id;
+              let client = channel.registry.getClient(id);
+              let min = diffMinutes(client.connectTime.getTime(), d);
+              if (min > 90) { // 90
+                console.log("Sending to redirect funtion due to timeout...");
+                redirect(id, "screenOut");
+              }
+              else {
+                  console.log('Still time left!');
+              }
+          });
+      }
+
         memory.stream();
+
+        memory.view("consent").stream({ headerAdd: "consent" });
+
+        memory.consent.on('insert', item => {
+          if (item.consent === false) {
+            console.log('Redirecting in 10 seconds!');
+            let id = item.player;
+            //console.log(item.player);
+            //let url = `https://dkr1.ssisurveys.com/projects/end?rst=2&psid=${id}`;
+            console.log("Sending to redirect funtion due to consent rejected...");
+            setTimeout(() => redirect(id, "screenOut"), 10000);
+          }
+        });
 
         // Feedback.
         memory.view('feedback').stream({
@@ -55,6 +139,26 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         // memory.index('choice_nicaragua', item => {
         //     if (item.stepId === 'Part2_Info_Choice_Nicaragua') return item.player;
         // });
+
+        node.on.pdisconnect(p => {
+            //debugger
+            let id = p.id;
+            // if (!p.redirected) {
+            //     // Decrease quota.
+            //     setup.decreaseQuota(item);
+            //     // Perhaps you want to use timers, to avoid that somebody
+            //     // who disconnected and then reconnects has no place any more.
+            // }
+            console.log("Sending to redirect funtion due to disconnection...");
+            redirect(id, "disconnect");
+        });
+
+        node.on.preconnect(p => {
+            let id = p.id;
+            // Decrease quota.
+            console.log("Sending to redirect funtion due to reconnection...");
+            redirect(id, "reconnect");
+        });
 
         node.on.data('done', function(msg) {
 
@@ -187,9 +291,9 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         node.on.data('end',function(message) {
             let id = message.from;
             gameRoom.computeBonus({
+                headerAdd: ["psid"],
                 append: true,
-                clients: [ id ],
-                amt: true
+                clients: [ id ]
             });
         });
 
@@ -259,4 +363,12 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         let county = info.forms.district.value;
         return { state, county };
     }
+
+    node.on.done('end', function(msg) {
+            console.log('Redirecting');
+            let id = msg.from;
+            //let url = `https://dkr1.ssisurveys.com/projects/end?rst=1&psid=${id}&basic=78806`;
+            console.log("Sending to redirect funtion due to completion...");
+            redirect(id, "completed");
+        });
 };

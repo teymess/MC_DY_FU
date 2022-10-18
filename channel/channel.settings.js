@@ -52,7 +52,7 @@ module.exports = {
      * to use the real channel name, so you will need to pass it explicitly:
      * `node.connect('/gameName').
      */
-     alias: ['survey_US_followup'],
+     alias: ['w2dynfup'],
 
     /**
      * ## playerServer (object|string) Optional
@@ -68,7 +68,7 @@ module.exports = {
      */
     playerServer: {
 
-        endpoint: 'MC_followup',
+        endpoint: 'MC_DYN_FU',
 
         // Anti-spoofing, extra check to see if msg.from matches socket.id
         // on SocketIo socket connections. Spoofed messages are logged
