@@ -461,42 +461,42 @@ stager.extendStep('Part4_Posterior_LYL', {
                     mainText: '<br><br>' +
                     'Indicate how much you agree or disagree with the following statements.',
                     forms: [
-                        {
-                            id: 'LOC_q6',
-                            mainText: '<span style="font-weight: normal;color:gray;">Statement 6</span><br>' +
-                            '"How much air pollution will affect my health in the future mostly depends on me."',
-                            choices: [
-                              ['1', 'I strongly agree'],
-                              ['2', 'I agree'],
-                              ['3', 'I am neutral'],
-                              ['4', 'I disagree'],
-                              ['5', 'I strongly disagree'],
-                            ],
-                            requiredChoice: true,
-                            shuffleChoices: false,
-                            onclick: function(value, removed) {
-                              var w, forms, len;
-                              forms = node.widgets.lastAppended.formsById
-                              w = forms.LOC_q7;
-                              w.show();
-                            }
-                        },
-                        {
-                            id: 'LOC_q7',
-                            orientation: 'H',
-                            mainText: '<span style="font-weight: normal;color:gray;">Statement 7</span><br>' +
-                            '"I can reduce the negative effect of air pollution on my health as much as I want if I really set my mind to it."',
-                            choices: [
-                              ['1', 'I strongly agree'],
-                              ['2', 'I agree'],
-                              ['3', 'I am neutral'],
-                              ['4', 'I disagree'],
-                              ['5', 'I strongly disagree'],
-                            ],
-                            requiredChoice: true,
-                            shuffleChoices: false,
-                            hidden: true,
-                        }
+                      {
+                                  id: 'LOC_q6',
+                                  mainText: '<span style="font-weight: normal;color:gray;">Statement 6</span><br>' +
+                                  '"How much air pollution will affect my health in the future mostly depends on me."',
+                                  choices: [
+                                    ['5', 'I strongly disagree'],
+                                    ['4', 'I disagree'],
+                                    ['3', 'I am neutral'],
+                                    ['2', 'I agree'],
+                                    ['1', 'I strongly agree'],
+                                  ],
+                                  requiredChoice: true,
+                                  shuffleChoices: false,
+                                  onclick: function(value, removed) {
+                                    var w, forms, len;
+                                    forms = node.widgets.lastAppended.formsById
+                                    w = forms.LOC_q7;
+                                    w.show();
+                                  }
+                              },
+                              {
+                                  id: 'LOC_q7',
+                                  orientation: 'H',
+                                  mainText: '<span style="font-weight: normal;color:gray;">Statement 7</span><br>' +
+                                  '"I can reduce the negative effect of air pollution on my health as much as I want if I really set my mind to it."',
+                                  choices: [
+                                    ['5', 'I strongly disagree'],
+                                    ['4', 'I disagree'],
+                                    ['3', 'I am neutral'],
+                                    ['2', 'I agree'],
+                                    ['1', 'I strongly agree'],
+                                  ],
+                                  requiredChoice: true,
+                                  shuffleChoices: false,
+                                  hidden: true,
+                              }
                     ]
                 }
             }
