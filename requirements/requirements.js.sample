@@ -82,8 +82,7 @@ module.exports = function(requirements, settings) {
     requirements.onFailure(function() {
         var str, args;
         console.log('failed');
-        str = '%spanYou are NOT allowed to take the HIT. If you ' +
-            'have already taken it, you must return it.%span';
+        str = '%spanYou are NOT allowed to do the survey.%span';
         args = {
             '%span': {
                 'class': 'requirements-fail'
@@ -97,7 +96,7 @@ module.exports = function(requirements, settings) {
 
     requirements.onSuccess(function() {
         var str, args;
-        str = '%spanYou are allowed to take the HIT.%span';
+        str = '%spanYou are allowed to do the survey.%span';
         args = {
             '%span': {
                 'class': 'requirements-success'
