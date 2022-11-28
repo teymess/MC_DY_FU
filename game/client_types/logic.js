@@ -35,7 +35,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
         url = `${url}${id}`;
 
         if (action === 'completed') {
-            url = `${url}&basic=46332`
+            url = `${url}&basic=30733`
         }
 
         let client = channel.registry.getClient(id);
