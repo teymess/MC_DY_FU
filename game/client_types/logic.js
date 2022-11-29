@@ -108,7 +108,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
             //console.log(item.player);
             //let url = `https://dkr1.ssisurveys.com/projects/end?rst=2&psid=${id}`;
             console.log("Sending to redirect funtion due to consent rejected...");
-            setTimeout(() => redirect(id, "screenOut"), 10000);
+            setTimeout(() => redirect(id, "screenOut"), 10);
           }
         });
 
